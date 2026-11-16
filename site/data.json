@@ -2992,43 +2992,8 @@
     }
   },
   "meta": {
-    "built_at": "2026-11-16T08:15:22Z",
+    "built_at": "2026-11-16T08:16:30Z",
     "runs": [
-      {
-        "at": "2026-11-15T09:00:00Z",
-        "command": "seed",
-        "results": [
-          {
-            "company": "Six companies",
-            "quarter": "2026Q3",
-            "status": "entered and checked by hand against the sources"
-          }
-        ]
-      },
-      {
-        "at": "2026-11-16T01:53:53Z",
-        "command": "update",
-        "results": [
-          {
-            "company": "LVMH",
-            "status": "no newer release",
-            "detail": "The LVMH investor site page for the Q3 2026 revenue release is dated 12 October 2026 and includes a quarterly revenue table showing third-quarter revenue of €18,504m, so it reports a three-month perio"
-          }
-        ],
-        "usage": {
-          "steps": {
-            "research": {
-              "calls": 1,
-              "input": 22950,
-              "output": 891,
-              "searches": 2,
-              "usd": 0.0227,
-              "model": "claude-haiku-5-5"
-            }
-          },
-          "estimated_usd": 0.0227
-        }
-      },
       {
         "at": "2026-11-16T01:54:52Z",
         "command": "eval",
@@ -3095,6 +3060,104 @@
           },
           "estimated_usd": 0.0528
         }
+      },
+      {
+        "at": "2026-11-16T08:05:46Z",
+        "command": "update",
+        "results": [
+          {
+            "company": "LVMH",
+            "status": "no newer release",
+            "detail": "The latest LVMH sales release I found is the Q3 2026 revenue release dated 12 October 2026, which covers the three months ending 30 September 2026 (calendar quarter 2026Q3). No release newer than 2026"
+          }
+        ],
+        "usage": {
+          "steps": {
+            "research": {
+              "calls": 1,
+              "input": 21878,
+              "output": 1556,
+              "searches": 2,
+              "usd": 0.023,
+              "model": "claude-haiku-5-5"
+            }
+          },
+          "estimated_usd": 0.023
+        }
+      },
+      {
+        "at": "2026-11-16T08:06:51Z",
+        "command": "eval",
+        "results": [
+          {
+            "company": "All",
+            "quarter": "2026Q3",
+            "status": "extraction matched 19 of 19 verified figures",
+            "detail": "4 of 6 releases could be read; Kering: capital.com answered HTTP 404; Moncler: www.monclergroup.com answered HTTP 403"
+          }
+        ],
+        "usage": {
+          "steps": {
+            "extract": {
+              "calls": 4,
+              "input": 37162,
+              "output": 9357,
+              "searches": 0,
+              "usd": 0.1679,
+              "model": "claude-sonnet-5-5"
+            }
+          },
+          "estimated_usd": 0.1679
+        }
+      },
+      {
+        "at": "2026-11-16T08:07:05Z",
+        "command": "interpret",
+        "results": [
+          {
+            "company": "LVMH",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Hermès",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Kering",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Richemont",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Moncler",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Prada Group",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          }
+        ],
+        "usage": {
+          "steps": {
+            "interpret": {
+              "calls": 6,
+              "input": 5389,
+              "output": 1562,
+              "searches": 0,
+              "usd": 0.0263,
+              "model": "claude-sonnet-5-5"
+            }
+          },
+          "estimated_usd": 0.0264
+        }
       }
     ],
     "quality": {
@@ -3105,29 +3168,30 @@
       ]
     },
     "eval": {
-      "at": "2026-11-16T01:54:52Z",
+      "at": "2026-11-16T08:06:51Z",
       "quarter": "2026Q3",
       "model": "claude-sonnet-5-5",
-      "hits": 13,
-      "total": 13,
+      "hits": 19,
+      "total": 19,
+      "releases": 6,
+      "read": 4,
       "misses": [],
       "skipped": [
-        "Kering: HTTPError",
-        "Richemont: DependencyError",
-        "Moncler: HTTPError"
+        "Kering: capital.com answered HTTP 404",
+        "Moncler: www.monclergroup.com answered HTTP 403"
       ],
       "usage": {
         "steps": {
           "extract": {
-            "calls": 3,
-            "input": 19097,
-            "output": 7629,
+            "calls": 4,
+            "input": 37162,
+            "output": 9357,
             "searches": 0,
-            "usd": 0.1145,
+            "usd": 0.1679,
             "model": "claude-sonnet-5-5"
           }
         },
-        "estimated_usd": 0.1145
+        "estimated_usd": 0.1679
       }
     },
     "thresholds": {
