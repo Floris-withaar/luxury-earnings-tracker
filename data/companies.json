@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-15",
+  "asOf": "2026-11-16",
   "latest": "2026Q3",
   "companies": [
     {
@@ -161,11 +161,11 @@
         },
         "2026Q1": {
           "g": 5.6,
-          "s": 4
+          "s": 3
         },
         "2026Q2": {
           "g": 6.7,
-          "s": 4
+          "s": 3
         },
         "2026Q3": {
           "g": 4.3,
@@ -206,22 +206,27 @@
           "asia": {
             "v": 2.5,
             "label": "Asia-Pacific excl. Japan",
-            "s": 4
+            "s": 3
           },
           "japan": {
             "v": 12.3,
             "label": "Japan",
-            "s": 4
+            "s": 3
+          },
+          "europe": {
+            "v": 7.4,
+            "label": "Total Europe",
+            "s": 3
           },
           "americas": {
             "v": 13.7,
             "label": "Americas",
-            "s": 4
+            "s": 3
           },
           "me": {
             "v": -2.4,
             "label": "Other (Middle East)",
-            "s": 4
+            "s": 3
           }
         }
       },
@@ -295,18 +300,11 @@
           "kind": "company"
         },
         {
-          "t": "2026 half-year results (first quarter +6%, second quarter +7%)",
+          "t": "2026 half-year results (first and second quarter by region and sector)",
           "pub": "Hermès International, regulatory release",
           "date": "29 Jul 2026",
           "url": "https://mfn.se/one/a/hermes/hermes-international-2026-half-year-results-be9f20c4.iframe",
           "kind": "company"
-        },
-        {
-          "t": "Hermès: H1 2026 revenue reaches €8.2 billion (quarterly growth to one decimal, by region)",
-          "pub": "Pulse 2.0",
-          "date": "29 Jul 2026",
-          "url": "https://pulse2.com/hermes-h1-2026-revenue-reaches-e8-2-billion-as-operating-margin-holds-at-41/",
-          "kind": "press"
         }
       ],
       "origin": "base",
@@ -366,6 +364,11 @@
             "v": 2,
             "label": "North America",
             "s": 4
+          },
+          "me": {
+            "v": 2,
+            "label": "Rest of World",
+            "s": 4
           }
         }
       },
@@ -411,7 +414,7 @@
           "t": "Revenue for the third quarter of 2026",
           "pub": "Kering press release (GlobeNewswire)",
           "date": "22 Oct 2026",
-          "url": "https://capital.com/en-gb/news/kering-revenue-for-the-third-quarter-of-2026",
+          "url": "https://www.globenewswire.com/news-release/2026/10/22/3386683/0/en/kering-revenue-for-the-third-quarter-of-2026.html",
           "kind": "company"
         },
         {
@@ -436,18 +439,18 @@
           "kind": "company"
         },
         {
-          "t": "Kering revenue holds steady in Q3 (regional growth from the results presentation)",
-          "pub": "The Impression",
-          "date": "Oct 2026",
-          "url": "https://theimpression.com/?p=12070551",
-          "kind": "press"
+          "t": "2026 third-quarter revenue presentation (group revenue by region, slide 6)",
+          "pub": "Kering",
+          "date": "22 Oct 2026",
+          "url": "https://www.kering.com/api/download-file/?path=20261022_Kering_Q3_26_Presentation_88a2b4f753.pdf",
+          "kind": "company"
         },
         {
-          "t": "Kering reports stable revenue for the first quarter of 2026",
-          "pub": "MarketScreener",
-          "date": "Apr 2026",
-          "url": "https://www.marketscreener.com/news/kering-reports-stable-revenue-for-the-first-quarter-of-2026-ce7e50dfdc8bf722",
-          "kind": "press"
+          "t": "2026 first-quarter revenue",
+          "pub": "Kering press release (GlobeNewswire)",
+          "date": "14 Apr 2026",
+          "url": "https://www.globenewswire.com/news-release/2026/04/14/3273700/0/en/Kering-2026-First-quarter-revenue-gradual-improvement-and-focus-on-execution.html",
+          "kind": "company"
         }
       ],
       "origin": "base",

@@ -580,8 +580,8 @@
         "asia_gap": -4.2,
         "asia_delta": null,
         "breadth": {
-          "growing": 3,
-          "reported": 4
+          "growing": 4,
+          "reported": 5
         },
         "region_spread": 16.1,
         "driver": null,
@@ -741,7 +741,7 @@
         "region_spread": 11,
         "driver": {
           "key": "asia",
-          "name": "Asia ex-Japan",
+          "name": "Asia excl. Japan",
           "change": -9
         },
         "signal": {
@@ -799,8 +799,8 @@
         "asia_gap": -4,
         "asia_delta": null,
         "breadth": {
-          "growing": 2,
-          "reported": 4
+          "growing": 3,
+          "reported": 5
         },
         "region_spread": 9,
         "driver": null,
@@ -867,7 +867,7 @@
         "region_spread": 13,
         "driver": {
           "key": "asia",
-          "name": "Asia ex-Japan",
+          "name": "Asia (APAC, Japan, Korea)",
           "change": -7
         },
         "signal": {

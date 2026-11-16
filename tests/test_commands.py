@@ -161,3 +161,29 @@ class LikeForLikeTests(TempRepoCase):
         self.assertEqual(after["median_prev"], before["median_prev"])
         self.assertIn("6 companies that report both quarters", interpret.peer_lede("2026Q3", after))
         self.assertNotIn("report both quarters", interpret.peer_lede("2026Q3", before))
+
+
+class StaleNoteTests(TempRepoCase):
+    """A model note is tied to the exact figures it was written from."""
+
+    def test_note_survives_a_rebuild_but_not_a_change_in_the_figures(self):
+        client = FakeClient(*[{"note": "Asia was the weak spot this quarter.", "themes": [], "watch": ""}] * 6)
+        with mock.patch.object(run.llm, "get_client", return_value=client):
+            run.cmd_interpret(SimpleNamespace())
+        data = load(run.COMPANIES)
+        run.rebuild(data)
+        notes = self.read("data/commentary.json")["2026Q3"]["companies"]
+        self.assertTrue(all(n["by"] == llm.MODELS["interpret"] for n in notes.values()))
+
+        kering = next(c for c in data["companies"] if c["id"] == "kering")
+        kering["regions"]["2026Q3"]["japan"]["v"] = 9          # one figure changes for one company
+        run.save(run.COMPANIES, data)
+        run.rebuild(data)
+        notes = self.read("data/commentary.json")["2026Q3"]["companies"]
+        self.assertEqual(notes["kering"]["by"], "rules")
+        self.assertNotEqual(notes["kering"]["note"], "Asia was the weak spot this quarter.")
+        self.assertEqual(notes["richemont"]["by"], llm.MODELS["interpret"])   # companies whose figures did not change keep theirs
+
+    def test_a_region_goes_by_the_company_s_own_name(self):
+        metrics = model.compute(load(COMPANIES))["2026Q3"]["companies"]["moncler"]
+        self.assertEqual(metrics["driver"]["name"], "Asia (APAC, Japan, Korea)")
