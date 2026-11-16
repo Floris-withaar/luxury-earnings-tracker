@@ -165,7 +165,9 @@ function trendChart(lines, qs, endLabels){
     const svg = sv("svg", {viewBox:"0 0 " + W + " " + H, role:"img", "aria-label":"Line chart by quarter. The table below it holds the numbers."});
     dom.ticks.forEach(t => { svg.append(sv("line", {class: t === 0 ? "zl" : "gl", x1: m.l, x2: W - m.r, y1: y(t), y2: y(t)}));
       const tx = sv("text", {class:"tk", x: m.l - 8, y: y(t) + 4, "text-anchor":"end"}); tx.textContent = (t > 0 ? "+" : t < 0 ? "−" : "") + Math.abs(t) + "%"; svg.append(tx); });
-    qs.forEach((q, i) => { const tx = sv("text", {class:"tk", x: x(i), y: H - 8, "text-anchor":"middle"}); tx.textContent = narrow ? "Q" + q.slice(5) + " ’" + q.slice(2, 4) : qLabel(q); svg.append(tx); });
+    /* Each label needs about 52px. When there is less, label every second quarter, always including the latest. */
+    const step = (W - m.l - m.r) / Math.max(1, qs.length - 1) < 52 ? 2 : 1;
+    qs.forEach((q, i) => { if ((qs.length - 1 - i) % step) return; const tx = sv("text", {class:"tk", x: x(i), y: H - 8, "text-anchor":"middle"}); tx.textContent = narrow ? "Q" + q.slice(5) + " ’" + q.slice(2, 4) : qLabel(q); svg.append(tx); });
     lines.forEach(l => {
       let d = "", pen = false, n = 0, last = null;
       l.vals.forEach((v, i) => { if (!isNum(v)){ pen = false; return; } d += (pen ? "L" : "M") + x(i).toFixed(1) + " " + y(v).toFixed(1); pen = true; n++; last = {i, v}; });
@@ -285,7 +287,7 @@ function viewCompare(v){
   const cmp = rows.filter(r => isNum(r.ref)), below = cmp.filter(r => r.g < r.ref).length;
   const t1 = hasRef && cmp.length ? below + " of " + cmp.length + " selected " + (cmp.length === 1 ? "company is" : "companies are") + " below " + againstLabel(q) + " on " + MEASURES.find(x => x[0] === m)[2] + "." : ml + " in " + qLabel(q) + ".";
   const leg = el("div", {class:"legend"}, el("span", null, "Bar: " + qLabel(q)), hasRef ? el("span", null, el("i", {class:"tick"}), againstLabel(q)[0].toUpperCase() + againstLabel(q).slice(1)) : null, hasRef ? el("span", null, "Right column: the difference in points") : null);
-  const qs = allQuarters().slice(-6);
+  const qs = allQuarters().slice(-8);
   const lines = list.map(c => ({name: c.name, color: colorOf(c), vals: qs.map(x => val(c, x, m))})).filter(l => l.vals.some(isNum));
   if (state.against === "median") lines.push({name:"Median of all companies", ref: true, vals: qs.map(x => median(cos().map(c => val(c, x, m))))});
   if (state.against === "company" && !state.sel.has(state.againstCo)) lines.push({name: byId(state.againstCo).name, ref: true, vals: qs.map(x => val(byId(state.againstCo), x, m))});
@@ -334,7 +336,7 @@ function viewCompany(v){
   const note = el("div", {class:"prose"}, el("p", {text: nt ? nt.note : "No note for this quarter."}));
   if (nt && nt.watch) note.append(el("p", null, el("b", {style:"font-weight:600", text:"To check next: "}), nt.watch));
   note.append(el("div", {style:"margin:8px 0"}, signalChips(x)));
-  const qs = allQuarters().slice(-6);
+  const qs = allQuarters().slice(-8);
   const lines = [{name: c.name, color: colorOf(c), vals: qs.map(t => gv(c, t))}, {name:"Median of all companies", ref: true, vals: qs.map(t => median(cos().map(o => gv(o, t))))}];
   const left = el("div", {style:"display:grid;gap:24px;align-content:start"},
     exhibit(x ? x.signal.label + "." : "What moved", note, {src: nt ? (nt.by === "rules" ? "Note written by fixed rules from the model output." : "Note written by " + nt.by + " from the model output. Every number in it was checked against the data.") : ""}),

@@ -135,7 +135,7 @@ def validate(dataset: dict, watchlist: dict | None = None, today: date | None = 
         mirrors = sorted({f"{c.get('name')}: {s['url'].split('/')[2]}" for c in companies for s in (c.get("sources") or [])
                           if s.get("kind") == "company" and s.get("url") and not is_trusted(s["url"], domains)})
         if mirrors:
-            warnings.append(f"{len(mirrors)} company sources are linked through another site, not the company or a regulatory wire: " + "; ".join(mirrors) + ".")
+            warnings.append(f"Company sources linked through another site, not the company or a regulatory wire ({len(mirrors)}): " + "; ".join(mirrors) + ".")
         today = today or date.today()
         by_id = {c.get("id"): c for c in companies}
         for entry in watchlist.get("companies", []):

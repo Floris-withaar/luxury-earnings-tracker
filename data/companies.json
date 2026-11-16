@@ -9,6 +9,18 @@
       "hq": "Paris",
       "basis": "Organic",
       "series": {
+        "2024Q4": {
+          "g": 1,
+          "s": 3
+        },
+        "2025Q1": {
+          "g": -3,
+          "s": 4
+        },
+        "2025Q2": {
+          "g": -4,
+          "s": 4
+        },
         "2025Q3": {
           "g": 1,
           "s": 2
@@ -137,6 +149,20 @@
           "date": "Jan 2026",
           "url": "https://www.lvmh.com/static/letter-to-shareholders-january-2026/",
           "kind": "company"
+        },
+        {
+          "t": "2024 results (fourth quarter 2024 organic growth)",
+          "pub": "LVMH press release (GlobeNewswire)",
+          "date": "28 Jan 2025",
+          "url": "https://www.globenewswire.com/news-release/2025/01/28/3016635/0/en/lvmh-achieves-a-solid-performance-despite-an-unfavorable-global-economic-environment.html",
+          "kind": "company"
+        },
+        {
+          "t": "2025 first-half results (organic growth by quarter, appendix)",
+          "pub": "LVMH press release (GlobeNewswire)",
+          "date": "24 Jul 2025",
+          "url": "https://www.globenewswire.com/news-release/2025/07/24/3121280/0/en/lvmh-solid-results-in-the-first-half-of-2025-despite-the-prevailing-environment.html",
+          "kind": "company"
         }
       ],
       "origin": "base",
@@ -149,6 +175,18 @@
       "hq": "Paris",
       "basis": "Constant FX",
       "series": {
+        "2024Q4": {
+          "g": 17.6,
+          "s": 4
+        },
+        "2025Q1": {
+          "g": 7.2,
+          "s": 1
+        },
+        "2025Q2": {
+          "g": 9.0,
+          "s": 1
+        },
         "2025Q3": {
           "g": 9.6,
           "rev": 3881,
@@ -286,7 +324,7 @@
           "kind": "company"
         },
         {
-          "t": "2025 full-year results",
+          "t": "2025 full-year results (growth by quarter for 2025)",
           "pub": "Hermès International, regulatory release",
           "date": "12 Feb 2026",
           "url": "https://live.euronext.com/it/node/12862215",
@@ -305,6 +343,13 @@
           "date": "29 Jul 2026",
           "url": "https://mfn.se/one/a/hermes/hermes-international-2026-half-year-results-be9f20c4.iframe",
           "kind": "company"
+        },
+        {
+          "t": "2024 full-year results (growth by quarter)",
+          "pub": "Hermès International, regulatory release (GlobeNewswire)",
+          "date": "14 Feb 2025",
+          "url": "https://www.globenewswire.com/news-release/2025/02/14/3026433/0/en/Herm%C3%A8s-International-2024-Full-Year-Results.html",
+          "kind": "company"
         }
       ],
       "origin": "base",
@@ -317,10 +362,21 @@
       "hq": "Paris",
       "basis": "Comparable",
       "series": {
+        "2024Q4": {
+          "g": -12,
+          "s": 6
+        },
+        "2025Q1": {
+          "g": -15,
+          "s": 7
+        },
+        "2025Q2": {
+          "g": -16,
+          "s": 7
+        },
         "2025Q3": {
-          "g": -5,
-          "rev": 3415,
-          "s": 3
+          "g": -6,
+          "s": 7
         },
         "2025Q4": {
           "g": -3,
@@ -426,9 +482,9 @@
         },
         {
           "t": "2025 results",
-          "pub": "Kering press release",
+          "pub": "Kering press release (GlobeNewswire)",
           "date": "10 Feb 2026",
-          "url": "https://www.nasdaq.com/press-release/kering-2025-results-sequential-improvement-unlocking-next-phase-sustainable",
+          "url": "https://www.globenewswire.com/news-release/2026/02/10/3235000/0/en/kering-2025-results-sequential-improvement-unlocking-the-next-phase-of-sustainable-profitable-growth.html",
           "kind": "company"
         },
         {
@@ -451,10 +507,25 @@
           "date": "14 Apr 2026",
           "url": "https://www.globenewswire.com/news-release/2026/04/14/3273700/0/en/Kering-2026-First-quarter-revenue-gradual-improvement-and-focus-on-execution.html",
           "kind": "company"
+        },
+        {
+          "t": "2024 annual results (fourth quarter 2024)",
+          "pub": "Kering press release (GlobeNewswire)",
+          "date": "11 Feb 2025",
+          "url": "https://www.globenewswire.com/news-release/2025/2/11/3023901/0/en/kering-press-release-2024-annual-results.html",
+          "kind": "company"
+        },
+        {
+          "t": "2025 Financial Document (group revenue by quarter, restated to exclude Kering Beauté)",
+          "pub": "Kering",
+          "date": "10 Feb 2026",
+          "url": "https://www.kering.com/api/download-file/?path=Kering_2025_Results_Financial_Document_975124ec5f.pdf",
+          "kind": "company"
         }
       ],
       "origin": "base",
-      "cur": "EUR"
+      "cur": "EUR",
+      "scope": "2025 quarters are the restated figures that exclude Kering Beauté, from the 2025 Financial Document. That is the basis every 2026 figure is compared with. As first published, with Kering Beauté: Q1 2025 -14%, Q2 2025 -15%, Q3 2025 -5%. Q4 2024 is as first published and includes Kering Beauté."
     },
     {
       "id": "richemont",
@@ -464,6 +535,21 @@
       "basis": "Constant FX",
       "fiscal": "Financial year ends 31 March. Calendar Q3 2026 is Richemont's Q2 FY27.",
       "series": {
+        "2024Q4": {
+          "g": 10,
+          "s": 4,
+          "label": "Q3 FY25"
+        },
+        "2025Q1": {
+          "g": 7,
+          "s": 4,
+          "label": "Q4 FY25"
+        },
+        "2025Q2": {
+          "g": 6,
+          "s": 5,
+          "label": "Q1 FY26"
+        },
         "2025Q3": {
           "g": 14,
           "label": "Q2 FY26",
@@ -603,6 +689,20 @@
           "date": "14 Nov 2025",
           "url": "https://www.richemont.com/news-media/press-releases-news/richemont-delivers-solid-results-for-the-six-month-period-ended-30-september-2025-with-strong-sales-momentum-in-q2/",
           "kind": "company"
+        },
+        {
+          "t": "Chairman's address, annual general meeting (third and fourth quarter of the year ended 31 March 2025)",
+          "pub": "Richemont",
+          "date": "10 Sep 2025",
+          "url": "https://www.richemont.com/media/xcxhjwbr/chairmans-address-2025.pdf",
+          "kind": "company"
+        },
+        {
+          "t": "First-quarter sales, quarter ended 30 June 2025",
+          "pub": "Richemont",
+          "date": "16 Jul 2025",
+          "url": "https://www.richemont.com/news-media/press-releases-news/richemont-posts-solid-start-to-the-year-for-its-first-quarter-ended-30-june-2025/",
+          "kind": "company"
         }
       ],
       "origin": "base",
@@ -616,6 +716,18 @@
       "basis": "Constant FX",
       "scope": "Regions are for the Moncler brand, about 83% of third-quarter group revenue.",
       "series": {
+        "2024Q4": {
+          "g": 8,
+          "s": 5
+        },
+        "2025Q1": {
+          "g": 1,
+          "s": 6
+        },
+        "2025Q2": {
+          "g": -1,
+          "s": 6
+        },
         "2025Q3": {
           "g": -1,
           "rev": 615.6,
@@ -734,10 +846,24 @@
           "kind": "company"
         },
         {
-          "t": "Interim management statement, first quarter of 2026",
-          "pub": "Moncler Group filing",
+          "t": "First-quarter 2026 revenues",
+          "pub": "Moncler Group press release",
           "date": "21 Apr 2026",
-          "url": "https://financialreports.eu/filings/moncler/interim-quarterly-report/2026/34818561/",
+          "url": "https://www.monclergroup.com/v3/assets/blt61bda6b71f29a239/blt8a2645a0ef1b276c/69e79bd9e3673125916076b8/Moncler-Group-Press-Release-Q1-2026.pdf",
+          "kind": "company"
+        },
+        {
+          "t": "Annual Report 2024 (fourth quarter 2024 group revenues)",
+          "pub": "Moncler Group",
+          "date": "2025",
+          "url": "https://www.monclergroup.com/v3/assets/blt61bda6b71f29a239/blt415fe73be2e3f2a6/68b0043d1268fb8d785f3107/moncler-group-annual-report-2024.pdf",
+          "kind": "company"
+        },
+        {
+          "t": "Nine months 2025 presentation (group revenues by quarter)",
+          "pub": "Moncler Group",
+          "date": "28 Oct 2025",
+          "url": "https://www.monclergroup.com/v3/assets/blt61bda6b71f29a239/blt5bec297b1e89f6d9/690b646596cc596251a0dd56/Moncler-Group-9M-2025-Interim-Management-Statement-Presentation.pdf",
           "kind": "company"
         }
       ],
@@ -752,6 +878,18 @@
       "basis": "Organic",
       "scope": "Series and regions are retail sales on an organic basis (constant currency, excluding Versace). Retail is 87% of net revenues. Net revenues grew 1% organic in the third quarter.",
       "series": {
+        "2024Q4": {
+          "g": 18,
+          "s": 7
+        },
+        "2025Q1": {
+          "g": 13.0,
+          "s": 8
+        },
+        "2025Q2": {
+          "g": 7.6,
+          "s": 9
+        },
         "2025Q3": {
           "g": 7.6,
           "s": 5
@@ -897,6 +1035,27 @@
           "pub": "Prada Group",
           "date": "Jul 2026",
           "url": "https://www.pradagroup.com/en/investors",
+          "kind": "company"
+        },
+        {
+          "t": "Full-year 2024 results (fourth-quarter retail sales)",
+          "pub": "Prada Group press release",
+          "date": "4 Mar 2025",
+          "url": "https://www.pradagroup.com/content/dam/pradagroup/documents/investors/FY-2024/Prada_Group_FY24_PR.pdf",
+          "kind": "company"
+        },
+        {
+          "t": "Unaudited revenues for the three months ended 31 March 2025",
+          "pub": "Prada Group announcement",
+          "date": "30 Apr 2025",
+          "url": "https://www.pradagroup.com/content/dam/pradagroup/documents/Shareholderinformation/2025/e-Announcement-of-Unaudited-Revenues-for-the-three-months-ended-March-31,2025-04-2025.pdf",
+          "kind": "company"
+        },
+        {
+          "t": "First-half 2025 results (second-quarter retail sales)",
+          "pub": "Prada Group press release",
+          "date": "30 Jul 2025",
+          "url": "https://www.pradagroup.com/content/dam/pradagroup/documents/investors/H1-2025/Prada_Group_H125_PR.pdf",
           "kind": "company"
         }
       ],

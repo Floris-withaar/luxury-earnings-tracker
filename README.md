@@ -148,9 +148,9 @@ Growth is on the underlying basis each company publishes: organic, constant exch
 
 ## Status
 
-- The six companies and five quarters in the dataset were entered and checked by hand against the linked sources on 15 November 2026.
+- The six companies and eight quarters in the dataset were entered and checked against the linked sources on 15 and 16 November 2026.
 - Steps 3 and 4, the data gate and the website are covered by tests and run without a key.
 - First live run, 16 November 2026, cost $0.19. Research worked. Extraction matched 13 of 13 verified figures, but only 3 of 6 releases could be read: two company sites turned the download away and one PDF needed a library that was missing. All six notes failed because the answer limit left no room for the model's thinking. The library, the limits and the error reporting are fixed. The two sites that refuse automated downloads remain: their releases go in by hand with `add --file`.
-- 19 figures come from press reports of company releases and presentations: 8 for LVMH, 6 for Hermès and 5 for Kering. They are marked Press on the site and are next to be replaced with company sources.
+- 8 regional figures for LVMH come from a press report of the company's slides. They are marked Press on the site until a person confirms them against the slides. Kering's 2025 quarters use the company's restated figures, which exclude Kering Beauté.
 
 This is a study project built from public company releases. It gives no investment advice.
