@@ -1,1 +1,104 @@
-[{"at": "2026-11-15T09:00:00Z", "command": "seed", "results": [{"company": "Six companies", "quarter": "2026Q3", "status": "entered and checked by hand against the sources"}]}]
+[
+  {
+    "at": "2026-11-15T09:00:00Z",
+    "command": "seed",
+    "results": [
+      {
+        "company": "Six companies",
+        "quarter": "2026Q3",
+        "status": "entered and checked by hand against the sources"
+      }
+    ]
+  },
+  {
+    "at": "2026-11-16T01:53:53Z",
+    "command": "update",
+    "results": [
+      {
+        "company": "LVMH",
+        "status": "no newer release",
+        "detail": "The LVMH investor site page for the Q3 2026 revenue release is dated 12 October 2026 and includes a quarterly revenue table showing third-quarter revenue of €18,504m, so it reports a three-month perio"
+      }
+    ],
+    "usage": {
+      "steps": {
+        "research": {
+          "calls": 1,
+          "input": 22950,
+          "output": 891,
+          "searches": 2,
+          "usd": 0.0227,
+          "model": "claude-haiku-5-5"
+        }
+      },
+      "estimated_usd": 0.0227
+    }
+  },
+  {
+    "at": "2026-11-16T01:54:52Z",
+    "command": "eval",
+    "results": [
+      {
+        "company": "All",
+        "quarter": "2026Q3",
+        "status": "extraction matched 13 of 13 verified figures"
+      }
+    ],
+    "usage": {
+      "steps": {
+        "extract": {
+          "calls": 3,
+          "input": 19097,
+          "output": 7629,
+          "searches": 0,
+          "usd": 0.1145,
+          "model": "claude-sonnet-5-5"
+        }
+      },
+      "estimated_usd": 0.1145
+    }
+  },
+  {
+    "at": "2026-11-16T01:55:27Z",
+    "command": "interpret",
+    "results": [
+      {
+        "company": "lvmh",
+        "status": "note by rules (model note rejected)"
+      },
+      {
+        "company": "hermes",
+        "status": "note by rules (model note rejected)"
+      },
+      {
+        "company": "kering",
+        "status": "note by rules (model note rejected)"
+      },
+      {
+        "company": "richemont",
+        "status": "note by rules (model note rejected)"
+      },
+      {
+        "company": "moncler",
+        "status": "note by rules (model note rejected)"
+      },
+      {
+        "company": "prada",
+        "status": "note by rules (model note rejected)"
+      }
+    ],
+    "usage": {
+      "steps": {
+        "interpret": {
+          "calls": 6,
+          "input": 5389,
+          "output": 4200,
+          "searches": 0,
+          "usd": 0.0529,
+          "model": "claude-sonnet-5-5"
+        }
+      },
+      "estimated_usd": 0.0528
+    }
+  }
+]
