@@ -6,7 +6,7 @@ Language models find and read the company releases. Fixed rules check their work
 
 ## Run it on your computer
 
-You need Python 3.10 or newer. No API key is needed to view the site or run the model.
+You need Python 3.13, the version the checks run on. No API key is needed to view the site or run the model. `requirements.txt` is a locked list with a hash for every package. If it does not install on your system, `pip install -r requirements.in` installs the same direct versions without the hash check.
 
 ```bash
 python -m pipeline.run serve
@@ -17,10 +17,10 @@ Then open http://localhost:8000.
 To recompute the model and rebuild the site data after a change to `data/companies.json`:
 
 ```bash
-pip install -r requirements.txt
+pip install --require-hashes -r requirements.txt
 python -m pipeline.run model
 python -m pipeline.run validate
-python -m unittest discover -s tests
+python -m unittest discover -s tests -b
 ```
 
 ## How it works
@@ -72,9 +72,9 @@ Five screens in `site/` (`index.html`, `styles.css`, `app.js`), with no build st
 
 | Check | Command | What it proves |
 |---|---|---|
-| Unit and flow tests | `python -m unittest discover -s tests` | Each step works, and a saved release travels from extraction to the file the site reads without touching other companies. |
+| Unit, flow and command tests | `python -m unittest discover -s tests -b` | Each step works, a saved release travels from extraction to the file the site reads without touching other companies, and every command behaves as the workflows expect, including when a download is blocked or an answer is cut off. |
 | Data gate | `python -m pipeline.run validate` | Every figure has a source, a valid quarter and a plausible value, and the site data matches the dataset. Warns on large swings, a group figure outside its regions, gaps, stale companies and press sources. |
-| Browser test | `python tests/smoke_site.py` | All five screens open on desktop and phone widths with no errors, no broken text and the right number of figures. Needs `pip install -r requirements-dev.txt`. |
+| Browser test | `python tests/smoke_site.py` | All five screens open on desktop and phone widths with no errors, no broken text and the right number of figures. The site loads nothing from another host, and the medians it works out itself agree with the pipeline's. Needs `pip install --require-hashes -r requirements-dev.txt`. |
 | Extraction test | `python -m pipeline.run eval` | The LLM re-reads the latest releases and its figures are scored against the verified dataset. Needs an API key. |
 
 The first three run on GitHub for every push and pull request. The site is published only when they pass.
@@ -84,7 +84,7 @@ The first three run on GitHub for every push and pull request. The site is publi
 These need an Anthropic API key. API usage is billed separately from a Claude subscription.
 
 ```bash
-pip install -r requirements.txt
+pip install --require-hashes -r requirements.txt
 export ANTHROPIC_API_KEY=sk-ant-...
 
 python -m pipeline.run update                 # check companies whose release is due, write drafts to data/review
@@ -150,7 +150,7 @@ Growth is on the underlying basis each company publishes: organic, constant exch
 
 - The six companies and five quarters in the dataset were entered and checked by hand against the linked sources on 15 November 2026.
 - Steps 3 and 4, the data gate and the website are covered by tests and run without a key.
-- Steps 1, 2 and 5 are tested with a stand-in for the API. They have not yet been run against the live API. The `Live check` workflow does that and records the result on the Method screen.
-- 16 regional figures for LVMH and Kering come from trade press reports of the results presentations. They are marked Press on the site and are next to be replaced with company sources.
+- First live run, 16 November 2026, cost $0.19. Research worked. Extraction matched 13 of 13 verified figures, but only 3 of 6 releases could be read: two company sites turned the download away and one PDF needed a library that was missing. All six notes failed because the answer limit left no room for the model's thinking. The library, the limits and the error reporting are fixed. The two sites that refuse automated downloads remain: their releases go in by hand with `add --file`.
+- 19 figures come from press reports of company releases and presentations: 8 for LVMH, 6 for Hermès and 5 for Kering. They are marked Press on the site and are next to be replaced with company sources.
 
 This is a study project built from public company releases. It gives no investment advice.

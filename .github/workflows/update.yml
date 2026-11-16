@@ -29,9 +29,9 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
         with:
-          python-version: "3.12"
+          python-version: "3.13"
           cache: pip
-      - run: pip install -r requirements.txt
+      - run: pip install --require-hashes -r requirements.txt
       - name: Research, extract, verify, model, interpret
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -42,23 +42,12 @@ jobs:
           else
             python -m pipeline.run update --apply
           fi
-      - run: python -m unittest discover -s tests
+      - run: python -m unittest discover -s tests -b
       - run: python -m pipeline.run validate
       - name: Open a pull request when the dataset or the review folder changed
         env:
           GH_TOKEN: ${{ github.token }}
-        run: |
-          if [ -z "$(git status --porcelain data/companies.json data/review)" ]; then
-            echo "No new figures. Nothing to review."
-            exit 0
-          fi
-          branch="data-update-$(date -u +%Y%m%d-%H%M)"
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout -b "$branch"
-          git add -A data site/data.json
-          git commit -m "Data update $(date -u +%Y-%m-%d)"
-          git push origin "$branch"
-          gh pr create --title "Data update $(date -u +%Y-%m-%d)" \
-            --body "Found by the scheduled pipeline. Figures that matched their release word for word and passed the data gate are merged into data/companies.json. Anything else is in data/review for a person to check. Review the diff before merging." \
-            || echo "::warning::The branch $branch was pushed. Open the pull request by hand, or allow Actions to create pull requests in the repository settings."
+        run: >
+          .github/scripts/open-pr.sh data-update "Data update"
+          "Found by the scheduled pipeline. Figures that matched their release word for word and passed the data gate are merged into data/companies.json. Anything else is in data/review for a person to check. Review the diff before merging."
+          data/companies.json data/review

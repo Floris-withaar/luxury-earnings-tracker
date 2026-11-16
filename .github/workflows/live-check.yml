@@ -33,9 +33,9 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
         with:
-          python-version: "3.12"
+          python-version: "3.13"
           cache: pip
-      - run: pip install -r requirements.txt
+      - run: pip install --require-hashes -r requirements.txt
       - name: Check that the API key is set
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -57,23 +57,12 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python -m pipeline.run interpret | tee -a "$GITHUB_STEP_SUMMARY"
-      - run: python -m unittest discover -s tests
+      - run: python -m unittest discover -s tests -b
       - run: python -m pipeline.run validate
       - name: Open a pull request with the results
         env:
           GH_TOKEN: ${{ github.token }}
-        run: |
-          if [ -z "$(git status --porcelain data site/data.json)" ]; then
-            echo "Nothing changed."
-            exit 0
-          fi
-          branch="live-check-$(date -u +%Y%m%d-%H%M)"
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout -b "$branch"
-          git add -A data site/data.json
-          git commit -m "Live check $(date -u +%Y-%m-%d)"
-          git push origin "$branch"
-          gh pr create --title "Live check $(date -u +%Y-%m-%d)" \
-            --body "Results of a manual live run: the extraction score, the notes written by the model and the run log. No figure in data/companies.json is changed by this run. Review the diff before merging." \
-            || echo "::warning::The branch $branch was pushed. Open the pull request by hand, or allow Actions to create pull requests in the repository settings."
+        run: >
+          .github/scripts/open-pr.sh live-check "Live check"
+          "Results of a manual live run: the extraction score, the notes written by the model and the run log. No figure in data/companies.json is changed by this run. Review the diff before merging."
+          data site/data.json

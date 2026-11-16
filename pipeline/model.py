@@ -48,6 +48,7 @@ def company_metrics(company: dict, q: str, peers: list[dict]) -> dict:
         "base": base,
         "next_base": next_base,
         "asia": asia,
+        "asia_prev": asia_prev,
         "asia_gap": _r(asia - g) if asia is not None else None,
         "asia_delta": _r(asia - asia_prev) if asia is not None and asia_prev is not None else None,
         "breadth": {"growing": len(growing), "reported": len(reported)},
@@ -86,7 +87,6 @@ def compute(dataset: dict) -> dict:
     out = {}
     for q in all_quarters(companies):
         peers = [c for c in companies if growth(c, q) is not None]
-        p = prev_quarter(q)
         rows = {c["id"]: company_metrics(c, q, peers) for c in peers}
 
         ranked = sorted(rows, key=lambda cid: -rows[cid]["growth"])
@@ -96,16 +96,22 @@ def compute(dataset: dict) -> dict:
         both = [m for m in rows.values() if m["delta"] is not None]
         gaps = [m["asia_gap"] for m in rows.values() if m["asia_gap"] is not None]
         values = [m["growth"] for m in rows.values()]
+        # Like for like: a change in the median only uses companies that report both quarters,
+        # so adding a company never shows up as a move in the median.
+        asia_both = [m for m in rows.values() if m["asia_delta"] is not None]
         out[q] = {
             "peer": {
                 "n": len(peers),
                 "median": _r(median(values), 2),
-                "median_prev": _r(median([growth(c, p) for c in companies]), 2),
+                "median_like": _r(median([m["growth"] for m in both]), 2),
+                "median_prev": _r(median([m["prev"] for m in both]), 2),
                 "spread": _r(max(values) - min(values)) if values else None,
                 "slowed": sum(m["delta"] < 0 for m in both),
                 "compared": len(both),
                 "asia_median": _r(median([m["asia"] for m in rows.values()]), 2),
-                "asia_median_prev": _r(median([region(c, p, "asia") for c in companies]), 2),
+                "asia_median_like": _r(median([m["asia"] for m in asia_both]), 2),
+                "asia_median_prev": _r(median([m["asia_prev"] for m in asia_both]), 2),
+                "asia_both": len(asia_both),
                 "asia_lagging": sum(gap < 0 for gap in gaps),
                 "asia_compared": len(gaps),
             },

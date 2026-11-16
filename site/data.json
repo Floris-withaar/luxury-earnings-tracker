@@ -906,12 +906,15 @@
       "peer": {
         "n": 6,
         "median": 4.3,
+        "median_like": null,
         "median_prev": null,
         "spread": 19,
         "slowed": 0,
         "compared": 0,
         "asia_median": null,
+        "asia_median_like": null,
         "asia_median_prev": null,
+        "asia_both": 0,
         "asia_lagging": 0,
         "asia_compared": 0
       },
@@ -925,6 +928,7 @@
           "base": null,
           "next_base": null,
           "asia": null,
+          "asia_prev": null,
           "asia_gap": null,
           "asia_delta": null,
           "breadth": {
@@ -950,6 +954,7 @@
           "base": null,
           "next_base": null,
           "asia": null,
+          "asia_prev": null,
           "asia_gap": null,
           "asia_delta": null,
           "breadth": {
@@ -975,6 +980,7 @@
           "base": null,
           "next_base": null,
           "asia": null,
+          "asia_prev": null,
           "asia_gap": null,
           "asia_delta": null,
           "breadth": {
@@ -1000,6 +1006,7 @@
           "base": null,
           "next_base": null,
           "asia": null,
+          "asia_prev": null,
           "asia_gap": null,
           "asia_delta": null,
           "breadth": {
@@ -1025,6 +1032,7 @@
           "base": null,
           "next_base": null,
           "asia": null,
+          "asia_prev": null,
           "asia_gap": null,
           "asia_delta": null,
           "breadth": {
@@ -1050,6 +1058,7 @@
           "base": null,
           "next_base": null,
           "asia": null,
+          "asia_prev": null,
           "asia_gap": null,
           "asia_delta": null,
           "breadth": {
@@ -1072,12 +1081,15 @@
       "peer": {
         "n": 6,
         "median": 6.3,
+        "median_like": 6.3,
         "median_prev": 4.3,
         "spread": 14,
         "slowed": 2,
         "compared": 6,
         "asia_median": null,
+        "asia_median_like": null,
         "asia_median_prev": null,
+        "asia_both": 0,
         "asia_lagging": 0,
         "asia_compared": 0
       },
@@ -1091,6 +1103,7 @@
           "base": null,
           "next_base": null,
           "asia": null,
+          "asia_prev": null,
           "asia_gap": null,
           "asia_delta": null,
           "breadth": {
@@ -1116,6 +1129,7 @@
           "base": null,
           "next_base": null,
           "asia": null,
+          "asia_prev": null,
           "asia_gap": null,
           "asia_delta": null,
           "breadth": {
@@ -1141,6 +1155,7 @@
           "base": null,
           "next_base": null,
           "asia": null,
+          "asia_prev": null,
           "asia_gap": null,
           "asia_delta": null,
           "breadth": {
@@ -1166,6 +1181,7 @@
           "base": null,
           "next_base": null,
           "asia": null,
+          "asia_prev": null,
           "asia_gap": null,
           "asia_delta": null,
           "breadth": {
@@ -1191,6 +1207,7 @@
           "base": null,
           "next_base": null,
           "asia": null,
+          "asia_prev": null,
           "asia_gap": null,
           "asia_delta": null,
           "breadth": {
@@ -1216,6 +1233,7 @@
           "base": null,
           "next_base": null,
           "asia": null,
+          "asia_prev": null,
           "asia_gap": null,
           "asia_delta": null,
           "breadth": {
@@ -1238,12 +1256,15 @@
       "peer": {
         "n": 6,
         "median": 3.3,
+        "median_like": 3.3,
         "median_prev": 6.3,
         "spread": 13,
         "slowed": 2,
         "compared": 6,
         "asia_median": null,
+        "asia_median_like": null,
         "asia_median_prev": null,
+        "asia_both": 0,
         "asia_lagging": 0,
         "asia_compared": 0
       },
@@ -1257,6 +1278,7 @@
           "base": null,
           "next_base": null,
           "asia": null,
+          "asia_prev": null,
           "asia_gap": null,
           "asia_delta": null,
           "breadth": {
@@ -1282,6 +1304,7 @@
           "base": null,
           "next_base": null,
           "asia": null,
+          "asia_prev": null,
           "asia_gap": null,
           "asia_delta": null,
           "breadth": {
@@ -1307,6 +1330,7 @@
           "base": null,
           "next_base": null,
           "asia": null,
+          "asia_prev": null,
           "asia_gap": null,
           "asia_delta": null,
           "breadth": {
@@ -1332,6 +1356,7 @@
           "base": null,
           "next_base": null,
           "asia": null,
+          "asia_prev": null,
           "asia_gap": null,
           "asia_delta": null,
           "breadth": {
@@ -1357,6 +1382,7 @@
           "base": null,
           "next_base": null,
           "asia": null,
+          "asia_prev": null,
           "asia_gap": null,
           "asia_delta": null,
           "breadth": {
@@ -1382,6 +1408,7 @@
           "base": null,
           "next_base": null,
           "asia": null,
+          "asia_prev": null,
           "asia_gap": null,
           "asia_delta": null,
           "breadth": {
@@ -1404,12 +1431,15 @@
       "peer": {
         "n": 6,
         "median": 5.0,
+        "median_like": 5.0,
         "median_prev": 3.3,
         "spread": 18,
         "slowed": 1,
         "compared": 6,
         "asia_median": 8,
+        "asia_median_like": null,
         "asia_median_prev": null,
+        "asia_both": 0,
         "asia_lagging": 1,
         "asia_compared": 5
       },
@@ -1423,6 +1453,7 @@
           "base": null,
           "next_base": 1,
           "asia": 4,
+          "asia_prev": null,
           "asia_gap": 1,
           "asia_delta": null,
           "breadth": {
@@ -1448,6 +1479,7 @@
           "base": null,
           "next_base": 9.6,
           "asia": 2.5,
+          "asia_prev": null,
           "asia_gap": -4.2,
           "asia_delta": null,
           "breadth": {
@@ -1475,6 +1507,7 @@
           "base": null,
           "next_base": -5,
           "asia": null,
+          "asia_prev": null,
           "asia_gap": null,
           "asia_delta": null,
           "breadth": {
@@ -1500,6 +1533,7 @@
           "base": null,
           "next_base": 14,
           "asia": 21,
+          "asia_prev": null,
           "asia_gap": 1,
           "asia_delta": null,
           "breadth": {
@@ -1525,6 +1559,7 @@
           "base": null,
           "next_base": -1,
           "asia": 12,
+          "asia_prev": null,
           "asia_gap": 7,
           "asia_delta": null,
           "breadth": {
@@ -1552,6 +1587,7 @@
           "base": null,
           "next_base": 7.6,
           "asia": 8,
+          "asia_prev": null,
           "asia_gap": 3,
           "asia_delta": null,
           "breadth": {
@@ -1576,12 +1612,15 @@
       "peer": {
         "n": 6,
         "median": 0.5,
+        "median_like": 0.5,
         "median_prev": 5.0,
         "spread": 14,
         "slowed": 6,
         "compared": 6,
         "asia_median": 0.0,
+        "asia_median_like": 0,
         "asia_median_prev": 8,
+        "asia_both": 5,
         "asia_lagging": 4,
         "asia_compared": 6
       },
@@ -1595,6 +1634,7 @@
           "base": 1,
           "next_base": 1,
           "asia": -5,
+          "asia_prev": 4,
           "asia_gap": -6,
           "asia_delta": -9,
           "breadth": {
@@ -1626,6 +1666,7 @@
           "base": 9.6,
           "next_base": 9.8,
           "asia": 0,
+          "asia_prev": 2.5,
           "asia_gap": -4.3,
           "asia_delta": -2.5,
           "breadth": {
@@ -1657,6 +1698,7 @@
           "base": -5,
           "next_base": -3,
           "asia": -5,
+          "asia_prev": null,
           "asia_gap": -4,
           "asia_delta": null,
           "breadth": {
@@ -1685,6 +1727,7 @@
           "base": 14,
           "next_base": 11,
           "asia": 10,
+          "asia_prev": 21,
           "asia_gap": -3,
           "asia_delta": -11,
           "breadth": {
@@ -1717,6 +1760,7 @@
           "base": -1,
           "next_base": 7,
           "asia": 5,
+          "asia_prev": 12,
           "asia_gap": 5,
           "asia_delta": -7,
           "breadth": {
@@ -1749,6 +1793,7 @@
           "base": 7.6,
           "next_base": 5.6,
           "asia": 0,
+          "asia_prev": 8,
           "asia_gap": 0,
           "asia_delta": -8,
           "breadth": {
@@ -1779,8 +1824,9 @@
     "2025Q3": {
       "peer": {
         "note": "",
+        "lede": "",
         "by": "rules",
-        "at": "2026-11-15T13:41:59Z"
+        "at": "2026-11-16T02:11:06Z"
       },
       "companies": {
         "lvmh": {
@@ -1829,9 +1875,10 @@
     },
     "2025Q4": {
       "peer": {
-        "note": "2 of 6 companies grew more slowly in Q4 2025 than in Q3 2025. Median growth went from +4.3% to +6.3%.",
+        "note": "2 of 6 companies grew more slowly in Q4 2025 than in Q3 2025. Median growth went from +4.3% in Q3 2025 to +6.3%.",
+        "lede": "Median growth went from +4.3% in Q3 2025 to +6.3%.",
         "by": "rules",
-        "at": "2026-11-15T13:41:59Z"
+        "at": "2026-11-16T02:11:06Z"
       },
       "companies": {
         "lvmh": {
@@ -1880,9 +1927,10 @@
     },
     "2026Q1": {
       "peer": {
-        "note": "2 of 6 companies grew more slowly in Q1 2026 than in Q4 2025. Median growth went from +6.3% to +3.3%.",
+        "note": "2 of 6 companies grew more slowly in Q1 2026 than in Q4 2025. Median growth went from +6.3% in Q4 2025 to +3.3%.",
+        "lede": "Median growth went from +6.3% in Q4 2025 to +3.3%.",
         "by": "rules",
-        "at": "2026-11-15T13:41:59Z"
+        "at": "2026-11-16T02:11:06Z"
       },
       "companies": {
         "lvmh": {
@@ -1931,9 +1979,10 @@
     },
     "2026Q2": {
       "peer": {
-        "note": "1 of 6 companies grew more slowly in Q2 2026 than in Q1 2026. Median growth went from +3.3% to +5%. Asia grew more slowly than the group at 1 of 5 companies.",
+        "note": "1 of 6 companies grew more slowly in Q2 2026 than in Q1 2026. Median growth went from +3.3% in Q1 2026 to +5%. Asia grew more slowly than the group at 1 of 5 companies.",
+        "lede": "Median growth went from +3.3% in Q1 2026 to +5%.",
         "by": "rules",
-        "at": "2026-11-15T13:41:59Z"
+        "at": "2026-11-16T02:11:06Z"
       },
       "companies": {
         "lvmh": {
@@ -1988,9 +2037,10 @@
     },
     "2026Q3": {
       "peer": {
-        "note": "6 of 6 companies grew more slowly in Q3 2026 than in Q2 2026. Median growth went from +5% to +0.5%. In Asia excluding Japan the median went from +8% to 0%. Asia grew more slowly than the group at 4 of 6 companies.",
+        "note": "6 of 6 companies grew more slowly in Q3 2026 than in Q2 2026. Median growth went from +5% in Q2 2026 to +0.5%. In Asia excluding Japan it went from +8% to 0%. Asia grew more slowly than the group at 4 of 6 companies.",
+        "lede": "Median growth went from +5% in Q2 2026 to +0.5%. In Asia excluding Japan it went from +8% to 0%.",
         "by": "rules",
-        "at": "2026-11-15T13:41:59Z"
+        "at": "2026-11-16T02:11:06Z"
       },
       "companies": {
         "lvmh": {
@@ -2055,7 +2105,7 @@
     }
   },
   "meta": {
-    "built_at": "2026-11-16T01:55:27Z",
+    "built_at": "2026-11-16T07:39:12Z",
     "runs": [
       {
         "at": "2026-11-15T09:00:00Z",
@@ -2164,7 +2214,7 @@
       "figures": 101,
       "errors": 0,
       "warnings": [
-        "16 regional figures come from press reports. Replace them with company sources."
+        "19 figures come from press reports (LVMH 8, Hermès 6, Kering 5). Replace them with company sources."
       ]
     },
     "eval": {

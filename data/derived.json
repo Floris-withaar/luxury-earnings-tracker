@@ -3,12 +3,15 @@
     "peer": {
       "n": 6,
       "median": 4.3,
+      "median_like": null,
       "median_prev": null,
       "spread": 19,
       "slowed": 0,
       "compared": 0,
       "asia_median": null,
+      "asia_median_like": null,
       "asia_median_prev": null,
+      "asia_both": 0,
       "asia_lagging": 0,
       "asia_compared": 0
     },
@@ -22,6 +25,7 @@
         "base": null,
         "next_base": null,
         "asia": null,
+        "asia_prev": null,
         "asia_gap": null,
         "asia_delta": null,
         "breadth": {
@@ -47,6 +51,7 @@
         "base": null,
         "next_base": null,
         "asia": null,
+        "asia_prev": null,
         "asia_gap": null,
         "asia_delta": null,
         "breadth": {
@@ -72,6 +77,7 @@
         "base": null,
         "next_base": null,
         "asia": null,
+        "asia_prev": null,
         "asia_gap": null,
         "asia_delta": null,
         "breadth": {
@@ -97,6 +103,7 @@
         "base": null,
         "next_base": null,
         "asia": null,
+        "asia_prev": null,
         "asia_gap": null,
         "asia_delta": null,
         "breadth": {
@@ -122,6 +129,7 @@
         "base": null,
         "next_base": null,
         "asia": null,
+        "asia_prev": null,
         "asia_gap": null,
         "asia_delta": null,
         "breadth": {
@@ -147,6 +155,7 @@
         "base": null,
         "next_base": null,
         "asia": null,
+        "asia_prev": null,
         "asia_gap": null,
         "asia_delta": null,
         "breadth": {
@@ -169,12 +178,15 @@
     "peer": {
       "n": 6,
       "median": 6.3,
+      "median_like": 6.3,
       "median_prev": 4.3,
       "spread": 14,
       "slowed": 2,
       "compared": 6,
       "asia_median": null,
+      "asia_median_like": null,
       "asia_median_prev": null,
+      "asia_both": 0,
       "asia_lagging": 0,
       "asia_compared": 0
     },
@@ -188,6 +200,7 @@
         "base": null,
         "next_base": null,
         "asia": null,
+        "asia_prev": null,
         "asia_gap": null,
         "asia_delta": null,
         "breadth": {
@@ -213,6 +226,7 @@
         "base": null,
         "next_base": null,
         "asia": null,
+        "asia_prev": null,
         "asia_gap": null,
         "asia_delta": null,
         "breadth": {
@@ -238,6 +252,7 @@
         "base": null,
         "next_base": null,
         "asia": null,
+        "asia_prev": null,
         "asia_gap": null,
         "asia_delta": null,
         "breadth": {
@@ -263,6 +278,7 @@
         "base": null,
         "next_base": null,
         "asia": null,
+        "asia_prev": null,
         "asia_gap": null,
         "asia_delta": null,
         "breadth": {
@@ -288,6 +304,7 @@
         "base": null,
         "next_base": null,
         "asia": null,
+        "asia_prev": null,
         "asia_gap": null,
         "asia_delta": null,
         "breadth": {
@@ -313,6 +330,7 @@
         "base": null,
         "next_base": null,
         "asia": null,
+        "asia_prev": null,
         "asia_gap": null,
         "asia_delta": null,
         "breadth": {
@@ -335,12 +353,15 @@
     "peer": {
       "n": 6,
       "median": 3.3,
+      "median_like": 3.3,
       "median_prev": 6.3,
       "spread": 13,
       "slowed": 2,
       "compared": 6,
       "asia_median": null,
+      "asia_median_like": null,
       "asia_median_prev": null,
+      "asia_both": 0,
       "asia_lagging": 0,
       "asia_compared": 0
     },
@@ -354,6 +375,7 @@
         "base": null,
         "next_base": null,
         "asia": null,
+        "asia_prev": null,
         "asia_gap": null,
         "asia_delta": null,
         "breadth": {
@@ -379,6 +401,7 @@
         "base": null,
         "next_base": null,
         "asia": null,
+        "asia_prev": null,
         "asia_gap": null,
         "asia_delta": null,
         "breadth": {
@@ -404,6 +427,7 @@
         "base": null,
         "next_base": null,
         "asia": null,
+        "asia_prev": null,
         "asia_gap": null,
         "asia_delta": null,
         "breadth": {
@@ -429,6 +453,7 @@
         "base": null,
         "next_base": null,
         "asia": null,
+        "asia_prev": null,
         "asia_gap": null,
         "asia_delta": null,
         "breadth": {
@@ -454,6 +479,7 @@
         "base": null,
         "next_base": null,
         "asia": null,
+        "asia_prev": null,
         "asia_gap": null,
         "asia_delta": null,
         "breadth": {
@@ -479,6 +505,7 @@
         "base": null,
         "next_base": null,
         "asia": null,
+        "asia_prev": null,
         "asia_gap": null,
         "asia_delta": null,
         "breadth": {
@@ -501,12 +528,15 @@
     "peer": {
       "n": 6,
       "median": 5.0,
+      "median_like": 5.0,
       "median_prev": 3.3,
       "spread": 18,
       "slowed": 1,
       "compared": 6,
       "asia_median": 8,
+      "asia_median_like": null,
       "asia_median_prev": null,
+      "asia_both": 0,
       "asia_lagging": 1,
       "asia_compared": 5
     },
@@ -520,6 +550,7 @@
         "base": null,
         "next_base": 1,
         "asia": 4,
+        "asia_prev": null,
         "asia_gap": 1,
         "asia_delta": null,
         "breadth": {
@@ -545,6 +576,7 @@
         "base": null,
         "next_base": 9.6,
         "asia": 2.5,
+        "asia_prev": null,
         "asia_gap": -4.2,
         "asia_delta": null,
         "breadth": {
@@ -572,6 +604,7 @@
         "base": null,
         "next_base": -5,
         "asia": null,
+        "asia_prev": null,
         "asia_gap": null,
         "asia_delta": null,
         "breadth": {
@@ -597,6 +630,7 @@
         "base": null,
         "next_base": 14,
         "asia": 21,
+        "asia_prev": null,
         "asia_gap": 1,
         "asia_delta": null,
         "breadth": {
@@ -622,6 +656,7 @@
         "base": null,
         "next_base": -1,
         "asia": 12,
+        "asia_prev": null,
         "asia_gap": 7,
         "asia_delta": null,
         "breadth": {
@@ -649,6 +684,7 @@
         "base": null,
         "next_base": 7.6,
         "asia": 8,
+        "asia_prev": null,
         "asia_gap": 3,
         "asia_delta": null,
         "breadth": {
@@ -673,12 +709,15 @@
     "peer": {
       "n": 6,
       "median": 0.5,
+      "median_like": 0.5,
       "median_prev": 5.0,
       "spread": 14,
       "slowed": 6,
       "compared": 6,
       "asia_median": 0.0,
+      "asia_median_like": 0,
       "asia_median_prev": 8,
+      "asia_both": 5,
       "asia_lagging": 4,
       "asia_compared": 6
     },
@@ -692,6 +731,7 @@
         "base": 1,
         "next_base": 1,
         "asia": -5,
+        "asia_prev": 4,
         "asia_gap": -6,
         "asia_delta": -9,
         "breadth": {
@@ -723,6 +763,7 @@
         "base": 9.6,
         "next_base": 9.8,
         "asia": 0,
+        "asia_prev": 2.5,
         "asia_gap": -4.3,
         "asia_delta": -2.5,
         "breadth": {
@@ -754,6 +795,7 @@
         "base": -5,
         "next_base": -3,
         "asia": -5,
+        "asia_prev": null,
         "asia_gap": -4,
         "asia_delta": null,
         "breadth": {
@@ -782,6 +824,7 @@
         "base": 14,
         "next_base": 11,
         "asia": 10,
+        "asia_prev": 21,
         "asia_gap": -3,
         "asia_delta": -11,
         "breadth": {
@@ -814,6 +857,7 @@
         "base": -1,
         "next_base": 7,
         "asia": 5,
+        "asia_prev": 12,
         "asia_gap": 5,
         "asia_delta": -7,
         "breadth": {
@@ -846,6 +890,7 @@
         "base": 7.6,
         "next_base": 5.6,
         "asia": 0,
+        "asia_prev": 8,
         "asia_gap": 0,
         "asia_delta": -8,
         "breadth": {

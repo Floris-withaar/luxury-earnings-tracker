@@ -34,7 +34,7 @@ def find_release(entry: dict, known_quarter: str | None = None, *, client=None) 
         known=known_quarter or "any earlier period",
     )
     tool = dict(llm.WEB_SEARCH_TOOL, max_uses=3)
-    found = llm.ask_json(prompt, step="research", client=client, tools=[tool], max_tokens=1500)
+    found = llm.ask_json(prompt, step="research", client=client, tools=[tool])
     if not isinstance(found, dict):
         return {"found": False, "why": "The research answer was not a JSON object."}
     url = found.get("url")

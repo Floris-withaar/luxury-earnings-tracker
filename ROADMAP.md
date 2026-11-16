@@ -7,14 +7,14 @@ The aim: a sourced record of what the large luxury groups report each quarter, k
 | Phase | What | Status |
 |---|---|---|
 | 0 | Dataset of six groups and five quarters, model, five-screen site, pipeline code | Done |
-| 1 | Prove it works: data gate, flow test, browser test on every change, live run, extraction score | Built. The live run and the score need an API key. |
-| 2 | Secure it: source allowlist, download guards, pinned dependencies, content security policy, protected `main` | Built. Branch protection is a repository setting. |
-| 3 | Deepen the data: company sources for the 16 press figures, eight quarters of history, four more groups | Next |
+| 1 | Prove it works: data gate, flow test, browser test on every change, live run, extraction score | Done. First live run on 16 November 2026 found three defects, all fixed. A second run confirms the fixes. |
+| 2 | Secure it: source allowlist, download guards, hash-checked dependencies, content security policy, self-hosted fonts, protected `main` | Done |
+| 3 | Deepen the data: company sources for the 19 press figures, eight quarters of history, four more groups | Next |
 | 4 | Explain it: architecture diagram, this roadmap, notes on using it for another sector | Done in the README |
 
 ## Phase 3 in detail
 
-1. Replace the LVMH and Kering regional figures taken from the trade press with figures from the companies' own slides or transcripts.
+1. Replace the 19 figures taken from press reports (LVMH 8, Hermès 6, Kering 5) with figures from the companies' own releases, slides or transcripts. Link the guidance and China commentary to a source in the same pass.
 2. Extend the history from five quarters to eight, so two-year growth is available for every quarter shown.
 3. Add Burberry, Zegna, Brunello Cucinelli and Swatch Group. The limit is about ten groups: beyond that the peer median stops meaning "large luxury".
 4. After two reporting seasons, publish how often the pipeline found the release, how many figures it extracted correctly and what it cost.

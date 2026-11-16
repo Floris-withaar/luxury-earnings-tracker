@@ -33,6 +33,14 @@ STANDARD_TO_KEY = {
     "middle_east_other": "me",
 }
 QUARTER_RE = re.compile(r"^\d{4}Q[1-4]$")
+# The growth bases a company can report on.
+BASES = ["Organic", "Constant FX", "Comparable", "Reported"]
+# Percent. A quarterly growth figure outside this range is almost certainly a mistake.
+GROWTH_RANGE = (-70, 150)
+
+
+def plausible(v) -> bool:
+    return is_num(v) and GROWTH_RANGE[0] <= v <= GROWTH_RANGE[1]
 
 
 def load(path: Path, default=None):

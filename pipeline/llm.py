@@ -25,11 +25,26 @@ WEB_SEARCH_TOOL = {"type": "web_search_20250305", "name": "web_search"}
 PRICES = {"claude-haiku-5-5": (0.10, 0.50), "claude-sonnet-5-5": (2.00, 10.00)}
 SEARCH_PRICE = 10.00 / 1000   # USD per web search
 
+# Output limit per step. The current models think before they answer and that thinking counts
+# toward the limit, so each limit leaves room for it. This is also the ceiling on what one call can cost.
+LIMITS = {"research": 4000, "extract": 12000, "interpret": 4000}
+# How hard the model works. None keeps the model's default. The note is short and simple, so it gets less.
+EFFORT = {"research": None, "extract": None, "interpret": "medium"}
+CEILING = 20000               # the SDK needs streaming above about 21,000 output tokens
+
 USAGE: list[dict] = []        # one entry per API call in this run
 
 
 class LLMUnavailable(RuntimeError):
     """Raised when the LLM steps cannot run (no key, or the SDK is missing)."""
+
+
+class LLMCutOff(RuntimeError):
+    """The answer hit the output limit before it was complete, so it cannot be trusted."""
+
+
+class LLMRefused(RuntimeError):
+    """The model declined the request."""
 
 
 def get_client():
@@ -38,7 +53,7 @@ def get_client():
     try:
         import anthropic
     except ImportError as exc:
-        raise LLMUnavailable("Run: pip install -r requirements.txt") from exc
+        raise LLMUnavailable("Run: pip install --require-hashes -r requirements.txt") from exc
     return anthropic.Anthropic()
 
 
@@ -69,22 +84,34 @@ def usage_summary() -> dict:
     return {"steps": steps, "estimated_usd": round(total, 4)}
 
 
-def complete(prompt: str, *, step: str = "extract", client=None, tools=None, max_tokens: int = 4000) -> str:
+def complete(prompt: str, *, step: str = "extract", client=None, tools=None, max_tokens: int | None = None) -> str:
     """Send one prompt and return the text of the answer."""
     client = client or get_client()
     model = MODELS[step]
-    messages = [{"role": "user", "content": prompt}]
-    response = None
-    for _ in range(4):
-        kwargs = {"model": model, "max_tokens": max_tokens, "messages": messages}
+    limit = max_tokens or LIMITS[step]
+    first = [{"role": "user", "content": prompt}]
+    messages, response, retried = first, None, False
+    for _ in range(6):
+        kwargs = {"model": model, "max_tokens": limit, "messages": messages}
         if tools:
             kwargs["tools"] = tools
+        if EFFORT.get(step):
+            kwargs["output_config"] = {"effort": EFFORT[step]}
         response = client.messages.create(**kwargs)
         _record(step, model, response)
+        reason = getattr(response, "stop_reason", None)
         # A long web-search turn can pause. Send the partial turn back to continue it.
-        if getattr(response, "stop_reason", None) == "pause_turn":
-            messages = [messages[0], {"role": "assistant", "content": response.content}]
+        if reason == "pause_turn":
+            messages = [first[0], {"role": "assistant", "content": response.content}]
             continue
+        # A cut-off answer is never used, even if it happens to parse. Try once more with twice the room.
+        if reason == "max_tokens":
+            if retried or limit >= CEILING:
+                raise LLMCutOff(f"The {step} answer was cut off at {limit} output tokens.")
+            retried, limit, messages = True, min(limit * 2, CEILING), first
+            continue
+        if reason == "refusal":
+            raise LLMRefused(f"The model declined the {step} request.")
         break
     return "".join(getattr(b, "text", "") for b in response.content if getattr(b, "type", "") == "text")
 

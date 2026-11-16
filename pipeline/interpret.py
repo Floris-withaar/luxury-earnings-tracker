@@ -61,18 +61,27 @@ def rule_note(company: dict, q: str, m: dict, peer: dict) -> str:
     return " ".join(parts)
 
 
+def peer_lede(q: str, peer: dict) -> str:
+    """How the median moved. Both ends of the move use the companies that report both quarters."""
+    p = prev_quarter(q)
+    parts = []
+    if peer["median_like"] is not None and peer["median_prev"] is not None:
+        scope = "" if peer["compared"] == peer["n"] else f" for the {peer['compared']} companies that report both quarters"
+        parts.append(f"Median growth went from {fmt_pct(peer['median_prev'])} in {quarter_label(p)} to {fmt_pct(peer['median_like'])}{scope}.")
+    if peer["asia_median_like"] is not None and peer["asia_median_prev"] is not None:
+        parts.append(f"In Asia excluding Japan it went from {fmt_pct(peer['asia_median_prev'])} to {fmt_pct(peer['asia_median_like'])}.")
+    return " ".join(parts)
+
+
 def rule_peer_note(q: str, peer: dict) -> str:
     p = prev_quarter(q)
     parts = []
     if peer["compared"]:
         parts.append(f"{peer['slowed']} of {peer['compared']} companies grew more slowly in {quarter_label(q)} than in {quarter_label(p)}.")
-    if peer["median"] is not None and peer["median_prev"] is not None:
-        parts.append(f"Median growth went from {fmt_pct(peer['median_prev'])} to {fmt_pct(peer['median'])}.")
-    if peer["asia_median"] is not None and peer["asia_median_prev"] is not None:
-        parts.append(f"In Asia excluding Japan the median went from {fmt_pct(peer['asia_median_prev'])} to {fmt_pct(peer['asia_median'])}.")
+    parts.append(peer_lede(q, peer))
     if peer["asia_compared"]:
         parts.append(f"Asia grew more slowly than the group at {peer['asia_lagging']} of {peer['asia_compared']} companies.")
-    return " ".join(parts)
+    return " ".join(x for x in parts if x)
 
 
 def _numbers_in(obj) -> set[float]:
@@ -91,14 +100,17 @@ def _numbers_in(obj) -> set[float]:
     return found
 
 
+def ungrounded(note: str, payload: dict) -> list[str]:
+    """The numbers in the note that do not appear in the data the LLM was given."""
+    allowed = _numbers_in(payload)
+    # Names of periods are not figures: Q3, H1, 9M, FY27, 2026.
+    text = re.sub(r"\b[QH][1-4]\b|\b9M\b|\bFY\d{2,4}\b|\b20\d{2}\b", " ", note)
+    return [t for t in re.findall(r"\d+(?:[.,]\d+)?", text) if round(float(t.replace(",", ".")), 1) not in allowed]
+
+
 def grounded(note: str, payload: dict) -> bool:
     """True when every number in the note also appears in the data the LLM was given."""
-    allowed = _numbers_in(payload)
-    text = re.sub(r"\bQ[1-4]\b|\bFY\d{2,4}\b|\b20\d{2}\b", " ", note)
-    for token in re.findall(r"\d+(?:[.,]\d+)?", text):
-        if round(float(token.replace(",", ".")), 1) not in allowed:
-            return False
-    return True
+    return not ungrounded(note, payload)
 
 
 def payload_for(company: dict, q: str, m: dict, peer: dict) -> dict:
@@ -116,7 +128,7 @@ def payload_for(company: dict, q: str, m: dict, peer: dict) -> dict:
 def interpret(dataset: dict, derived: dict, q: str, *, client=None, use_llm: bool = True, previous: dict | None = None) -> dict:
     """Return the commentary block for one quarter."""
     block = derived[q]
-    out = {"peer": {"note": rule_peer_note(q, block["peer"]), "by": "rules", "at": now_iso()}, "companies": {}}
+    out = {"peer": {"note": rule_peer_note(q, block["peer"]), "lede": peer_lede(q, block["peer"]), "by": "rules", "at": now_iso()}, "companies": {}}
     by_id = {c["id"]: c for c in dataset["companies"]}
     for cid, m in block["companies"].items():
         company = by_id[cid]
@@ -124,17 +136,20 @@ def interpret(dataset: dict, derived: dict, q: str, *, client=None, use_llm: boo
         if use_llm:
             payload = payload_for(company, q, m, block["peer"])
             try:
-                answer = llm.ask_json(PROMPT.format(payload=json.dumps(payload, ensure_ascii=False)), step="interpret", client=client, max_tokens=700)
+                answer = llm.ask_json(PROMPT.format(payload=json.dumps(payload, ensure_ascii=False)), step="interpret", client=client)
                 note = str(answer.get("note", "")).strip()
-                if note and grounded(note, payload):
+                extra = ungrounded(note, payload)
+                if note and not extra:
                     entry.update(note=note, themes=[str(t)[:40] for t in (answer.get("themes") or [])[:4]],
                                  watch=str(answer.get("watch", "")).strip()[:300], by=llm.MODELS["interpret"])
+                elif note:
+                    entry["rejected"] = "The model note used numbers that are not in the data: " + ", ".join(extra[:6]) + "."
                 else:
-                    entry["rejected"] = "The model note used a number that is not in the data."
+                    entry["rejected"] = "The model returned no note."
             except llm.LLMUnavailable:
                 use_llm = False
             except Exception as exc:  # a failed note must not stop the run
-                entry["rejected"] = f"LLM note failed: {type(exc).__name__}"
+                entry["rejected"] = f"The model note failed. {type(exc).__name__}: {exc}"[:200]
         elif previous and (previous.get("companies") or {}).get(cid, {}).get("by") not in (None, "rules"):
             # Keep an earlier LLM note when the figures behind it have not changed.
             old = previous["companies"][cid]

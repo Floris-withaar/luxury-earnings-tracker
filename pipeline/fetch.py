@@ -16,7 +16,11 @@ from urllib.parse import urljoin, urlparse
 MAX_BYTES = 25 * 1024 * 1024
 MAX_CHARS = 150_000
 MAX_REDIRECTS = 5
-HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; luxury-earnings-tracker/1.0; research use)"}
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (compatible; luxury-earnings-tracker/1.0; research use)",
+    "Accept": "text/html,application/xhtml+xml,application/pdf;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en",
+}
 
 # Regulatory wires and exchange sites that carry unedited company releases.
 TRUSTED_WIRES = [
@@ -27,6 +31,10 @@ TRUSTED_WIRES = [
 
 class UntrustedSource(ValueError):
     """The link is not allowed: wrong scheme, a private address, or off the allowlist."""
+
+
+class FetchFailed(RuntimeError):
+    """The site did not hand over the document. The message says what it answered."""
 
 
 def allowlist(watchlist: dict | None) -> list[str]:
@@ -106,7 +114,10 @@ def fetch_text(url: str) -> str:
         if response.is_redirect or response.status_code in (301, 302, 303, 307, 308):
             url = urljoin(url, response.headers.get("location", ""))
             continue
-        response.raise_for_status()
+        if response.status_code >= 400:
+            # Many investor sites turn away automated readers with 403. That is theirs to decide:
+            # the release then goes in by hand with `add --file`.
+            raise FetchFailed(f"{host_of(url)} answered HTTP {response.status_code}")
         raw = response.raw.read(MAX_BYTES, decode_content=True)
         return text_from_bytes(raw, response.headers.get("content-type", ""), url.split("?")[0])
     raise UntrustedSource("Too many redirects.")

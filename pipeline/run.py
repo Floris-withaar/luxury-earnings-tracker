@@ -24,29 +24,38 @@ RUN_LOG = DATA / "run_log.json"
 EVAL = DATA / "eval.json"
 
 
-def rebuild(dataset: dict, *, use_llm: bool, client=None) -> None:
-    """Steps 4 and 5, then write the single file the website reads."""
+def refresh(dataset: dict, *, use_llm: bool, client=None) -> None:
+    """Steps 4 and 5: recompute the model and the notes."""
     derived = model.compute(dataset)
     save(DERIVED, derived)
     old = load(COMMENTARY, {})
     notes = {q: interpret.interpret(dataset, derived, q, client=client, use_llm=use_llm and q == dataset["latest"], previous=old.get(q))
              for q in derived}
     save(COMMENTARY, notes)
+
+
+def publish(dataset: dict) -> None:
+    """Write the single file the website reads, from what refresh and the run log left on disk."""
     built = {
         "asOf": dataset["asOf"], "latest": dataset["latest"], "companies": dataset["companies"],
-        "model": derived, "notes": notes,
+        "model": load(DERIVED), "notes": load(COMMENTARY),
         "meta": {"built_at": now_iso(), "runs": load(RUN_LOG, [])[-5:],
                  "quality": validate.summary(dataset), "eval": load(EVAL),
                  "thresholds": {"momentum_pts": model.MOMENTUM_PTS, "level_pts": model.LEVEL_PTS,
                                 "asia_gap_pts": model.ASIA_GAP_PTS, "base_shift_pts": model.BASE_SHIFT_PTS}},
     }
-    # A rebuild that changes nothing keeps the old build date, so it leaves no diff behind.
+    # A build that changes nothing keeps the old build date, so it leaves no diff behind.
     old_site = load(SITE / "data.json") or {}
     stamp = (old_site.get("meta") or {}).get("built_at")
     built = json.loads(json.dumps(built))
     if stamp and dict(old_site, meta=dict(old_site["meta"], built_at=None)) == dict(built, meta=dict(built["meta"], built_at=None)):
         built["meta"]["built_at"] = stamp
     save(SITE / "data.json", built)
+
+
+def rebuild(dataset: dict, *, use_llm: bool = False, client=None) -> None:
+    refresh(dataset, use_llm=use_llm, client=client)
+    publish(dataset)
 
 
 def log_run(command: str, results: list[dict]) -> None:
@@ -138,16 +147,17 @@ def cmd_update(args) -> int:
             if not allowed:
                 results.append({"company": entry["name"], "status": "source not on the allowlist", "detail": found["url"][:200]})
                 continue
-            text, used = None, None
+            text, used, problems = None, None, []
             for url in allowed:
                 try:
                     text, used = fetch.fetch_text(url), url
                     if len(text) > 500:
                         break
-                except Exception:
-                    continue
+                    problems.append(f"{fetch.host_of(url)} returned almost no text")
+                except Exception as exc:
+                    problems.append(f"{exc}"[:120] or type(exc).__name__)
             if not text or len(text) < 500:
-                results.append({"company": entry["name"], "status": "could not fetch", "detail": allowed[0][:200]})
+                results.append({"company": entry["name"], "status": "could not fetch", "detail": "; ".join(problems)[:300]})
                 continue
             source = {"url": used, "title": found.get("title"), "publisher": found.get("publisher"),
                       "published": found.get("published"), "calendar_quarter": found.get("calendar_quarter")}
@@ -158,9 +168,9 @@ def cmd_update(args) -> int:
     if changed:
         save(COMPANIES, dataset)
     # The written notes are only redone when figures changed, so a quiet week costs nothing.
-    rebuild(dataset, use_llm=changed, client=client)
+    refresh(dataset, use_llm=changed, client=client)
     log_run("update", results)
-    rebuild(dataset, use_llm=False)
+    publish(dataset)
     for r in results:
         print(r)
     print("Estimated API cost of this run: $%.4f" % llm.usage_summary()["estimated_usd"])
@@ -189,9 +199,9 @@ def cmd_add(args) -> int:
     result = process_release(dataset, args.name, text, source, client=client, company_id=None, apply=args.apply, trusted=trusted)
     if result["status"] == "merged":
         save(COMPANIES, dataset)
-    rebuild(dataset, use_llm=result["status"] == "merged", client=client)
+    refresh(dataset, use_llm=result["status"] == "merged", client=client)
     log_run(f"add {args.name}", [result])
-    rebuild(dataset, use_llm=False)
+    publish(dataset)
     print(result)
     return 0
 
@@ -227,11 +237,12 @@ def cmd_apply(args) -> int:
 
 def cmd_interpret(args) -> int:
     dataset = load(COMPANIES)
-    rebuild(dataset, use_llm=True, client=llm.get_client())
+    refresh(dataset, use_llm=True, client=llm.get_client())
     notes = load(COMMENTARY)[dataset["latest"]]["companies"]
-    log_run("interpret", [{"company": cid, "status": "note by " + n["by"] + (" (model note rejected)" if n.get("rejected") else "")}
+    by_id = {c["id"]: c["name"] for c in dataset["companies"]}
+    log_run("interpret", [{"company": by_id.get(cid, cid), "status": "note by " + n["by"], "detail": n.get("rejected", "")}
                           for cid, n in notes.items()])
-    rebuild(dataset, use_llm=False)
+    publish(dataset)
     for cid, n in notes.items():
         print(f"{cid}: by {n['by']}" + (f" (rejected: {n['rejected']})" if n.get("rejected") else ""))
     print("Estimated API cost of this run: $%.4f" % llm.usage_summary()["estimated_usd"])
@@ -241,17 +252,18 @@ def cmd_interpret(args) -> int:
 def cmd_eval(args) -> int:
     """Run extraction on releases whose figures are already verified, and count the matches."""
     client = llm.get_client()
-    dataset, hits, total, misses, skipped = load(COMPANIES), 0, 0, [], []
+    dataset, hits, total, misses, skipped, releases = load(COMPANIES), 0, 0, [], [], 0
     q = dataset["latest"]
     for company in dataset["companies"]:
         entry = (company.get("series") or {}).get(q)
         source = company["sources"][entry["s"]] if entry and company.get("sources") else None
         if not source or not source.get("url"):
             continue
+        releases += 1
         try:
             draft = extract.extract(company["name"], fetch.fetch_text(source["url"]), client=client)
         except Exception as exc:
-            skipped.append(f"{company['name']}: {type(exc).__name__}")
+            skipped.append(f"{company['name']}: {exc}"[:160] if str(exc) else f"{company['name']}: {type(exc).__name__}")
             continue
         got = {"group": draft["figures"][0].get("v")}
         got.update({f["bucket"]: f["v"] for f in draft["figures"] if f["kind"] == "region"})
@@ -267,13 +279,15 @@ def cmd_eval(args) -> int:
             hits += ok
             if not ok:
                 misses.append(f"{company['name']} {key}: expected {value}, extracted {got.get(key)}")
+    read = releases - len(skipped)
     save(EVAL, {"at": now_iso(), "quarter": q, "model": llm.MODELS["extract"], "hits": hits, "total": total,
-                "misses": misses, "skipped": skipped, "usage": llm.usage_summary()})
-    log_run("eval", [{"company": "All", "quarter": q, "status": f"extraction matched {hits} of {total} verified figures"}])
-    rebuild(dataset, use_llm=False)
+                "releases": releases, "read": read, "misses": misses, "skipped": skipped, "usage": llm.usage_summary()})
+    log_run("eval", [{"company": "All", "quarter": q, "status": f"extraction matched {hits} of {total} verified figures",
+                      "detail": f"{read} of {releases} releases could be read" + ("; " + "; ".join(skipped) if skipped else "")}])
+    publish(dataset)
     for line in misses + ["skipped " + x for x in skipped]:
         print(" ", line)
-    print(f"Extraction accuracy on verified figures: {hits} of {total}.")
+    print(f"Extraction accuracy on verified figures: {hits} of {total}, from {read} of {releases} releases.")
     print("Estimated API cost of this run: $%.4f" % llm.usage_summary()["estimated_usd"])
     return 0
 

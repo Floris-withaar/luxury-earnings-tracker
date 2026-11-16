@@ -2,8 +2,9 @@
   "2025Q3": {
     "peer": {
       "note": "",
+      "lede": "",
       "by": "rules",
-      "at": "2026-11-15T13:41:59Z"
+      "at": "2026-11-16T02:11:06Z"
     },
     "companies": {
       "lvmh": {
@@ -52,9 +53,10 @@
   },
   "2025Q4": {
     "peer": {
-      "note": "2 of 6 companies grew more slowly in Q4 2025 than in Q3 2025. Median growth went from +4.3% to +6.3%.",
+      "note": "2 of 6 companies grew more slowly in Q4 2025 than in Q3 2025. Median growth went from +4.3% in Q3 2025 to +6.3%.",
+      "lede": "Median growth went from +4.3% in Q3 2025 to +6.3%.",
       "by": "rules",
-      "at": "2026-11-15T13:41:59Z"
+      "at": "2026-11-16T02:11:06Z"
     },
     "companies": {
       "lvmh": {
@@ -103,9 +105,10 @@
   },
   "2026Q1": {
     "peer": {
-      "note": "2 of 6 companies grew more slowly in Q1 2026 than in Q4 2025. Median growth went from +6.3% to +3.3%.",
+      "note": "2 of 6 companies grew more slowly in Q1 2026 than in Q4 2025. Median growth went from +6.3% in Q4 2025 to +3.3%.",
+      "lede": "Median growth went from +6.3% in Q4 2025 to +3.3%.",
       "by": "rules",
-      "at": "2026-11-15T13:41:59Z"
+      "at": "2026-11-16T02:11:06Z"
     },
     "companies": {
       "lvmh": {
@@ -154,9 +157,10 @@
   },
   "2026Q2": {
     "peer": {
-      "note": "1 of 6 companies grew more slowly in Q2 2026 than in Q1 2026. Median growth went from +3.3% to +5%. Asia grew more slowly than the group at 1 of 5 companies.",
+      "note": "1 of 6 companies grew more slowly in Q2 2026 than in Q1 2026. Median growth went from +3.3% in Q1 2026 to +5%. Asia grew more slowly than the group at 1 of 5 companies.",
+      "lede": "Median growth went from +3.3% in Q1 2026 to +5%.",
       "by": "rules",
-      "at": "2026-11-15T13:41:59Z"
+      "at": "2026-11-16T02:11:06Z"
     },
     "companies": {
       "lvmh": {
@@ -211,9 +215,10 @@
   },
   "2026Q3": {
     "peer": {
-      "note": "6 of 6 companies grew more slowly in Q3 2026 than in Q2 2026. Median growth went from +5% to +0.5%. In Asia excluding Japan the median went from +8% to 0%. Asia grew more slowly than the group at 4 of 6 companies.",
+      "note": "6 of 6 companies grew more slowly in Q3 2026 than in Q2 2026. Median growth went from +5% in Q2 2026 to +0.5%. In Asia excluding Japan it went from +8% to 0%. Asia grew more slowly than the group at 4 of 6 companies.",
+      "lede": "Median growth went from +5% in Q2 2026 to +0.5%. In Asia excluding Japan it went from +8% to 0%.",
       "by": "rules",
-      "at": "2026-11-15T13:41:59Z"
+      "at": "2026-11-16T02:11:06Z"
     },
     "companies": {
       "lvmh": {

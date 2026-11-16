@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import re
 
-from .common import QUARTER_RE, REGION_KEYS, growth, is_num
+from .common import QUARTER_RE, REGION_KEYS, growth, is_num, plausible
 
 
 def norm(s: str) -> str:
@@ -55,7 +55,7 @@ def verify_draft(draft: dict, text: str, existing: dict | None = None) -> dict:
     flags = []
     for fig in draft["figures"]:
         fig["check"] = check_figure(fig.get("v"), fig.get("quote", ""), doc_norm, doc_squash)
-        if is_num(fig.get("v")) and not -70 <= fig["v"] <= 150:
+        if is_num(fig.get("v")) and not plausible(fig["v"]):
             flags.append(f"{fig['label']}: growth of {fig['v']}% is outside the plausible range.")
     quarter = draft.get("calendar_quarter")
     if not (isinstance(quarter, str) and QUARTER_RE.match(quarter)):
