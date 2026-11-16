@@ -91,7 +91,8 @@ def merge_draft(dataset: dict, draft: dict) -> dict:
         dataset["companies"].append(company)
     src = draft.get("source") or {}
     source = {"t": src.get("title") or f"Results release for {draft.get('period_label') or quarter}",
-              "pub": src.get("publisher") or company["name"], "date": src.get("published") or "", "url": src.get("url") or ""}
+              "pub": src.get("publisher") or company["name"], "date": src.get("published") or "", "url": src.get("url") or "",
+              "kind": src.get("kind") if src.get("kind") in ("company", "press") else "company"}
     urls = [s.get("url") for s in company["sources"]]
     if source["url"] and source["url"] in urls:
         index = urls.index(source["url"])

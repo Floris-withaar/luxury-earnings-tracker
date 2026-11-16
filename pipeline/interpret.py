@@ -141,4 +141,19 @@ def interpret(dataset: dict, derived: dict, q: str, *, client=None, use_llm: boo
             if grounded(old.get("note", ""), payload_for(company, q, m, block["peer"])):
                 entry = old
         out["companies"][cid] = entry
+    _keep_dates(out, previous)
     return out
+
+
+def _keep_dates(out: dict, previous: dict | None) -> None:
+    """A note that says the same as last time keeps its date, so a rebuild with no new data changes no file."""
+    def same(a: dict, b: dict | None) -> bool:
+        return bool(b) and {k: v for k, v in a.items() if k != "at"} == {k: v for k, v in b.items() if k != "at"}
+
+    previous = previous or {}
+    if same(out["peer"], previous.get("peer")):
+        out["peer"]["at"] = previous["peer"].get("at", out["peer"]["at"])
+    for cid, entry in out["companies"].items():
+        old = (previous.get("companies") or {}).get(cid)
+        if same(entry, old):
+            entry["at"] = old.get("at", entry["at"])

@@ -1,0 +1,209 @@
+"""Tests for the data gate, the download guards and the full flow. No network, no API key."""
+import copy
+import json
+import tempfile
+import unittest
+from datetime import date
+from pathlib import Path
+from unittest import mock
+
+from pipeline import fetch, model, run, validate
+from pipeline.common import COMPANIES, WATCHLIST, load
+
+from tests.test_pipeline import ANSWER, RELEASE, FakeClient
+
+
+def dataset():
+    return copy.deepcopy(load(COMPANIES))
+
+
+def company(data, cid):
+    return next(c for c in data["companies"] if c["id"] == cid)
+
+
+class GateTests(unittest.TestCase):
+    def test_the_published_dataset_passes(self):
+        result = validate.validate(load(COMPANIES), load(WATCHLIST), today=date(2026, 11, 16))
+        self.assertEqual(result["errors"], [])
+        self.assertGreater(result["figures"], 90)
+
+    def test_built_files_match_the_dataset(self):
+        self.assertEqual(validate.check_built(load(COMPANIES)), [])
+
+    def test_figure_without_a_source_is_an_error(self):
+        data = dataset()
+        company(data, "hermes")["series"]["2026Q3"]["s"] = 99
+        self.assertTrue(any("Hermès" in e and "no valid source" in e for e in validate.validate(data)["errors"]))
+
+    def test_impossible_growth_is_an_error(self):
+        data = dataset()
+        company(data, "lvmh")["series"]["2026Q3"]["g"] = 400
+        self.assertTrue(any("outside" in e for e in validate.validate(data)["errors"]))
+
+    def test_malformed_quarter_and_stale_latest_are_errors(self):
+        data = dataset()
+        lvmh = company(data, "lvmh")
+        lvmh["series"]["2026-Q4"] = dict(lvmh["series"]["2026Q3"])
+        self.assertTrue(any("not a quarter" in e for e in validate.validate(data)["errors"]))
+        data = dataset()
+        data["latest"] = "2026Q2"
+        self.assertTrue(any("latest is" in e for e in validate.validate(data)["errors"]))
+
+    def test_unknown_region_bucket_and_duplicate_company_are_errors(self):
+        data = dataset()
+        regions = company(data, "kering")["regions"]["2026Q3"]
+        regions["mars"] = dict(next(iter(regions.values())))
+        data["companies"].append(copy.deepcopy(company(data, "prada")))
+        errors = validate.validate(data)["errors"]
+        self.assertTrue(any("not a region bucket" in e for e in errors))
+        self.assertTrue(any("more than once" in e for e in errors))
+
+    def test_group_outside_its_regions_is_a_warning(self):
+        data = dataset()
+        company(data, "hermes")["series"]["2026Q3"]["g"] = 30
+        result = validate.validate(data)
+        self.assertEqual(result["errors"], [])
+        self.assertTrue(any("lies outside its regions" in w for w in result["warnings"]))
+
+    def test_large_swing_and_gap_are_warnings(self):
+        data = dataset()
+        moncler = company(data, "moncler")
+        moncler["series"]["2026Q3"]["g"] = -40
+        del company(data, "prada")["series"]["2026Q1"]
+        warnings = validate.validate(data)["warnings"]
+        self.assertTrue(any("Moncler" in w and "moved" in w for w in warnings))
+        self.assertTrue(any("Prada" in w and "no figure between" in w for w in warnings))
+
+    def test_stale_company_is_a_warning(self):
+        warnings = validate.validate(load(COMPANIES), load(WATCHLIST), today=date(2027, 6, 1))["warnings"]
+        self.assertTrue(any("LVMH" in w and "expected" in w for w in warnings))
+        fresh = validate.validate(load(COMPANIES), load(WATCHLIST), today=date(2026, 11, 16))["warnings"]
+        self.assertFalse(any("expected" in w for w in fresh))
+
+    def test_press_figures_are_counted(self):
+        self.assertTrue(any("press reports" in w for w in validate.validate(load(COMPANIES))["warnings"]))
+
+
+class FetchGuardTests(unittest.TestCase):
+    def setUp(self):
+        self.domains = fetch.allowlist(load(WATCHLIST))
+
+    def test_company_sites_and_wires_are_trusted(self):
+        self.assertTrue(fetch.is_trusted("https://www.lvmh.com/en/publications/q3", self.domains))
+        self.assertTrue(fetch.is_trusted("https://assets.finance.hermes.com/s3fs-public/x.pdf", self.domains))
+        self.assertTrue(fetch.is_trusted("https://www.globenewswire.com/news-release/2026/x.html", self.domains))
+
+    def test_lookalikes_news_sites_and_plain_http_are_not(self):
+        for url in ["https://lvmh.com.evil.example/q3.pdf", "https://evil-lvmh.com/q3.pdf", "https://notlvmh.com/x",
+                    "https://www.reuters.com/business/lvmh", "http://www.lvmh.com/q3.pdf", "ftp://www.lvmh.com/q3.pdf",
+                    "https://example.com/?u=https://www.lvmh.com/"]:
+            self.assertFalse(fetch.is_trusted(url, self.domains), url)
+
+    def test_private_and_local_addresses_are_refused(self):
+        for url in ["http://127.0.0.1/x", "http://localhost:8000/x", "http://169.254.169.254/latest/meta-data/", "http://10.0.0.5/x",
+                    "http://192.168.1.1/", "http://[::1]/x", "file:///etc/passwd", "http://printer.local/x", "https:///nohost"]:
+            with self.assertRaises(fetch.UntrustedSource, msg=url):
+                fetch.check_public(url)
+
+    def test_hostname_that_resolves_to_a_private_address_is_refused(self):
+        with mock.patch("socket.getaddrinfo", return_value=[(2, 1, 6, "", ("10.1.2.3", 0))]):
+            with self.assertRaises(fetch.UntrustedSource):
+                fetch.check_public("https://internal.example.com/x")
+        with mock.patch("socket.getaddrinfo", return_value=[(2, 1, 6, "", ("93.184.216.34", 0))]):
+            fetch.check_public("https://example.com/x")
+
+    def test_redirect_to_a_private_address_is_refused(self):
+        hop = mock.Mock(is_redirect=True, status_code=302, headers={"location": "http://169.254.169.254/latest/"})
+        with mock.patch("socket.getaddrinfo", return_value=[(2, 1, 6, "", ("93.184.216.34", 0))]), mock.patch("requests.get", return_value=hop) as get:
+            with self.assertRaises(fetch.UntrustedSource):
+                fetch.fetch_text("https://example.com/release.pdf")
+        self.assertEqual(get.call_count, 1)
+        self.assertFalse(get.call_args.kwargs["allow_redirects"])
+
+
+class FlowTests(unittest.TestCase):
+    """One saved release goes through every step and ends up in the file the website reads."""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        root = Path(self.tmp.name)
+        (root / "data" / "review").mkdir(parents=True)
+        (root / "site").mkdir()
+        (root / "data" / "companies.json").write_text(Path(COMPANIES).read_text())
+        paths = dict(DATA=root / "data", COMPANIES=root / "data" / "companies.json", DERIVED=root / "data" / "derived.json",
+                     COMMENTARY=root / "data" / "commentary.json", REVIEW=root / "data" / "review", SITE=root / "site",
+                     RUN_LOG=root / "data" / "run_log.json", EVAL=root / "data" / "eval.json")
+        self.patches = [mock.patch.multiple(run, **paths), mock.patch.multiple(validate, DERIVED=paths["DERIVED"], SITE=paths["SITE"])]
+        for p in self.patches:
+            p.start()
+        self.root = root
+
+    def tearDown(self):
+        for p in self.patches:
+            p.stop()
+        self.tmp.cleanup()
+
+    def source(self):
+        return {"url": "https://www.burberryplc.com/q2.pdf", "title": "Second quarter trading update", "calendar_quarter": "2026Q3"}
+
+    def test_release_to_site_data(self):
+        data = load(run.COMPANIES)
+        result = run.process_release(data, "Burberry", RELEASE, self.source(), client=FakeClient(ANSWER), company_id=None, apply=True)
+        self.assertEqual(result["status"], "merged", result)
+        self.assertEqual(result["checks"], "6/6")
+        run.save(run.COMPANIES, data)
+        run.rebuild(data, use_llm=False)
+
+        site = json.loads((self.root / "site" / "data.json").read_text())
+        burberry = next(c for c in site["companies"] if c["id"] == "burberry-group")
+        self.assertEqual(burberry["series"]["2026Q3"]["g"], 4)
+        self.assertEqual(burberry["regions"]["2026Q3"]["japan"]["v"], 9)
+        self.assertEqual(burberry["sources"][burberry["series"]["2026Q3"]["s"]]["url"], "https://www.burberryplc.com/q2.pdf")
+        self.assertEqual(len(site["model"]["2026Q3"]["companies"]), 7)
+        self.assertEqual(site["model"]["2026Q3"]["peer"]["median"], model.compute(data)["2026Q3"]["peer"]["median"])
+        self.assertIn("burberry-group", site["notes"]["2026Q3"]["companies"])
+        self.assertEqual(site["meta"]["quality"]["errors"], 0)
+        # The six original companies are untouched and every check still passes.
+        before = {c["id"]: c for c in load(COMPANIES)["companies"]}
+        for c in site["companies"]:
+            if c["id"] in before:
+                self.assertEqual(c, before[c["id"]])
+        self.assertEqual(validate.validate(data)["errors"] + validate.check_built(data), [])
+        self.assertNotIn("99", json.dumps(burberry))   # the instruction planted in the release had no effect
+
+    def test_untrusted_source_is_never_merged(self):
+        data = load(run.COMPANIES)
+        result = run.process_release(data, "Burberry", RELEASE, self.source(), client=FakeClient(ANSWER), company_id=None, apply=True, trusted=False)
+        self.assertEqual(result["status"], "needs review")
+        self.assertTrue(any("allowlist" in f for f in result["flags"]))
+        self.assertEqual(len(data["companies"]), 6)
+
+    def test_draft_that_breaks_the_gate_is_not_merged(self):
+        text = RELEASE.replace("grew 4%", "grew 400%")
+        answer = copy.deepcopy(ANSWER)
+        answer["group"].update(growth_pct=400, quote="Comparable store sales grew 400% in the quarter")
+        data = load(run.COMPANIES)
+        result = run.process_release(data, "Burberry", text, self.source(), client=FakeClient(answer), company_id=None, apply=True)
+        self.assertNotEqual(result["status"], "merged", result)
+        self.assertEqual(len(data["companies"]), 6)
+
+    def test_gate_has_the_last_word_on_a_merge(self):
+        data = load(run.COMPANIES)
+        blocked = {"errors": ["Burberry Group 2026Q3: group growth has no valid source."], "warnings": [], "figures": 0, "companies": 0}
+        with mock.patch.object(validate, "validate", return_value=blocked):
+            result = run.process_release(data, "Burberry", RELEASE, self.source(), client=FakeClient(ANSWER), company_id=None, apply=True)
+        self.assertEqual(result["status"], "blocked by the data gate")
+        self.assertEqual(len(data["companies"]), 6)
+        self.assertFalse(json.loads((self.root / "data" / "review" / "burberry-group-2026Q3.json").read_text())["auto_merge"])
+
+    def test_rebuild_without_new_data_changes_nothing(self):
+        data = load(run.COMPANIES)
+        run.rebuild(data, use_llm=False)
+        first = json.loads((self.root / "site" / "data.json").read_text())
+        run.rebuild(data, use_llm=False)
+        second = json.loads((self.root / "site" / "data.json").read_text())
+        self.assertEqual(first, second)
+
+
+if __name__ == "__main__":
+    unittest.main()

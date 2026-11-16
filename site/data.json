@@ -2055,7 +2055,7 @@
     }
   },
   "meta": {
-    "built_at": "2026-11-15T13:41:59Z",
+    "built_at": "2026-11-16T01:30:29Z",
     "runs": [
       {
         "at": "2026-11-15T09:00:00Z",
@@ -2069,6 +2069,14 @@
         ]
       }
     ],
+    "quality": {
+      "figures": 101,
+      "errors": 0,
+      "warnings": [
+        "16 regional figures come from press reports. Replace them with company sources."
+      ]
+    },
+    "eval": null,
     "thresholds": {
       "momentum_pts": 1.0,
       "level_pts": 2.0,

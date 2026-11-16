@@ -1,0 +1,79 @@
+name: Live check
+
+# Run by hand. Proves the three LLM steps against the real API and puts a number on the extraction step.
+#   1. Research   searches for one company's newest release (nothing is merged)
+#   2. Extract    re-reads the latest releases and scores the figures against the verified dataset
+#   3. Interpret  writes the company notes and checks every number in them
+# Needs a repository secret named ANTHROPIC_API_KEY. Expected cost: well under one dollar.
+on:
+  workflow_dispatch:
+    inputs:
+      company:
+        description: "Watchlist id for the research step"
+        required: true
+        default: "lvmh"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+defaults:
+  run:
+    shell: bash   # with pipefail, so a failed step is not hidden by tee
+
+concurrency:
+  group: data-update
+  cancel-in-progress: false
+
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Check that the API key is set
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "::error::Add a repository secret named ANTHROPIC_API_KEY first (Settings > Secrets and variables > Actions)."
+            exit 1
+          fi
+      - name: 1. Research
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          COMPANY: ${{ inputs.company }}
+        run: python -m pipeline.run update --force --company "$COMPANY" | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: 2. Extract, scored against the verified figures
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python -m pipeline.run eval | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: 3. Interpret
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python -m pipeline.run interpret | tee -a "$GITHUB_STEP_SUMMARY"
+      - run: python -m unittest discover -s tests
+      - run: python -m pipeline.run validate
+      - name: Open a pull request with the results
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -z "$(git status --porcelain data site/data.json)" ]; then
+            echo "Nothing changed."
+            exit 0
+          fi
+          branch="live-check-$(date -u +%Y%m%d-%H%M)"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add -A data site/data.json
+          git commit -m "Live check $(date -u +%Y-%m-%d)"
+          git push origin "$branch"
+          gh pr create --title "Live check $(date -u +%Y-%m-%d)" \
+            --body "Results of a manual live run: the extraction score, the notes written by the model and the run log. No figure in data/companies.json is changed by this run. Review the diff before merging." \
+            || echo "::warning::The branch $branch was pushed. Open the pull request by hand, or allow Actions to create pull requests in the repository settings."
