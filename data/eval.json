@@ -1,26 +1,27 @@
 {
-  "at": "2026-11-16T01:54:52Z",
+  "at": "2026-11-16T08:06:51Z",
   "quarter": "2026Q3",
   "model": "claude-sonnet-5-5",
-  "hits": 13,
-  "total": 13,
+  "hits": 19,
+  "total": 19,
+  "releases": 6,
+  "read": 4,
   "misses": [],
   "skipped": [
-    "Kering: HTTPError",
-    "Richemont: DependencyError",
-    "Moncler: HTTPError"
+    "Kering: capital.com answered HTTP 404",
+    "Moncler: www.monclergroup.com answered HTTP 403"
   ],
   "usage": {
     "steps": {
       "extract": {
-        "calls": 3,
-        "input": 19097,
-        "output": 7629,
+        "calls": 4,
+        "input": 37162,
+        "output": 9357,
         "searches": 0,
-        "usd": 0.1145,
+        "usd": 0.1679,
         "model": "claude-sonnet-5-5"
       }
     },
-    "estimated_usd": 0.1145
+    "estimated_usd": 0.1679
   }
 }
