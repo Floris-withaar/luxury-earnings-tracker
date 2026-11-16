@@ -2050,7 +2050,7 @@
           ],
           "watch": "",
           "by": "rules",
-          "at": "2026-11-15T13:41:59Z"
+          "at": "2026-11-16T01:55:27Z"
         },
         "hermes": {
           "note": "Growth was +4.3% in Q3 2026 (at constant exchange rates), down 2.4 pts from +6.7% in Q2 2026. Japan led the regions at +9.6%. Other (Middle East) was weakest at −4.5%. Asia-Pacific excl. Japan moved from +2.5% to 0%, a swing of −2.5 pts. Compounded with the same quarter a year earlier, growth is +14.3% over two years. That is 4.3 pts ahead of the median of the other companies.",
@@ -2059,7 +2059,7 @@
           ],
           "watch": "",
           "by": "rules",
-          "at": "2026-11-15T13:41:59Z"
+          "at": "2026-11-16T01:55:27Z"
         },
         "kering": {
           "note": "Growth was −1% in Q3 2026 (comparable), down 3 pts from +2% in Q2 2026. Japan led the regions at +4%. Asia Pacific was weakest at −5%. Compounded with the same quarter a year earlier, growth is −5.9% over two years. That is 2 pts behind the median of the other companies.",
@@ -2069,7 +2069,7 @@
           ],
           "watch": "",
           "by": "rules",
-          "at": "2026-11-15T13:41:59Z"
+          "at": "2026-11-16T01:55:27Z"
         },
         "richemont": {
           "note": "Growth was +13% in Q3 2026 (at constant exchange rates), down 7 pts from +20% in Q2 2026. Japan led the regions at +23%. Middle East & Africa was weakest at −7%. Asia Pacific moved from +21% to +10%, a swing of −11 pts. Compounded with the same quarter a year earlier, growth is +28.8% over two years. That is 13 pts ahead of the median of the other companies.",
@@ -2079,7 +2079,7 @@
           ],
           "watch": "",
           "by": "rules",
-          "at": "2026-11-15T13:41:59Z"
+          "at": "2026-11-16T01:55:27Z"
         },
         "moncler": {
           "note": "Growth was 0% in Q3 2026 (at constant exchange rates), down 5 pts from +5% in Q2 2026. Asia (APAC, Japan, Korea) led the regions at +5%. EMEA was weakest at −8%. Asia (APAC, Japan, Korea) moved from +12% to +5%, a swing of −7 pts. Compounded with the same quarter a year earlier, growth is −1% over two years. That is 1 pt behind the median of the other companies.",
@@ -2089,7 +2089,7 @@
           ],
           "watch": "",
           "by": "rules",
-          "at": "2026-11-15T13:41:59Z"
+          "at": "2026-11-16T01:55:27Z"
         },
         "prada": {
           "note": "Growth was 0% in Q3 2026 (organic), down 5 pts from +5% in Q2 2026. Americas led the regions at +5%. Middle East was weakest at −18%. Asia Pacific moved from +8% to 0%, a swing of −8 pts. Compounded with the same quarter a year earlier, growth is +7.6% over two years. That is 1 pt behind the median of the other companies.",
@@ -2099,13 +2099,13 @@
           ],
           "watch": "",
           "by": "rules",
-          "at": "2026-11-15T13:41:59Z"
+          "at": "2026-11-16T01:55:27Z"
         }
       }
     }
   },
   "meta": {
-    "built_at": "2026-11-16T06:53:29Z",
+    "built_at": "2026-11-16T07:39:12Z",
     "runs": [
       {
         "at": "2026-11-15T09:00:00Z",
@@ -2117,6 +2117,97 @@
             "status": "entered and checked by hand against the sources"
           }
         ]
+      },
+      {
+        "at": "2026-11-16T01:53:53Z",
+        "command": "update",
+        "results": [
+          {
+            "company": "LVMH",
+            "status": "no newer release",
+            "detail": "The LVMH investor site page for the Q3 2026 revenue release is dated 12 October 2026 and includes a quarterly revenue table showing third-quarter revenue of €18,504m, so it reports a three-month perio"
+          }
+        ],
+        "usage": {
+          "steps": {
+            "research": {
+              "calls": 1,
+              "input": 22950,
+              "output": 891,
+              "searches": 2,
+              "usd": 0.0227,
+              "model": "claude-haiku-5-5"
+            }
+          },
+          "estimated_usd": 0.0227
+        }
+      },
+      {
+        "at": "2026-11-16T01:54:52Z",
+        "command": "eval",
+        "results": [
+          {
+            "company": "All",
+            "quarter": "2026Q3",
+            "status": "extraction matched 13 of 13 verified figures"
+          }
+        ],
+        "usage": {
+          "steps": {
+            "extract": {
+              "calls": 3,
+              "input": 19097,
+              "output": 7629,
+              "searches": 0,
+              "usd": 0.1145,
+              "model": "claude-sonnet-5-5"
+            }
+          },
+          "estimated_usd": 0.1145
+        }
+      },
+      {
+        "at": "2026-11-16T01:55:27Z",
+        "command": "interpret",
+        "results": [
+          {
+            "company": "lvmh",
+            "status": "note by rules (model note rejected)"
+          },
+          {
+            "company": "hermes",
+            "status": "note by rules (model note rejected)"
+          },
+          {
+            "company": "kering",
+            "status": "note by rules (model note rejected)"
+          },
+          {
+            "company": "richemont",
+            "status": "note by rules (model note rejected)"
+          },
+          {
+            "company": "moncler",
+            "status": "note by rules (model note rejected)"
+          },
+          {
+            "company": "prada",
+            "status": "note by rules (model note rejected)"
+          }
+        ],
+        "usage": {
+          "steps": {
+            "interpret": {
+              "calls": 6,
+              "input": 5389,
+              "output": 4200,
+              "searches": 0,
+              "usd": 0.0529,
+              "model": "claude-sonnet-5-5"
+            }
+          },
+          "estimated_usd": 0.0528
+        }
       }
     ],
     "quality": {
@@ -2126,7 +2217,32 @@
         "19 figures come from press reports (LVMH 8, Hermès 6, Kering 5). Replace them with company sources."
       ]
     },
-    "eval": null,
+    "eval": {
+      "at": "2026-11-16T01:54:52Z",
+      "quarter": "2026Q3",
+      "model": "claude-sonnet-5-5",
+      "hits": 13,
+      "total": 13,
+      "misses": [],
+      "skipped": [
+        "Kering: HTTPError",
+        "Richemont: DependencyError",
+        "Moncler: HTTPError"
+      ],
+      "usage": {
+        "steps": {
+          "extract": {
+            "calls": 3,
+            "input": 19097,
+            "output": 7629,
+            "searches": 0,
+            "usd": 0.1145,
+            "model": "claude-sonnet-5-5"
+          }
+        },
+        "estimated_usd": 0.1145
+      }
+    },
     "thresholds": {
       "momentum_pts": 1.0,
       "level_pts": 2.0,
