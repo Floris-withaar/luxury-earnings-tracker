@@ -1,0 +1,904 @@
+{
+  "asOf": "2026-11-15",
+  "latest": "2026Q3",
+  "companies": [
+    {
+      "id": "lvmh",
+      "name": "LVMH",
+      "ticker": "MC.PA",
+      "hq": "Paris",
+      "basis": "Organic",
+      "series": {
+        "2025Q3": {
+          "g": 1,
+          "s": 2
+        },
+        "2025Q4": {
+          "g": 1,
+          "s": 2
+        },
+        "2026Q1": {
+          "g": 1,
+          "s": 0
+        },
+        "2026Q2": {
+          "g": 3,
+          "s": 0
+        },
+        "2026Q3": {
+          "g": 1,
+          "rev": 18504,
+          "s": 0
+        }
+      },
+      "regions": {
+        "2026Q3": {
+          "asia": {
+            "v": -5,
+            "label": "Asia excl. Japan",
+            "s": 1
+          },
+          "japan": {
+            "v": 6,
+            "label": "Japan",
+            "s": 1
+          },
+          "europe": {
+            "v": 4,
+            "label": "Europe",
+            "s": 1
+          },
+          "americas": {
+            "v": 5,
+            "label": "United States",
+            "note": "United States only",
+            "s": 1
+          }
+        },
+        "2026Q2": {
+          "asia": {
+            "v": 4,
+            "label": "Asia excl. Japan",
+            "s": 1
+          },
+          "japan": {
+            "v": 14,
+            "label": "Japan",
+            "s": 1
+          },
+          "europe": {
+            "v": 0,
+            "label": "Europe",
+            "s": 1
+          },
+          "americas": {
+            "v": 6,
+            "label": "United States",
+            "note": "United States only",
+            "s": 1
+          }
+        }
+      },
+      "segments": {
+        "2026Q3": [
+          {
+            "name": "Wines & Spirits",
+            "g": 6,
+            "rev": 1429
+          },
+          {
+            "name": "Fashion & Leather Goods",
+            "g": -5,
+            "rev": 8245
+          },
+          {
+            "name": "Perfumes & Cosmetics",
+            "g": 1,
+            "rev": 2008
+          },
+          {
+            "name": "Watches & Jewelry",
+            "g": 6,
+            "rev": 2500
+          },
+          {
+            "name": "Selective Retailing",
+            "g": 8,
+            "rev": 4070
+          }
+        ]
+      },
+      "china": "Third-quarter growth reflected a less buoyant environment in China, which hit Fashion & Leather Goods. Asia excluding Japan went from +4% in the second quarter to −5% in the third, while the United States, Europe and Japan grew.",
+      "guidance": {
+        "kind": "qualitative",
+        "date": "12 Oct 2026",
+        "text": "No numeric guidance. LVMH says it remains confident and expects to reinforce its global leadership in luxury goods in 2026.",
+        "evidence": "Nine-month organic growth of 2%.",
+        "read": "Nothing to test against."
+      },
+      "sources": [
+        {
+          "t": "Continued growth in the third quarter of 2026",
+          "pub": "LVMH press release",
+          "date": "12 Oct 2026",
+          "url": "https://www.lvmh.com/en/publications/continued-growth-in-the-third-quarter-of-2026",
+          "kind": "company"
+        },
+        {
+          "t": "China Slowdown Impacts LVMH's Key Fashion Unit in Q3 (regional growth from the results presentation)",
+          "pub": "WWD",
+          "date": "Oct 2026",
+          "url": "https://wwd.com/business-news/financial/lvmh-q3-sales-fashion-leather-goods-down-5-percent-1239342984/",
+          "kind": "press"
+        },
+        {
+          "t": "Letter to shareholders, January 2026 (fourth and third quarter 2025)",
+          "pub": "LVMH",
+          "date": "Jan 2026",
+          "url": "https://www.lvmh.com/static/letter-to-shareholders-january-2026/",
+          "kind": "company"
+        }
+      ],
+      "origin": "base",
+      "cur": "EUR"
+    },
+    {
+      "id": "hermes",
+      "name": "Hermès",
+      "ticker": "RMS.PA",
+      "hq": "Paris",
+      "basis": "Constant FX",
+      "series": {
+        "2025Q3": {
+          "g": 9.6,
+          "rev": 3881,
+          "s": 2
+        },
+        "2025Q4": {
+          "g": 9.8,
+          "rev": 4087,
+          "s": 1
+        },
+        "2026Q1": {
+          "g": 5.6,
+          "s": 4
+        },
+        "2026Q2": {
+          "g": 6.7,
+          "s": 4
+        },
+        "2026Q3": {
+          "g": 4.3,
+          "rev": 4096,
+          "s": 0
+        }
+      },
+      "regions": {
+        "2026Q3": {
+          "asia": {
+            "v": 0,
+            "label": "Asia-Pacific excl. Japan",
+            "s": 0
+          },
+          "japan": {
+            "v": 9.6,
+            "label": "Japan",
+            "s": 0
+          },
+          "europe": {
+            "v": 7.2,
+            "label": "Total Europe",
+            "note": "France +3.6%, rest of Europe +9.5%",
+            "s": 0
+          },
+          "americas": {
+            "v": 8.8,
+            "label": "Americas",
+            "s": 0
+          },
+          "me": {
+            "v": -4.5,
+            "label": "Other (Middle East)",
+            "s": 0
+          }
+        },
+        "2026Q2": {
+          "asia": {
+            "v": 2.5,
+            "label": "Asia-Pacific excl. Japan",
+            "s": 4
+          },
+          "japan": {
+            "v": 12.3,
+            "label": "Japan",
+            "s": 4
+          },
+          "americas": {
+            "v": 13.7,
+            "label": "Americas",
+            "s": 4
+          },
+          "me": {
+            "v": -2.4,
+            "label": "Other (Middle East)",
+            "s": 4
+          }
+        }
+      },
+      "segments": {
+        "2026Q3": [
+          {
+            "name": "Leather Goods and Saddlery",
+            "g": 10.8,
+            "rev": 1912
+          },
+          {
+            "name": "Ready-to-wear and Accessories",
+            "g": -2,
+            "rev": 1141
+          },
+          {
+            "name": "Silk and Textiles",
+            "g": 1.4,
+            "rev": 214
+          },
+          {
+            "name": "Other Hermès sectors",
+            "g": -1.1,
+            "rev": 486
+          },
+          {
+            "name": "Perfume and Beauty",
+            "g": 7.5,
+            "rev": 128
+          },
+          {
+            "name": "Watches",
+            "g": -6,
+            "rev": 125
+          },
+          {
+            "name": "Other products",
+            "g": 10.5,
+            "rev": 92
+          }
+        ]
+      },
+      "china": "Asia excluding Japan was flat in the third quarter. Hermès describes Greater China as stable over the nine months in a more difficult context, with a solid performance in Korea.",
+      "guidance": {
+        "kind": "qualitative",
+        "date": "22 Oct 2026",
+        "text": "For the medium term, Hermès confirms an ambitious goal for revenue growth at constant exchange rates. No number is attached.",
+        "evidence": "Nine-month growth of 5.5% at constant exchange rates.",
+        "read": "Nothing to test against."
+      },
+      "sources": [
+        {
+          "t": "Quarterly information report as of the end of September 2026",
+          "pub": "Hermès International, regulatory release",
+          "date": "22 Oct 2026",
+          "url": "https://mfn.se/one/a/hermes/hermes-international-third-quarter-2026-revenue-767f0a7b",
+          "kind": "company"
+        },
+        {
+          "t": "2025 full-year results",
+          "pub": "Hermès International, regulatory release",
+          "date": "12 Feb 2026",
+          "url": "https://live.euronext.com/it/node/12862215",
+          "kind": "company"
+        },
+        {
+          "t": "Third quarter 2025 revenue",
+          "pub": "Hermès International, regulatory release",
+          "date": "22 Oct 2025",
+          "url": "https://www.mfn.se/one/a/hermes/hermes-international-third-quarter-2025-revenue-b22889db",
+          "kind": "company"
+        },
+        {
+          "t": "2026 half-year results (first quarter +6%, second quarter +7%)",
+          "pub": "Hermès International, regulatory release",
+          "date": "29 Jul 2026",
+          "url": "https://mfn.se/one/a/hermes/hermes-international-2026-half-year-results-be9f20c4.iframe",
+          "kind": "company"
+        },
+        {
+          "t": "Hermès: H1 2026 revenue reaches €8.2 billion (quarterly growth to one decimal, by region)",
+          "pub": "Pulse 2.0",
+          "date": "29 Jul 2026",
+          "url": "https://pulse2.com/hermes-h1-2026-revenue-reaches-e8-2-billion-as-operating-margin-holds-at-41/",
+          "kind": "press"
+        }
+      ],
+      "origin": "base",
+      "cur": "EUR"
+    },
+    {
+      "id": "kering",
+      "name": "Kering",
+      "ticker": "KER.PA",
+      "hq": "Paris",
+      "basis": "Comparable",
+      "series": {
+        "2025Q3": {
+          "g": -5,
+          "rev": 3415,
+          "s": 3
+        },
+        "2025Q4": {
+          "g": -3,
+          "rev": 3905,
+          "s": 2
+        },
+        "2026Q1": {
+          "g": 0,
+          "rev": 3568,
+          "s": 5
+        },
+        "2026Q2": {
+          "g": 2,
+          "rev": 3652,
+          "s": 1
+        },
+        "2026Q3": {
+          "g": -1,
+          "rev": 3345,
+          "s": 0
+        }
+      },
+      "regions": {
+        "2026Q3": {
+          "asia": {
+            "v": -5,
+            "label": "Asia Pacific",
+            "s": 4
+          },
+          "japan": {
+            "v": 4,
+            "label": "Japan",
+            "s": 4
+          },
+          "europe": {
+            "v": -2,
+            "label": "Western Europe",
+            "s": 4
+          },
+          "americas": {
+            "v": 2,
+            "label": "North America",
+            "s": 4
+          }
+        }
+      },
+      "segments": {
+        "2026Q3": [
+          {
+            "name": "Kering Fashion & Leather Goods",
+            "g": -3,
+            "rev": 2743
+          },
+          {
+            "name": "of which Gucci",
+            "g": -6,
+            "rev": 1291
+          },
+          {
+            "name": "Kering Jewelry",
+            "g": 11,
+            "rev": 239
+          },
+          {
+            "name": "Kering Eyewear",
+            "g": 4,
+            "rev": 373
+          },
+          {
+            "name": "Corporate & Other",
+            "g": -5,
+            "rev": 27
+          }
+        ]
+      },
+      "china": "Lower store traffic weighed on Asia Pacific, particularly Mainland China, and on Japan for Gucci. Gucci's own retail sales fell 9% on a comparable basis.",
+      "guidance": {
+        "kind": "testable",
+        "date": "10 Feb 2026",
+        "text": "Kering set a 2026 objective to return to growth and improve margins. In October it confirmed the objective of improving its recurring operating margin.",
+        "evidence": "Nine-month revenue is flat on a comparable basis (Q1 0%, Q2 +2%, Q3 −1%). First-half recurring operating margin was 12.8%, up 40 basis points.",
+        "read": "Margin on track at the half year. Growth has yet to show over nine months."
+      },
+      "sources": [
+        {
+          "t": "Revenue for the third quarter of 2026",
+          "pub": "Kering press release (GlobeNewswire)",
+          "date": "22 Oct 2026",
+          "url": "https://capital.com/en-gb/news/kering-revenue-for-the-third-quarter-of-2026",
+          "kind": "company"
+        },
+        {
+          "t": "2026 first-half results",
+          "pub": "Kering, regulatory release",
+          "date": "28 Jul 2026",
+          "url": "https://mfn.se/all/a/kering/kering-2026-first-half-results-back-to-growth-performance-improvement-and-strategy-execution-on-track-be4c7c4c",
+          "kind": "company"
+        },
+        {
+          "t": "2025 results",
+          "pub": "Kering press release",
+          "date": "10 Feb 2026",
+          "url": "https://www.nasdaq.com/press-release/kering-2025-results-sequential-improvement-unlocking-next-phase-sustainable",
+          "kind": "company"
+        },
+        {
+          "t": "2025 third-quarter revenue",
+          "pub": "Kering, regulatory release",
+          "date": "22 Oct 2025",
+          "url": "https://live.euronext.com/en/products/equities/company-news/2025-10-22-kering-press-release-2025-third-quarter-revenue",
+          "kind": "company"
+        },
+        {
+          "t": "Kering revenue holds steady in Q3 (regional growth from the results presentation)",
+          "pub": "The Impression",
+          "date": "Oct 2026",
+          "url": "https://theimpression.com/?p=12070551",
+          "kind": "press"
+        },
+        {
+          "t": "Kering reports stable revenue for the first quarter of 2026",
+          "pub": "MarketScreener",
+          "date": "Apr 2026",
+          "url": "https://www.marketscreener.com/news/kering-reports-stable-revenue-for-the-first-quarter-of-2026-ce7e50dfdc8bf722",
+          "kind": "press"
+        }
+      ],
+      "origin": "base",
+      "cur": "EUR"
+    },
+    {
+      "id": "richemont",
+      "name": "Richemont",
+      "ticker": "CFR.SW",
+      "hq": "Geneva",
+      "basis": "Constant FX",
+      "fiscal": "Financial year ends 31 March. Calendar Q3 2026 is Richemont's Q2 FY27.",
+      "series": {
+        "2025Q3": {
+          "g": 14,
+          "label": "Q2 FY26",
+          "s": 3
+        },
+        "2025Q4": {
+          "g": 11,
+          "label": "Q3 FY26",
+          "s": 1
+        },
+        "2026Q1": {
+          "g": 13,
+          "label": "Q4 FY26",
+          "s": 2
+        },
+        "2026Q2": {
+          "g": 20,
+          "rev": 6329,
+          "label": "Q1 FY27",
+          "s": 0
+        },
+        "2026Q3": {
+          "g": 13,
+          "rev": 5953,
+          "label": "Q2 FY27",
+          "s": 0
+        }
+      },
+      "regions": {
+        "2026Q3": {
+          "asia": {
+            "v": 10,
+            "label": "Asia Pacific",
+            "s": 0
+          },
+          "japan": {
+            "v": 23,
+            "label": "Japan",
+            "s": 0
+          },
+          "europe": {
+            "v": 15,
+            "label": "Europe",
+            "s": 0
+          },
+          "americas": {
+            "v": 19,
+            "label": "Americas",
+            "s": 0
+          },
+          "me": {
+            "v": -7,
+            "label": "Middle East & Africa",
+            "s": 0
+          }
+        },
+        "2026Q2": {
+          "asia": {
+            "v": 21,
+            "label": "Asia Pacific",
+            "s": 0
+          },
+          "japan": {
+            "v": 36,
+            "label": "Japan",
+            "s": 0
+          },
+          "europe": {
+            "v": 11,
+            "label": "Europe",
+            "s": 0
+          },
+          "americas": {
+            "v": 27,
+            "label": "Americas",
+            "s": 0
+          },
+          "me": {
+            "v": 3,
+            "label": "Middle East & Africa",
+            "s": 0
+          }
+        }
+      },
+      "segments": {
+        "2026Q3": [
+          {
+            "name": "Jewellery Maisons",
+            "g": 14,
+            "rev": 4414
+          },
+          {
+            "name": "Specialist Watchmakers",
+            "g": 12,
+            "rev": 833
+          },
+          {
+            "name": "Other",
+            "g": 9,
+            "rev": 706
+          }
+        ]
+      },
+      "china": "Sales in China, Hong Kong and Macau combined grew 7% in the first half, with a modest increase in the second quarter despite persistent softness in Mainland China.",
+      "guidance": {
+        "kind": "none",
+        "date": "13 Nov 2026",
+        "text": "No guidance. The Chairman expects the macroeconomic and geopolitical environment to remain volatile.",
+        "evidence": "First-half sales up 17% at constant rates.",
+        "read": "Nothing to test against."
+      },
+      "sources": [
+        {
+          "t": "FY27 interim results announcement, six months ended 30 September 2026",
+          "pub": "Richemont",
+          "date": "13 Nov 2026",
+          "url": "https://www.richemont.com/media/ztpd2qqu/ad-hoc-announcement-pursuant-to-art-53-lr-fy27-interim-results-en.pdf",
+          "kind": "company"
+        },
+        {
+          "t": "Third-quarter sales, quarter ended 31 December 2025",
+          "pub": "Richemont",
+          "date": "15 Jan 2026",
+          "url": "https://www.richemont.com/news-media/press-releases-news/richemont-maintained-strong-momentum-with-sales-up-11-at-constant-rates-for-its-third-quarter-ended-31-december-2025/",
+          "kind": "company"
+        },
+        {
+          "t": "Results for the year ended 31 March 2026",
+          "pub": "Richemont",
+          "date": "22 May 2026",
+          "url": "https://www.richemont.com/news-media/press-releases-news/richemont-delivers-strong-sales-growth-and-solid-results-for-the-year-ended-31-march-2026/",
+          "kind": "company"
+        },
+        {
+          "t": "Results for the six months ended 30 September 2025",
+          "pub": "Richemont",
+          "date": "14 Nov 2025",
+          "url": "https://www.richemont.com/news-media/press-releases-news/richemont-delivers-solid-results-for-the-six-month-period-ended-30-september-2025-with-strong-sales-momentum-in-q2/",
+          "kind": "company"
+        }
+      ],
+      "origin": "base",
+      "cur": "EUR"
+    },
+    {
+      "id": "moncler",
+      "name": "Moncler",
+      "ticker": "MONC.MI",
+      "hq": "Milan",
+      "basis": "Constant FX",
+      "scope": "Regions are for the Moncler brand, about 83% of third-quarter group revenue.",
+      "series": {
+        "2025Q3": {
+          "g": -1,
+          "rev": 615.6,
+          "s": 3
+        },
+        "2025Q4": {
+          "g": 7,
+          "rev": 1290.8,
+          "s": 2
+        },
+        "2026Q1": {
+          "g": 12,
+          "rev": 880.6,
+          "s": 4
+        },
+        "2026Q2": {
+          "g": 5,
+          "rev": 409.3,
+          "s": 1
+        },
+        "2026Q3": {
+          "g": 0,
+          "rev": 605.5,
+          "s": 0
+        }
+      },
+      "regions": {
+        "2026Q3": {
+          "asia": {
+            "v": 5,
+            "label": "Asia (APAC, Japan, Korea)",
+            "note": "Includes Japan and Korea",
+            "s": 0
+          },
+          "europe": {
+            "v": -8,
+            "label": "EMEA",
+            "note": "EMEA, includes the Middle East",
+            "s": 0
+          },
+          "americas": {
+            "v": 2,
+            "label": "Americas",
+            "s": 0
+          }
+        },
+        "2026Q2": {
+          "asia": {
+            "v": 12,
+            "label": "Asia (APAC, Japan, Korea)",
+            "note": "Includes Japan and Korea",
+            "s": 1
+          },
+          "europe": {
+            "v": -8,
+            "label": "EMEA",
+            "note": "EMEA, includes the Middle East",
+            "s": 1
+          },
+          "americas": {
+            "v": 4,
+            "label": "Americas",
+            "s": 1
+          }
+        }
+      },
+      "segments": {
+        "2026Q3": [
+          {
+            "name": "Moncler",
+            "g": -1,
+            "rev": 499.6
+          },
+          {
+            "name": "Stone Island",
+            "g": 5,
+            "rev": 105.9
+          }
+        ]
+      },
+      "china": "Asia grew 5% in the third quarter with APAC, Japan and Korea all positive. EMEA fell 8% on softer local demand and subdued tourist flows, particularly from Asia. In the second quarter China and Korea outperformed the region.",
+      "guidance": {
+        "kind": "none",
+        "date": "21 Oct 2026",
+        "text": "No guidance in the release.",
+        "evidence": "Nine-month revenue up 6% at constant exchange rates.",
+        "read": "Nothing to test against."
+      },
+      "sources": [
+        {
+          "t": "Interim management statement, first nine months of 2026",
+          "pub": "Moncler Group press release",
+          "date": "21 Oct 2026",
+          "url": "https://www.monclergroup.com/v3/assets/blt61bda6b71f29a239/blt29cee49a7fab548e/6ad8de7aebc4638f4deb349e/Moncler-Group-Press-Release-9M-2026.pdf",
+          "kind": "company"
+        },
+        {
+          "t": "First-half 2026 results",
+          "pub": "Moncler Group press release",
+          "date": "22 Jul 2026",
+          "url": "https://www.monclergroup.com/v3/assets/blt61bda6b71f29a239/blt6651b04f18f67307/6a60e7584e8afd132530f0c6/Moncler-Group-Press-Release-H1-2026.pdf",
+          "kind": "company"
+        },
+        {
+          "t": "2025 financial results",
+          "pub": "Moncler Group press release",
+          "date": "19 Feb 2026",
+          "url": "https://www.emarketstorage.it/sites/default/files/comunicati/2026-02/20260219_177665.pdf",
+          "kind": "company"
+        },
+        {
+          "t": "Interim management statement, first nine months of 2025",
+          "pub": "Moncler Group press release",
+          "date": "28 Oct 2025",
+          "url": "https://www.monclergroup.com/v3/assets/blt61bda6b71f29a239/bltf918207c92bab566/690b64c396cc598759a0dd60/Moncler-Group-Press-Release-9M-2025.pdf",
+          "kind": "company"
+        },
+        {
+          "t": "Interim management statement, first quarter of 2026",
+          "pub": "Moncler Group filing",
+          "date": "21 Apr 2026",
+          "url": "https://financialreports.eu/filings/moncler/interim-quarterly-report/2026/34818561/",
+          "kind": "company"
+        }
+      ],
+      "origin": "base",
+      "cur": "EUR"
+    },
+    {
+      "id": "prada",
+      "name": "Prada Group",
+      "ticker": "1913.HK",
+      "hq": "Milan",
+      "basis": "Organic",
+      "scope": "Series and regions are retail sales on an organic basis (constant currency, excluding Versace). Retail is 87% of net revenues. Net revenues grew 1% organic in the third quarter.",
+      "series": {
+        "2025Q3": {
+          "g": 7.6,
+          "s": 5
+        },
+        "2025Q4": {
+          "g": 5.6,
+          "s": 4
+        },
+        "2026Q1": {
+          "g": 1,
+          "s": 3
+        },
+        "2026Q2": {
+          "g": 5,
+          "s": 6
+        },
+        "2026Q3": {
+          "g": 0,
+          "s": 1
+        }
+      },
+      "regions": {
+        "2026Q3": {
+          "asia": {
+            "v": 0,
+            "label": "Asia Pacific",
+            "s": 1
+          },
+          "japan": {
+            "v": 0,
+            "label": "Japan",
+            "s": 1
+          },
+          "europe": {
+            "v": -3,
+            "label": "Europe",
+            "s": 1
+          },
+          "americas": {
+            "v": 5,
+            "label": "Americas",
+            "s": 1
+          },
+          "me": {
+            "v": -18,
+            "label": "Middle East",
+            "s": 1
+          }
+        },
+        "2026Q2": {
+          "asia": {
+            "v": 8,
+            "label": "Asia Pacific",
+            "s": 6
+          },
+          "japan": {
+            "v": 8,
+            "label": "Japan",
+            "s": 6
+          },
+          "europe": {
+            "v": -2,
+            "label": "Europe",
+            "s": 6
+          },
+          "americas": {
+            "v": 19,
+            "label": "Americas",
+            "s": 6
+          },
+          "me": {
+            "v": -26,
+            "label": "Middle East",
+            "s": 6
+          }
+        }
+      },
+      "segments": {
+        "2026Q3": [
+          {
+            "name": "Prada (retail sales)",
+            "g": 1
+          },
+          {
+            "name": "Miu Miu (retail sales)",
+            "g": -3
+          }
+        ]
+      },
+      "china": "Asia Pacific was stable in the third quarter. Subdued traffic in Mainland China was offset by Korea, Hong Kong and Macau.",
+      "guidance": {
+        "kind": "testable",
+        "date": "30 Jul 2026",
+        "text": "Prada Group states an ambition of delivering above-market growth.",
+        "evidence": "Third-quarter net revenues grew 1% organic. The median of the other companies here is {median}.",
+        "read": "In line with this peer set in the third quarter."
+      },
+      "sources": [
+        {
+          "t": "Nine months 2026 revenue",
+          "pub": "Prada Group press release",
+          "date": "22 Oct 2026",
+          "url": "https://www.pradagroup.com/content/dam/pradagroup/documents/investors/9M-2026/Prada-Group-9M26-Press-release.pdf",
+          "kind": "company"
+        },
+        {
+          "t": "Investor relations highlights (third-quarter retail sales by geography)",
+          "pub": "Prada Group",
+          "date": "Oct 2026",
+          "url": "https://www.pradagroup.com/en/investors/investor-relations.html",
+          "kind": "company"
+        },
+        {
+          "t": "First-half 2026 results",
+          "pub": "Prada Group press release",
+          "date": "30 Jul 2026",
+          "url": "https://www.pradagroup.com/content/dam/pradagroup/documents/investors/H1-2026/Prada-Group-H126-Press-release.pdf",
+          "kind": "company"
+        },
+        {
+          "t": "First-quarter 2026 revenue",
+          "pub": "Prada Group press release",
+          "date": "30 Apr 2026",
+          "url": "https://www.pradagroup.com/en/news-media/press-releases-documents/2026/26-04-30-pradagroup-q1-26-revenue.html",
+          "kind": "company"
+        },
+        {
+          "t": "Full-year 2025 results",
+          "pub": "Prada Group press release",
+          "date": "5 Mar 2026",
+          "url": "https://www.pradagroup.com/en/news-media/press-releases-documents/2026/26-03-05-prada-group-2025-fy-results.html",
+          "kind": "company"
+        },
+        {
+          "t": "Nine months 2025 revenue",
+          "pub": "Prada Group press release",
+          "date": "23 Oct 2025",
+          "url": "https://www.pradagroup.com/content/dam/pradagroup/documents/investors/9M-2025/Prada-Group-9M25-PR.pdf",
+          "kind": "company"
+        },
+        {
+          "t": "Investors page (second-quarter retail sales by geography)",
+          "pub": "Prada Group",
+          "date": "Jul 2026",
+          "url": "https://www.pradagroup.com/en/investors",
+          "kind": "company"
+        }
+      ],
+      "origin": "base",
+      "cur": "EUR"
+    }
+  ]
+}

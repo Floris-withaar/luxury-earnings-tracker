@@ -1,0 +1,2079 @@
+{
+  "asOf": "2026-11-15",
+  "latest": "2026Q3",
+  "companies": [
+    {
+      "id": "lvmh",
+      "name": "LVMH",
+      "ticker": "MC.PA",
+      "hq": "Paris",
+      "basis": "Organic",
+      "series": {
+        "2025Q3": {
+          "g": 1,
+          "s": 2
+        },
+        "2025Q4": {
+          "g": 1,
+          "s": 2
+        },
+        "2026Q1": {
+          "g": 1,
+          "s": 0
+        },
+        "2026Q2": {
+          "g": 3,
+          "s": 0
+        },
+        "2026Q3": {
+          "g": 1,
+          "rev": 18504,
+          "s": 0
+        }
+      },
+      "regions": {
+        "2026Q3": {
+          "asia": {
+            "v": -5,
+            "label": "Asia excl. Japan",
+            "s": 1
+          },
+          "japan": {
+            "v": 6,
+            "label": "Japan",
+            "s": 1
+          },
+          "europe": {
+            "v": 4,
+            "label": "Europe",
+            "s": 1
+          },
+          "americas": {
+            "v": 5,
+            "label": "United States",
+            "note": "United States only",
+            "s": 1
+          }
+        },
+        "2026Q2": {
+          "asia": {
+            "v": 4,
+            "label": "Asia excl. Japan",
+            "s": 1
+          },
+          "japan": {
+            "v": 14,
+            "label": "Japan",
+            "s": 1
+          },
+          "europe": {
+            "v": 0,
+            "label": "Europe",
+            "s": 1
+          },
+          "americas": {
+            "v": 6,
+            "label": "United States",
+            "note": "United States only",
+            "s": 1
+          }
+        }
+      },
+      "segments": {
+        "2026Q3": [
+          {
+            "name": "Wines & Spirits",
+            "g": 6,
+            "rev": 1429
+          },
+          {
+            "name": "Fashion & Leather Goods",
+            "g": -5,
+            "rev": 8245
+          },
+          {
+            "name": "Perfumes & Cosmetics",
+            "g": 1,
+            "rev": 2008
+          },
+          {
+            "name": "Watches & Jewelry",
+            "g": 6,
+            "rev": 2500
+          },
+          {
+            "name": "Selective Retailing",
+            "g": 8,
+            "rev": 4070
+          }
+        ]
+      },
+      "china": "Third-quarter growth reflected a less buoyant environment in China, which hit Fashion & Leather Goods. Asia excluding Japan went from +4% in the second quarter to −5% in the third, while the United States, Europe and Japan grew.",
+      "guidance": {
+        "kind": "qualitative",
+        "date": "12 Oct 2026",
+        "text": "No numeric guidance. LVMH says it remains confident and expects to reinforce its global leadership in luxury goods in 2026.",
+        "evidence": "Nine-month organic growth of 2%.",
+        "read": "Nothing to test against."
+      },
+      "sources": [
+        {
+          "t": "Continued growth in the third quarter of 2026",
+          "pub": "LVMH press release",
+          "date": "12 Oct 2026",
+          "url": "https://www.lvmh.com/en/publications/continued-growth-in-the-third-quarter-of-2026",
+          "kind": "company"
+        },
+        {
+          "t": "China Slowdown Impacts LVMH's Key Fashion Unit in Q3 (regional growth from the results presentation)",
+          "pub": "WWD",
+          "date": "Oct 2026",
+          "url": "https://wwd.com/business-news/financial/lvmh-q3-sales-fashion-leather-goods-down-5-percent-1239342984/",
+          "kind": "press"
+        },
+        {
+          "t": "Letter to shareholders, January 2026 (fourth and third quarter 2025)",
+          "pub": "LVMH",
+          "date": "Jan 2026",
+          "url": "https://www.lvmh.com/static/letter-to-shareholders-january-2026/",
+          "kind": "company"
+        }
+      ],
+      "origin": "base",
+      "cur": "EUR"
+    },
+    {
+      "id": "hermes",
+      "name": "Hermès",
+      "ticker": "RMS.PA",
+      "hq": "Paris",
+      "basis": "Constant FX",
+      "series": {
+        "2025Q3": {
+          "g": 9.6,
+          "rev": 3881,
+          "s": 2
+        },
+        "2025Q4": {
+          "g": 9.8,
+          "rev": 4087,
+          "s": 1
+        },
+        "2026Q1": {
+          "g": 5.6,
+          "s": 4
+        },
+        "2026Q2": {
+          "g": 6.7,
+          "s": 4
+        },
+        "2026Q3": {
+          "g": 4.3,
+          "rev": 4096,
+          "s": 0
+        }
+      },
+      "regions": {
+        "2026Q3": {
+          "asia": {
+            "v": 0,
+            "label": "Asia-Pacific excl. Japan",
+            "s": 0
+          },
+          "japan": {
+            "v": 9.6,
+            "label": "Japan",
+            "s": 0
+          },
+          "europe": {
+            "v": 7.2,
+            "label": "Total Europe",
+            "note": "France +3.6%, rest of Europe +9.5%",
+            "s": 0
+          },
+          "americas": {
+            "v": 8.8,
+            "label": "Americas",
+            "s": 0
+          },
+          "me": {
+            "v": -4.5,
+            "label": "Other (Middle East)",
+            "s": 0
+          }
+        },
+        "2026Q2": {
+          "asia": {
+            "v": 2.5,
+            "label": "Asia-Pacific excl. Japan",
+            "s": 4
+          },
+          "japan": {
+            "v": 12.3,
+            "label": "Japan",
+            "s": 4
+          },
+          "americas": {
+            "v": 13.7,
+            "label": "Americas",
+            "s": 4
+          },
+          "me": {
+            "v": -2.4,
+            "label": "Other (Middle East)",
+            "s": 4
+          }
+        }
+      },
+      "segments": {
+        "2026Q3": [
+          {
+            "name": "Leather Goods and Saddlery",
+            "g": 10.8,
+            "rev": 1912
+          },
+          {
+            "name": "Ready-to-wear and Accessories",
+            "g": -2,
+            "rev": 1141
+          },
+          {
+            "name": "Silk and Textiles",
+            "g": 1.4,
+            "rev": 214
+          },
+          {
+            "name": "Other Hermès sectors",
+            "g": -1.1,
+            "rev": 486
+          },
+          {
+            "name": "Perfume and Beauty",
+            "g": 7.5,
+            "rev": 128
+          },
+          {
+            "name": "Watches",
+            "g": -6,
+            "rev": 125
+          },
+          {
+            "name": "Other products",
+            "g": 10.5,
+            "rev": 92
+          }
+        ]
+      },
+      "china": "Asia excluding Japan was flat in the third quarter. Hermès describes Greater China as stable over the nine months in a more difficult context, with a solid performance in Korea.",
+      "guidance": {
+        "kind": "qualitative",
+        "date": "22 Oct 2026",
+        "text": "For the medium term, Hermès confirms an ambitious goal for revenue growth at constant exchange rates. No number is attached.",
+        "evidence": "Nine-month growth of 5.5% at constant exchange rates.",
+        "read": "Nothing to test against."
+      },
+      "sources": [
+        {
+          "t": "Quarterly information report as of the end of September 2026",
+          "pub": "Hermès International, regulatory release",
+          "date": "22 Oct 2026",
+          "url": "https://mfn.se/one/a/hermes/hermes-international-third-quarter-2026-revenue-767f0a7b",
+          "kind": "company"
+        },
+        {
+          "t": "2025 full-year results",
+          "pub": "Hermès International, regulatory release",
+          "date": "12 Feb 2026",
+          "url": "https://live.euronext.com/it/node/12862215",
+          "kind": "company"
+        },
+        {
+          "t": "Third quarter 2025 revenue",
+          "pub": "Hermès International, regulatory release",
+          "date": "22 Oct 2025",
+          "url": "https://www.mfn.se/one/a/hermes/hermes-international-third-quarter-2025-revenue-b22889db",
+          "kind": "company"
+        },
+        {
+          "t": "2026 half-year results (first quarter +6%, second quarter +7%)",
+          "pub": "Hermès International, regulatory release",
+          "date": "29 Jul 2026",
+          "url": "https://mfn.se/one/a/hermes/hermes-international-2026-half-year-results-be9f20c4.iframe",
+          "kind": "company"
+        },
+        {
+          "t": "Hermès: H1 2026 revenue reaches €8.2 billion (quarterly growth to one decimal, by region)",
+          "pub": "Pulse 2.0",
+          "date": "29 Jul 2026",
+          "url": "https://pulse2.com/hermes-h1-2026-revenue-reaches-e8-2-billion-as-operating-margin-holds-at-41/",
+          "kind": "press"
+        }
+      ],
+      "origin": "base",
+      "cur": "EUR"
+    },
+    {
+      "id": "kering",
+      "name": "Kering",
+      "ticker": "KER.PA",
+      "hq": "Paris",
+      "basis": "Comparable",
+      "series": {
+        "2025Q3": {
+          "g": -5,
+          "rev": 3415,
+          "s": 3
+        },
+        "2025Q4": {
+          "g": -3,
+          "rev": 3905,
+          "s": 2
+        },
+        "2026Q1": {
+          "g": 0,
+          "rev": 3568,
+          "s": 5
+        },
+        "2026Q2": {
+          "g": 2,
+          "rev": 3652,
+          "s": 1
+        },
+        "2026Q3": {
+          "g": -1,
+          "rev": 3345,
+          "s": 0
+        }
+      },
+      "regions": {
+        "2026Q3": {
+          "asia": {
+            "v": -5,
+            "label": "Asia Pacific",
+            "s": 4
+          },
+          "japan": {
+            "v": 4,
+            "label": "Japan",
+            "s": 4
+          },
+          "europe": {
+            "v": -2,
+            "label": "Western Europe",
+            "s": 4
+          },
+          "americas": {
+            "v": 2,
+            "label": "North America",
+            "s": 4
+          }
+        }
+      },
+      "segments": {
+        "2026Q3": [
+          {
+            "name": "Kering Fashion & Leather Goods",
+            "g": -3,
+            "rev": 2743
+          },
+          {
+            "name": "of which Gucci",
+            "g": -6,
+            "rev": 1291
+          },
+          {
+            "name": "Kering Jewelry",
+            "g": 11,
+            "rev": 239
+          },
+          {
+            "name": "Kering Eyewear",
+            "g": 4,
+            "rev": 373
+          },
+          {
+            "name": "Corporate & Other",
+            "g": -5,
+            "rev": 27
+          }
+        ]
+      },
+      "china": "Lower store traffic weighed on Asia Pacific, particularly Mainland China, and on Japan for Gucci. Gucci's own retail sales fell 9% on a comparable basis.",
+      "guidance": {
+        "kind": "testable",
+        "date": "10 Feb 2026",
+        "text": "Kering set a 2026 objective to return to growth and improve margins. In October it confirmed the objective of improving its recurring operating margin.",
+        "evidence": "Nine-month revenue is flat on a comparable basis (Q1 0%, Q2 +2%, Q3 −1%). First-half recurring operating margin was 12.8%, up 40 basis points.",
+        "read": "Margin on track at the half year. Growth has yet to show over nine months."
+      },
+      "sources": [
+        {
+          "t": "Revenue for the third quarter of 2026",
+          "pub": "Kering press release (GlobeNewswire)",
+          "date": "22 Oct 2026",
+          "url": "https://capital.com/en-gb/news/kering-revenue-for-the-third-quarter-of-2026",
+          "kind": "company"
+        },
+        {
+          "t": "2026 first-half results",
+          "pub": "Kering, regulatory release",
+          "date": "28 Jul 2026",
+          "url": "https://mfn.se/all/a/kering/kering-2026-first-half-results-back-to-growth-performance-improvement-and-strategy-execution-on-track-be4c7c4c",
+          "kind": "company"
+        },
+        {
+          "t": "2025 results",
+          "pub": "Kering press release",
+          "date": "10 Feb 2026",
+          "url": "https://www.nasdaq.com/press-release/kering-2025-results-sequential-improvement-unlocking-next-phase-sustainable",
+          "kind": "company"
+        },
+        {
+          "t": "2025 third-quarter revenue",
+          "pub": "Kering, regulatory release",
+          "date": "22 Oct 2025",
+          "url": "https://live.euronext.com/en/products/equities/company-news/2025-10-22-kering-press-release-2025-third-quarter-revenue",
+          "kind": "company"
+        },
+        {
+          "t": "Kering revenue holds steady in Q3 (regional growth from the results presentation)",
+          "pub": "The Impression",
+          "date": "Oct 2026",
+          "url": "https://theimpression.com/?p=12070551",
+          "kind": "press"
+        },
+        {
+          "t": "Kering reports stable revenue for the first quarter of 2026",
+          "pub": "MarketScreener",
+          "date": "Apr 2026",
+          "url": "https://www.marketscreener.com/news/kering-reports-stable-revenue-for-the-first-quarter-of-2026-ce7e50dfdc8bf722",
+          "kind": "press"
+        }
+      ],
+      "origin": "base",
+      "cur": "EUR"
+    },
+    {
+      "id": "richemont",
+      "name": "Richemont",
+      "ticker": "CFR.SW",
+      "hq": "Geneva",
+      "basis": "Constant FX",
+      "fiscal": "Financial year ends 31 March. Calendar Q3 2026 is Richemont's Q2 FY27.",
+      "series": {
+        "2025Q3": {
+          "g": 14,
+          "label": "Q2 FY26",
+          "s": 3
+        },
+        "2025Q4": {
+          "g": 11,
+          "label": "Q3 FY26",
+          "s": 1
+        },
+        "2026Q1": {
+          "g": 13,
+          "label": "Q4 FY26",
+          "s": 2
+        },
+        "2026Q2": {
+          "g": 20,
+          "rev": 6329,
+          "label": "Q1 FY27",
+          "s": 0
+        },
+        "2026Q3": {
+          "g": 13,
+          "rev": 5953,
+          "label": "Q2 FY27",
+          "s": 0
+        }
+      },
+      "regions": {
+        "2026Q3": {
+          "asia": {
+            "v": 10,
+            "label": "Asia Pacific",
+            "s": 0
+          },
+          "japan": {
+            "v": 23,
+            "label": "Japan",
+            "s": 0
+          },
+          "europe": {
+            "v": 15,
+            "label": "Europe",
+            "s": 0
+          },
+          "americas": {
+            "v": 19,
+            "label": "Americas",
+            "s": 0
+          },
+          "me": {
+            "v": -7,
+            "label": "Middle East & Africa",
+            "s": 0
+          }
+        },
+        "2026Q2": {
+          "asia": {
+            "v": 21,
+            "label": "Asia Pacific",
+            "s": 0
+          },
+          "japan": {
+            "v": 36,
+            "label": "Japan",
+            "s": 0
+          },
+          "europe": {
+            "v": 11,
+            "label": "Europe",
+            "s": 0
+          },
+          "americas": {
+            "v": 27,
+            "label": "Americas",
+            "s": 0
+          },
+          "me": {
+            "v": 3,
+            "label": "Middle East & Africa",
+            "s": 0
+          }
+        }
+      },
+      "segments": {
+        "2026Q3": [
+          {
+            "name": "Jewellery Maisons",
+            "g": 14,
+            "rev": 4414
+          },
+          {
+            "name": "Specialist Watchmakers",
+            "g": 12,
+            "rev": 833
+          },
+          {
+            "name": "Other",
+            "g": 9,
+            "rev": 706
+          }
+        ]
+      },
+      "china": "Sales in China, Hong Kong and Macau combined grew 7% in the first half, with a modest increase in the second quarter despite persistent softness in Mainland China.",
+      "guidance": {
+        "kind": "none",
+        "date": "13 Nov 2026",
+        "text": "No guidance. The Chairman expects the macroeconomic and geopolitical environment to remain volatile.",
+        "evidence": "First-half sales up 17% at constant rates.",
+        "read": "Nothing to test against."
+      },
+      "sources": [
+        {
+          "t": "FY27 interim results announcement, six months ended 30 September 2026",
+          "pub": "Richemont",
+          "date": "13 Nov 2026",
+          "url": "https://www.richemont.com/media/ztpd2qqu/ad-hoc-announcement-pursuant-to-art-53-lr-fy27-interim-results-en.pdf",
+          "kind": "company"
+        },
+        {
+          "t": "Third-quarter sales, quarter ended 31 December 2025",
+          "pub": "Richemont",
+          "date": "15 Jan 2026",
+          "url": "https://www.richemont.com/news-media/press-releases-news/richemont-maintained-strong-momentum-with-sales-up-11-at-constant-rates-for-its-third-quarter-ended-31-december-2025/",
+          "kind": "company"
+        },
+        {
+          "t": "Results for the year ended 31 March 2026",
+          "pub": "Richemont",
+          "date": "22 May 2026",
+          "url": "https://www.richemont.com/news-media/press-releases-news/richemont-delivers-strong-sales-growth-and-solid-results-for-the-year-ended-31-march-2026/",
+          "kind": "company"
+        },
+        {
+          "t": "Results for the six months ended 30 September 2025",
+          "pub": "Richemont",
+          "date": "14 Nov 2025",
+          "url": "https://www.richemont.com/news-media/press-releases-news/richemont-delivers-solid-results-for-the-six-month-period-ended-30-september-2025-with-strong-sales-momentum-in-q2/",
+          "kind": "company"
+        }
+      ],
+      "origin": "base",
+      "cur": "EUR"
+    },
+    {
+      "id": "moncler",
+      "name": "Moncler",
+      "ticker": "MONC.MI",
+      "hq": "Milan",
+      "basis": "Constant FX",
+      "scope": "Regions are for the Moncler brand, about 83% of third-quarter group revenue.",
+      "series": {
+        "2025Q3": {
+          "g": -1,
+          "rev": 615.6,
+          "s": 3
+        },
+        "2025Q4": {
+          "g": 7,
+          "rev": 1290.8,
+          "s": 2
+        },
+        "2026Q1": {
+          "g": 12,
+          "rev": 880.6,
+          "s": 4
+        },
+        "2026Q2": {
+          "g": 5,
+          "rev": 409.3,
+          "s": 1
+        },
+        "2026Q3": {
+          "g": 0,
+          "rev": 605.5,
+          "s": 0
+        }
+      },
+      "regions": {
+        "2026Q3": {
+          "asia": {
+            "v": 5,
+            "label": "Asia (APAC, Japan, Korea)",
+            "note": "Includes Japan and Korea",
+            "s": 0
+          },
+          "europe": {
+            "v": -8,
+            "label": "EMEA",
+            "note": "EMEA, includes the Middle East",
+            "s": 0
+          },
+          "americas": {
+            "v": 2,
+            "label": "Americas",
+            "s": 0
+          }
+        },
+        "2026Q2": {
+          "asia": {
+            "v": 12,
+            "label": "Asia (APAC, Japan, Korea)",
+            "note": "Includes Japan and Korea",
+            "s": 1
+          },
+          "europe": {
+            "v": -8,
+            "label": "EMEA",
+            "note": "EMEA, includes the Middle East",
+            "s": 1
+          },
+          "americas": {
+            "v": 4,
+            "label": "Americas",
+            "s": 1
+          }
+        }
+      },
+      "segments": {
+        "2026Q3": [
+          {
+            "name": "Moncler",
+            "g": -1,
+            "rev": 499.6
+          },
+          {
+            "name": "Stone Island",
+            "g": 5,
+            "rev": 105.9
+          }
+        ]
+      },
+      "china": "Asia grew 5% in the third quarter with APAC, Japan and Korea all positive. EMEA fell 8% on softer local demand and subdued tourist flows, particularly from Asia. In the second quarter China and Korea outperformed the region.",
+      "guidance": {
+        "kind": "none",
+        "date": "21 Oct 2026",
+        "text": "No guidance in the release.",
+        "evidence": "Nine-month revenue up 6% at constant exchange rates.",
+        "read": "Nothing to test against."
+      },
+      "sources": [
+        {
+          "t": "Interim management statement, first nine months of 2026",
+          "pub": "Moncler Group press release",
+          "date": "21 Oct 2026",
+          "url": "https://www.monclergroup.com/v3/assets/blt61bda6b71f29a239/blt29cee49a7fab548e/6ad8de7aebc4638f4deb349e/Moncler-Group-Press-Release-9M-2026.pdf",
+          "kind": "company"
+        },
+        {
+          "t": "First-half 2026 results",
+          "pub": "Moncler Group press release",
+          "date": "22 Jul 2026",
+          "url": "https://www.monclergroup.com/v3/assets/blt61bda6b71f29a239/blt6651b04f18f67307/6a60e7584e8afd132530f0c6/Moncler-Group-Press-Release-H1-2026.pdf",
+          "kind": "company"
+        },
+        {
+          "t": "2025 financial results",
+          "pub": "Moncler Group press release",
+          "date": "19 Feb 2026",
+          "url": "https://www.emarketstorage.it/sites/default/files/comunicati/2026-02/20260219_177665.pdf",
+          "kind": "company"
+        },
+        {
+          "t": "Interim management statement, first nine months of 2025",
+          "pub": "Moncler Group press release",
+          "date": "28 Oct 2025",
+          "url": "https://www.monclergroup.com/v3/assets/blt61bda6b71f29a239/bltf918207c92bab566/690b64c396cc598759a0dd60/Moncler-Group-Press-Release-9M-2025.pdf",
+          "kind": "company"
+        },
+        {
+          "t": "Interim management statement, first quarter of 2026",
+          "pub": "Moncler Group filing",
+          "date": "21 Apr 2026",
+          "url": "https://financialreports.eu/filings/moncler/interim-quarterly-report/2026/34818561/",
+          "kind": "company"
+        }
+      ],
+      "origin": "base",
+      "cur": "EUR"
+    },
+    {
+      "id": "prada",
+      "name": "Prada Group",
+      "ticker": "1913.HK",
+      "hq": "Milan",
+      "basis": "Organic",
+      "scope": "Series and regions are retail sales on an organic basis (constant currency, excluding Versace). Retail is 87% of net revenues. Net revenues grew 1% organic in the third quarter.",
+      "series": {
+        "2025Q3": {
+          "g": 7.6,
+          "s": 5
+        },
+        "2025Q4": {
+          "g": 5.6,
+          "s": 4
+        },
+        "2026Q1": {
+          "g": 1,
+          "s": 3
+        },
+        "2026Q2": {
+          "g": 5,
+          "s": 6
+        },
+        "2026Q3": {
+          "g": 0,
+          "s": 1
+        }
+      },
+      "regions": {
+        "2026Q3": {
+          "asia": {
+            "v": 0,
+            "label": "Asia Pacific",
+            "s": 1
+          },
+          "japan": {
+            "v": 0,
+            "label": "Japan",
+            "s": 1
+          },
+          "europe": {
+            "v": -3,
+            "label": "Europe",
+            "s": 1
+          },
+          "americas": {
+            "v": 5,
+            "label": "Americas",
+            "s": 1
+          },
+          "me": {
+            "v": -18,
+            "label": "Middle East",
+            "s": 1
+          }
+        },
+        "2026Q2": {
+          "asia": {
+            "v": 8,
+            "label": "Asia Pacific",
+            "s": 6
+          },
+          "japan": {
+            "v": 8,
+            "label": "Japan",
+            "s": 6
+          },
+          "europe": {
+            "v": -2,
+            "label": "Europe",
+            "s": 6
+          },
+          "americas": {
+            "v": 19,
+            "label": "Americas",
+            "s": 6
+          },
+          "me": {
+            "v": -26,
+            "label": "Middle East",
+            "s": 6
+          }
+        }
+      },
+      "segments": {
+        "2026Q3": [
+          {
+            "name": "Prada (retail sales)",
+            "g": 1
+          },
+          {
+            "name": "Miu Miu (retail sales)",
+            "g": -3
+          }
+        ]
+      },
+      "china": "Asia Pacific was stable in the third quarter. Subdued traffic in Mainland China was offset by Korea, Hong Kong and Macau.",
+      "guidance": {
+        "kind": "testable",
+        "date": "30 Jul 2026",
+        "text": "Prada Group states an ambition of delivering above-market growth.",
+        "evidence": "Third-quarter net revenues grew 1% organic. The median of the other companies here is {median}.",
+        "read": "In line with this peer set in the third quarter."
+      },
+      "sources": [
+        {
+          "t": "Nine months 2026 revenue",
+          "pub": "Prada Group press release",
+          "date": "22 Oct 2026",
+          "url": "https://www.pradagroup.com/content/dam/pradagroup/documents/investors/9M-2026/Prada-Group-9M26-Press-release.pdf",
+          "kind": "company"
+        },
+        {
+          "t": "Investor relations highlights (third-quarter retail sales by geography)",
+          "pub": "Prada Group",
+          "date": "Oct 2026",
+          "url": "https://www.pradagroup.com/en/investors/investor-relations.html",
+          "kind": "company"
+        },
+        {
+          "t": "First-half 2026 results",
+          "pub": "Prada Group press release",
+          "date": "30 Jul 2026",
+          "url": "https://www.pradagroup.com/content/dam/pradagroup/documents/investors/H1-2026/Prada-Group-H126-Press-release.pdf",
+          "kind": "company"
+        },
+        {
+          "t": "First-quarter 2026 revenue",
+          "pub": "Prada Group press release",
+          "date": "30 Apr 2026",
+          "url": "https://www.pradagroup.com/en/news-media/press-releases-documents/2026/26-04-30-pradagroup-q1-26-revenue.html",
+          "kind": "company"
+        },
+        {
+          "t": "Full-year 2025 results",
+          "pub": "Prada Group press release",
+          "date": "5 Mar 2026",
+          "url": "https://www.pradagroup.com/en/news-media/press-releases-documents/2026/26-03-05-prada-group-2025-fy-results.html",
+          "kind": "company"
+        },
+        {
+          "t": "Nine months 2025 revenue",
+          "pub": "Prada Group press release",
+          "date": "23 Oct 2025",
+          "url": "https://www.pradagroup.com/content/dam/pradagroup/documents/investors/9M-2025/Prada-Group-9M25-PR.pdf",
+          "kind": "company"
+        },
+        {
+          "t": "Investors page (second-quarter retail sales by geography)",
+          "pub": "Prada Group",
+          "date": "Jul 2026",
+          "url": "https://www.pradagroup.com/en/investors",
+          "kind": "company"
+        }
+      ],
+      "origin": "base",
+      "cur": "EUR"
+    }
+  ],
+  "model": {
+    "2025Q3": {
+      "peer": {
+        "n": 6,
+        "median": 4.3,
+        "median_prev": null,
+        "spread": 19,
+        "slowed": 0,
+        "compared": 0,
+        "asia_median": null,
+        "asia_median_prev": null,
+        "asia_lagging": 0,
+        "asia_compared": 0
+      },
+      "companies": {
+        "lvmh": {
+          "growth": 1,
+          "prev": null,
+          "delta": null,
+          "vs_median": -6.6,
+          "two_year_stack": null,
+          "base": null,
+          "next_base": null,
+          "asia": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "No prior quarter",
+            "level": "behind peers",
+            "flags": [],
+            "label": "No prior quarter, behind peers"
+          },
+          "rank": 4
+        },
+        "hermes": {
+          "growth": 9.6,
+          "prev": null,
+          "delta": null,
+          "vs_median": 8.6,
+          "two_year_stack": null,
+          "base": null,
+          "next_base": null,
+          "asia": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "No prior quarter",
+            "level": "ahead of peers",
+            "flags": [],
+            "label": "No prior quarter, ahead of peers"
+          },
+          "rank": 2
+        },
+        "kering": {
+          "growth": -5,
+          "prev": null,
+          "delta": null,
+          "vs_median": -12.6,
+          "two_year_stack": null,
+          "base": null,
+          "next_base": null,
+          "asia": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "No prior quarter",
+            "level": "behind peers",
+            "flags": [],
+            "label": "No prior quarter, behind peers"
+          },
+          "rank": 6
+        },
+        "richemont": {
+          "growth": 14,
+          "prev": null,
+          "delta": null,
+          "vs_median": 13,
+          "two_year_stack": null,
+          "base": null,
+          "next_base": null,
+          "asia": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "No prior quarter",
+            "level": "ahead of peers",
+            "flags": [],
+            "label": "No prior quarter, ahead of peers"
+          },
+          "rank": 1
+        },
+        "moncler": {
+          "growth": -1,
+          "prev": null,
+          "delta": null,
+          "vs_median": -8.6,
+          "two_year_stack": null,
+          "base": null,
+          "next_base": null,
+          "asia": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "No prior quarter",
+            "level": "behind peers",
+            "flags": [],
+            "label": "No prior quarter, behind peers"
+          },
+          "rank": 5
+        },
+        "prada": {
+          "growth": 7.6,
+          "prev": null,
+          "delta": null,
+          "vs_median": 6.6,
+          "two_year_stack": null,
+          "base": null,
+          "next_base": null,
+          "asia": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "No prior quarter",
+            "level": "ahead of peers",
+            "flags": [],
+            "label": "No prior quarter, ahead of peers"
+          },
+          "rank": 3
+        }
+      }
+    },
+    "2025Q4": {
+      "peer": {
+        "n": 6,
+        "median": 6.3,
+        "median_prev": 4.3,
+        "spread": 14,
+        "slowed": 2,
+        "compared": 6,
+        "asia_median": null,
+        "asia_median_prev": null,
+        "asia_lagging": 0,
+        "asia_compared": 0
+      },
+      "companies": {
+        "lvmh": {
+          "growth": 1,
+          "prev": 1,
+          "delta": 0,
+          "vs_median": -6,
+          "two_year_stack": null,
+          "base": null,
+          "next_base": null,
+          "asia": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "Steady",
+            "level": "behind peers",
+            "flags": [],
+            "label": "Steady, behind peers"
+          },
+          "rank": 5
+        },
+        "hermes": {
+          "growth": 9.8,
+          "prev": 9.6,
+          "delta": 0.2,
+          "vs_median": 4.2,
+          "two_year_stack": null,
+          "base": null,
+          "next_base": null,
+          "asia": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "Steady",
+            "level": "ahead of peers",
+            "flags": [],
+            "label": "Steady, ahead of peers"
+          },
+          "rank": 2
+        },
+        "kering": {
+          "growth": -3,
+          "prev": -5,
+          "delta": 2,
+          "vs_median": -10,
+          "two_year_stack": null,
+          "base": null,
+          "next_base": null,
+          "asia": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "Accelerating",
+            "level": "behind peers",
+            "flags": [],
+            "label": "Accelerating, behind peers"
+          },
+          "rank": 6
+        },
+        "richemont": {
+          "growth": 11,
+          "prev": 14,
+          "delta": -3,
+          "vs_median": 5.4,
+          "two_year_stack": null,
+          "base": null,
+          "next_base": null,
+          "asia": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "Slowing",
+            "level": "ahead of peers",
+            "flags": [],
+            "label": "Slowing, ahead of peers"
+          },
+          "rank": 1
+        },
+        "moncler": {
+          "growth": 7,
+          "prev": -1,
+          "delta": 8,
+          "vs_median": 1.4,
+          "two_year_stack": null,
+          "base": null,
+          "next_base": null,
+          "asia": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "Accelerating",
+            "level": "in line with peers",
+            "flags": [],
+            "label": "Accelerating, in line with peers"
+          },
+          "rank": 3
+        },
+        "prada": {
+          "growth": 5.6,
+          "prev": 7.6,
+          "delta": -2.0,
+          "vs_median": -1.4,
+          "two_year_stack": null,
+          "base": null,
+          "next_base": null,
+          "asia": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "Slowing",
+            "level": "in line with peers",
+            "flags": [],
+            "label": "Slowing, in line with peers"
+          },
+          "rank": 4
+        }
+      }
+    },
+    "2026Q1": {
+      "peer": {
+        "n": 6,
+        "median": 3.3,
+        "median_prev": 6.3,
+        "spread": 13,
+        "slowed": 2,
+        "compared": 6,
+        "asia_median": null,
+        "asia_median_prev": null,
+        "asia_lagging": 0,
+        "asia_compared": 0
+      },
+      "companies": {
+        "lvmh": {
+          "growth": 1,
+          "prev": 1,
+          "delta": 0,
+          "vs_median": -4.6,
+          "two_year_stack": null,
+          "base": null,
+          "next_base": null,
+          "asia": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "Steady",
+            "level": "behind peers",
+            "flags": [],
+            "label": "Steady, behind peers"
+          },
+          "rank": 4
+        },
+        "hermes": {
+          "growth": 5.6,
+          "prev": 9.8,
+          "delta": -4.2,
+          "vs_median": 4.6,
+          "two_year_stack": null,
+          "base": null,
+          "next_base": null,
+          "asia": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "Slowing",
+            "level": "ahead of peers",
+            "flags": [],
+            "label": "Slowing, ahead of peers"
+          },
+          "rank": 3
+        },
+        "kering": {
+          "growth": 0,
+          "prev": -3,
+          "delta": 3,
+          "vs_median": -5.6,
+          "two_year_stack": null,
+          "base": null,
+          "next_base": null,
+          "asia": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "Accelerating",
+            "level": "behind peers",
+            "flags": [],
+            "label": "Accelerating, behind peers"
+          },
+          "rank": 6
+        },
+        "richemont": {
+          "growth": 13,
+          "prev": 11,
+          "delta": 2,
+          "vs_median": 12,
+          "two_year_stack": null,
+          "base": null,
+          "next_base": null,
+          "asia": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "Accelerating",
+            "level": "ahead of peers",
+            "flags": [],
+            "label": "Accelerating, ahead of peers"
+          },
+          "rank": 1
+        },
+        "moncler": {
+          "growth": 12,
+          "prev": 7,
+          "delta": 5,
+          "vs_median": 11,
+          "two_year_stack": null,
+          "base": null,
+          "next_base": null,
+          "asia": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "Accelerating",
+            "level": "ahead of peers",
+            "flags": [],
+            "label": "Accelerating, ahead of peers"
+          },
+          "rank": 2
+        },
+        "prada": {
+          "growth": 1,
+          "prev": 5.6,
+          "delta": -4.6,
+          "vs_median": -4.6,
+          "two_year_stack": null,
+          "base": null,
+          "next_base": null,
+          "asia": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "Slowing",
+            "level": "behind peers",
+            "flags": [],
+            "label": "Slowing, behind peers"
+          },
+          "rank": 5
+        }
+      }
+    },
+    "2026Q2": {
+      "peer": {
+        "n": 6,
+        "median": 5.0,
+        "median_prev": 3.3,
+        "spread": 18,
+        "slowed": 1,
+        "compared": 6,
+        "asia_median": 8,
+        "asia_median_prev": null,
+        "asia_lagging": 1,
+        "asia_compared": 5
+      },
+      "companies": {
+        "lvmh": {
+          "growth": 3,
+          "prev": 1,
+          "delta": 2,
+          "vs_median": -2,
+          "two_year_stack": null,
+          "base": null,
+          "next_base": 1,
+          "asia": 4,
+          "asia_gap": 1,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 3,
+            "reported": 4
+          },
+          "region_spread": 14,
+          "driver": null,
+          "signal": {
+            "momentum": "Accelerating",
+            "level": "behind peers",
+            "flags": [],
+            "label": "Accelerating, behind peers"
+          },
+          "rank": 5
+        },
+        "hermes": {
+          "growth": 6.7,
+          "prev": 5.6,
+          "delta": 1.1,
+          "vs_median": 1.7,
+          "two_year_stack": null,
+          "base": null,
+          "next_base": 9.6,
+          "asia": 2.5,
+          "asia_gap": -4.2,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 3,
+            "reported": 4
+          },
+          "region_spread": 16.1,
+          "driver": null,
+          "signal": {
+            "momentum": "Accelerating",
+            "level": "in line with peers",
+            "flags": [
+              "Asia drag"
+            ],
+            "label": "Accelerating, in line with peers"
+          },
+          "rank": 2
+        },
+        "kering": {
+          "growth": 2,
+          "prev": 0,
+          "delta": 2,
+          "vs_median": -3,
+          "two_year_stack": null,
+          "base": null,
+          "next_base": -5,
+          "asia": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "Accelerating",
+            "level": "behind peers",
+            "flags": [],
+            "label": "Accelerating, behind peers"
+          },
+          "rank": 6
+        },
+        "richemont": {
+          "growth": 20,
+          "prev": 13,
+          "delta": 7,
+          "vs_median": 15,
+          "two_year_stack": null,
+          "base": null,
+          "next_base": 14,
+          "asia": 21,
+          "asia_gap": 1,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 5,
+            "reported": 5
+          },
+          "region_spread": 33,
+          "driver": null,
+          "signal": {
+            "momentum": "Accelerating",
+            "level": "ahead of peers",
+            "flags": [],
+            "label": "Accelerating, ahead of peers"
+          },
+          "rank": 1
+        },
+        "moncler": {
+          "growth": 5,
+          "prev": 12,
+          "delta": -7,
+          "vs_median": 0,
+          "two_year_stack": null,
+          "base": null,
+          "next_base": -1,
+          "asia": 12,
+          "asia_gap": 7,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 2,
+            "reported": 3
+          },
+          "region_spread": 20,
+          "driver": null,
+          "signal": {
+            "momentum": "Slowing",
+            "level": "in line with peers",
+            "flags": [
+              "Asia lift"
+            ],
+            "label": "Slowing, in line with peers"
+          },
+          "rank": 3
+        },
+        "prada": {
+          "growth": 5,
+          "prev": 1,
+          "delta": 4,
+          "vs_median": 0,
+          "two_year_stack": null,
+          "base": null,
+          "next_base": 7.6,
+          "asia": 8,
+          "asia_gap": 3,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 3,
+            "reported": 5
+          },
+          "region_spread": 45,
+          "driver": null,
+          "signal": {
+            "momentum": "Accelerating",
+            "level": "in line with peers",
+            "flags": [
+              "Asia lift"
+            ],
+            "label": "Accelerating, in line with peers"
+          },
+          "rank": 4
+        }
+      }
+    },
+    "2026Q3": {
+      "peer": {
+        "n": 6,
+        "median": 0.5,
+        "median_prev": 5.0,
+        "spread": 14,
+        "slowed": 6,
+        "compared": 6,
+        "asia_median": 0.0,
+        "asia_median_prev": 8,
+        "asia_lagging": 4,
+        "asia_compared": 6
+      },
+      "companies": {
+        "lvmh": {
+          "growth": 1,
+          "prev": 3,
+          "delta": -2,
+          "vs_median": 1,
+          "two_year_stack": 2.0,
+          "base": 1,
+          "next_base": 1,
+          "asia": -5,
+          "asia_gap": -6,
+          "asia_delta": -9,
+          "breadth": {
+            "growing": 3,
+            "reported": 4
+          },
+          "region_spread": 11,
+          "driver": {
+            "key": "asia",
+            "name": "Asia ex-Japan",
+            "change": -9
+          },
+          "signal": {
+            "momentum": "Slowing",
+            "level": "in line with peers",
+            "flags": [
+              "Asia drag"
+            ],
+            "label": "Slowing, in line with peers"
+          },
+          "rank": 3
+        },
+        "hermes": {
+          "growth": 4.3,
+          "prev": 6.7,
+          "delta": -2.4,
+          "vs_median": 4.3,
+          "two_year_stack": 14.3,
+          "base": 9.6,
+          "next_base": 9.8,
+          "asia": 0,
+          "asia_gap": -4.3,
+          "asia_delta": -2.5,
+          "breadth": {
+            "growing": 3,
+            "reported": 5
+          },
+          "region_spread": 14.1,
+          "driver": {
+            "key": "americas",
+            "name": "Americas",
+            "change": -4.9
+          },
+          "signal": {
+            "momentum": "Slowing",
+            "level": "ahead of peers",
+            "flags": [
+              "Asia drag"
+            ],
+            "label": "Slowing, ahead of peers"
+          },
+          "rank": 2
+        },
+        "kering": {
+          "growth": -1,
+          "prev": 2,
+          "delta": -3,
+          "vs_median": -2,
+          "two_year_stack": -5.9,
+          "base": -5,
+          "next_base": -3,
+          "asia": -5,
+          "asia_gap": -4,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 2,
+            "reported": 4
+          },
+          "region_spread": 9,
+          "driver": null,
+          "signal": {
+            "momentum": "Slowing",
+            "level": "behind peers",
+            "flags": [
+              "Asia drag",
+              "Tougher base next quarter"
+            ],
+            "label": "Slowing, behind peers"
+          },
+          "rank": 6
+        },
+        "richemont": {
+          "growth": 13,
+          "prev": 20,
+          "delta": -7,
+          "vs_median": 13,
+          "two_year_stack": 28.8,
+          "base": 14,
+          "next_base": 11,
+          "asia": 10,
+          "asia_gap": -3,
+          "asia_delta": -11,
+          "breadth": {
+            "growing": 4,
+            "reported": 5
+          },
+          "region_spread": 30,
+          "driver": {
+            "key": "japan",
+            "name": "Japan",
+            "change": -13
+          },
+          "signal": {
+            "momentum": "Slowing",
+            "level": "ahead of peers",
+            "flags": [
+              "Asia drag",
+              "Easier base next quarter"
+            ],
+            "label": "Slowing, ahead of peers"
+          },
+          "rank": 1
+        },
+        "moncler": {
+          "growth": 0,
+          "prev": 5,
+          "delta": -5,
+          "vs_median": -1,
+          "two_year_stack": -1.0,
+          "base": -1,
+          "next_base": 7,
+          "asia": 5,
+          "asia_gap": 5,
+          "asia_delta": -7,
+          "breadth": {
+            "growing": 2,
+            "reported": 3
+          },
+          "region_spread": 13,
+          "driver": {
+            "key": "asia",
+            "name": "Asia ex-Japan",
+            "change": -7
+          },
+          "signal": {
+            "momentum": "Slowing",
+            "level": "in line with peers",
+            "flags": [
+              "Asia lift",
+              "Tougher base next quarter"
+            ],
+            "label": "Slowing, in line with peers"
+          },
+          "rank": 4
+        },
+        "prada": {
+          "growth": 0,
+          "prev": 5,
+          "delta": -5,
+          "vs_median": -1,
+          "two_year_stack": 7.6,
+          "base": 7.6,
+          "next_base": 5.6,
+          "asia": 0,
+          "asia_gap": 0,
+          "asia_delta": -8,
+          "breadth": {
+            "growing": 1,
+            "reported": 5
+          },
+          "region_spread": 23,
+          "driver": {
+            "key": "americas",
+            "name": "Americas",
+            "change": -14
+          },
+          "signal": {
+            "momentum": "Slowing",
+            "level": "in line with peers",
+            "flags": [
+              "Narrow growth",
+              "Easier base next quarter"
+            ],
+            "label": "Slowing, in line with peers"
+          },
+          "rank": 5
+        }
+      }
+    }
+  },
+  "notes": {
+    "2025Q3": {
+      "peer": {
+        "note": "",
+        "by": "rules",
+        "at": "2026-11-15T13:41:59Z"
+      },
+      "companies": {
+        "lvmh": {
+          "note": "Growth was +1% in Q3 2025 (organic). That is 6.6 pts behind the median of the other companies.",
+          "themes": [],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-15T13:41:59Z"
+        },
+        "hermes": {
+          "note": "Growth was +9.6% in Q3 2025 (at constant exchange rates). That is 8.6 pts ahead of the median of the other companies.",
+          "themes": [],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-15T13:41:59Z"
+        },
+        "kering": {
+          "note": "Growth was −5% in Q3 2025 (comparable). That is 12.6 pts behind the median of the other companies.",
+          "themes": [],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-15T13:41:59Z"
+        },
+        "richemont": {
+          "note": "Growth was +14% in Q3 2025 (at constant exchange rates). That is 13 pts ahead of the median of the other companies.",
+          "themes": [],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-15T13:41:59Z"
+        },
+        "moncler": {
+          "note": "Growth was −1% in Q3 2025 (at constant exchange rates). That is 8.6 pts behind the median of the other companies.",
+          "themes": [],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-15T13:41:59Z"
+        },
+        "prada": {
+          "note": "Growth was +7.6% in Q3 2025 (organic). That is 6.6 pts ahead of the median of the other companies.",
+          "themes": [],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-15T13:41:59Z"
+        }
+      }
+    },
+    "2025Q4": {
+      "peer": {
+        "note": "2 of 6 companies grew more slowly in Q4 2025 than in Q3 2025. Median growth went from +4.3% to +6.3%.",
+        "by": "rules",
+        "at": "2026-11-15T13:41:59Z"
+      },
+      "companies": {
+        "lvmh": {
+          "note": "Growth was +1% in Q4 2025 (organic), unchanged from Q3 2025. That is 6 pts behind the median of the other companies.",
+          "themes": [],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-15T13:41:59Z"
+        },
+        "hermes": {
+          "note": "Growth was +9.8% in Q4 2025 (at constant exchange rates), up 0.2 pts from +9.6% in Q3 2025. That is 4.2 pts ahead of the median of the other companies.",
+          "themes": [],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-15T13:41:59Z"
+        },
+        "kering": {
+          "note": "Growth was −3% in Q4 2025 (comparable), up 2 pts from −5% in Q3 2025. That is 10 pts behind the median of the other companies.",
+          "themes": [],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-15T13:41:59Z"
+        },
+        "richemont": {
+          "note": "Growth was +11% in Q4 2025 (at constant exchange rates), down 3 pts from +14% in Q3 2025. That is 5.4 pts ahead of the median of the other companies.",
+          "themes": [],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-15T13:41:59Z"
+        },
+        "moncler": {
+          "note": "Growth was +7% in Q4 2025 (at constant exchange rates), up 8 pts from −1% in Q3 2025. That is 1.4 pts ahead of the median of the other companies.",
+          "themes": [],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-15T13:41:59Z"
+        },
+        "prada": {
+          "note": "Growth was +5.6% in Q4 2025 (organic), down 2 pts from +7.6% in Q3 2025. That is 1.4 pts behind the median of the other companies.",
+          "themes": [],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-15T13:41:59Z"
+        }
+      }
+    },
+    "2026Q1": {
+      "peer": {
+        "note": "2 of 6 companies grew more slowly in Q1 2026 than in Q4 2025. Median growth went from +6.3% to +3.3%.",
+        "by": "rules",
+        "at": "2026-11-15T13:41:59Z"
+      },
+      "companies": {
+        "lvmh": {
+          "note": "Growth was +1% in Q1 2026 (organic), unchanged from Q4 2025. That is 4.6 pts behind the median of the other companies.",
+          "themes": [],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-15T13:41:59Z"
+        },
+        "hermes": {
+          "note": "Growth was +5.6% in Q1 2026 (at constant exchange rates), down 4.2 pts from +9.8% in Q4 2025. That is 4.6 pts ahead of the median of the other companies.",
+          "themes": [],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-15T13:41:59Z"
+        },
+        "kering": {
+          "note": "Growth was 0% in Q1 2026 (comparable), up 3 pts from −3% in Q4 2025. That is 5.6 pts behind the median of the other companies.",
+          "themes": [],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-15T13:41:59Z"
+        },
+        "richemont": {
+          "note": "Growth was +13% in Q1 2026 (at constant exchange rates), up 2 pts from +11% in Q4 2025. That is 12 pts ahead of the median of the other companies.",
+          "themes": [],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-15T13:41:59Z"
+        },
+        "moncler": {
+          "note": "Growth was +12% in Q1 2026 (at constant exchange rates), up 5 pts from +7% in Q4 2025. That is 11 pts ahead of the median of the other companies.",
+          "themes": [],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-15T13:41:59Z"
+        },
+        "prada": {
+          "note": "Growth was +1% in Q1 2026 (organic), down 4.6 pts from +5.6% in Q4 2025. That is 4.6 pts behind the median of the other companies.",
+          "themes": [],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-15T13:41:59Z"
+        }
+      }
+    },
+    "2026Q2": {
+      "peer": {
+        "note": "1 of 6 companies grew more slowly in Q2 2026 than in Q1 2026. Median growth went from +3.3% to +5%. Asia grew more slowly than the group at 1 of 5 companies.",
+        "by": "rules",
+        "at": "2026-11-15T13:41:59Z"
+      },
+      "companies": {
+        "lvmh": {
+          "note": "Growth was +3% in Q2 2026 (organic), up 2 pts from +1% in Q1 2026. Japan led the regions at +14%. Europe was weakest at 0%. That is 2 pts behind the median of the other companies.",
+          "themes": [],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-15T13:41:59Z"
+        },
+        "hermes": {
+          "note": "Growth was +6.7% in Q2 2026 (at constant exchange rates), up 1.1 pts from +5.6% in Q1 2026. Americas led the regions at +13.7%. Other (Middle East) was weakest at −2.4%. That is 1.7 pts ahead of the median of the other companies.",
+          "themes": [
+            "Asia drag"
+          ],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-15T13:41:59Z"
+        },
+        "kering": {
+          "note": "Growth was +2% in Q2 2026 (comparable), up 2 pts from 0% in Q1 2026. That is 3 pts behind the median of the other companies.",
+          "themes": [],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-15T13:41:59Z"
+        },
+        "richemont": {
+          "note": "Growth was +20% in Q2 2026 (at constant exchange rates), up 7 pts from +13% in Q1 2026. Japan led the regions at +36%. Middle East & Africa was weakest at +3%. That is 15 pts ahead of the median of the other companies.",
+          "themes": [],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-15T13:41:59Z"
+        },
+        "moncler": {
+          "note": "Growth was +5% in Q2 2026 (at constant exchange rates), down 7 pts from +12% in Q1 2026. Asia (APAC, Japan, Korea) led the regions at +12%. EMEA was weakest at −8%. That is level with the median of the other companies.",
+          "themes": [
+            "Asia lift"
+          ],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-15T13:41:59Z"
+        },
+        "prada": {
+          "note": "Growth was +5% in Q2 2026 (organic), up 4 pts from +1% in Q1 2026. Americas led the regions at +19%. Middle East was weakest at −26%. That is level with the median of the other companies.",
+          "themes": [
+            "Asia lift"
+          ],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-15T13:41:59Z"
+        }
+      }
+    },
+    "2026Q3": {
+      "peer": {
+        "note": "6 of 6 companies grew more slowly in Q3 2026 than in Q2 2026. Median growth went from +5% to +0.5%. In Asia excluding Japan the median went from +8% to 0%. Asia grew more slowly than the group at 4 of 6 companies.",
+        "by": "rules",
+        "at": "2026-11-15T13:41:59Z"
+      },
+      "companies": {
+        "lvmh": {
+          "note": "Growth was +1% in Q3 2026 (organic), down 2 pts from +3% in Q2 2026. Japan led the regions at +6%. Asia excl. Japan was weakest at −5%. Asia excl. Japan moved from +4% to −5%, a swing of −9 pts. Compounded with the same quarter a year earlier, growth is +2% over two years. That is 1 pt ahead of the median of the other companies.",
+          "themes": [
+            "Asia drag"
+          ],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-15T13:41:59Z"
+        },
+        "hermes": {
+          "note": "Growth was +4.3% in Q3 2026 (at constant exchange rates), down 2.4 pts from +6.7% in Q2 2026. Japan led the regions at +9.6%. Other (Middle East) was weakest at −4.5%. Asia-Pacific excl. Japan moved from +2.5% to 0%, a swing of −2.5 pts. Compounded with the same quarter a year earlier, growth is +14.3% over two years. That is 4.3 pts ahead of the median of the other companies.",
+          "themes": [
+            "Asia drag"
+          ],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-15T13:41:59Z"
+        },
+        "kering": {
+          "note": "Growth was −1% in Q3 2026 (comparable), down 3 pts from +2% in Q2 2026. Japan led the regions at +4%. Asia Pacific was weakest at −5%. Compounded with the same quarter a year earlier, growth is −5.9% over two years. That is 2 pts behind the median of the other companies.",
+          "themes": [
+            "Asia drag",
+            "Tougher base next quarter"
+          ],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-15T13:41:59Z"
+        },
+        "richemont": {
+          "note": "Growth was +13% in Q3 2026 (at constant exchange rates), down 7 pts from +20% in Q2 2026. Japan led the regions at +23%. Middle East & Africa was weakest at −7%. Asia Pacific moved from +21% to +10%, a swing of −11 pts. Compounded with the same quarter a year earlier, growth is +28.8% over two years. That is 13 pts ahead of the median of the other companies.",
+          "themes": [
+            "Asia drag",
+            "Easier base next quarter"
+          ],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-15T13:41:59Z"
+        },
+        "moncler": {
+          "note": "Growth was 0% in Q3 2026 (at constant exchange rates), down 5 pts from +5% in Q2 2026. Asia (APAC, Japan, Korea) led the regions at +5%. EMEA was weakest at −8%. Asia (APAC, Japan, Korea) moved from +12% to +5%, a swing of −7 pts. Compounded with the same quarter a year earlier, growth is −1% over two years. That is 1 pt behind the median of the other companies.",
+          "themes": [
+            "Asia lift",
+            "Tougher base next quarter"
+          ],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-15T13:41:59Z"
+        },
+        "prada": {
+          "note": "Growth was 0% in Q3 2026 (organic), down 5 pts from +5% in Q2 2026. Americas led the regions at +5%. Middle East was weakest at −18%. Asia Pacific moved from +8% to 0%, a swing of −8 pts. Compounded with the same quarter a year earlier, growth is +7.6% over two years. That is 1 pt behind the median of the other companies.",
+          "themes": [
+            "Narrow growth",
+            "Easier base next quarter"
+          ],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-15T13:41:59Z"
+        }
+      }
+    }
+  },
+  "meta": {
+    "built_at": "2026-11-15T13:41:59Z",
+    "runs": [
+      {
+        "at": "2026-11-15T09:00:00Z",
+        "command": "seed",
+        "results": [
+          {
+            "company": "Six companies",
+            "quarter": "2026Q3",
+            "status": "entered and checked by hand against the sources"
+          }
+        ]
+      }
+    ],
+    "thresholds": {
+      "momentum_pts": 1.0,
+      "level_pts": 2.0,
+      "asia_gap_pts": 3.0,
+      "base_shift_pts": 2.0
+    }
+  }
+}

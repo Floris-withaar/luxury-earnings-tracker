@@ -1,0 +1,874 @@
+{
+  "2025Q3": {
+    "peer": {
+      "n": 6,
+      "median": 4.3,
+      "median_prev": null,
+      "spread": 19,
+      "slowed": 0,
+      "compared": 0,
+      "asia_median": null,
+      "asia_median_prev": null,
+      "asia_lagging": 0,
+      "asia_compared": 0
+    },
+    "companies": {
+      "lvmh": {
+        "growth": 1,
+        "prev": null,
+        "delta": null,
+        "vs_median": -6.6,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "No prior quarter",
+          "level": "behind peers",
+          "flags": [],
+          "label": "No prior quarter, behind peers"
+        },
+        "rank": 4
+      },
+      "hermes": {
+        "growth": 9.6,
+        "prev": null,
+        "delta": null,
+        "vs_median": 8.6,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "No prior quarter",
+          "level": "ahead of peers",
+          "flags": [],
+          "label": "No prior quarter, ahead of peers"
+        },
+        "rank": 2
+      },
+      "kering": {
+        "growth": -5,
+        "prev": null,
+        "delta": null,
+        "vs_median": -12.6,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "No prior quarter",
+          "level": "behind peers",
+          "flags": [],
+          "label": "No prior quarter, behind peers"
+        },
+        "rank": 6
+      },
+      "richemont": {
+        "growth": 14,
+        "prev": null,
+        "delta": null,
+        "vs_median": 13,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "No prior quarter",
+          "level": "ahead of peers",
+          "flags": [],
+          "label": "No prior quarter, ahead of peers"
+        },
+        "rank": 1
+      },
+      "moncler": {
+        "growth": -1,
+        "prev": null,
+        "delta": null,
+        "vs_median": -8.6,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "No prior quarter",
+          "level": "behind peers",
+          "flags": [],
+          "label": "No prior quarter, behind peers"
+        },
+        "rank": 5
+      },
+      "prada": {
+        "growth": 7.6,
+        "prev": null,
+        "delta": null,
+        "vs_median": 6.6,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "No prior quarter",
+          "level": "ahead of peers",
+          "flags": [],
+          "label": "No prior quarter, ahead of peers"
+        },
+        "rank": 3
+      }
+    }
+  },
+  "2025Q4": {
+    "peer": {
+      "n": 6,
+      "median": 6.3,
+      "median_prev": 4.3,
+      "spread": 14,
+      "slowed": 2,
+      "compared": 6,
+      "asia_median": null,
+      "asia_median_prev": null,
+      "asia_lagging": 0,
+      "asia_compared": 0
+    },
+    "companies": {
+      "lvmh": {
+        "growth": 1,
+        "prev": 1,
+        "delta": 0,
+        "vs_median": -6,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Steady",
+          "level": "behind peers",
+          "flags": [],
+          "label": "Steady, behind peers"
+        },
+        "rank": 5
+      },
+      "hermes": {
+        "growth": 9.8,
+        "prev": 9.6,
+        "delta": 0.2,
+        "vs_median": 4.2,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Steady",
+          "level": "ahead of peers",
+          "flags": [],
+          "label": "Steady, ahead of peers"
+        },
+        "rank": 2
+      },
+      "kering": {
+        "growth": -3,
+        "prev": -5,
+        "delta": 2,
+        "vs_median": -10,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Accelerating",
+          "level": "behind peers",
+          "flags": [],
+          "label": "Accelerating, behind peers"
+        },
+        "rank": 6
+      },
+      "richemont": {
+        "growth": 11,
+        "prev": 14,
+        "delta": -3,
+        "vs_median": 5.4,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Slowing",
+          "level": "ahead of peers",
+          "flags": [],
+          "label": "Slowing, ahead of peers"
+        },
+        "rank": 1
+      },
+      "moncler": {
+        "growth": 7,
+        "prev": -1,
+        "delta": 8,
+        "vs_median": 1.4,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Accelerating",
+          "level": "in line with peers",
+          "flags": [],
+          "label": "Accelerating, in line with peers"
+        },
+        "rank": 3
+      },
+      "prada": {
+        "growth": 5.6,
+        "prev": 7.6,
+        "delta": -2.0,
+        "vs_median": -1.4,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Slowing",
+          "level": "in line with peers",
+          "flags": [],
+          "label": "Slowing, in line with peers"
+        },
+        "rank": 4
+      }
+    }
+  },
+  "2026Q1": {
+    "peer": {
+      "n": 6,
+      "median": 3.3,
+      "median_prev": 6.3,
+      "spread": 13,
+      "slowed": 2,
+      "compared": 6,
+      "asia_median": null,
+      "asia_median_prev": null,
+      "asia_lagging": 0,
+      "asia_compared": 0
+    },
+    "companies": {
+      "lvmh": {
+        "growth": 1,
+        "prev": 1,
+        "delta": 0,
+        "vs_median": -4.6,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Steady",
+          "level": "behind peers",
+          "flags": [],
+          "label": "Steady, behind peers"
+        },
+        "rank": 4
+      },
+      "hermes": {
+        "growth": 5.6,
+        "prev": 9.8,
+        "delta": -4.2,
+        "vs_median": 4.6,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Slowing",
+          "level": "ahead of peers",
+          "flags": [],
+          "label": "Slowing, ahead of peers"
+        },
+        "rank": 3
+      },
+      "kering": {
+        "growth": 0,
+        "prev": -3,
+        "delta": 3,
+        "vs_median": -5.6,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Accelerating",
+          "level": "behind peers",
+          "flags": [],
+          "label": "Accelerating, behind peers"
+        },
+        "rank": 6
+      },
+      "richemont": {
+        "growth": 13,
+        "prev": 11,
+        "delta": 2,
+        "vs_median": 12,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Accelerating",
+          "level": "ahead of peers",
+          "flags": [],
+          "label": "Accelerating, ahead of peers"
+        },
+        "rank": 1
+      },
+      "moncler": {
+        "growth": 12,
+        "prev": 7,
+        "delta": 5,
+        "vs_median": 11,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Accelerating",
+          "level": "ahead of peers",
+          "flags": [],
+          "label": "Accelerating, ahead of peers"
+        },
+        "rank": 2
+      },
+      "prada": {
+        "growth": 1,
+        "prev": 5.6,
+        "delta": -4.6,
+        "vs_median": -4.6,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Slowing",
+          "level": "behind peers",
+          "flags": [],
+          "label": "Slowing, behind peers"
+        },
+        "rank": 5
+      }
+    }
+  },
+  "2026Q2": {
+    "peer": {
+      "n": 6,
+      "median": 5.0,
+      "median_prev": 3.3,
+      "spread": 18,
+      "slowed": 1,
+      "compared": 6,
+      "asia_median": 8,
+      "asia_median_prev": null,
+      "asia_lagging": 1,
+      "asia_compared": 5
+    },
+    "companies": {
+      "lvmh": {
+        "growth": 3,
+        "prev": 1,
+        "delta": 2,
+        "vs_median": -2,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": 1,
+        "asia": 4,
+        "asia_gap": 1,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 3,
+          "reported": 4
+        },
+        "region_spread": 14,
+        "driver": null,
+        "signal": {
+          "momentum": "Accelerating",
+          "level": "behind peers",
+          "flags": [],
+          "label": "Accelerating, behind peers"
+        },
+        "rank": 5
+      },
+      "hermes": {
+        "growth": 6.7,
+        "prev": 5.6,
+        "delta": 1.1,
+        "vs_median": 1.7,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": 9.6,
+        "asia": 2.5,
+        "asia_gap": -4.2,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 3,
+          "reported": 4
+        },
+        "region_spread": 16.1,
+        "driver": null,
+        "signal": {
+          "momentum": "Accelerating",
+          "level": "in line with peers",
+          "flags": [
+            "Asia drag"
+          ],
+          "label": "Accelerating, in line with peers"
+        },
+        "rank": 2
+      },
+      "kering": {
+        "growth": 2,
+        "prev": 0,
+        "delta": 2,
+        "vs_median": -3,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": -5,
+        "asia": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Accelerating",
+          "level": "behind peers",
+          "flags": [],
+          "label": "Accelerating, behind peers"
+        },
+        "rank": 6
+      },
+      "richemont": {
+        "growth": 20,
+        "prev": 13,
+        "delta": 7,
+        "vs_median": 15,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": 14,
+        "asia": 21,
+        "asia_gap": 1,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 5,
+          "reported": 5
+        },
+        "region_spread": 33,
+        "driver": null,
+        "signal": {
+          "momentum": "Accelerating",
+          "level": "ahead of peers",
+          "flags": [],
+          "label": "Accelerating, ahead of peers"
+        },
+        "rank": 1
+      },
+      "moncler": {
+        "growth": 5,
+        "prev": 12,
+        "delta": -7,
+        "vs_median": 0,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": -1,
+        "asia": 12,
+        "asia_gap": 7,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 2,
+          "reported": 3
+        },
+        "region_spread": 20,
+        "driver": null,
+        "signal": {
+          "momentum": "Slowing",
+          "level": "in line with peers",
+          "flags": [
+            "Asia lift"
+          ],
+          "label": "Slowing, in line with peers"
+        },
+        "rank": 3
+      },
+      "prada": {
+        "growth": 5,
+        "prev": 1,
+        "delta": 4,
+        "vs_median": 0,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": 7.6,
+        "asia": 8,
+        "asia_gap": 3,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 3,
+          "reported": 5
+        },
+        "region_spread": 45,
+        "driver": null,
+        "signal": {
+          "momentum": "Accelerating",
+          "level": "in line with peers",
+          "flags": [
+            "Asia lift"
+          ],
+          "label": "Accelerating, in line with peers"
+        },
+        "rank": 4
+      }
+    }
+  },
+  "2026Q3": {
+    "peer": {
+      "n": 6,
+      "median": 0.5,
+      "median_prev": 5.0,
+      "spread": 14,
+      "slowed": 6,
+      "compared": 6,
+      "asia_median": 0.0,
+      "asia_median_prev": 8,
+      "asia_lagging": 4,
+      "asia_compared": 6
+    },
+    "companies": {
+      "lvmh": {
+        "growth": 1,
+        "prev": 3,
+        "delta": -2,
+        "vs_median": 1,
+        "two_year_stack": 2.0,
+        "base": 1,
+        "next_base": 1,
+        "asia": -5,
+        "asia_gap": -6,
+        "asia_delta": -9,
+        "breadth": {
+          "growing": 3,
+          "reported": 4
+        },
+        "region_spread": 11,
+        "driver": {
+          "key": "asia",
+          "name": "Asia ex-Japan",
+          "change": -9
+        },
+        "signal": {
+          "momentum": "Slowing",
+          "level": "in line with peers",
+          "flags": [
+            "Asia drag"
+          ],
+          "label": "Slowing, in line with peers"
+        },
+        "rank": 3
+      },
+      "hermes": {
+        "growth": 4.3,
+        "prev": 6.7,
+        "delta": -2.4,
+        "vs_median": 4.3,
+        "two_year_stack": 14.3,
+        "base": 9.6,
+        "next_base": 9.8,
+        "asia": 0,
+        "asia_gap": -4.3,
+        "asia_delta": -2.5,
+        "breadth": {
+          "growing": 3,
+          "reported": 5
+        },
+        "region_spread": 14.1,
+        "driver": {
+          "key": "americas",
+          "name": "Americas",
+          "change": -4.9
+        },
+        "signal": {
+          "momentum": "Slowing",
+          "level": "ahead of peers",
+          "flags": [
+            "Asia drag"
+          ],
+          "label": "Slowing, ahead of peers"
+        },
+        "rank": 2
+      },
+      "kering": {
+        "growth": -1,
+        "prev": 2,
+        "delta": -3,
+        "vs_median": -2,
+        "two_year_stack": -5.9,
+        "base": -5,
+        "next_base": -3,
+        "asia": -5,
+        "asia_gap": -4,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 2,
+          "reported": 4
+        },
+        "region_spread": 9,
+        "driver": null,
+        "signal": {
+          "momentum": "Slowing",
+          "level": "behind peers",
+          "flags": [
+            "Asia drag",
+            "Tougher base next quarter"
+          ],
+          "label": "Slowing, behind peers"
+        },
+        "rank": 6
+      },
+      "richemont": {
+        "growth": 13,
+        "prev": 20,
+        "delta": -7,
+        "vs_median": 13,
+        "two_year_stack": 28.8,
+        "base": 14,
+        "next_base": 11,
+        "asia": 10,
+        "asia_gap": -3,
+        "asia_delta": -11,
+        "breadth": {
+          "growing": 4,
+          "reported": 5
+        },
+        "region_spread": 30,
+        "driver": {
+          "key": "japan",
+          "name": "Japan",
+          "change": -13
+        },
+        "signal": {
+          "momentum": "Slowing",
+          "level": "ahead of peers",
+          "flags": [
+            "Asia drag",
+            "Easier base next quarter"
+          ],
+          "label": "Slowing, ahead of peers"
+        },
+        "rank": 1
+      },
+      "moncler": {
+        "growth": 0,
+        "prev": 5,
+        "delta": -5,
+        "vs_median": -1,
+        "two_year_stack": -1.0,
+        "base": -1,
+        "next_base": 7,
+        "asia": 5,
+        "asia_gap": 5,
+        "asia_delta": -7,
+        "breadth": {
+          "growing": 2,
+          "reported": 3
+        },
+        "region_spread": 13,
+        "driver": {
+          "key": "asia",
+          "name": "Asia ex-Japan",
+          "change": -7
+        },
+        "signal": {
+          "momentum": "Slowing",
+          "level": "in line with peers",
+          "flags": [
+            "Asia lift",
+            "Tougher base next quarter"
+          ],
+          "label": "Slowing, in line with peers"
+        },
+        "rank": 4
+      },
+      "prada": {
+        "growth": 0,
+        "prev": 5,
+        "delta": -5,
+        "vs_median": -1,
+        "two_year_stack": 7.6,
+        "base": 7.6,
+        "next_base": 5.6,
+        "asia": 0,
+        "asia_gap": 0,
+        "asia_delta": -8,
+        "breadth": {
+          "growing": 1,
+          "reported": 5
+        },
+        "region_spread": 23,
+        "driver": {
+          "key": "americas",
+          "name": "Americas",
+          "change": -14
+        },
+        "signal": {
+          "momentum": "Slowing",
+          "level": "in line with peers",
+          "flags": [
+            "Narrow growth",
+            "Easier base next quarter"
+          ],
+          "label": "Slowing, in line with peers"
+        },
+        "rank": 5
+      }
+    }
+  }
+}

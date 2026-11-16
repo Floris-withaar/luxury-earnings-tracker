@@ -1,0 +1,71 @@
+{
+  "note": "Companies the scheduled update checks. ir_domain is a hint for the research step. lags holds, per calendar quarter (1 to 4), the days after quarter end before the first search, set a few days ahead of when the company reported that quarter last time. first_check_days is used for quarters with no entry.",
+  "companies": [
+    {
+      "id": "lvmh",
+      "name": "LVMH",
+      "ir_domain": "lvmh.com",
+      "first_check_days": 10,
+      "lags": {
+        "3": 10
+      }
+    },
+    {
+      "id": "hermes",
+      "name": "Hermès International",
+      "ir_domain": "finance.hermes.com",
+      "first_check_days": 12,
+      "lags": {
+        "2": 27,
+        "3": 20,
+        "4": 40
+      }
+    },
+    {
+      "id": "kering",
+      "name": "Kering",
+      "ir_domain": "kering.com",
+      "first_check_days": 12,
+      "lags": {
+        "2": 26,
+        "3": 20,
+        "4": 38
+      }
+    },
+    {
+      "id": "richemont",
+      "name": "Richemont",
+      "ir_domain": "richemont.com",
+      "first_check_days": 10,
+      "lags": {
+        "1": 50,
+        "3": 42,
+        "4": 13
+      }
+    },
+    {
+      "id": "moncler",
+      "name": "Moncler Group",
+      "ir_domain": "monclergroup.com",
+      "first_check_days": 15,
+      "lags": {
+        "1": 19,
+        "2": 20,
+        "3": 19,
+        "4": 47
+      }
+    },
+    {
+      "id": "prada",
+      "name": "Prada Group",
+      "ir_domain": "pradagroup.com",
+      "first_check_days": 20,
+      "lags": {
+        "1": 28,
+        "2": 28,
+        "3": 20,
+        "4": 60
+      }
+    }
+  ]
+}
