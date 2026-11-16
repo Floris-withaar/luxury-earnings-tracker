@@ -1,23 +1,27 @@
 """Command line entry point.
 
     python -m pipeline.run model                 recompute the model and rebuild the site data (no API key needed)
+    python -m pipeline.run validate              run the data gate (no API key needed)
     python -m pipeline.run serve                 open the site on http://localhost:8000
     python -m pipeline.run update [--apply]      research, extract and verify releases that are due (--force to search anyway)
     python -m pipeline.run add "Burberry" --url https://...    extract one release into a review file
     python -m pipeline.run apply data/review/x.json            merge a reviewed draft into the dataset
     python -m pipeline.run interpret             rewrite the commentary with the LLM
-    python -m pipeline.run eval                  score the extraction stage against the verified dataset
+    python -m pipeline.run eval                  score the extraction step against the verified dataset
 """
 from __future__ import annotations
 
 import argparse
+import copy
+import json
 import sys
 
-from . import extract, fetch, interpret, llm, model, research, verify
+from . import extract, fetch, interpret, llm, model, research, validate, verify
 from .common import (COMMENTARY, COMPANIES, DATA, DERIVED, REGION_KEYS, REVIEW, SITE, WATCHLIST, growth, load, now_iso,
                      region, save)
 
 RUN_LOG = DATA / "run_log.json"
+EVAL = DATA / "eval.json"
 
 
 def rebuild(dataset: dict, *, use_llm: bool, client=None) -> None:
@@ -28,13 +32,21 @@ def rebuild(dataset: dict, *, use_llm: bool, client=None) -> None:
     notes = {q: interpret.interpret(dataset, derived, q, client=client, use_llm=use_llm and q == dataset["latest"], previous=old.get(q))
              for q in derived}
     save(COMMENTARY, notes)
-    save(SITE / "data.json", {
+    built = {
         "asOf": dataset["asOf"], "latest": dataset["latest"], "companies": dataset["companies"],
         "model": derived, "notes": notes,
         "meta": {"built_at": now_iso(), "runs": load(RUN_LOG, [])[-5:],
+                 "quality": validate.summary(dataset), "eval": load(EVAL),
                  "thresholds": {"momentum_pts": model.MOMENTUM_PTS, "level_pts": model.LEVEL_PTS,
                                 "asia_gap_pts": model.ASIA_GAP_PTS, "base_shift_pts": model.BASE_SHIFT_PTS}},
-    })
+    }
+    # A rebuild that changes nothing keeps the old build date, so it leaves no diff behind.
+    old_site = load(SITE / "data.json") or {}
+    stamp = (old_site.get("meta") or {}).get("built_at")
+    built = json.loads(json.dumps(built))
+    if stamp and dict(old_site, meta=dict(old_site["meta"], built_at=None)) == dict(built, meta=dict(built["meta"], built_at=None)):
+        built["meta"]["built_at"] = stamp
+    save(SITE / "data.json", built)
 
 
 def log_run(command: str, results: list[dict]) -> None:
@@ -46,7 +58,8 @@ def log_run(command: str, results: list[dict]) -> None:
     save(RUN_LOG, runs[-30:])
 
 
-def process_release(dataset: dict, name: str, text: str, source: dict, *, client, company_id: str | None, apply: bool) -> dict:
+def process_release(dataset: dict, name: str, text: str, source: dict, *, client, company_id: str | None, apply: bool,
+                    trusted: bool = True) -> dict:
     """Steps 2 and 3 for one release. Always leaves a review file behind."""
     draft = extract.extract(name, text, client=client, source=source)
     existing = next((c for c in dataset["companies"] if c["id"] == company_id), None)
@@ -55,13 +68,25 @@ def process_release(dataset: dict, name: str, text: str, source: dict, *, client
     if not draft["calendar_quarter"] and source.get("calendar_quarter"):
         draft["calendar_quarter"] = source["calendar_quarter"]
     verify.verify_draft(draft, text, existing)
+    if not trusted:
+        draft["flags"].append(f"The source {fetch.host_of(source.get('url') or '') or 'file'} is not on the allowlist of company sites and regulatory wires.")
+        draft["auto_merge"] = False
     path = REVIEW / f"{draft['company']['id']}-{draft['calendar_quarter'] or 'unknown'}.json"
     save(path, draft)
     status = "needs review"
     if apply and draft["auto_merge"]:
-        verify.merge_draft(dataset, draft)
-        dataset["asOf"] = now_iso()[:10]
-        status = "merged"
+        candidate = copy.deepcopy(dataset)   # trial merge, so a draft that fails the gate leaves the dataset untouched
+        verify.merge_draft(candidate, draft)
+        gate = validate.validate(candidate)
+        if gate["errors"]:
+            draft["flags"] += gate["errors"][:5]
+            draft["auto_merge"] = False
+            save(path, draft)
+            status = "blocked by the data gate"
+        else:
+            verify.merge_draft(dataset, draft)
+            dataset["asOf"] = now_iso()[:10]
+            status = "merged"
     return {"company": draft["company"]["name"], "quarter": draft["calendar_quarter"], "status": status,
             "checks": f"{draft['checks']['ok']}/{draft['checks']['total']}", "flags": draft["flags"], "file": str(path.relative_to(DATA.parent))}
 
@@ -76,11 +101,26 @@ def cmd_model(args) -> int:
     return 0
 
 
+def cmd_validate(args) -> int:
+    dataset = load(COMPANIES)
+    result = validate.validate(dataset, load(WATCHLIST))
+    problems = result["errors"] + validate.check_built(dataset)
+    print(f"Checked {result['figures']} figures across {result['companies']} companies.")
+    for w in result["warnings"]:
+        print("  warning:", w)
+    for e in problems:
+        print("  ERROR:", e)
+    print("Data gate:", "FAILED" if problems else "passed", f"({len(problems)} errors, {len(result['warnings'])} warnings)")
+    return 1 if problems else 0
+
+
 def cmd_update(args) -> int:
     client = llm.get_client()
     dataset = load(COMPANIES)
+    watchlist = load(WATCHLIST)
+    domains = fetch.allowlist(watchlist)
     results = []
-    for entry in load(WATCHLIST)["companies"]:
+    for entry in watchlist["companies"]:
         if args.company and entry["id"] != args.company:
             continue
         company = next((c for c in dataset["companies"] if c["id"] == entry["id"]), None)
@@ -91,10 +131,15 @@ def cmd_update(args) -> int:
         try:
             found = research.find_release(entry, known, client=client)            # step 1
             if not research.is_newer(found, known):
-                results.append({"company": entry["name"], "status": "no newer release", "detail": found.get("why", "")[:200]})
+                results.append({"company": entry["name"], "status": "no newer release", "detail": str(found.get("why", ""))[:200]})
+                continue
+            candidates = [u for u in [found["url"], *(found.get("alternates") or [])] if isinstance(u, str)]
+            allowed = [u for u in candidates if fetch.is_trusted(u, domains)][:3]
+            if not allowed:
+                results.append({"company": entry["name"], "status": "source not on the allowlist", "detail": found["url"][:200]})
                 continue
             text, used = None, None
-            for url in [found["url"], *[u for u in (found.get("alternates") or []) if isinstance(u, str)]][:3]:
+            for url in allowed:
                 try:
                     text, used = fetch.fetch_text(url), url
                     if len(text) > 500:
@@ -102,7 +147,7 @@ def cmd_update(args) -> int:
                 except Exception:
                     continue
             if not text or len(text) < 500:
-                results.append({"company": entry["name"], "status": "could not fetch", "detail": found["url"]})
+                results.append({"company": entry["name"], "status": "could not fetch", "detail": allowed[0][:200]})
                 continue
             source = {"url": used, "title": found.get("title"), "publisher": found.get("publisher"),
                       "published": found.get("published"), "calendar_quarter": found.get("calendar_quarter")}
@@ -125,23 +170,28 @@ def cmd_update(args) -> int:
 def cmd_add(args) -> int:
     client = llm.get_client()
     dataset = load(COMPANIES)
+    domains = fetch.allowlist(load(WATCHLIST))
+    trusted = False   # a file or an off-list link is always left for a person to review
     if args.file:
         text, source = fetch.read_file(args.file), {"url": args.url or "", "title": f"Results release, {args.name}"}
     elif args.url:
         text, source = fetch.fetch_text(args.url), {"url": args.url, "title": f"Results release, {args.name}"}
+        trusted = fetch.is_trusted(args.url, domains)
     else:
         found = research.find_release({"name": args.name}, None, client=client)
         if not found.get("found"):
             print("No release found:", found.get("why"))
             return 1
         text = fetch.fetch_text(found["url"])
+        trusted = fetch.is_trusted(found["url"], domains)
         source = {"url": found["url"], "title": found.get("title"), "publisher": found.get("publisher"),
                   "published": found.get("published"), "calendar_quarter": found.get("calendar_quarter")}
-    result = process_release(dataset, args.name, text, source, client=client, company_id=None, apply=args.apply)
+    result = process_release(dataset, args.name, text, source, client=client, company_id=None, apply=args.apply, trusted=trusted)
     if result["status"] == "merged":
         save(COMPANIES, dataset)
-    log_run(f"add {args.name}", [result])
     rebuild(dataset, use_llm=result["status"] == "merged", client=client)
+    log_run(f"add {args.name}", [result])
+    rebuild(dataset, use_llm=False)
     print(result)
     return 0
 
@@ -161,6 +211,12 @@ def cmd_apply(args) -> int:
         print("Check these against the release, correct the review file if needed, then rerun with --force.")
         return 2
     verify.merge_draft(dataset, draft)
+    gate = validate.validate(dataset)
+    if gate["errors"]:
+        print("Not merged. The data gate found:")
+        for e in gate["errors"]:
+            print("  ERROR:", e)
+        return 2
     dataset["asOf"] = now_iso()[:10]
     save(COMPANIES, dataset)
     log_run(f"apply {args.path.name}", [{"company": draft["company"]["name"], "quarter": draft["calendar_quarter"], "status": "merged by hand"}])
@@ -170,17 +226,22 @@ def cmd_apply(args) -> int:
 
 
 def cmd_interpret(args) -> int:
-    rebuild(load(COMPANIES), use_llm=True, client=llm.get_client())
-    notes = load(COMMENTARY)[load(COMPANIES)["latest"]]["companies"]
+    dataset = load(COMPANIES)
+    rebuild(dataset, use_llm=True, client=llm.get_client())
+    notes = load(COMMENTARY)[dataset["latest"]]["companies"]
+    log_run("interpret", [{"company": cid, "status": "note by " + n["by"] + (" (model note rejected)" if n.get("rejected") else "")}
+                          for cid, n in notes.items()])
+    rebuild(dataset, use_llm=False)
     for cid, n in notes.items():
         print(f"{cid}: by {n['by']}" + (f" (rejected: {n['rejected']})" if n.get("rejected") else ""))
+    print("Estimated API cost of this run: $%.4f" % llm.usage_summary()["estimated_usd"])
     return 0
 
 
 def cmd_eval(args) -> int:
     """Run extraction on releases whose figures are already verified, and count the matches."""
     client = llm.get_client()
-    dataset, hits, total = load(COMPANIES), 0, 0
+    dataset, hits, total, misses, skipped = load(COMPANIES), 0, 0, [], []
     q = dataset["latest"]
     for company in dataset["companies"]:
         entry = (company.get("series") or {}).get(q)
@@ -190,18 +251,30 @@ def cmd_eval(args) -> int:
         try:
             draft = extract.extract(company["name"], fetch.fetch_text(source["url"]), client=client)
         except Exception as exc:
-            print(f"{company['name']}: skipped ({type(exc).__name__})")
+            skipped.append(f"{company['name']}: {type(exc).__name__}")
             continue
         got = {"group": draft["figures"][0].get("v")}
         got.update({f["bucket"]: f["v"] for f in draft["figures"] if f["kind"] == "region"})
-        want = {"group": growth(company, q), **{k: region(company, q, k) for k in REGION_KEYS if region(company, q, k) is not None}}
+        # Only figures taken from this same release can be scored against it.
+        want = {"group": growth(company, q)}
+        for k in REGION_KEYS:
+            cell = ((company.get("regions") or {}).get(q) or {}).get(k)
+            if cell and cell.get("s") == entry["s"]:
+                want[k] = region(company, q, k)
         for key, value in want.items():
             total += 1
             ok = got.get(key) is not None and abs(got[key] - value) < 0.05
             hits += ok
             if not ok:
-                print(f"  {company['name']} {key}: expected {value}, extracted {got.get(key)}")
+                misses.append(f"{company['name']} {key}: expected {value}, extracted {got.get(key)}")
+    save(EVAL, {"at": now_iso(), "quarter": q, "model": llm.MODELS["extract"], "hits": hits, "total": total,
+                "misses": misses, "skipped": skipped, "usage": llm.usage_summary()})
+    log_run("eval", [{"company": "All", "quarter": q, "status": f"extraction matched {hits} of {total} verified figures"}])
+    rebuild(dataset, use_llm=False)
+    for line in misses + ["skipped " + x for x in skipped]:
+        print(" ", line)
     print(f"Extraction accuracy on verified figures: {hits} of {total}.")
+    print("Estimated API cost of this run: $%.4f" % llm.usage_summary()["estimated_usd"])
     return 0
 
 
@@ -225,6 +298,7 @@ def main(argv=None) -> int:
     parser = argparse.ArgumentParser(prog="python -m pipeline.run", description="Luxury Earnings Tracker pipeline")
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("model").set_defaults(func=cmd_model)
+    sub.add_parser("validate").set_defaults(func=cmd_validate)
     p = sub.add_parser("serve"); p.add_argument("--port", type=int, default=8000); p.set_defaults(func=cmd_serve)
     p = sub.add_parser("update"); p.add_argument("--company"); p.add_argument("--apply", action="store_true"); p.add_argument("--force", action="store_true", help="search even when no release is due"); p.set_defaults(func=cmd_update)
     p = sub.add_parser("add"); p.add_argument("name"); p.add_argument("--url"); p.add_argument("--file"); p.add_argument("--apply", action="store_true"); p.set_defaults(func=cmd_add)
@@ -237,6 +311,9 @@ def main(argv=None) -> int:
     except llm.LLMUnavailable as exc:
         print(f"This command needs the LLM: {exc}", file=sys.stderr)
         return 3
+    except fetch.UntrustedSource as exc:
+        print(f"Refused: {exc}", file=sys.stderr)
+        return 4
 
 
 if __name__ == "__main__":
