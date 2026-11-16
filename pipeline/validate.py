@@ -129,7 +129,13 @@ def validate(dataset: dict, watchlist: dict | None = None, today: date | None = 
         warnings.append(f"{sum(press.values())} figures come from press reports ({detail}). Replace them with company sources.")
 
     if watchlist:
+        from .fetch import allowlist, is_trusted
         from .research import due_date   # imported here so the gate has no hard link to the LLM steps
+        domains = allowlist(watchlist)
+        mirrors = sorted({f"{c.get('name')}: {s['url'].split('/')[2]}" for c in companies for s in (c.get("sources") or [])
+                          if s.get("kind") == "company" and s.get("url") and not is_trusted(s["url"], domains)})
+        if mirrors:
+            warnings.append(f"Company sources linked through another site, not the company or a regulatory wire ({len(mirrors)}): " + "; ".join(mirrors) + ".")
         today = today or date.today()
         by_id = {c.get("id"): c for c in companies}
         for entry in watchlist.get("companies", []):

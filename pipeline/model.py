@@ -33,7 +33,9 @@ def company_metrics(company: dict, q: str, peers: list[dict]) -> dict:
     others = [growth(c, q) for c in peers if c["id"] != company["id"]]
     asia, asia_prev = region(company, q, "asia"), region(company, p, "asia")
 
-    cells = [(key, name, region(company, q, key), region(company, p, key)) for key, name in REGIONS]
+    # Each region goes by the company's own name for it. Moncler's Asia includes Japan, for one, so the bucket name would mislead.
+    labels = (company.get("regions") or {}).get(q) or {}
+    cells = [(key, (labels.get(key) or {}).get("label") or name, region(company, q, key), region(company, p, key)) for key, name in REGIONS]
     reported = [c for c in cells if c[2] is not None]
     growing = [c for c in reported if c[2] > 0]
     moved = [(key, name, now - before) for key, name, now, before in cells if now is not None and before is not None]
