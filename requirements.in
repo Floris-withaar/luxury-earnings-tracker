@@ -1,0 +1,6 @@
+# Edit this file, then run: pip-compile --generate-hashes --output-file requirements.txt requirements.in
+anthropic==2.8.0
+requests==2.34.2
+beautifulsoup4==4.15.0
+pypdf==7.1.0
+cryptography==50.0.2   # pypdf needs it to open protected PDFs, which some companies publish

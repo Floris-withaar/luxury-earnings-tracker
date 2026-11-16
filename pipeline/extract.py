@@ -4,9 +4,7 @@ from __future__ import annotations
 import json
 
 from . import llm
-from .common import QUARTER_RE, STANDARD_TO_KEY, is_num, now_iso, slugify
-
-BASES = ["Organic", "Constant FX", "Comparable", "Reported"]
+from .common import BASES, QUARTER_RE, STANDARD_TO_KEY, is_num, now_iso, slugify
 
 SHAPE = """{
   "company": string,
@@ -101,5 +99,5 @@ def to_draft(raw: dict, name: str, source: dict | None = None) -> dict:
 
 
 def extract(name: str, text: str, *, client=None, source: dict | None = None) -> dict:
-    raw = llm.ask_json(build_prompt(name, text), step="extract", client=client, max_tokens=4000)
+    raw = llm.ask_json(build_prompt(name, text), step="extract", client=client)
     return to_draft(raw, name, source)

@@ -1,16 +1,15 @@
 """Tests for the data gate, the download guards and the full flow. No network, no API key."""
 import copy
 import json
-import tempfile
 import unittest
 from datetime import date
-from pathlib import Path
 from unittest import mock
 
 from pipeline import fetch, model, run, validate
 from pipeline.common import COMPANIES, WATCHLIST, load
 
-from tests.test_pipeline import ANSWER, RELEASE, FakeClient
+from tests.support import FakeClient, TempRepoCase
+from tests.test_pipeline import ANSWER, RELEASE
 
 
 def dataset():
@@ -121,27 +120,8 @@ class FetchGuardTests(unittest.TestCase):
         self.assertFalse(get.call_args.kwargs["allow_redirects"])
 
 
-class FlowTests(unittest.TestCase):
+class FlowTests(TempRepoCase):
     """One saved release goes through every step and ends up in the file the website reads."""
-
-    def setUp(self):
-        self.tmp = tempfile.TemporaryDirectory()
-        root = Path(self.tmp.name)
-        (root / "data" / "review").mkdir(parents=True)
-        (root / "site").mkdir()
-        (root / "data" / "companies.json").write_text(Path(COMPANIES).read_text())
-        paths = dict(DATA=root / "data", COMPANIES=root / "data" / "companies.json", DERIVED=root / "data" / "derived.json",
-                     COMMENTARY=root / "data" / "commentary.json", REVIEW=root / "data" / "review", SITE=root / "site",
-                     RUN_LOG=root / "data" / "run_log.json", EVAL=root / "data" / "eval.json")
-        self.patches = [mock.patch.multiple(run, **paths), mock.patch.multiple(validate, DERIVED=paths["DERIVED"], SITE=paths["SITE"])]
-        for p in self.patches:
-            p.start()
-        self.root = root
-
-    def tearDown(self):
-        for p in self.patches:
-            p.stop()
-        self.tmp.cleanup()
 
     def source(self):
         return {"url": "https://www.burberryplc.com/q2.pdf", "title": "Second quarter trading update", "calendar_quarter": "2026Q3"}

@@ -1,9 +1,8 @@
 """Tests that run without a network or an API key:  python -m unittest discover -s tests"""
 import copy
-import json
 import unittest
-from types import SimpleNamespace
 
+from tests.support import FakeClient
 from pipeline import extract, interpret, llm, model, research, verify
 from pipeline.common import COMPANIES, load, shift_quarter
 
@@ -34,21 +33,6 @@ ANSWER = {
     "segments": [{"name": "Leather goods", "growth_pct": 0, "revenue_m": None, "quote": "Leather goods comparable sales were flat."}],
     "guidance": {"text": None, "numeric": False}, "china": {"text": None}, "warnings": [],
 }
-
-
-class FakeClient:
-    """Stands in for anthropic.Anthropic(). Returns whatever answers it was given, in order."""
-
-    def __init__(self, *answers):
-        self.answers, self.calls = list(answers), []
-        self.messages = self
-
-    def create(self, **kwargs):
-        self.calls.append(kwargs)
-        answer = self.answers.pop(0)
-        text = answer if isinstance(answer, str) else json.dumps(answer)
-        usage = SimpleNamespace(input_tokens=1000, output_tokens=200, server_tool_use=SimpleNamespace(web_search_requests=2 if kwargs.get("tools") else 0))
-        return SimpleNamespace(stop_reason="end_turn", usage=usage, content=[SimpleNamespace(type="text", text=text)])
 
 
 class QuarterTests(unittest.TestCase):

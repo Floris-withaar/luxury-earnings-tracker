@@ -20,13 +20,35 @@ WIDTHS = [(1440, 900), (390, 844)]
 BAD_TEXT = ["undefined", "NaN", "[object Object]", "null"]
 
 
+# Runs in the page. Compares numbers the site works out itself with the ones the pipeline computed.
+AGREEMENT = """() => {
+  const out = [], close = (a, b) => (a == null && b == null) || (a != null && b != null && Math.abs(a - b) < 0.051);
+  for (const q of allQuarters()) {
+    const peer = MODEL[q].peer;
+    if (!close(median(cos().map(c => gv(c, q))), peer.median)) out.push(q + ": the site's median differs from the pipeline's.");
+    if (!close(median(cos().map(c => rv(c, q, 'asia'))), peer.asia_median)) out.push(q + ": the site's Asia median differs from the pipeline's.");
+    for (const c of cos()) {
+      const m = mm(c, q); if (!m) continue;
+      const others = median(cos().filter(o => o.id !== c.id).map(o => gv(o, q)));
+      if (others != null && !close(gv(c, q) - others, m.vs_median)) out.push(q + " " + c.id + ": gap to the median differs.");
+      if (fmtPct(m.growth) === '' || fmtPts(m.delta) === undefined) out.push(q + " " + c.id + ": a figure did not format.");
+    }
+  }
+  return out;
+}"""
+
+
 def serve():
     class Quiet(http.server.SimpleHTTPRequestHandler):
         def log_message(self, *args):
             pass
 
     handler = functools.partial(Quiet, directory=str(SITE))
-    server = http.server.ThreadingHTTPServer(("127.0.0.1", 0), handler)
+    class QuietServer(http.server.ThreadingHTTPServer):
+        def handle_error(self, request, client_address):
+            pass   # the browser drops connections when a page reloads
+
+    server = QuietServer(("127.0.0.1", 0), handler)
     threading.Thread(target=server.serve_forever, daemon=True).start()
     return server
 
@@ -38,7 +60,8 @@ def main() -> int:
     figures = sum(1 + len((c.get("regions") or {}).get(latest) or {}) + len((c.get("segments") or {}).get(latest) or [])
                   for c in companies if latest in (c.get("series") or {}))
     server, failures, checks = serve(), [], 0
-    base = f"http://127.0.0.1:{server.server_address[1]}/index.html"
+    origin = f"http://127.0.0.1:{server.server_address[1]}/"
+    base = origin + "index.html"
     with sync_playwright() as pw:
         browser = pw.chromium.launch(executable_path=os.environ.get("CHROME_PATH") or None, args=["--no-sandbox"])
         for width, height in WIDTHS:
@@ -46,9 +69,10 @@ def main() -> int:
             problems = []
             page.on("console", lambda m: problems.append(m.text) if m.type == "error" else None)
             page.on("pageerror", lambda e: problems.append(str(e)))
-            # Fonts come from Google. The test must pass without them, so they are answered locally.
-            page.route("https://fonts.googleapis.com/**", lambda r: r.fulfill(status=200, content_type="text/css", body=""))
-            page.route("https://fonts.gstatic.com/**", lambda r: r.fulfill(status=200, body=""))
+            # The site must work from its own files alone. Any request to another host is a failure.
+            page.on("request", lambda r: problems.append("request to another host: " + r.url) if not r.url.startswith(origin) else None)
+            # The test reloads each screen, which cancels requests still in flight. A cancelled request is not a failure.
+            page.on("requestfailed", lambda r: None if "ERR_ABORTED" in (r.failure or "") else problems.append("failed to load " + r.url))
             for hash_, title in SCREENS:
                 where = f"{title} at {width}px"
                 page.goto(base + hash_)
@@ -79,6 +103,12 @@ def main() -> int:
                     page.keyboard.press("Escape")
                 if hash_ == "#method" and "Data gate" not in text:
                     failures.append(f"{where}: the quality checks are missing.")
+                if hash_ == "#overview":
+                    # The site has its own median for interactive comparisons. It must agree with the pipeline's.
+                    for line in page.evaluate(AGREEMENT):
+                        failures.append(f"{where}: {line}")
+                    if not page.evaluate("document.fonts.check('500 20px \"Bodoni Moda\"') && document.fonts.check('15px \"IBM Plex Sans\"')"):
+                        failures.append(f"{where}: the site's own fonts did not load.")
                 for p in problems:
                     failures.append(f"{where}: browser error: {p[:200]}")
                 problems.clear()

@@ -12,19 +12,14 @@ import re
 from datetime import date, timedelta
 
 from . import model
-from .common import DERIVED, QUARTER_RE, REGION_KEYS, SITE, WATCHLIST, growth, is_num, load, prev_quarter, quarter_label
+from .common import (BASES, DERIVED, GROWTH_RANGE, QUARTER_RE, REGION_KEYS, SITE, WATCHLIST, growth, is_num, load, plausible,
+                     prev_quarter, quarter_label)
 
-BASES = {"Organic", "Constant FX", "Comparable", "Reported"}
 ID_RE = re.compile(r"^[a-z0-9][a-z0-9-]{0,60}$")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
-GROWTH_RANGE = (-70, 150)   # percent. Outside this a quarterly growth figure is almost certainly a mistake.
 SWING_PTS = 15              # a move this large against the prior quarter gets a second look
 REGION_SLACK = 0.5          # rounding room when comparing the group with its regions
 STALE_DAYS = 21             # days past the expected release date before a company is called stale
-
-
-def _in_range(v) -> bool:
-    return is_num(v) and GROWTH_RANGE[0] <= v <= GROWTH_RANGE[1]
 
 
 def check_company(c: dict, errors: list, warnings: list) -> int:
@@ -60,7 +55,7 @@ def check_company(c: dict, errors: list, warnings: list) -> int:
         if not QUARTER_RE.match(q):
             errors.append(f"{name}: {q!r} is not a quarter like 2026Q3.")
             continue
-        if not _in_range(s.get("g")):
+        if not plausible(s.get("g")):
             errors.append(f"{name} {q}: group growth {s.get('g')!r} is missing or outside {GROWTH_RANGE}.")
         if not has_source(s.get("s")):
             errors.append(f"{name} {q}: group growth has no valid source.")
@@ -81,7 +76,7 @@ def check_company(c: dict, errors: list, warnings: list) -> int:
             figures += 1
             if key not in REGION_KEYS:
                 errors.append(f"{name} {q}: {key!r} is not a region bucket.")
-            if not _in_range(cell.get("v")):
+            if not plausible(cell.get("v")):
                 errors.append(f"{name} {q} {key}: growth {cell.get('v')!r} is missing or outside {GROWTH_RANGE}.")
             else:
                 values.append(cell["v"])
@@ -101,7 +96,7 @@ def check_company(c: dict, errors: list, warnings: list) -> int:
             figures += 1
             if not seg.get("name"):
                 errors.append(f"{name} {q}: a segment has no name.")
-            if "g" in seg and not _in_range(seg["g"]):
+            if "g" in seg and not plausible(seg["g"]):
                 errors.append(f"{name} {q} {seg.get('name')}: growth {seg['g']!r} is outside {GROWTH_RANGE}.")
     return figures
 
@@ -122,10 +117,16 @@ def validate(dataset: dict, watchlist: dict | None = None, today: date | None = 
     if quarters and dataset.get("latest") != quarters[-1]:
         errors.append(f"latest is {dataset.get('latest')!r} but the newest quarter in the data is {quarters[-1]}.")
 
-    press = sum(1 for c in companies for cells in (c.get("regions") or {}).values() for cell in cells.values()
-                if isinstance(cell.get("s"), int) and cell["s"] < len(c.get("sources") or []) and c["sources"][cell["s"]].get("kind") == "press")
+    press = {}
+    for c in companies:
+        sources = c.get("sources") or []
+        cells = list((c.get("series") or {}).values()) + [cell for cells in (c.get("regions") or {}).values() for cell in cells.values()]
+        n = sum(1 for cell in cells if isinstance(cell.get("s"), int) and 0 <= cell["s"] < len(sources) and sources[cell["s"]].get("kind") == "press")
+        if n:
+            press[c.get("name") or c.get("id")] = n
     if press:
-        warnings.append(f"{press} regional figures come from press reports. Replace them with company sources.")
+        detail = ", ".join(f"{name} {n}" for name, n in press.items())
+        warnings.append(f"{sum(press.values())} figures come from press reports ({detail}). Replace them with company sources.")
 
     if watchlist:
         from .research import due_date   # imported here so the gate has no hard link to the LLM steps

@@ -89,11 +89,16 @@ function bindTip(node, build){
 
 /* ---------- exhibit frame ---------- */
 let exNo = 0;
+/* The default source line under an exhibit. It names the companies with press-sourced figures, so no exhibit overstates its sources. */
+function sourceLine(){
+  const press = cos().filter(c => Object.values(c.regions || {}).some(r => Object.values(r).some(x => (srcOf(c, x.s) || {}).kind === "press")) || Object.values(c.series || {}).some(x => (srcOf(c, x.s) || {}).kind === "press")).map(c => c.name);
+  return "Source: company releases" + (press.length ? "; some figures for " + (press.length > 1 ? press.slice(0, -1).join(", ") + " and " : "") + press[press.length - 1] + " come from press reports" : "") + ". Linked figure by figure on the Data screen.";
+}
 function exhibit(title, body, opts){
   opts = opts || {}; exNo += 1;
   return el("figure", {class:"ex", style:"margin:0"}, el("div", {class:"mono", text:"Exhibit " + exNo}), el("h3", {text: title}),
     opts.sub ? el("p", {class:"sub", text: opts.sub}) : null, el("div", {class:"body"}, body),
-    el("div", {class:"src", text: opts.src || "Source: company releases, linked figure by figure on the Data screen."}));
+    el("div", {class:"src", text: opts.src || sourceLine()}));
 }
 
 /* ---------- charts ---------- */
@@ -226,18 +231,16 @@ function viewOverview(v){
   const ranked = list.filter(c => gv(c, q) != null).sort((a, b) => gv(b, q) - gv(a, q));
   let head = "Luxury sales in " + qLabel(q) + ".";
   if (peer.compared >= 2) head = peer.slowed * 2 >= peer.compared ? count(peer.slowed, peer.compared) + " groups slowed in " + qLabel(q) + "." : count(peer.compared - peer.slowed, peer.compared) + " groups sped up in " + qLabel(q) + ".";
-  const bits = [];
-  if (isNum(peer.median) && isNum(peer.median_prev)) bits.push("Median growth went from " + fmtPct(peer.median_prev) + " in " + qLabel(p) + " to " + fmtPct(peer.median) + ".");
-  if (isNum(peer.asia_median) && isNum(peer.asia_median_prev)) bits.push("In Asia excluding Japan it went from " + fmtPct(peer.asia_median_prev) + " to " + fmtPct(peer.asia_median) + ".");
-  bits.push("Every figure links to the company release it came from.");
+  /* The sentence on how the median moved is written once, by the pipeline. */
+  const bits = [((NOTES[q] || {}).peer || {}).lede, "Every figure links to its source."].filter(Boolean);
   v.append(el("div", {class:"hero"}, el("div", {class:"mono", text: qLabel(q) + " · " + ranked.length + " groups · data as of " + D.asOf}), el("h2", {class:"headline", text: head}), el("p", {class:"lede", text: bits.join(" ")})));
 
   const delta = (a, b) => { if (!isNum(a) || !isNum(b)) return null; const d = a - b; return el("span", {class:"delta " + (d < 0 ? "down" : d > 0 ? "up" : "")}, (d < 0 ? "▼ " : d > 0 ? "▲ " : "") + fmtPts(d)); };
   const tile = (label, value, ...rest) => el("div", {class:"kpi"}, el("div", {class:"mono", text: label}), el("div", {class:"v num", text: value}), el("div", {class:"d"}, ...rest));
   const top = ranked[0], low = ranked[ranked.length - 1];
   v.append(el("div", {class:"kpis"},
-    tile("Median growth", fmtPct(peer.median), delta(peer.median, peer.median_prev), isNum(peer.median_prev) ? " against " + qLabel(p) : ""),
-    tile("Median, Asia ex-Japan", fmtPct(peer.asia_median), delta(peer.asia_median, peer.asia_median_prev), isNum(peer.asia_median_prev) ? " against " + qLabel(p) : ""),
+    tile("Median growth", fmtPct(peer.median), delta(peer.median_like, peer.median_prev), isNum(peer.median_prev) ? " against " + qLabel(p) : ""),
+    tile("Median, Asia ex-Japan", fmtPct(peer.asia_median), delta(peer.asia_median_like, peer.asia_median_prev), isNum(peer.asia_median_prev) ? " against " + qLabel(p) : ""),
     tile("Fastest", top ? fmtPct(gv(top, q)) : "n/d", top ? top.name : ""),
     tile("Slowest", low ? fmtPct(gv(low, q)) : "n/d", low ? low.name : "")));
 
@@ -445,7 +448,8 @@ function viewMethod(v){
   if (ql) (ql.warnings || []).forEach(w => checks.append(el("li", null, el("span", {class:"st part", text:"Open"}), el("span", {class:"note", text: w}))));
   checks.append(ev && ev.total
     ? el("li", null, el("span", {class:"st " + (ev.hits === ev.total ? "ok" : "part"), text: ev.hits + " of " + ev.total}), el("b", {style:"font-weight:600", text:"Extraction test"}),
-        el("span", {class:"note", text:"The LLM re-read the " + qLabel(ev.quarter) + " releases and its figures were compared with the verified dataset. Run " + (ev.at || "").slice(0, 10) + " on " + ev.model + "."}))
+        el("span", {class:"note", text:"The LLM re-read " + (isNum(ev.read) ? ev.read + " of " + ev.releases : "the") + " " + qLabel(ev.quarter) + " releases and its figures were compared with the verified dataset."
+          + (ev.skipped && ev.skipped.length ? " " + ev.skipped.length + " could not be read: " + ev.skipped.join("; ") + "." : "") + " Run " + (ev.at || "").slice(0, 10) + " on " + ev.model + "."}))
     : el("li", null, el("span", {class:"st", text:"Not run"}), el("b", {style:"font-weight:600", text:"Extraction test"}), el("span", {class:"note", text:"Scores the LLM extraction against the verified dataset. It has not been run yet."})));
   v.append(el("div", {class:"ex"}, el("div", {class:"mono", text:"Quality checks"}), el("div", {class:"body"}, checks)));
   const ul = el("ul", {class:"runs"});
