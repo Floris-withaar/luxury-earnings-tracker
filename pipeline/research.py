@@ -4,7 +4,7 @@ from __future__ import annotations
 from datetime import date, timedelta
 
 from . import llm
-from .common import QUARTER_RE, all_quarters, shift_quarter
+from .common import QUARTER_RE, all_quarters, shift_quarter, skipped_quarters
 
 PROMPT = """You are a research assistant for a tracker of luxury-goods earnings.
 
@@ -57,11 +57,15 @@ def due_date(entry: dict, known_quarter: str | None) -> date | None:
 
     Companies report on a steady calendar. `lags` in the watchlist holds, per calendar quarter,
     how many days after quarter end the company reported last time. Where that is unknown,
-    `first_check_days` is used. Searching before this date only costs money.
+    `first_check_days` is used. Searching before this date only costs money. Quarters in
+    `skip_quarters` are passed over, because the company never reports them on their own.
     """
     if not known_quarter:
         return None
     next_quarter = shift_quarter(known_quarter, 1)
+    skipped = skipped_quarters(entry)
+    while int(next_quarter[5]) in skipped:   # the company publishes no figure for this quarter alone
+        next_quarter = shift_quarter(next_quarter, 1)
     lag = (entry.get("lags") or {}).get(next_quarter[5], entry.get("first_check_days", 10))
     return quarter_end(next_quarter) + timedelta(days=int(lag))
 

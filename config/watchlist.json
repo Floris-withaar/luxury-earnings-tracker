@@ -1,5 +1,5 @@
 {
-  "note": "Companies the scheduled update checks. ir_domain is a hint for the research step. lags holds, per calendar quarter (1 to 4), the days after quarter end before the first search, set a few days ahead of when the company reported that quarter last time. first_check_days is used for quarters with no entry.",
+  "note": "Companies the scheduled update checks. ir_domain is a hint for the research step. lags holds, per calendar quarter (1 to 4), the days after quarter end before the first search, set a few days ahead of when the company reported that quarter last time. first_check_days is used for quarters with no entry. skip_quarters lists the calendar quarters for which a company publishes no quarter-only figure, so no release is expected and the gap is not a fault.",
   "companies": [
     {
       "id": "lvmh",
@@ -91,6 +91,32 @@
         "1": 30,
         "2": 23,
         "3": 22,
+        "4": 27
+      }
+    },
+    {
+      "id": "cucinelli",
+      "name": "Brunello Cucinelli",
+      "ir_domain": "brunellocucinelli.com",
+      "first_check_days": 10,
+      "lags": {
+        "1": 9,
+        "3": 15,
+        "4": 12
+      },
+      "skip_quarters": [
+        2
+      ]
+    },
+    {
+      "id": "ferragamo",
+      "name": "Ferragamo",
+      "ir_domain": "ferragamo.com",
+      "first_check_days": 20,
+      "lags": {
+        "1": 44,
+        "2": 34,
+        "3": 20,
         "4": 27
       }
     }

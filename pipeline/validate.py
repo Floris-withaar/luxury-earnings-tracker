@@ -13,7 +13,7 @@ from datetime import date, timedelta
 
 from . import model
 from .common import (BASES, DERIVED, GROWTH_RANGE, QUARTER_RE, REGION_KEYS, SITE, WATCHLIST, growth, is_num, load, plausible,
-                     prev_quarter, quarter_label)
+                     prev_quarter, quarter_label, skipped_quarters)
 
 ID_RE = re.compile(r"^[a-z0-9][a-z0-9-]{0,60}$")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
@@ -22,8 +22,12 @@ REGION_SLACK = 0.5          # rounding room when comparing the group with its re
 STALE_DAYS = 21             # days past the expected release date before a company is called stale
 
 
-def check_company(c: dict, errors: list, warnings: list) -> int:
-    """Check one company record. Returns the number of figures looked at."""
+def check_company(c: dict, errors: list, warnings: list, skipped: frozenset = frozenset()) -> int:
+    """Check one company record. Returns the number of figures looked at.
+
+    `skipped` holds the calendar quarters (1 to 4) the company never reports on their own.
+    A hole in the series at one of those is expected and is not reported.
+    """
     name = c.get("name") or c.get("id") or "?"
     figures = 0
     if not ID_RE.match(str(c.get("id", ""))):
@@ -63,7 +67,14 @@ def check_company(c: dict, errors: list, warnings: list) -> int:
             errors.append(f"{name} {q}: revenue {s['rev']!r} is not a positive number.")
     quarters = sorted(q for q in series if QUARTER_RE.match(q))
     for a, b in zip(quarters, quarters[1:]):
-        if prev_quarter(b) != a:
+        missing = []
+        step = prev_quarter(b)
+        while step > a:
+            missing.append(step)
+            step = prev_quarter(step)
+        if missing and all(int(m[5]) in skipped for m in missing):
+            continue   # the company publishes no figure for these quarters alone
+        if missing:
             warnings.append(f"{name}: no figure between {quarter_label(a)} and {quarter_label(b)}.")
         elif is_num(series[a].get("g")) and is_num(series[b].get("g")) and abs(series[b]["g"] - series[a]["g"]) > SWING_PTS:
             warnings.append(f"{name}: growth moved {series[b]['g'] - series[a]['g']:+.1f} pts from {quarter_label(a)} to {quarter_label(b)}. Check both figures.")
@@ -113,8 +124,9 @@ def validate(dataset: dict, watchlist: dict | None = None, today: date | None = 
     ids = [c.get("id") for c in companies]
     for dup in sorted({i for i in ids if ids.count(i) > 1}):
         errors.append(f"Company id {dup!r} appears more than once.")
+    entries = {entry.get("id"): entry for entry in (watchlist or {}).get("companies", [])}
     for c in companies:
-        figures += check_company(c, errors, warnings)
+        figures += check_company(c, errors, warnings, frozenset(skipped_quarters(entries.get(c.get("id")))))
     quarters = sorted({q for c in companies for q in (c.get("series") or {}) if QUARTER_RE.match(q)})
     if quarters and dataset.get("latest") != quarters[-1]:
         errors.append(f"latest is {dataset.get('latest')!r} but the newest quarter in the data is {quarters[-1]}.")
