@@ -54,4 +54,5 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
           OWNER: ${{ github.repository_owner }}
-        run: .github/scripts/notify.sh watch.md data-watch "Data watch: something needs attention" --close-when-clean
+        run: |
+          .github/scripts/notify.sh watch.md data-watch "Data watch: something needs attention" --close-when-clean
