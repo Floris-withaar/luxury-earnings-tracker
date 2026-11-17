@@ -9,15 +9,25 @@ The aim: a sourced record of what the large luxury groups report each quarter, k
 | 0 | Dataset of six groups and five quarters, model, five-screen site, pipeline code | Done |
 | 1 | Prove it works: data gate, flow test, browser test on every change, live run, extraction score | Done. First live run on 16 November 2026 found three defects, all fixed. A second run confirms the fixes. |
 | 2 | Secure it: source allowlist, download guards, hash-checked dependencies, content security policy, self-hosted fonts, protected `main` | Done |
-| 3 | Deepen the data: company sources for the press figures, eight quarters of history, more groups | In progress. Press figures down from 19 to 5, history extended to eight quarters, Burberry added. Zegna, Brunello Cucinelli and Ferragamo are next. |
+| 3 | Deepen the data: company sources for the press figures, eight quarters of history, more groups | In progress. No press-sourced figures remain, history covers eight quarters, Burberry and Zegna are in. Brunello Cucinelli and Ferragamo are next. |
 | 4 | Explain it: architecture diagram, this roadmap, notes on using it for another sector | Done in the README |
 
 ## Phase 3 in detail
 
-1. Done for Hermès and Kering. LVMH's eight regional figures are in the company's slides, which automated tools may not read; they stay marked Press until a person confirms them against the slides. Still to do: link the guidance and China commentary to a source.
+1. Done. Every figure now cites a company document. LVMH's regional figures were checked by hand against its slides, which automated tools may not read. Still to do: link the guidance and China commentary to a source.
 2. Done. Every company has eight quarters, from Q4 2024 to Q3 2026.
-3. Burberry is in. Next: Zegna, Brunello Cucinelli and Ferragamo, one at a time. Swatch Group is left out because it publishes sales only twice a year, which a quarterly tracker cannot use. The limit is about ten groups: beyond that the peer median stops meaning "large luxury".
+3. Burberry and Zegna are in. Next: Brunello Cucinelli and Ferragamo, one at a time. Swatch Group is left out because it publishes sales only twice a year, which a quarterly tracker cannot use. The limit is about ten groups: beyond that the peer median stops meaning "large luxury".
 4. After two reporting seasons, publish how often the pipeline found the release, how many figures it extracted correctly and what it cost.
+
+## The finish line: compare across groups, regions and industries
+
+Once the data is deep enough, the tracker compares more than companies with each other:
+
+1. **Peer groups.** Each company gets a group, such as fashion and leather, jewellery and watches, or luxury cars. Each group has its own median, and groups can be set side by side. Car makers and other industries enter here, never into the luxury goods median.
+2. **Regions that line up.** Companies cut Asia differently: some report Japan alone, some fold it into the rest of Asia. A second set of region columns handles that, so regions compare like with like.
+3. **Segments.** Leather goods against jewellery against watches, across companies.
+
+The order matters. This comes after the ten-group dataset has run a full reporting season with clean alerts. Breadth without checked sources is what the project exists to avoid.
 
 ## Decided against
 

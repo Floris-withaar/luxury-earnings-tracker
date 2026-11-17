@@ -102,7 +102,9 @@ def check_company(c: dict, errors: list, warnings: list) -> int:
 
 
 def validate(dataset: dict, watchlist: dict | None = None, today: date | None = None) -> dict:
-    errors, warnings, figures = [], [], 0
+    # errors stop the build. warnings are standing notes. alerts are the warnings that mean
+    # "something is overdue", which the weekly watch sends to the owner.
+    errors, warnings, alerts, figures = [], [], [], 0
     if not DATE_RE.match(str(dataset.get("asOf", ""))):
         errors.append("asOf is not a date like 2026-11-15.")
     companies = dataset.get("companies") or []
@@ -147,8 +149,10 @@ def validate(dataset: dict, watchlist: dict | None = None, today: date | None = 
             known = sorted((c or {}).get("series") or {})
             due = due_date(entry, known[-1]) if known else None
             if due and today > due + timedelta(days=STALE_DAYS):
-                warnings.append(f"{entry['name']}: a new release was expected from {due} and has not been added.")
-    return {"errors": errors, "warnings": warnings, "figures": figures, "companies": len(companies)}
+                message = f"{entry['name']}: a new release was expected from {due} and has not been added."
+                warnings.append(message)
+                alerts.append(message)
+    return {"errors": errors, "warnings": warnings, "alerts": alerts, "figures": figures, "companies": len(companies)}
 
 
 def check_built(dataset: dict) -> list[str]:

@@ -2,6 +2,7 @@
 
     python -m pipeline.run model                 recompute the model and rebuild the site data (no API key needed)
     python -m pipeline.run validate              run the data gate (no API key needed)
+    python -m pipeline.run watch --report f.md   look for anything a person should know about (no API key needed)
     python -m pipeline.run serve                 open the site on http://localhost:8000
     python -m pipeline.run update [--apply]      research, extract and verify releases that are due (--force to search anyway)
     python -m pipeline.run add "Burberry" --url https://...    extract one release into a review file
@@ -16,7 +17,7 @@ import copy
 import json
 import sys
 
-from . import extract, fetch, interpret, llm, model, research, validate, verify
+from . import extract, fetch, interpret, llm, model, research, validate, verify, watch
 from .common import (COMMENTARY, COMPANIES, DATA, DERIVED, REGION_KEYS, REVIEW, SITE, WATCHLIST, growth, load, now_iso,
                      region, save)
 
@@ -174,7 +175,23 @@ def cmd_update(args) -> int:
     for r in results:
         print(r)
     print("Estimated API cost of this run: $%.4f" % llm.usage_summary()["estimated_usd"])
+    if getattr(args, "report", None):
+        # Outcomes that leave no pull request behind, so nobody would otherwise hear of them.
+        stuck = [f"Update: {r['company']}: {r['status']}. {r.get('detail', '')}".strip() for r in results
+                 if r["status"] in ("could not fetch", "error", "source not on the allowlist", "blocked by the data gate")]
+        args.report.write_text("".join(f"{line}\n" for line in stuck), encoding="utf-8")
     return 0
+
+
+def cmd_watch(args) -> int:
+    dataset = load(COMPANIES)
+    result = watch.watch(dataset, load(WATCHLIST), links=not args.no_links)
+    extra = [line.strip() for line in args.also.read_text(encoding="utf-8").splitlines() if line.strip()] if args.also and args.also.exists() else []
+    text = watch.markdown(result, extra, run_url=args.run_url)
+    if args.report:
+        args.report.write_text(text, encoding="utf-8")
+    print(text or f"Nothing needs attention. Checked {result['figures']} figures across {result['companies']} companies.")
+    return 10 if text else 0
 
 
 def cmd_add(args) -> int:
@@ -314,7 +331,8 @@ def main(argv=None) -> int:
     sub.add_parser("model").set_defaults(func=cmd_model)
     sub.add_parser("validate").set_defaults(func=cmd_validate)
     p = sub.add_parser("serve"); p.add_argument("--port", type=int, default=8000); p.set_defaults(func=cmd_serve)
-    p = sub.add_parser("update"); p.add_argument("--company"); p.add_argument("--apply", action="store_true"); p.add_argument("--force", action="store_true", help="search even when no release is due"); p.set_defaults(func=cmd_update)
+    p = sub.add_parser("update"); p.add_argument("--company"); p.add_argument("--apply", action="store_true"); p.add_argument("--force", action="store_true", help="search even when no release is due"); p.add_argument("--report", type=Path, help="write outcomes that need a person to this file"); p.set_defaults(func=cmd_update)
+    p = sub.add_parser("watch"); p.add_argument("--report", type=Path); p.add_argument("--also", type=Path, help="a file of extra alerts, one per line"); p.add_argument("--no-links", action="store_true"); p.add_argument("--run-url"); p.set_defaults(func=cmd_watch)
     p = sub.add_parser("add"); p.add_argument("name"); p.add_argument("--url"); p.add_argument("--file"); p.add_argument("--apply", action="store_true"); p.set_defaults(func=cmd_add)
     p = sub.add_parser("apply"); p.add_argument("path", type=Path); p.add_argument("--force", action="store_true"); p.set_defaults(func=cmd_apply)
     sub.add_parser("interpret").set_defaults(func=cmd_interpret)

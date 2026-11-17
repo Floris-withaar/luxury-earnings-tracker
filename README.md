@@ -126,6 +126,27 @@ The `Update data` workflow runs every Monday and can be started by hand from the
 
 The `Live check` workflow is run by hand. It searches for one company, scores the extraction step against the verified figures and rewrites the notes, then opens a pull request with the results. Use it once after adding the key, and again after changing a prompt or a model.
 
+## How you hear about problems
+
+Nobody has to remember to look. Three things raise their hand on their own:
+
+| What goes wrong | How you hear | When |
+|---|---|---|
+| A change would break the data: a figure with no source, an impossible value, site data out of step | The checks on the pull request fail, and GitHub will not publish the site | Before it is merged |
+| A release could not be downloaded or read, or the weekly update failed | An issue titled "Weekly update: a release needs a person", assigned to the repository owner | The same Monday |
+| A release is overdue, a source link has gone, or a draft is waiting in `data/review` | An issue titled "Data watch: something needs attention", assigned to the repository owner. It closes itself once the problem is gone | The next Monday |
+
+GitHub emails the person an issue is assigned to. To check that this reaches you, run the `Data watch` workflow by hand with "Send a test alert" ticked.
+
+What to do when an alert arrives:
+
+- **Could not fetch** or **refuses automated readers**: download the release yourself and run `python -m pipeline.run add "Company" --file release.pdf`, then review the draft in `data/review`.
+- **Draft waiting for review**: open the file, compare each figure marked `part` or `miss` with the release, then `python -m pipeline.run apply data/review/<file> --force`.
+- **Overdue**: the company has reported and the tracker has no figure. Usually one of the two cases above.
+- **Source link has gone**: find the document's new address and update the link in `data/companies.json`.
+
+What no rule can catch: a figure that is wrong but plausible, or a company restating an old quarter. The quote check at entry and the `Live check` re-read are the protection there, so run `Live check` after each reporting season.
+
 ## Use it for another sector
 
 The pipeline knows nothing about luxury except in three places:
@@ -148,9 +169,9 @@ Growth is on the underlying basis each company publishes: organic, constant exch
 
 ## Status
 
-- The seven companies and eight quarters in the dataset were entered and checked against the linked sources between 15 and 17 November 2026.
+- The eight companies and eight quarters in the dataset were entered and checked against the linked sources between 15 and 17 November 2026.
 - Steps 3 and 4, the data gate and the website are covered by tests and run without a key.
 - Three live runs so far, at about 20 cents each. The first found three defects: the answer limit left no room for the model's thinking, a library for protected PDFs was missing, and failures did not say why. All are fixed. In the latest run, on 17 November 2026, research worked, all six notes were written by the model and passed the number check, and extraction matched 18 of 19 verified figures from 4 of 6 releases. The miss was a group figure the model left blank. Two releases could not be downloaded: Moncler's site and the GlobeNewswire wire both refuse automated readers. Those companies' releases go in by hand with `add --file`.
-- 5 regional figures for LVMH come from a press report of the company's slides: the four for Q3 2026 and Europe for Q2 2026. They are marked Press on the site until a person confirms them against the slides. Kering's 2025 quarters use the company's restated figures, which exclude Kering Beauté. Burberry's series is comparable retail sales, and its Asia column is Greater China.
+- Every figure cites a company document. LVMH's regional figures come from its slides, which automated tools may not read; they were checked by hand on 17 November 2026. Kering's 2025 quarters use the company's restated figures, which exclude Kering Beauté. Burberry's series is comparable retail sales. For Burberry and Zegna the Asia column is Greater China.
 
 This is a study project built from public company releases. It gives no investment advice.
