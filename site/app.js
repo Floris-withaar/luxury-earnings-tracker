@@ -38,7 +38,7 @@ const prevQ = q => shiftQ(q, -1);
 function median(a){ const v = a.filter(isNum).sort((x, y) => x - y); if (!v.length) return null; const m = v.length >> 1; return v.length % 2 ? v[m] : (v[m - 1] + v[m]) / 2; }
 const cos = () => D.companies;
 const byId = id => cos().find(c => c.id === id) || cos()[0];
-function colorOf(c){ const i = cos().indexOf(c); return i >= 0 && i < 6 ? "var(--c" + (i + 1) + ")" : "var(--c-more)"; }
+function colorOf(c){ const i = cos().indexOf(c); return i >= 0 && i < 8 ? "var(--c" + (i + 1) + ")" : "var(--c-more)"; }   /* eight checked hues; any company beyond that is grey */
 function gv(c, q){ const s = c.series && c.series[q]; return s && isNum(s.g) ? s.g : null; }
 function rcell(c, q, k){ const r = c.regions && c.regions[q]; return r && r[k] && isNum(r[k].v) ? r[k] : null; }
 function rv(c, q, k){ const x = rcell(c, q, k); return x ? x.v : null; }
@@ -239,10 +239,14 @@ function viewOverview(v){
 
   const delta = (a, b) => { if (!isNum(a) || !isNum(b)) return null; const d = a - b; return el("span", {class:"delta " + (d < 0 ? "down" : d > 0 ? "up" : "")}, (d < 0 ? "▼ " : d > 0 ? "▲ " : "") + fmtPts(d)); };
   const tile = (label, value, ...rest) => el("div", {class:"kpi"}, el("div", {class:"mono", text: label}), el("div", {class:"v num", text: value}), el("div", {class:"d"}, ...rest));
+  const medianTile = (label, all, like, prev, both, n) => isNum(prev) && isNum(like)
+    ? tile(label, fmtPct(like), delta(like, prev), " against " + qLabel(p) + (both < n ? ", " + both + " of " + n + " companies" : ""))
+    : tile(label, fmtPct(all), "");
   const top = ranked[0], low = ranked[ranked.length - 1];
   v.append(el("div", {class:"kpis"},
-    tile("Median growth", fmtPct(peer.median), delta(peer.median_like, peer.median_prev), isNum(peer.median_prev) ? " against " + qLabel(p) : ""),
-    tile("Median, Asia ex-Japan", fmtPct(peer.asia_median), delta(peer.asia_median_like, peer.asia_median_prev), isNum(peer.asia_median_prev) ? " against " + qLabel(p) : ""),
+    /* A tile that shows a change shows the level for the same companies, and says so when that is not all of them. */
+    medianTile("Median growth", peer.median, peer.median_like, peer.median_prev, peer.compared, peer.n),
+    medianTile("Median, Asia ex-Japan", peer.asia_median, peer.asia_median_like, peer.asia_median_prev, peer.asia_both, peer.asia_compared),
     tile("Fastest", top ? fmtPct(gv(top, q)) : "n/d", top ? top.name : ""),
     tile("Slowest", low ? fmtPct(gv(low, q)) : "n/d", low ? low.name : "")));
 

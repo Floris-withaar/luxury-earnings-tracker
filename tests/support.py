@@ -7,7 +7,10 @@ from types import SimpleNamespace
 from unittest import mock
 
 from pipeline import llm, run, validate
-from pipeline.common import COMPANIES
+
+# A frozen copy of the dataset as it stood with six companies. Tests of the logic use this,
+# so adding a company or a quarter to the live dataset never breaks them.
+FIXTURE = Path(__file__).resolve().parent / "fixtures" / "companies.json"
 
 
 def reply(text: str = "", stop: str = "end_turn"):
@@ -42,7 +45,7 @@ class TempRepoCase(unittest.TestCase):
         root = Path(self.tmp.name)
         (root / "data" / "review").mkdir(parents=True)
         (root / "site").mkdir()
-        (root / "data" / "companies.json").write_text(Path(COMPANIES).read_text(encoding="utf-8"), encoding="utf-8")
+        (root / "data" / "companies.json").write_text(FIXTURE.read_text(encoding="utf-8"), encoding="utf-8")
         paths = dict(DATA=root / "data", COMPANIES=root / "data" / "companies.json", DERIVED=root / "data" / "derived.json",
                      COMMENTARY=root / "data" / "commentary.json", REVIEW=root / "data" / "review", SITE=root / "site",
                      RUN_LOG=root / "data" / "run_log.json", EVAL=root / "data" / "eval.json")
