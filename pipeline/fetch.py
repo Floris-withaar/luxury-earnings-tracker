@@ -38,7 +38,8 @@ class FetchFailed(RuntimeError):
 
 
 def allowlist(watchlist: dict | None) -> list[str]:
-    domains = [c["ir_domain"].lower() for c in (watchlist or {}).get("companies", []) if c.get("ir_domain")]
+    # `more_domains` holds other hosts a company publishes its own documents on, such as its document store.
+    domains = [h.lower() for c in (watchlist or {}).get("companies", []) for h in [c.get("ir_domain"), *(c.get("more_domains") or [])] if h]
     return sorted(set(domains + TRUSTED_WIRES))
 
 

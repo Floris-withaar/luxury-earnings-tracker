@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-16",
+  "asOf": "2026-11-17",
   "latest": "2026Q3",
   "companies": [
     {
@@ -71,12 +71,12 @@
           "asia": {
             "v": 4,
             "label": "Asia excl. Japan",
-            "s": 1
+            "s": 5
           },
           "japan": {
             "v": 14,
             "label": "Japan",
-            "s": 1
+            "s": 5
           },
           "europe": {
             "v": 0,
@@ -87,7 +87,7 @@
             "v": 6,
             "label": "United States",
             "note": "United States only",
-            "s": 1
+            "s": 5
           }
         }
       },
@@ -162,6 +162,13 @@
           "pub": "LVMH press release (GlobeNewswire)",
           "date": "24 Jul 2025",
           "url": "https://www.globenewswire.com/news-release/2025/07/24/3121280/0/en/lvmh-solid-results-in-the-first-half-of-2025-despite-the-prevailing-environment.html",
+          "kind": "company"
+        },
+        {
+          "t": "2026 first-half results presentation (quarterly revenue by region, organic change)",
+          "pub": "LVMH",
+          "date": "27 Jul 2026",
+          "url": "https://lvmh-com.cdn.prismic.io/lvmh-com/68yUok3lubOY0jf__LVMH_2026FirsthalfResults_Presentation.pdf",
           "kind": "company"
         }
       ],
@@ -1061,6 +1068,155 @@
       ],
       "origin": "base",
       "cur": "EUR"
+    },
+    {
+      "id": "burberry",
+      "name": "Burberry",
+      "ticker": "BRBY.L",
+      "hq": "London",
+      "basis": "Comparable",
+      "fiscal": "Financial year ends in late March. Calendar Q3 2026 is Burberry's Q2 FY27.",
+      "scope": "Series and regions are comparable retail sales: stores open for a year, at constant exchange rates. Retail is about 85% of revenue. Burberry reports Asia in two parts. Greater China is shown in the Asia column. The rest of Asia Pacific, which includes Japan and South Korea, grew 3% in each of the last three quarters and has no matching column.",
+      "series": {
+        "2024Q4": {
+          "g": -4,
+          "label": "Q3 FY25",
+          "s": 6
+        },
+        "2025Q1": {
+          "g": -6,
+          "label": "Q4 FY25",
+          "s": 5
+        },
+        "2025Q2": {
+          "g": -1,
+          "label": "Q1 FY26",
+          "s": 4
+        },
+        "2025Q3": {
+          "g": 2,
+          "label": "Q2 FY26",
+          "s": 4
+        },
+        "2025Q4": {
+          "g": 3,
+          "label": "Q3 FY26",
+          "s": 3
+        },
+        "2026Q1": {
+          "g": 5,
+          "label": "Q4 FY26",
+          "s": 2
+        },
+        "2026Q2": {
+          "g": 5,
+          "label": "Q1 FY27",
+          "s": 1
+        },
+        "2026Q3": {
+          "g": 4,
+          "label": "Q2 FY27",
+          "s": 0
+        }
+      },
+      "regions": {
+        "2026Q3": {
+          "asia": {
+            "v": 5,
+            "label": "Greater China",
+            "s": 0
+          },
+          "europe": {
+            "v": -2,
+            "label": "EMEIA",
+            "s": 0
+          },
+          "americas": {
+            "v": 11,
+            "label": "Americas",
+            "s": 0
+          }
+        },
+        "2026Q2": {
+          "asia": {
+            "v": 9,
+            "label": "Greater China",
+            "s": 1
+          },
+          "europe": {
+            "v": -3,
+            "label": "EMEIA",
+            "s": 1
+          },
+          "americas": {
+            "v": 12,
+            "label": "Americas",
+            "s": 1
+          }
+        }
+      },
+      "segments": {},
+      "china": "Greater China comparable retail sales grew 5% in the quarter, after 9% in the quarter before. Burberry's Greater China covers Mainland China, Hong Kong, Macau and Taiwan.",
+      "guidance": {
+        "kind": "qualitative",
+        "date": "14 May 2026",
+        "text": "Expects further progress on its financial ambitions in FY27, with revenue growth and margin expansion, while mindful of an uncertain geopolitical and macroeconomic environment.",
+        "evidence": "First-half comparable retail sales up 4%.",
+        "read": "Nothing to test against."
+      },
+      "sources": [
+        {
+          "t": "Interim results for the 26 weeks ended 26 September 2026 (comparable retail sales by region and quarter)",
+          "pub": "Burberry Group plc",
+          "date": "12 Nov 2026",
+          "url": "https://www.burberryplc.com/content/dam/burberryplc/corporate/documents/investors/results-reports/2026/interims/Burberry%20FY27%20Interim%20Results%20Announcement.pdf.downloadasset.pdf",
+          "kind": "company"
+        },
+        {
+          "t": "First-quarter trading update, FY27",
+          "pub": "Burberry Group plc",
+          "date": "17 Jul 2026",
+          "url": "https://www.burberryplc.com/news/financial/2026/first-quarter-trading-update",
+          "kind": "company"
+        },
+        {
+          "t": "Preliminary results for the 52 weeks ended 28 March 2026",
+          "pub": "Burberry Group plc",
+          "date": "14 May 2026",
+          "url": "https://www.burberryplc.com/news/financial/2026/preliminary-results-for-52-weeks-ended-28-march-2026",
+          "kind": "company"
+        },
+        {
+          "t": "Third-quarter trading update, FY26",
+          "pub": "Burberry Group plc, regulatory release (London Stock Exchange)",
+          "date": "21 Jan 2026",
+          "url": "https://www.rns-pdf.londonstockexchange.com/rns/6781P_1-2026-1-20.pdf",
+          "kind": "company"
+        },
+        {
+          "t": "Interim results for the 26 weeks ended 27 September 2025 (first and second quarter)",
+          "pub": "Burberry Group plc",
+          "date": "13 Nov 2025",
+          "url": "https://www.burberryplc.com/content/dam/burberryplc/corporate/documents/investors/results-reports/2025/interims-november-2025/Burberry%20FY26%20Interim%20Results%20Press%20Release%20November%202025.pdf.downloadasset.pdf",
+          "kind": "company"
+        },
+        {
+          "t": "Preliminary results for the 52 weeks ended 29 March 2025 (fourth quarter)",
+          "pub": "Burberry Group plc",
+          "date": "14 May 2025",
+          "url": "https://www.burberryplc.com/content/dam/burberryplc/corporate/documents/investors/results-reports/2025/prelims-/Burberry%20FY25%20Preliminary%20Results%20Press%20Release.pdf.downloadasset.pdf",
+          "kind": "company"
+        },
+        {
+          "t": "Third-quarter trading update, FY25",
+          "pub": "Burberry Group plc",
+          "date": "24 Jan 2025",
+          "url": "https://www.burberryplc.com/news/financial/2025/third-quarter-trading-update",
+          "kind": "company"
+        }
+      ],
+      "origin": "base",
+      "cur": "GBP"
     }
   ]
 }

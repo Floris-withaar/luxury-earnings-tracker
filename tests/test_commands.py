@@ -4,9 +4,9 @@ from types import SimpleNamespace
 from unittest import mock
 
 from pipeline import fetch, interpret, llm, model, run, validate
-from pipeline.common import COMPANIES, load
+from pipeline.common import load
 
-from tests.support import FakeClient, TempRepoCase, reply
+from tests.support import FIXTURE, FakeClient, TempRepoCase, reply
 
 Q4_RELEASE = ("LVMH Moët Hennessy Louis Vuitton, fourth quarter 2026 revenue.\n"
               "Organic revenue growth was 2% in the fourth quarter.\n" + "The Group continued to invest in its Maisons. " * 20)
@@ -57,26 +57,26 @@ class UpdateCommandTests(TempRepoCase):
         code, fetched = self.update(FakeClient(dict(FOUND, url="https://www.reuters.com/lvmh-q4")))
         self.assertEqual(fetched.call_count, 0)
         self.assertEqual(self.read("data/run_log.json")[-1]["results"][0]["status"], "source not on the allowlist")
-        self.assertEqual(self.read("data/companies.json"), load(COMPANIES))
+        self.assertEqual(self.read("data/companies.json"), load(FIXTURE))
 
     def test_blocked_download_is_reported_with_its_reason(self):
         code, _ = self.update(FakeClient(FOUND), fetch_error=fetch.FetchFailed("www.lvmh.com answered HTTP 403"))
         result = self.read("data/run_log.json")[-1]["results"][0]
         self.assertEqual(result["status"], "could not fetch")
         self.assertIn("HTTP 403", result["detail"])
-        self.assertEqual(self.read("data/companies.json"), load(COMPANIES))
+        self.assertEqual(self.read("data/companies.json"), load(FIXTURE))
 
     def test_cut_off_extraction_changes_nothing(self):
         code, _ = self.update(FakeClient(FOUND, reply(stop="max_tokens"), reply(stop="max_tokens")))
         result = self.read("data/run_log.json")[-1]["results"][0]
         self.assertEqual(result["status"], "error")
         self.assertIn("cut off", result["detail"])
-        self.assertEqual(self.read("data/companies.json"), load(COMPANIES))
+        self.assertEqual(self.read("data/companies.json"), load(FIXTURE))
 
 
 class EvalAndInterpretCommandTests(TempRepoCase):
     def test_eval_scores_what_it_could_read_and_says_what_it_could_not(self):
-        hermes = next(c for c in load(COMPANIES)["companies"] if c["id"] == "hermes")
+        hermes = next(c for c in load(FIXTURE)["companies"] if c["id"] == "hermes")
         series = hermes["series"]["2026Q3"]
         keys = {"asia": "asia_ex_japan", "japan": "japan", "europe": "europe", "americas": "americas", "me": "middle_east_other"}
         answer = {"company": "Hermès", "calendar_quarter": "2026Q3", "basis": "Constant FX", "group": {"growth_pct": series["g"], "quote": "x"},
@@ -149,7 +149,7 @@ class LimitTests(TempRepoCase):
 
 class LikeForLikeTests(TempRepoCase):
     def test_a_new_company_does_not_move_the_median_change(self):
-        data = load(COMPANIES)
+        data = load(FIXTURE)
         before = model.compute(data)["2026Q3"]["peer"]
         newcomer = copy.deepcopy(data["companies"][0])
         newcomer.update(id="newco", name="Newco", series={"2026Q3": {"g": 40, "s": 0}}, regions={}, segments={})
@@ -185,5 +185,5 @@ class StaleNoteTests(TempRepoCase):
         self.assertEqual(notes["richemont"]["by"], llm.MODELS["interpret"])   # companies whose figures did not change keep theirs
 
     def test_a_region_goes_by_the_company_s_own_name(self):
-        metrics = model.compute(load(COMPANIES))["2026Q3"]["companies"]["moncler"]
+        metrics = model.compute(load(FIXTURE))["2026Q3"]["companies"]["moncler"]
         self.assertEqual(metrics["driver"]["name"], "Asia (APAC, Japan, Korea)")

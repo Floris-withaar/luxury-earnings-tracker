@@ -8,12 +8,12 @@ from unittest import mock
 from pipeline import fetch, model, run, validate
 from pipeline.common import COMPANIES, WATCHLIST, load
 
-from tests.support import FakeClient, TempRepoCase
+from tests.support import FIXTURE, FakeClient, TempRepoCase
 from tests.test_pipeline import ANSWER, RELEASE
 
 
 def dataset():
-    return copy.deepcopy(load(COMPANIES))
+    return copy.deepcopy(load(FIXTURE))
 
 
 def company(data, cid):
@@ -74,13 +74,21 @@ class GateTests(unittest.TestCase):
         self.assertTrue(any("Prada" in w and "no figure between" in w for w in warnings))
 
     def test_stale_company_is_a_warning(self):
-        warnings = validate.validate(load(COMPANIES), load(WATCHLIST), today=date(2027, 6, 1))["warnings"]
+        warnings = validate.validate(load(FIXTURE), load(WATCHLIST), today=date(2027, 6, 1))["warnings"]
         self.assertTrue(any("LVMH" in w and "expected" in w for w in warnings))
-        fresh = validate.validate(load(COMPANIES), load(WATCHLIST), today=date(2026, 11, 16))["warnings"]
+        fresh = validate.validate(load(FIXTURE), load(WATCHLIST), today=date(2026, 11, 16))["warnings"]
         self.assertFalse(any("expected" in w for w in fresh))
 
+    def test_company_missing_from_the_watchlist_is_a_warning(self):
+        data = dataset()
+        newcomer = copy.deepcopy(company(data, "prada"))
+        newcomer.update(id="newco", name="Newco")
+        data["companies"].append(newcomer)
+        warnings = validate.validate(data, load(WATCHLIST), today=date(2026, 11, 16))["warnings"]
+        self.assertTrue(any("Not on the watchlist" in w and "Newco" in w for w in warnings))
+
     def test_press_figures_are_counted(self):
-        self.assertTrue(any("press reports" in w for w in validate.validate(load(COMPANIES))["warnings"]))
+        self.assertTrue(any("press reports" in w for w in validate.validate(load(FIXTURE))["warnings"]))
 
 
 class FetchGuardTests(unittest.TestCase):
@@ -91,6 +99,11 @@ class FetchGuardTests(unittest.TestCase):
         self.assertTrue(fetch.is_trusted("https://www.lvmh.com/en/publications/q3", self.domains))
         self.assertTrue(fetch.is_trusted("https://assets.finance.hermes.com/s3fs-public/x.pdf", self.domains))
         self.assertTrue(fetch.is_trusted("https://www.globenewswire.com/news-release/2026/x.html", self.domains))
+
+    def test_a_company_s_own_document_store_can_be_listed(self):
+        self.assertTrue(fetch.is_trusted("https://lvmh-com.cdn.prismic.io/lvmh-com/x_Presentation.pdf", self.domains))
+        self.assertFalse(fetch.is_trusted("https://other-company.cdn.prismic.io/x.pdf", self.domains))
+        self.assertFalse(fetch.is_trusted("https://prismic.io/x.pdf", self.domains))
 
     def test_lookalikes_news_sites_and_plain_http_are_not(self):
         for url in ["https://lvmh.com.evil.example/q3.pdf", "https://evil-lvmh.com/q3.pdf", "https://notlvmh.com/x",
@@ -144,7 +157,7 @@ class FlowTests(TempRepoCase):
         self.assertIn("burberry-group", site["notes"]["2026Q3"]["companies"])
         self.assertEqual(site["meta"]["quality"]["errors"], 0)
         # The six original companies are untouched and every check still passes.
-        before = {c["id"]: c for c in load(COMPANIES)["companies"]}
+        before = {c["id"]: c for c in load(FIXTURE)["companies"]}
         for c in site["companies"]:
             if c["id"] in before:
                 self.assertEqual(c, before[c["id"]])

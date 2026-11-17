@@ -9,14 +9,14 @@ The aim: a sourced record of what the large luxury groups report each quarter, k
 | 0 | Dataset of six groups and five quarters, model, five-screen site, pipeline code | Done |
 | 1 | Prove it works: data gate, flow test, browser test on every change, live run, extraction score | Done. First live run on 16 November 2026 found three defects, all fixed. A second run confirms the fixes. |
 | 2 | Secure it: source allowlist, download guards, hash-checked dependencies, content security policy, self-hosted fonts, protected `main` | Done |
-| 3 | Deepen the data: company sources for the press figures, eight quarters of history, four more groups | In progress. Press figures down from 19 to 8, history extended to eight quarters. Four more groups are next. |
+| 3 | Deepen the data: company sources for the press figures, eight quarters of history, more groups | In progress. Press figures down from 19 to 5, history extended to eight quarters, Burberry added. Zegna, Brunello Cucinelli and Ferragamo are next. |
 | 4 | Explain it: architecture diagram, this roadmap, notes on using it for another sector | Done in the README |
 
 ## Phase 3 in detail
 
 1. Done for Hermès and Kering. LVMH's eight regional figures are in the company's slides, which automated tools may not read; they stay marked Press until a person confirms them against the slides. Still to do: link the guidance and China commentary to a source.
 2. Done. Every company has eight quarters, from Q4 2024 to Q3 2026.
-3. Add Burberry, Zegna, Brunello Cucinelli and Swatch Group. The limit is about ten groups: beyond that the peer median stops meaning "large luxury".
+3. Burberry is in. Next: Zegna, Brunello Cucinelli and Ferragamo, one at a time. Swatch Group is left out because it publishes sales only twice a year, which a quarterly tracker cannot use. The limit is about ten groups: beyond that the peer median stops meaning "large luxury".
 4. After two reporting seasons, publish how often the pipeline found the release, how many figures it extracted correctly and what it cost.
 
 ## Decided against
