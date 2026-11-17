@@ -141,6 +141,11 @@ class LimitTests(TempRepoCase):
         self.assertEqual(client.calls[0]["output_config"], {"effort": llm.EFFORT["interpret"]})
         self.assertNotIn("output_config", client.calls[1])
 
+    def test_a_line_break_inside_a_note_does_not_lose_the_note(self):
+        answer = '{"note": "Growth was 13% in the quarter.\nJapan slowed.", "themes": [], "watch": ""}'
+        self.assertEqual(llm.parse_json(answer)["note"], "Growth was 13% in the quarter.\nJapan slowed.")
+        self.assertEqual(llm.parse_json("Here it is:\n```json\n" + answer + "\n```")["themes"], [])
+
     def test_period_names_are_not_treated_as_figures(self):
         payload = {"growth": 4.3, "note": "Nine-month growth of 5.5%"}
         self.assertEqual(interpret.ungrounded("In Q3 2026 growth was 4.3%, after 5.5% over 9M and H1 FY27.", payload), [])

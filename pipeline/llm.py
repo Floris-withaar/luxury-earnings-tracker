@@ -117,21 +117,24 @@ def complete(prompt: str, *, step: str = "extract", client=None, tools=None, max
 
 
 def parse_json(text: str):
-    """Read a JSON object out of a model answer, tolerating a code fence or a stray sentence."""
+    """Read a JSON object out of a model answer, tolerating a code fence or a stray sentence.
+
+    strict=False accepts a line break typed inside a string, which models sometimes do in a longer note.
+    """
     text = text.strip()
     try:
-        return json.loads(text)
+        return json.loads(text, strict=False)
     except json.JSONDecodeError:
         pass
     fence = re.search(r"```(?:json)?\s*(.+?)```", text, re.S)
     if fence:
         try:
-            return json.loads(fence.group(1))
+            return json.loads(fence.group(1), strict=False)
         except json.JSONDecodeError:
             pass
     start, end = text.find("{"), text.rfind("}")
     if start >= 0 and end > start:
-        return json.loads(text[start : end + 1])
+        return json.loads(text[start : end + 1], strict=False)
     raise ValueError("The model answer held no JSON object.")
 
 
