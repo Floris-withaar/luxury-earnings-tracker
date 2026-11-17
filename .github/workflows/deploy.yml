@@ -47,6 +47,10 @@ jobs:
           cache: pip
           cache-dependency-path: requirements-dev.txt
       - run: pip install --require-hashes -r requirements-dev.txt
+      - name: Workflow files are readable and pinned
+        run: |
+          python tests/check_workflows.py
+          actionlint
       - run: python -m playwright install --with-deps chromium
       - name: Open all five screens
         run: python tests/smoke_site.py

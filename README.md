@@ -75,6 +75,7 @@ Five screens in `site/` (`index.html`, `styles.css`, `app.js`), with no build st
 | Unit, flow and command tests | `python -m unittest discover -s tests -b` | Each step works, a saved release travels from extraction to the file the site reads without touching other companies, and every command behaves as the workflows expect, including when a download is blocked or an answer is cut off. |
 | Data gate | `python -m pipeline.run validate` | Every figure has a source, a valid quarter and a plausible value, and the site data matches the dataset. Warns on large swings, a group figure outside its regions, gaps, stale companies and press sources. |
 | Browser test | `python tests/smoke_site.py` | All five screens open on desktop and phone widths with no errors, no broken text and the right number of figures. The site loads nothing from another host, and the medians it works out itself agree with the pipeline's. Needs `pip install --require-hashes -r requirements-dev.txt`. |
+| Workflow check | `python tests/check_workflows.py` and `actionlint` | Every workflow file is readable by GitHub's parser, has a trigger and jobs, and uses only actions pinned to a commit id. A workflow GitHub cannot read never runs. |
 | Extraction test | `python -m pipeline.run eval` | The LLM re-reads the latest releases and its figures are scored against the verified dataset. Needs an API key. |
 
 The first three run on GitHub for every push and pull request. The site is published only when they pass.

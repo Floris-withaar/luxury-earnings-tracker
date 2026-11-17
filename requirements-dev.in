@@ -1,3 +1,5 @@
 # Edit this file, then run: pip-compile --generate-hashes --output-file requirements-dev.txt requirements-dev.in
 -c requirements.txt
 playwright==1.65.2
+pyyaml==6.0.3   # reads the workflow files in tests/check_workflows.py
+actionlint-py==1.7.12.25   # checks the workflow files against GitHub's own rules
