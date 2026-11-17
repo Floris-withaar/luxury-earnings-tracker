@@ -81,7 +81,7 @@
           "europe": {
             "v": 0,
             "label": "Europe",
-            "s": 1
+            "s": 5
           },
           "americas": {
             "v": 6,
@@ -137,11 +137,11 @@
           "kind": "company"
         },
         {
-          "t": "China Slowdown Impacts LVMH's Key Fashion Unit in Q3 (regional growth from the results presentation)",
-          "pub": "WWD",
-          "date": "Oct 2026",
-          "url": "https://wwd.com/business-news/financial/lvmh-q3-sales-fashion-leather-goods-down-5-percent-1239342984/",
-          "kind": "press"
+          "t": "2026 third-quarter revenue presentation (quarterly revenue by region, organic change). Open the Presentation link on this page",
+          "pub": "LVMH",
+          "date": "12 Oct 2026",
+          "url": "https://www.lvmh.com/en/financial-calendar/2026-q3-revenue",
+          "kind": "company"
         },
         {
           "t": "Letter to shareholders, January 2026 (fourth and third quarter 2025)",
@@ -173,7 +173,8 @@
         }
       ],
       "origin": "base",
-      "cur": "EUR"
+      "cur": "EUR",
+      "scope": "Regional figures come from LVMH's results presentations, which automated tools may not read. They were checked by hand against the slides on 17 November 2026."
     },
     {
       "id": "hermes",
@@ -1217,6 +1218,176 @@
       ],
       "origin": "base",
       "cur": "GBP"
+    },
+    {
+      "id": "zegna",
+      "name": "Zegna Group",
+      "ticker": "ZGN",
+      "hq": "Milan",
+      "basis": "Organic",
+      "scope": "Zegna reports Asia in two parts. The Greater China Region is shown in the Asia column. The rest of Asia Pacific, which includes Japan and South Korea, grew 5.0% in the third quarter and 19.3% in the second, and has no matching column.",
+      "series": {
+        "2024Q4": {
+          "g": 2.9,
+          "rev": 589.2,
+          "s": 7
+        },
+        "2025Q1": {
+          "g": -1.2,
+          "rev": 458.8,
+          "s": 6
+        },
+        "2025Q2": {
+          "g": -2.6,
+          "rev": 468.9,
+          "s": 5
+        },
+        "2025Q3": {
+          "g": 3.6,
+          "rev": 398.2,
+          "s": 4
+        },
+        "2025Q4": {
+          "g": 4.6,
+          "rev": 591.0,
+          "s": 3
+        },
+        "2026Q1": {
+          "g": 7.4,
+          "rev": 470.2,
+          "s": 2
+        },
+        "2026Q2": {
+          "g": 11.0,
+          "rev": 517.1,
+          "s": 1
+        },
+        "2026Q3": {
+          "g": 8.2,
+          "rev": 433.8,
+          "s": 0
+        }
+      },
+      "regions": {
+        "2026Q3": {
+          "asia": {
+            "v": 5.7,
+            "label": "Greater China Region",
+            "s": 0
+          },
+          "europe": {
+            "v": 6.3,
+            "label": "EMEA",
+            "s": 0
+          },
+          "americas": {
+            "v": 13.6,
+            "label": "Americas",
+            "s": 0
+          }
+        },
+        "2026Q2": {
+          "asia": {
+            "v": 8.6,
+            "label": "Greater China Region",
+            "s": 1
+          },
+          "europe": {
+            "v": 1.6,
+            "label": "EMEA",
+            "s": 1
+          },
+          "americas": {
+            "v": 21.8,
+            "label": "Americas",
+            "s": 1
+          }
+        }
+      },
+      "segments": {
+        "2026Q3": [
+          {
+            "name": "Zegna",
+            "g": 11.3
+          },
+          {
+            "name": "Thom Browne",
+            "g": -7.4
+          },
+          {
+            "name": "Tom Ford Fashion",
+            "g": 5.5
+          }
+        ]
+      },
+      "china": "The Greater China Region grew 5.7% organically, after 8.6% in the second quarter. Management described steady growth there in a more challenging environment, and said the slowdown weighed on Thom Browne.",
+      "guidance": {
+        "kind": "qualitative",
+        "date": "22 Oct 2026",
+        "text": "No numeric guidance. Management looks to the final months of the year with cautious confidence in an uncertain environment.",
+        "evidence": "Nine-month revenues up 8.9% organically.",
+        "read": "Nothing to test against."
+      },
+      "sources": [
+        {
+          "t": "Third-quarter 2026 revenues",
+          "pub": "Ermenegildo Zegna Group press release",
+          "date": "22 Oct 2026",
+          "url": "https://ir.zegnagroup.com/press-release/ermenegildo-zegna-group-q3-2026-revenues1-up-9-with-solid-growth-across-all-regions-and-continued-strength-in-the-dtc-channel-13-yoy/",
+          "kind": "company"
+        },
+        {
+          "t": "Second-quarter and first-half 2026 preliminary revenues",
+          "pub": "Ermenegildo Zegna Group press release",
+          "date": "23 Jul 2026",
+          "url": "https://ir.zegnagroup.com/press-release/ermenegildo-zegna-group-records-double-digit-revenue-growth-in-q2-2026-with-accelerating-dtc-momentum1/",
+          "kind": "company"
+        },
+        {
+          "t": "First-quarter 2026 revenues",
+          "pub": "Ermenegildo Zegna Group press release (Business Wire)",
+          "date": "30 Apr 2026",
+          "url": "https://www.businesswire.com/news/home/20260430172279/en/Ermenegildo-Zegna-Group-Reports-a-Solid-Start-of-the-Year-With-Q1-2026-Revenues-at-%E2%82%AC470-Million-Driven-by-Strong-DTC-Performance1",
+          "kind": "company"
+        },
+        {
+          "t": "Full-year 2025 revenues (fourth quarter)",
+          "pub": "Ermenegildo Zegna Group press release (SEC filing)",
+          "date": "2 Feb 2026",
+          "url": "https://www.sec.gov/Archives/edgar/data/1877787/000187778726000005/pressreleaserevenuesfy2025.htm",
+          "kind": "company"
+        },
+        {
+          "t": "Nine-month 2025 revenues (third quarter)",
+          "pub": "Ermenegildo Zegna Group press release (Business Wire)",
+          "date": "23 Oct 2025",
+          "url": "https://www.businesswire.com/news/home/20251023280497/en/Ermenegildo-Zegna-Group-Revenues1-Reach-%E2%82%AC1.33B-in-the-First-Nine-Months-of-2025-Acceleration-in-Q3-Driven-by-Robust-DTC-Growth-Across-All-Brands",
+          "kind": "company"
+        },
+        {
+          "t": "First-half 2025 preliminary revenues (second quarter)",
+          "pub": "Ermenegildo Zegna Group press release",
+          "date": "30 Jul 2025",
+          "url": "https://ir.zegnagroup.com/press-release/growth-in-the-dtc-channel-across-all-brands-drives-ermenegildo-zegna-group-h1-2025-revenues-to-e928-million/",
+          "kind": "company"
+        },
+        {
+          "t": "First-quarter 2025 revenues",
+          "pub": "Ermenegildo Zegna Group press release (Business Wire)",
+          "date": "24 Apr 2025",
+          "url": "https://www.businesswire.com/news/home/20250424917675/en/Ermenegildo-Zegna-Group-Reports-Q1-2025-Revenues-of-%E2%82%AC459-Million1-Driven-by-Positive-Results-in-DTC-for-All-Three-Brands",
+          "kind": "company"
+        },
+        {
+          "t": "Full-year 2024 revenues (fourth quarter)",
+          "pub": "Ermenegildo Zegna Group press release (Business Wire)",
+          "date": "27 Jan 2025",
+          "url": "https://www.businesswire.com/news/home/20250127113377/en/Ermenegildo-Zegna-Group-Revenues-Reach-%E2%82%AC1947-Million1-in-FY-2024.-Q4-Revenues-up-3-Year-On-Year-Driven-by-ZEGNA-Brand-up-8-YoY.",
+          "kind": "company"
+        }
+      ],
+      "origin": "base",
+      "cur": "EUR"
     }
   ]
 }

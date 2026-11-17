@@ -1,0 +1,57 @@
+name: Data watch
+
+# Every Monday, after the update: looks for anything a person should know about and, if it finds
+# something, opens a GitHub issue assigned to the repository owner. GitHub emails the assignee.
+# It checks the data gate, overdue releases, source links that have gone and drafts waiting for review.
+# Needs no API key and costs nothing. Run it by hand with "test" ticked to check that alerts reach you.
+on:
+  schedule:
+    - cron: "41 7 * * 1"
+  workflow_dispatch:
+    inputs:
+      test:
+        description: "Send a test alert"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  issues: write
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
+        with:
+          python-version: "3.13"
+          cache: pip
+      - run: pip install --require-hashes -r requirements.txt
+      - name: Look for anything that needs a person
+        env:
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          TEST: ${{ inputs.test }}
+        run: |
+          set +e
+          python -m pipeline.run watch --report watch.md --run-url "$RUN_URL" | tee -a "$GITHUB_STEP_SUMMARY"
+          code=${PIPESTATUS[0]}
+          set -e
+          # 0 means clean and 10 means there is something to report. Anything else is a real failure.
+          if [ "$code" != "0" ] && [ "$code" != "10" ]; then exit "$code"; fi
+          if [ "$TEST" = "true" ]; then
+            printf 'This is a test alert from the Data watch workflow.\n\nIf an email about this issue reached you, alerts work. You can close the issue.\n' > watch.md
+          fi
+      - name: Tell the owner
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          OWNER: ${{ github.repository_owner }}
+        run: .github/scripts/notify.sh watch.md data-watch "Data watch: something needs attention" --close-when-clean

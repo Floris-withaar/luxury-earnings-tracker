@@ -16,6 +16,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  issues: write
 
 concurrency:
   group: data-update
@@ -38,9 +39,9 @@ jobs:
           COMPANY: ${{ inputs.company }}
         run: |
           if [ -n "$COMPANY" ]; then
-            python -m pipeline.run update --apply --company "$COMPANY"
+            python -m pipeline.run update --apply --report update-problems.txt --company "$COMPANY"
           else
-            python -m pipeline.run update --apply
+            python -m pipeline.run update --apply --report update-problems.txt
           fi
       - run: python -m unittest discover -s tests -b
       - run: python -m pipeline.run validate
@@ -51,3 +52,27 @@ jobs:
           .github/scripts/open-pr.sh data-update "Data update"
           "Found by the scheduled pipeline. Figures that matched their release word for word and passed the data gate are merged into data/companies.json. Anything else is in data/review for a person to check. Review the diff before merging."
           data/companies.json data/review
+      - name: Tell the owner when a release could not be processed or the run failed
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          OWNER: ${{ github.repository_owner }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          STATUS: ${{ job.status }}
+        run: |
+          if [ "$STATUS" != "success" ]; then
+            echo "Update: the weekly update run failed before it could finish." >> update-problems.txt
+          fi
+          if [ -s update-problems.txt ]; then
+            {
+              echo "The weekly update needs a person."
+              echo
+              sed 's/^/- /' update-problems.txt
+              echo
+              echo "Run: $RUN_URL"
+              echo
+              echo 'What to do: see the section "How you hear about problems" in the README.'
+            } > update-report.md
+            .github/scripts/notify.sh update-report.md update-stuck "Weekly update: a release needs a person"
+          fi
