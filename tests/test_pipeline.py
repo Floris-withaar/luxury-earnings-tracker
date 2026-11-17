@@ -141,6 +141,14 @@ class ResearchTests(unittest.TestCase):
         self.assertEqual(research.due_date({"name": "X", "first_check_days": 10}, "2026Q4"), date(2027, 4, 10))
         self.assertTrue(research.is_due(entry, None))
 
+    def test_a_quarter_never_reported_alone_is_passed_over(self):
+        from datetime import date
+        entry = {"name": "X", "first_check_days": 10, "lags": {"3": 15}, "skip_quarters": [2]}
+        self.assertEqual(research.due_date(entry, "2027Q1"), date(2027, 10, 15))     # no search in July for the half year
+        self.assertEqual(research.due_date(entry, "2026Q3"), date(2027, 1, 10))
+        everything = {"name": "X", "first_check_days": 10, "skip_quarters": [1, 2, 3, 4]}
+        self.assertEqual(research.due_date(everything, "2026Q3"), date(2027, 1, 10))  # skipping all four is ignored
+
     def test_bad_url_is_rejected(self):
         found = research.find_release({"name": "X"}, None, client=FakeClient({"found": True, "url": "javascript:alert(1)"}))
         self.assertFalse(found["found"])

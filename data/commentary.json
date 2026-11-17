@@ -8,69 +8,76 @@
     },
     "companies": {
       "lvmh": {
-        "note": "Growth was +1% in Q4 2024 (organic). That is 7 pts behind the median of the other companies.",
+        "note": "Growth was +1% in Q4 2024 (organic). That is 4.5 pts behind the median of the other companies.",
         "themes": [],
         "watch": "",
         "by": "rules",
-        "at": "2026-11-17T01:33:54Z"
+        "at": "2026-11-17T02:36:32Z"
       },
       "hermes": {
-        "note": "Growth was +17.6% in Q4 2024 (at constant exchange rates). That is 14.7 pts ahead of the median of the other companies.",
+        "note": "Growth was +17.6% in Q4 2024 (at constant exchange rates). That is 15.7 pts ahead of the median of the other companies.",
         "themes": [],
         "watch": "",
         "by": "rules",
-        "at": "2026-11-17T01:33:54Z"
+        "at": "2026-11-17T02:36:32Z"
       },
       "kering": {
-        "note": "Growth was −12% in Q4 2024 (comparable). That is 20 pts behind the median of the other companies.",
+        "note": "Growth was −12% in Q4 2024 (comparable). That is 17.4 pts behind the median of the other companies.",
         "themes": [],
         "watch": "",
         "by": "rules",
-        "at": "2026-11-17T01:33:54Z"
+        "at": "2026-11-17T02:36:32Z"
       },
       "richemont": {
-        "note": "Growth was +10% in Q4 2024 (at constant exchange rates). That is 7.1 pts ahead of the median of the other companies.",
+        "note": "Growth was +10% in Q4 2024 (at constant exchange rates). That is 8.1 pts ahead of the median of the other companies.",
         "themes": [],
         "watch": "",
         "by": "rules",
-        "at": "2026-11-17T01:33:54Z"
+        "at": "2026-11-17T02:36:32Z"
       },
       "moncler": {
-        "note": "Growth was +8% in Q4 2024 (at constant exchange rates). That is 5.1 pts ahead of the median of the other companies.",
+        "note": "Growth was +8% in Q4 2024 (at constant exchange rates). That is 6 pts ahead of the median of the other companies.",
         "themes": [],
         "watch": "",
         "by": "rules",
-        "at": "2026-11-17T01:33:54Z"
+        "at": "2026-11-17T02:36:32Z"
       },
       "prada": {
-        "note": "Growth was +18% in Q4 2024 (organic). That is 15.1 pts ahead of the median of the other companies.",
+        "note": "Growth was +18% in Q4 2024 (organic). That is 16.1 pts ahead of the median of the other companies.",
         "themes": [],
         "watch": "",
         "by": "rules",
-        "at": "2026-11-17T01:33:54Z"
+        "at": "2026-11-17T02:36:32Z"
       },
       "burberry": {
-        "note": "Growth was −4% in Q4 2024 (comparable). That is 12 pts behind the median of the other companies.",
+        "note": "Growth was −4% in Q4 2024 (comparable). That is 9.4 pts behind the median of the other companies.",
         "themes": [],
         "watch": "",
         "by": "rules",
-        "at": "2026-11-17T01:33:54Z"
+        "at": "2026-11-17T02:36:32Z"
       },
       "zegna": {
-        "note": "Growth was +2.9% in Q4 2024 (organic). That is 5.1 pts behind the median of the other companies.",
+        "note": "Growth was +2.9% in Q4 2024 (organic). That is 1.6 pts behind the median of the other companies.",
         "themes": [],
         "watch": "",
         "by": "rules",
-        "at": "2026-11-17T01:33:54Z"
+        "at": "2026-11-17T02:36:32Z"
+      },
+      "ferragamo": {
+        "note": "Growth was −4% in Q4 2024 (at constant exchange rates). That is 9.4 pts behind the median of the other companies.",
+        "themes": [],
+        "watch": "",
+        "by": "rules",
+        "at": "2026-11-17T02:36:32Z"
       }
     }
   },
   "2025Q1": {
     "peer": {
-      "note": "8 of 8 companies grew more slowly in Q1 2025 than in Q4 2024. Median growth went from +5.5% in Q4 2024 to −0.1%.",
-      "lede": "Median growth went from +5.5% in Q4 2024 to −0.1%.",
+      "note": "8 of 9 companies grew more slowly in Q1 2025 than in Q4 2024. Median growth went from +2.9% in Q4 2024 to −1% for the 9 companies that report both quarters.",
+      "lede": "Median growth went from +2.9% in Q4 2024 to −1% for the 9 companies that report both quarters.",
       "by": "rules",
-      "at": "2026-11-17T01:33:54Z"
+      "at": "2026-11-17T02:36:32Z"
     },
     "companies": {
       "lvmh": {
@@ -81,11 +88,11 @@
         "at": "2026-11-17T01:33:54Z"
       },
       "hermes": {
-        "note": "Growth was +7.2% in Q1 2025 (at constant exchange rates), down 10.4 pts from +17.6% in Q4 2024. That is 8.4 pts ahead of the median of the other companies.",
+        "note": "Growth was +7.2% in Q1 2025 (at constant exchange rates), down 10.4 pts from +17.6% in Q4 2024. That is 8.2 pts ahead of the median of the other companies.",
         "themes": [],
         "watch": "",
         "by": "rules",
-        "at": "2026-11-17T01:33:54Z"
+        "at": "2026-11-17T02:36:32Z"
       },
       "kering": {
         "note": "Growth was −15% in Q1 2025 (comparable), down 3 pts from −12% in Q4 2024. That is 16 pts behind the median of the other companies.",
@@ -95,25 +102,25 @@
         "at": "2026-11-17T01:33:54Z"
       },
       "richemont": {
-        "note": "Growth was +7% in Q1 2025 (at constant exchange rates), down 3 pts from +10% in Q4 2024. That is 8.2 pts ahead of the median of the other companies.",
+        "note": "Growth was +7% in Q1 2025 (at constant exchange rates), down 3 pts from +10% in Q4 2024. That is 8 pts ahead of the median of the other companies.",
         "themes": [],
         "watch": "",
         "by": "rules",
-        "at": "2026-11-17T01:33:54Z"
+        "at": "2026-11-17T02:36:32Z"
       },
       "moncler": {
-        "note": "Growth was +1% in Q1 2025 (at constant exchange rates), down 7 pts from +8% in Q4 2024. That is 2.2 pts ahead of the median of the other companies.",
+        "note": "Growth was +1% in Q1 2025 (at constant exchange rates), down 7 pts from +8% in Q4 2024. That is 2 pts ahead of the median of the other companies.",
         "themes": [],
         "watch": "",
         "by": "rules",
-        "at": "2026-11-17T01:33:54Z"
+        "at": "2026-11-17T02:36:32Z"
       },
       "prada": {
-        "note": "Growth was +13% in Q1 2025 (organic), down 5 pts from +18% in Q4 2024. That is 14.2 pts ahead of the median of the other companies.",
+        "note": "Growth was +13% in Q1 2025 (organic), down 5 pts from +18% in Q4 2024. That is 14 pts ahead of the median of the other companies.",
         "themes": [],
         "watch": "",
         "by": "rules",
-        "at": "2026-11-17T01:33:54Z"
+        "at": "2026-11-17T02:36:32Z"
       },
       "burberry": {
         "note": "Growth was −6% in Q1 2025 (comparable), down 2 pts from −4% in Q4 2024. That is 7 pts behind the median of the other companies.",
@@ -128,15 +135,29 @@
         "watch": "",
         "by": "rules",
         "at": "2026-11-17T01:33:54Z"
+      },
+      "cucinelli": {
+        "note": "Growth was +10% in Q1 2025 (at constant exchange rates). That is 11 pts ahead of the median of the other companies.",
+        "themes": [],
+        "watch": "",
+        "by": "rules",
+        "at": "2026-11-17T02:36:32Z"
+      },
+      "ferragamo": {
+        "note": "Growth was −1% in Q1 2025 (at constant exchange rates), up 3 pts from −4% in Q4 2024. That is 2 pts behind the median of the other companies.",
+        "themes": [],
+        "watch": "",
+        "by": "rules",
+        "at": "2026-11-17T02:36:32Z"
       }
     }
   },
   "2025Q2": {
     "peer": {
-      "note": "6 of 8 companies grew more slowly in Q2 2025 than in Q1 2025. Median growth went from −0.1% in Q1 2025 to −1%.",
-      "lede": "Median growth went from −0.1% in Q1 2025 to −1%.",
+      "note": "7 of 9 companies grew more slowly in Q2 2025 than in Q1 2025. Median growth went from −1% in Q1 2025 to −1%.",
+      "lede": "Median growth went from −1% in Q1 2025 to −1%.",
       "by": "rules",
-      "at": "2026-11-17T01:33:54Z"
+      "at": "2026-11-17T02:36:32Z"
     },
     "companies": {
       "lvmh": {
@@ -147,11 +168,11 @@
         "at": "2026-11-17T01:33:54Z"
       },
       "hermes": {
-        "note": "Growth was +9% in Q2 2025 (at constant exchange rates), up 1.8 pts from +7.2% in Q1 2025. That is 10 pts ahead of the median of the other companies.",
+        "note": "Growth was +9% in Q2 2025 (at constant exchange rates), up 1.8 pts from +7.2% in Q1 2025. That is 10.8 pts ahead of the median of the other companies.",
         "themes": [],
         "watch": "",
         "by": "rules",
-        "at": "2026-11-16T08:14:42Z"
+        "at": "2026-11-17T02:36:32Z"
       },
       "kering": {
         "note": "Growth was −16% in Q2 2025 (comparable), down 1 pt from −15% in Q1 2025. That is 15 pts behind the median of the other companies.",
@@ -161,32 +182,32 @@
         "at": "2026-11-17T01:33:54Z"
       },
       "richemont": {
-        "note": "Growth was +6% in Q2 2025 (at constant exchange rates), down 1 pt from +7% in Q1 2025. That is 7 pts ahead of the median of the other companies.",
+        "note": "Growth was +6% in Q2 2025 (at constant exchange rates), down 1 pt from +7% in Q1 2025. That is 7.8 pts ahead of the median of the other companies.",
         "themes": [],
         "watch": "",
         "by": "rules",
-        "at": "2026-11-16T08:14:42Z"
+        "at": "2026-11-17T02:36:32Z"
       },
       "moncler": {
-        "note": "Growth was −1% in Q2 2025 (at constant exchange rates), down 2 pts from +1% in Q1 2025. That is level with the median of the other companies.",
+        "note": "Growth was −1% in Q2 2025 (at constant exchange rates), down 2 pts from +1% in Q1 2025. That is 0.8 pts ahead of the median of the other companies.",
         "themes": [],
         "watch": "",
         "by": "rules",
-        "at": "2026-11-17T01:33:54Z"
+        "at": "2026-11-17T02:36:32Z"
       },
       "prada": {
-        "note": "Growth was +7.6% in Q2 2025 (organic), down 5.4 pts from +13% in Q1 2025. That is 8.6 pts ahead of the median of the other companies.",
+        "note": "Growth was +7.6% in Q2 2025 (organic), down 5.4 pts from +13% in Q1 2025. That is 9.4 pts ahead of the median of the other companies.",
         "themes": [],
         "watch": "",
         "by": "rules",
-        "at": "2026-11-16T08:14:42Z"
+        "at": "2026-11-17T02:36:32Z"
       },
       "burberry": {
-        "note": "Growth was −1% in Q2 2025 (comparable), up 5 pts from −6% in Q1 2025. That is level with the median of the other companies.",
+        "note": "Growth was −1% in Q2 2025 (comparable), up 5 pts from −6% in Q1 2025. That is 0.8 pts ahead of the median of the other companies.",
         "themes": [],
         "watch": "",
         "by": "rules",
-        "at": "2026-11-17T01:33:54Z"
+        "at": "2026-11-17T02:36:32Z"
       },
       "zegna": {
         "note": "Growth was −2.6% in Q2 2025 (organic), down 1.4 pts from −1.2% in Q1 2025. That is 1.6 pts behind the median of the other companies.",
@@ -194,15 +215,22 @@
         "watch": "",
         "by": "rules",
         "at": "2026-11-17T01:33:54Z"
+      },
+      "ferragamo": {
+        "note": "Growth was −11.8% in Q2 2025 (at constant exchange rates), down 10.8 pts from −1% in Q1 2025. That is 10.8 pts behind the median of the other companies.",
+        "themes": [],
+        "watch": "",
+        "by": "rules",
+        "at": "2026-11-17T02:36:32Z"
       }
     }
   },
   "2025Q3": {
     "peer": {
-      "note": "0 of 8 companies grew more slowly in Q3 2025 than in Q2 2025. Median growth went from −1% in Q2 2025 to +2.8%.",
-      "lede": "Median growth went from −1% in Q2 2025 to +2.8%.",
+      "note": "0 of 9 companies grew more slowly in Q3 2025 than in Q2 2025. Median growth went from −1% in Q2 2025 to +2% for the 9 companies that report both quarters.",
+      "lede": "Median growth went from −1% in Q2 2025 to +2% for the 9 companies that report both quarters.",
       "by": "rules",
-      "at": "2026-11-17T01:33:54Z"
+      "at": "2026-11-17T02:36:32Z"
     },
     "companies": {
       "lvmh": {
@@ -260,15 +288,29 @@
         "watch": "",
         "by": "rules",
         "at": "2026-11-17T01:33:54Z"
+      },
+      "cucinelli": {
+        "note": "Growth was +12.5% in Q3 2025 (at constant exchange rates). That is 10.5 pts ahead of the median of the other companies.",
+        "themes": [],
+        "watch": "",
+        "by": "rules",
+        "at": "2026-11-17T02:36:32Z"
+      },
+      "ferragamo": {
+        "note": "Growth was +1.7% in Q3 2025 (at constant exchange rates), up 13.5 pts from −11.8% in Q2 2025. That is 1.9 pts behind the median of the other companies.",
+        "themes": [],
+        "watch": "",
+        "by": "rules",
+        "at": "2026-11-17T02:36:32Z"
       }
     }
   },
   "2025Q4": {
     "peer": {
-      "note": "2 of 8 companies grew more slowly in Q4 2025 than in Q3 2025. Median growth went from +2.8% in Q3 2025 to +5.1%.",
+      "note": "4 of 10 companies grew more slowly in Q4 2025 than in Q3 2025. Median growth went from +2.8% in Q3 2025 to +5.1%.",
       "lede": "Median growth went from +2.8% in Q3 2025 to +5.1%.",
       "by": "rules",
-      "at": "2026-11-17T01:33:54Z"
+      "at": "2026-11-17T02:36:32Z"
     },
     "companies": {
       "lvmh": {
@@ -342,15 +384,31 @@
         "watch": "",
         "by": "rules",
         "at": "2026-11-17T01:33:54Z"
+      },
+      "cucinelli": {
+        "note": "Growth was +11.9% in Q4 2025 (at constant exchange rates), down 0.6 pts from +12.5% in Q3 2025. That is 7.3 pts ahead of the median of the other companies.",
+        "themes": [],
+        "watch": "",
+        "by": "rules",
+        "at": "2026-11-17T02:36:32Z"
+      },
+      "ferragamo": {
+        "note": "Growth was −2% in Q4 2025 (at constant exchange rates), down 3.7 pts from +1.7% in Q3 2025. Compounded with the same quarter a year earlier, growth is −5.9% over two years. That is 7.6 pts behind the median of the other companies.",
+        "themes": [
+          "Tougher base next quarter"
+        ],
+        "watch": "",
+        "by": "rules",
+        "at": "2026-11-17T02:36:32Z"
       }
     }
   },
   "2026Q1": {
     "peer": {
-      "note": "2 of 8 companies grew more slowly in Q1 2026 than in Q4 2025. Median growth went from +5.1% in Q4 2025 to +5.3%.",
+      "note": "2 of 10 companies grew more slowly in Q1 2026 than in Q4 2025. Median growth went from +5.1% in Q4 2025 to +5.3%.",
       "lede": "Median growth went from +5.1% in Q4 2025 to +5.3%.",
       "by": "rules",
-      "at": "2026-11-17T01:33:54Z"
+      "at": "2026-11-17T02:36:32Z"
     },
     "companies": {
       "lvmh": {
@@ -414,15 +472,31 @@
         "watch": "",
         "by": "rules",
         "at": "2026-11-17T01:33:54Z"
+      },
+      "cucinelli": {
+        "note": "Growth was +14% in Q1 2026 (at constant exchange rates), up 2.1 pts from +11.9% in Q4 2025. Compounded with the same quarter a year earlier, growth is +25.4% over two years. That is 9 pts ahead of the median of the other companies.",
+        "themes": [],
+        "watch": "",
+        "by": "rules",
+        "at": "2026-11-17T02:36:32Z"
+      },
+      "ferragamo": {
+        "note": "Growth was −1.2% in Q1 2026 (at constant exchange rates), up 0.8 pts from −2% in Q4 2025. Compounded with the same quarter a year earlier, growth is −2.2% over two years. That is 6.8 pts behind the median of the other companies.",
+        "themes": [
+          "Easier base next quarter"
+        ],
+        "watch": "",
+        "by": "rules",
+        "at": "2026-11-17T02:36:32Z"
       }
     }
   },
   "2026Q2": {
     "peer": {
-      "note": "1 of 8 companies grew more slowly in Q2 2026 than in Q1 2026. Median growth went from +5.3% in Q1 2026 to +5%. Asia grew more slowly than the group at 2 of 7 companies.",
-      "lede": "Median growth went from +5.3% in Q1 2026 to +5%.",
+      "note": "1 of 9 companies grew more slowly in Q2 2026 than in Q1 2026. Median growth went from +5% in Q1 2026 to +5%. Asia grew more slowly than the group at 3 of 8 companies.",
+      "lede": "Median growth went from +5% in Q1 2026 to +5%.",
       "by": "rules",
-      "at": "2026-11-17T01:33:54Z"
+      "at": "2026-11-17T02:36:32Z"
     },
     "companies": {
       "lvmh": {
@@ -497,15 +571,25 @@
         "watch": "",
         "by": "rules",
         "at": "2026-11-17T01:33:54Z"
+      },
+      "ferragamo": {
+        "note": "Growth was +4.6% in Q2 2026 (at constant exchange rates), up 5.8 pts from −1.2% in Q1 2026. North America led the regions at +13%. EMEA was weakest at −1.3%. Compounded with the same quarter a year earlier, growth is −7.7% over two years. That is 0.4 pts behind the median of the other companies.",
+        "themes": [
+          "Asia drag",
+          "Tougher base next quarter"
+        ],
+        "watch": "",
+        "by": "rules",
+        "at": "2026-11-17T02:36:32Z"
       }
     }
   },
   "2026Q3": {
     "peer": {
-      "note": "8 of 8 companies grew more slowly in Q3 2026 than in Q2 2026. Median growth went from +5% in Q2 2026 to +2.5%. In Asia excluding Japan it went from +8.6% to +5%. Asia grew more slowly than the group at 5 of 8 companies.",
-      "lede": "Median growth went from +5% in Q2 2026 to +2.5%. In Asia excluding Japan it went from +8.6% to +5%.",
+      "note": "9 of 9 companies grew more slowly in Q3 2026 than in Q2 2026. Median growth went from +5% in Q2 2026 to +1% for the 9 companies that report both quarters. In Asia excluding Japan it went from +8.3% to +2.5%. Asia grew more slowly than the group at 6 of 9 companies.",
+      "lede": "Median growth went from +5% in Q2 2026 to +1% for the 9 companies that report both quarters. In Asia excluding Japan it went from +8.3% to +2.5%.",
       "by": "rules",
-      "at": "2026-11-17T01:33:54Z"
+      "at": "2026-11-17T02:36:32Z"
     },
     "companies": {
       "lvmh": {
@@ -568,8 +652,7 @@
         ],
         "watch": "",
         "by": "rules",
-        "at": "2026-11-17T02:20:43Z",
-        "rejected": "The model note failed. JSONDecodeError: Extra data: line 3 column 1 (char 180)"
+        "at": "2026-11-17T02:36:32Z"
       },
       "prada": {
         "note": "Prada Group's organic growth was 0% in Q3 2026, down from 5% in Q2 2026, a slowdown of 5 points and 4 points below the peer median of 2.5%... Let me state it cleanly: growth was 0% against 5% in the prior quarter, a change of -5 points. The largest driver was the Americas, where growth slowed by 14 points to 5%. Asia Pacific was 0%, 8 points lower than before. Only 1 of 5 regions grew. Europe was -3% and Middle East was -18%. Prada retail sales grew 1% and Miu Miu was -3%.",
@@ -609,6 +692,24 @@
         "by": "claude-sonnet-5-5",
         "at": "2026-11-17T02:20:52Z",
         "figures": "f32feba84f06"
+      },
+      "cucinelli": {
+        "note": "Growth was +13.5% in Q3 2026 (at constant exchange rates). Compounded with the same quarter a year earlier, growth is +27.7% over two years. That is 12.5 pts ahead of the median of the other companies.",
+        "themes": [],
+        "watch": "",
+        "by": "rules",
+        "at": "2026-11-17T02:36:32Z"
+      },
+      "ferragamo": {
+        "note": "Growth was −3.5% in Q3 2026 (at constant exchange rates), down 8.1 pts from +4.6% in Q2 2026. North America led the regions at +2.4%. Asia Pacific was weakest at −11.1%. Asia Pacific moved from −0.6% to −11.1%, a swing of −10.5 pts. Compounded with the same quarter a year earlier, growth is −1.9% over two years. That is 7.5 pts behind the median of the other companies.",
+        "themes": [
+          "Asia drag",
+          "Narrow growth",
+          "Easier base next quarter"
+        ],
+        "watch": "",
+        "by": "rules",
+        "at": "2026-11-17T02:36:32Z"
       }
     }
   }

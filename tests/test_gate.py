@@ -73,6 +73,19 @@ class GateTests(unittest.TestCase):
         self.assertTrue(any("Moncler" in w and "moved" in w for w in warnings))
         self.assertTrue(any("Prada" in w and "no figure between" in w for w in warnings))
 
+    def test_a_quarter_the_company_never_reports_alone_is_not_a_gap(self):
+        data = dataset()
+        del company(data, "hermes")["series"]["2026Q2"]
+        company(data, "hermes")["regions"].pop("2026Q2", None)
+        watchlist = {"companies": [{"id": c["id"], "name": c["name"], "ir_domain": "example.com"} for c in data["companies"]]}
+        gaps = lambda: [w for w in validate.validate(data, watchlist, today=date(2026, 11, 1))["warnings"] if "no figure between" in w]
+        self.assertEqual(len(gaps()), 1)
+        next(e for e in watchlist["companies"] if e["id"] == "hermes")["skip_quarters"] = [2]
+        self.assertEqual(gaps(), [])
+        del company(data, "hermes")["series"]["2026Q1"]          # a first-quarter hole is still a fault
+        company(data, "hermes")["regions"].pop("2026Q1", None)
+        self.assertEqual(len(gaps()), 1)
+
     def test_stale_company_is_a_warning(self):
         warnings = validate.validate(load(FIXTURE), load(WATCHLIST), today=date(2027, 6, 1))["warnings"]
         self.assertTrue(any("LVMH" in w and "expected" in w for w in warnings))

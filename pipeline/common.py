@@ -124,3 +124,12 @@ def slugify(name: str) -> str:
     plain = unicodedata.normalize("NFD", name.lower())
     plain = "".join(ch for ch in plain if unicodedata.category(ch) != "Mn")
     return re.sub(r"[^a-z0-9]+", "-", plain).strip("-")[:40] or "company"
+
+
+def skipped_quarters(entry: dict | None) -> set[int]:
+    """Calendar quarters (1 to 4) for which the company publishes no quarter-only figure.
+
+    Never all four, or the search for the next release would have nowhere to land.
+    """
+    found = {int(n) for n in ((entry or {}).get("skip_quarters") or []) if str(n) in ("1", "2", "3", "4")}
+    return found if len(found) < 4 else set()

@@ -107,7 +107,7 @@ The pipeline is set up to keep that low:
 - A company is searched only once its next release is due. `config/watchlist.json` holds, per company and quarter, how many days after quarter end it reported last time. Use `--force` to search anyway.
 - Extraction and the written notes use `claude-sonnet-5-5` and only run when a new release is found.
 
-At list prices this comes to roughly 5 to 8 US dollars a year for six companies, and a little more for each company added, with nothing spent in weeks when no release is due. That figure is an estimate. Every run that calls the API writes its token counts, search count and estimated cost to `data/run_log.json`, and the Method screen shows it.
+At list prices this comes to roughly 5 to 8 US dollars a year for six companies (ten are tracked now), and a little more for each company added, with nothing spent in weeks when no release is due. That figure is an estimate. Every run that calls the API writes its token counts, search count and estimated cost to `data/run_log.json`, and the Method screen shows it.
 
 Each step's model can be changed with `TRACKER_MODEL_RESEARCH`, `TRACKER_MODEL_EXTRACT` and `TRACKER_MODEL_INTERPRET`.
 
@@ -170,9 +170,9 @@ Growth is on the underlying basis each company publishes: organic, constant exch
 
 ## Status
 
-- The eight companies and eight quarters in the dataset were entered and checked against the linked sources between 15 and 17 November 2026.
+- The ten companies and eight quarters in the dataset were entered and checked against the linked sources between 15 and 17 November 2026.
 - Steps 3 and 4, the data gate and the website are covered by tests and run without a key.
 - Three live runs so far, at about 20 cents each. The first found three defects: the answer limit left no room for the model's thinking, a library for protected PDFs was missing, and failures did not say why. All are fixed. In the latest run, on 17 November 2026, research worked, all six notes were written by the model and passed the number check, and extraction matched 18 of 19 verified figures from 4 of 6 releases. The miss was a group figure the model left blank. Two releases could not be downloaded: Moncler's site and the GlobeNewswire wire both refuse automated readers. Those companies' releases go in by hand with `add --file`.
-- Every figure cites a company document. LVMH's regional figures come from its slides, which automated tools may not read; they were checked by hand on 17 November 2026. Kering's 2025 quarters use the company's restated figures, which exclude Kering Beauté. Burberry's series is comparable retail sales. For Burberry and Zegna the Asia column is Greater China.
+- Every figure cites a company document. LVMH's regional figures come from its slides, which automated tools may not read; they were checked by hand on 17 November 2026. Kering's 2025 quarters use the company's restated figures, which exclude Kering Beauté. Burberry's series is comparable retail sales. For Burberry and Zegna the Asia column is Greater China. Brunello Cucinelli publishes its second quarter only inside the half year and its regions only for the year to date, so it has no second-quarter figures and no regions. The watchlist marks that quarter with `skip_quarters`, so the gate and the weekly watch do not treat it as a missing release.
 
 This is a study project built from public company releases. It gives no investment advice.

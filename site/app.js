@@ -38,7 +38,7 @@ const prevQ = q => shiftQ(q, -1);
 function median(a){ const v = a.filter(isNum).sort((x, y) => x - y); if (!v.length) return null; const m = v.length >> 1; return v.length % 2 ? v[m] : (v[m - 1] + v[m]) / 2; }
 const cos = () => D.companies;
 const byId = id => cos().find(c => c.id === id) || cos()[0];
-function colorOf(c){ const i = cos().indexOf(c); return i >= 0 && i < 8 ? "var(--c" + (i + 1) + ")" : "var(--c-more)"; }   /* eight checked hues; any company beyond that is grey */
+function colorOf(c){ const i = cos().indexOf(c); return i >= 0 && i < 9 ? "var(--c" + (i + 1) + ")" : "var(--c-more)"; }   /* eight checked hues, then two neutrals: ink for the ninth, grey from the tenth on */
 function gv(c, q){ const s = c.series && c.series[q]; return s && isNum(s.g) ? s.g : null; }
 function rcell(c, q, k){ const r = c.regions && c.regions[q]; return r && r[k] && isNum(r[k].v) ? r[k] : null; }
 function rv(c, q, k){ const x = rcell(c, q, k); return x ? x.v : null; }
@@ -172,7 +172,8 @@ function trendChart(lines, qs, endLabels){
       let d = "", pen = false, n = 0, last = null;
       l.vals.forEach((v, i) => { if (!isNum(v)){ pen = false; return; } d += (pen ? "L" : "M") + x(i).toFixed(1) + " " + y(v).toFixed(1); pen = true; n++; last = {i, v}; });
       if (n >= 2) svg.append(sv("path", {class: l.ref ? "ref" : "ln", d, style: l.ref ? "" : "stroke:" + l.color}));
-      if (!l.ref) l.vals.forEach((v, i) => { if (isNum(v) && (n < 2 || i === last.i)) svg.append(sv("circle", {class:"pt", cx: x(i), cy: y(v), r: 4.5, style:"fill:" + l.color})); });
+      /* A dot marks the latest point, and any point with no neighbour, which the line alone would not show. */
+      if (!l.ref) l.vals.forEach((v, i) => { if (isNum(v) && (i === last.i || (!isNum(l.vals[i - 1]) && !isNum(l.vals[i + 1])))) svg.append(sv("circle", {class:"pt", cx: x(i), cy: y(v), r: 4.5, style:"fill:" + l.color})); });
       if (last && endLabels && !l.ref){ const tx = sv("text", {class:"endl", x: x(last.i) + 10, y: y(last.v) + 4}); tx.textContent = (narrow ? "" : l.name + " ") + fmtPct(last.v); svg.append(tx); }
     });
     const xh = sv("line", {class:"xh", y1: m.t, y2: H - m.b, x1: 0, x2: 0, visibility:"hidden"}); svg.append(xh);
