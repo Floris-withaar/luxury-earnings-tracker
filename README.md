@@ -55,10 +55,11 @@ flowchart LR
 
 ### The website
 
-Five screens in `site/` (`index.html`, `styles.css`, `app.js`), with no build step and no framework:
+Six screens in `site/` (`index.html`, `styles.css`, `app.js`), with no build step and no framework:
 
-- **Overview**: the finding for the quarter, four figures and three exhibits.
-- **Compare**: pick companies, a measure and what to compare against (prior quarter, same quarter last year, the median of the others, or one company).
+- **Overview**: the finding for the quarter for one peer group, four figures and three exhibits. The peer group is picked at the top.
+- **Compare**: pick companies, a measure and what to compare against (prior quarter, same quarter last year, the median of the others in the industry, or one company). Quick picks select a whole industry or a focus group.
+- **Categories**: every peer group side by side with its median, and segment growth grouped by product category across companies (fashion and leather goods, jewellery and watches, beauty, and so on).
 - **Company**: one page per group with its note, trend, segments, regions, base effect and sources.
 - **Data and sources**: every figure, whether it comes from the company or from the press, and the evidence behind it.
 - **Method**: definitions, signal rules, the pipeline, the quality checks and recent runs.
@@ -76,7 +77,7 @@ Five screens in `site/` (`index.html`, `styles.css`, `app.js`), with no build st
 |---|---|---|
 | Unit, flow and command tests | `python -m unittest discover -s tests -b` | Each step works, a saved release travels from extraction to the file the site reads without touching other companies, and every command behaves as the workflows expect, including when a download is blocked or an answer is cut off. |
 | Data gate | `python -m pipeline.run validate` | Every figure has a source, a valid quarter and a plausible value, and the site data matches the dataset. Warns on large swings, a group figure outside its regions, gaps, stale companies and press sources. |
-| Browser test | `python tests/smoke_site.py` | All five screens open on desktop and phone widths with no errors, no broken text and the right number of figures. The site loads nothing from another host, and the medians it works out itself agree with the pipeline's. Needs `pip install --require-hashes -r requirements-dev.txt`. |
+| Browser test | `python tests/smoke_site.py` | All six screens open on desktop and phone widths, each peer group shows its companies, with no errors, no broken text and the right number of figures. The site loads nothing from another host, and the medians it works out itself agree with the pipeline's. Needs `pip install --require-hashes -r requirements-dev.txt`. |
 | Workflow check | `python tests/check_workflows.py` and `actionlint` | Every workflow file is readable by GitHub's parser, has a trigger and jobs, and uses only actions pinned to a commit id. A workflow GitHub cannot read never runs. |
 | Extraction test | `python -m pipeline.run eval` | The LLM re-reads the latest releases and its figures are scored against the verified dataset. Needs an API key. |
 
@@ -109,7 +110,7 @@ The pipeline is set up to keep that low:
 - A company is searched only once its next release is due. `config/watchlist.json` holds, per company and quarter, how many days after quarter end it reported last time. Use `--force` to search anyway.
 - Extraction and the written notes use `claude-sonnet-5-5` and only run when a new release is found.
 
-At list prices this comes to roughly 5 to 8 US dollars a year for six companies (ten are tracked now), and a little more for each company added, with nothing spent in weeks when no release is due. That figure is an estimate. Every run that calls the API writes its token counts, search count and estimated cost to `data/run_log.json`, and the Method screen shows it.
+At list prices this comes to roughly 5 to 8 US dollars a year for six companies (twelve are tracked now), and a little more for each company added, with nothing spent in weeks when no release is due. That figure is an estimate. Every run that calls the API writes its token counts, search count and estimated cost to `data/run_log.json`, and the Method screen shows it.
 
 Each step's model can be changed with `TRACKER_MODEL_RESEARCH`, `TRACKER_MODEL_EXTRACT` and `TRACKER_MODEL_INTERPRET`.
 
@@ -168,11 +169,11 @@ Change those and the checks, the model and the site work as they are. See [ROADM
 - `regions`: growth by quarter for five buckets (`asia`, `japan`, `europe`, `americas`, `me`), each with the company's own label and a note where the bucket is a loose fit.
 - `segments`, `china`, `guidance`, `sources`.
 
-Growth is on the underlying basis each company publishes: organic, constant exchange rates or comparable. Periods are filed under the calendar quarter in which they end. No figure is derived or estimated. See the Method section of the site for the scope differences between companies.
+Growth is on the underlying basis each company publishes: organic, constant exchange rates or comparable. Aston Martin publishes only reported growth and is shown that way. `config/categories.json` holds the peer groups and the product category of every segment line; the data gate fails on an unknown group and warns on a segment with no category. Periods are filed under the calendar quarter in which they end. No figure is derived or estimated. See the Method section of the site for the scope differences between companies.
 
 ## Status
 
-- The ten companies and eight quarters in the dataset were entered and checked against the linked sources between 15 and 17 November 2026.
+- The twelve companies and eight quarters in the dataset were entered and checked against the linked sources between 15 and 18 November 2026: ten luxury goods groups and two luxury carmakers, Ferrari and Aston Martin.
 - Steps 3 and 4, the data gate and the website are covered by tests and run without a key.
 - Three live runs so far, at about 20 cents each. The first found three defects: the answer limit left no room for the model's thinking, a library for protected PDFs was missing, and failures did not say why. All are fixed. In the latest run, on 17 November 2026, research worked, all six notes were written by the model and passed the number check, and extraction matched 18 of 19 verified figures from 4 of 6 releases. The miss was a group figure the model left blank. Two releases could not be downloaded: Moncler's site and the GlobeNewswire wire both refuse automated readers. Those companies' releases go in by hand with `add --file`.
 - Every figure cites a company document. LVMH's regional figures come from its slides, which automated tools may not read; they were checked by hand on 17 November 2026. Kering's 2025 quarters use the company's restated figures, which exclude Kering Beauté. Burberry's series is comparable retail sales. For Burberry and Zegna the Asia column is Greater China. Brunello Cucinelli publishes its second quarter only inside the half year and its regions only for the year to date, so it has no second-quarter figures and no regions. The watchlist marks that quarter with `skip_quarters`, so the gate and the weekly watch do not treat it as a missing release.

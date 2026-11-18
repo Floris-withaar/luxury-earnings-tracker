@@ -88,6 +88,46 @@ class ModelTests(unittest.TestCase):
         self.assertIn("Tougher base next quarter", rows["moncler"]["signal"]["flags"])
         self.assertNotIn("score", rows["lvmh"])
 
+    def test_industries_are_kept_apart(self):
+        # Two carmakers join the dataset. The luxury goods medians must not move, and a group of two gets no median.
+        data = copy.deepcopy(self.data)
+        for cid, g in (("ferrari", 10), ("aston-martin", 36)):
+            car = copy.deepcopy(data["companies"][0])
+            car.update(id=cid, name=cid.title(), regions={}, segments={})
+            car["series"] = {"2026Q2": {"g": g - 5, "s": 0}, "2026Q3": {"g": g, "s": 0}}
+            data["companies"].append(car)
+        out = model.compute(data)["2026Q3"]
+        self.assertEqual(out["peer"], self.out["2026Q3"]["peer"])
+        self.assertEqual(out["groups"]["goods"]["n"], 6)
+        autos = out["groups"]["autos"]
+        self.assertEqual((autos["n"], autos["members"]), (2, ["ferrari", "aston-martin"]))
+        self.assertIsNone(autos["median"])
+        self.assertIsNone(out["companies"]["ferrari"]["vs_median"])
+        self.assertEqual((out["companies"]["ferrari"]["rank"], out["companies"]["ferrari"]["rank_of"]), (2, 2))
+        self.assertEqual(out["companies"]["lvmh"]["vs_median"], self.out["2026Q3"]["companies"]["lvmh"]["vs_median"])
+
+    def test_focus_groups_and_their_minimum(self):
+        groups = self.out["2026Q3"]["groups"]
+        self.assertEqual(groups["hard"]["members"], ["richemont"])
+        self.assertIsNone(groups["hard"]["median"])                # one company is not a median
+        self.assertEqual(groups["fashion"]["kind"], "focus")
+        self.assertIsNotNone(groups["fashion"]["median"])
+
+    def test_categories(self):
+        tax = {"min_group": 3, "categories": [{"id": "fashion", "label": "Fashion"}, {"id": "jw", "label": "Jewellery"},
+                                              {"id": "other", "label": "Other", "no_median": True}],
+               "segments": {"a": {"Leather": "fashion", "of which Brand": None}, "b": {"Jewels": "jw", "Leather": "fashion"},
+                            "c": {"Bags": "fashion", "Misc": "other"}}}
+        companies = [{"id": "a", "segments": {"2026Q3": [{"name": "Leather", "g": 4}, {"name": "of which Brand", "g": 9}, {"name": "New line", "g": 2}]}},
+                     {"id": "b", "segments": {"2026Q3": [{"name": "Jewels", "g": 11}, {"name": "Leather", "g": -2}]}},
+                     {"id": "c", "segments": {"2026Q3": [{"name": "Bags", "g": 1}, {"name": "Misc", "g": 7}]}}]
+        cats = model.category_rows(companies, "2026Q3", tax, 3)
+        self.assertEqual([r["g"] for r in cats["fashion"]["rows"]], [4, 1, -2])   # the line inside another line is left out
+        self.assertEqual(cats["fashion"]["median"], 1)
+        self.assertIsNone(cats["jw"]["median"])                    # one line
+        self.assertEqual(cats["other"]["n"], 2)                    # an unlisted line counts as Other
+        self.assertIsNone(cats["other"]["median"])                 # Other never gets a median
+
 
 
 class ExtractionFlowTests(unittest.TestCase):

@@ -15,7 +15,7 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 SITE = Path(__file__).resolve().parent.parent / "site"
-SCREENS = [("#overview", "Overview"), ("#compare", "Compare"), ("#company/hermes", "Company"), ("#data", "Data and sources"), ("#method", "Method")]
+SCREENS = [("#overview", "Overview"), ("#compare", "Compare"), ("#categories", "Categories"), ("#company/hermes", "Company"), ("#company/ferrari", "Company"), ("#data", "Data and sources"), ("#method", "Method")]
 WIDTHS = [(1440, 900), (390, 844)]
 BAD_TEXT = ["undefined", "NaN", "[object Object]", "null"]
 
@@ -23,14 +23,17 @@ BAD_TEXT = ["undefined", "NaN", "[object Object]", "null"]
 # Runs in the page. Compares numbers the site works out itself with the ones the pipeline computed.
 AGREEMENT = """() => {
   const out = [], close = (a, b) => (a == null && b == null) || (a != null && b != null && Math.abs(a - b) < 0.051);
+  // Medians are taken inside one industry, and only with enough companies behind them.
+  const first = cos().filter(c => industryOf(c) === firstIndustry());
   for (const q of allQuarters()) {
     const peer = MODEL[q].peer;
-    if (!close(median(cos().map(c => gv(c, q))), peer.median)) out.push(q + ": the site's median differs from the pipeline's.");
-    if (!close(median(cos().map(c => rv(c, q, 'asia'))), peer.asia_median)) out.push(q + ": the site's Asia median differs from the pipeline's.");
+    if (!close(median(first.map(c => gv(c, q))), peer.median)) out.push(q + ": the site's median differs from the pipeline's.");
+    if (!close(median(first.map(c => rv(c, q, 'asia'))), peer.asia_median)) out.push(q + ": the site's Asia median differs from the pipeline's.");
     for (const c of cos()) {
       const m = mm(c, q); if (!m) continue;
-      const others = median(cos().filter(o => o.id !== c.id).map(o => gv(o, q)));
-      if (others != null && !close(gv(c, q) - others, m.vs_median)) out.push(q + " " + c.id + ": gap to the median differs.");
+      const mates = sameIndustry(c).filter(o => o.id !== c.id && gv(o, q) != null);
+      const others = mates.length >= minGroup() - 1 ? median(mates.map(o => gv(o, q))) : null;
+      if (!close(others == null ? null : gv(c, q) - others, m.vs_median)) out.push(q + " " + c.id + ": gap to the median differs.");
       if (fmtPct(m.growth) === '' || fmtPts(m.delta) === undefined) out.push(q + " " + c.id + ": a figure did not format.");
     }
   }
@@ -89,9 +92,25 @@ def main() -> int:
                 if overflow > 1:
                     failures.append(f"{where}: the page scrolls sideways by {overflow}px.")
                 if hash_ == "#overview":
-                    for c in companies:
-                        if c["name"] not in text:
-                            failures.append(f"{where}: {c['name']} is missing.")
+                    # Each peer group shows all of its companies when it is picked.
+                    for ind in data["taxonomy"]["industries"]:
+                        page.select_option("#f-group", ind["id"])
+                        shown = page.inner_text("#view")
+                        for c in companies:
+                            if data["taxonomy"]["companies"].get(c["id"], {}).get("industry") == ind["id"] and c["name"] not in shown:
+                                failures.append(f"{where}, {ind['label']}: {c['name']} is missing.")
+                        for bad in BAD_TEXT:
+                            if bad in shown:
+                                failures.append(f"{where}, {ind['label']}: the page shows the text {bad!r}.")
+                    page.select_option("#f-group", data["taxonomy"]["industries"][0]["id"])
+                if hash_ == "#categories":
+                    block = data["model"][latest]
+                    for g in block["groups"].values():
+                        if g["n"] and g["label"] not in text:
+                            failures.append(f"{where}: the group {g['label']} is missing.")
+                    for k in block["categories"].values():
+                        if k["label"] not in text:
+                            failures.append(f"{where}: the category {k['label']} is missing.")
                 if hash_ == "#data":
                     rows = page.locator("#view table").first.locator("tbody tr").count()
                     if rows != figures:

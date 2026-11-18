@@ -1649,6 +1649,267 @@
       ],
       "origin": "base",
       "cur": "EUR"
+    },
+    {
+      "id": "ferrari",
+      "name": "Ferrari",
+      "ticker": "RACE.MI",
+      "hq": "Maranello",
+      "basis": "Constant FX",
+      "scope": "Growth is net revenues at constant currency. Ferrari reports shipments by region, not revenue, so the region columns are empty. Releases from the fourth quarter of 2025 onward round growth to whole numbers, and so does the fourth quarter of 2024, which comes from the release's table.",
+      "series": {
+        "2024Q4": {
+          "g": 15,
+          "rev": 1736,
+          "s": 7
+        },
+        "2025Q1": {
+          "g": 12.2,
+          "rev": 1791,
+          "s": 6
+        },
+        "2025Q2": {
+          "g": 5.1,
+          "rev": 1787,
+          "s": 5
+        },
+        "2025Q3": {
+          "g": 9.3,
+          "rev": 1766,
+          "s": 4
+        },
+        "2025Q4": {
+          "g": 6,
+          "rev": 1802,
+          "s": 3
+        },
+        "2026Q1": {
+          "g": 6,
+          "rev": 1848,
+          "s": 2
+        },
+        "2026Q2": {
+          "g": 11,
+          "rev": 1938,
+          "s": 1
+        },
+        "2026Q3": {
+          "g": 10,
+          "rev": 1896,
+          "s": 0
+        }
+      },
+      "regions": {},
+      "segments": {
+        "2026Q3": [
+          {
+            "name": "Cars and spare parts",
+            "g": 10,
+            "rev": 1586
+          },
+          {
+            "name": "Sponsorship, commercial and brand",
+            "g": 7,
+            "rev": 220
+          },
+          {
+            "name": "Other",
+            "g": 17,
+            "rev": 90
+          }
+        ]
+      },
+      "china": "Ferrari shipped 3,368 cars in the third quarter, 33 fewer than a year earlier, and reports shipments by region rather than revenue.",
+      "guidance": {
+        "kind": "testable",
+        "date": "3 Nov 2026",
+        "text": "Net revenues of about €7.65 billion in 2026, raised from about €7.60 billion. Net revenues were €7.15 billion in 2025.",
+        "evidence": "Nine-month net revenues were €5,682 million, up 6%.",
+        "read": "Testable at the full-year results in February."
+      },
+      "sources": [
+        {
+          "t": "Q3 2026 results",
+          "pub": "Ferrari press release (MFN)",
+          "date": "3 Nov 2026",
+          "url": "https://mfn.se/one/a/ferrari/strong-mix-and-personalizations-sustain-q3-growth-and-further-2026-guidance-upgrade-e16af121.iframe",
+          "kind": "company"
+        },
+        {
+          "t": "Q2 2026 results",
+          "pub": "Ferrari press release (MFN)",
+          "date": "30 Jul 2026",
+          "url": "https://mfn.se/one/a/ferrari/personalizations-and-mix-continue-to-drive-strong-results-and-2026-guidance-raise-79d4d9ab",
+          "kind": "company"
+        },
+        {
+          "t": "Q1 2026 results",
+          "pub": "Ferrari press release",
+          "date": "5 May 2026",
+          "url": "https://cdn.ferrari.com/cms/network/media/pdf/2026_05_05%20-%20%20Ferrari%20Q1%202026%20Results%20Press%20Release.pdf",
+          "kind": "company"
+        },
+        {
+          "t": "Q4 and full-year 2025 results",
+          "pub": "Ferrari press release",
+          "date": "10 Feb 2026",
+          "url": "https://cdn.ferrari.com/cms/network/media/pdf/2026_02_10%20-%20Ferrari%20FY%202025%20Results%20Press%20Release.pdf",
+          "kind": "company"
+        },
+        {
+          "t": "Q3 2025 results",
+          "pub": "Ferrari press release",
+          "date": "4 Nov 2025",
+          "url": "https://www.ferrari.com/en-PY/corporate/articles/ferrari-financial-results-q3-2025",
+          "kind": "company"
+        },
+        {
+          "t": "Q2 2025 results",
+          "pub": "Ferrari press release",
+          "date": "31 Jul 2025",
+          "url": "https://cdn.ferrari.com/cms/network/media/pdf/2.%202025_07_31%20-%20Ferrari%20Q2%202025%20Results%20Press%20Release.pdf",
+          "kind": "company"
+        },
+        {
+          "t": "Q1 2025 results",
+          "pub": "Ferrari press release (SEC filing)",
+          "date": "6 May 2025",
+          "url": "https://www.sec.gov/Archives/edgar/data/1648416/000164841625000049/fnvq12025results.htm",
+          "kind": "company"
+        },
+        {
+          "t": "Q4 and full-year 2024 results",
+          "pub": "Ferrari press release",
+          "date": "4 Feb 2025",
+          "url": "https://ferrari.com/en-EN/corporate/articles/2024-full-year-and-fourth-quarter-financial-results",
+          "kind": "company"
+        }
+      ],
+      "origin": "base",
+      "cur": "EUR"
+    },
+    {
+      "id": "aston-martin",
+      "name": "Aston Martin",
+      "ticker": "AML.L",
+      "hq": "Gaydon",
+      "basis": "Reported",
+      "scope": "Growth is total revenue as reported, in sterling: Aston Martin publishes no constant-currency figure. Valhalla deliveries, which began in the fourth quarter of 2025, make revenue swing from quarter to quarter. The company reports wholesale units by region, not revenue, so the region columns are empty. The announcements are the company's own regulatory releases (RNS), linked on the London Stock Exchange or on sites that republish RNS in full.",
+      "series": {
+        "2024Q4": {
+          "g": -1,
+          "rev": 589.3,
+          "s": 7
+        },
+        "2025Q1": {
+          "g": -13,
+          "rev": 233.9,
+          "s": 6
+        },
+        "2025Q2": {
+          "g": -34,
+          "rev": 220.5,
+          "s": 5,
+          "checked": "Checked against the release: fewer Specials and US tariff disruption."
+        },
+        "2025Q3": {
+          "g": -27,
+          "rev": 285.2,
+          "s": 4
+        },
+        "2025Q4": {
+          "g": -12,
+          "rev": 518.1,
+          "s": 3
+        },
+        "2026Q1": {
+          "g": 16,
+          "rev": 270.4,
+          "s": 2,
+          "checked": "Checked against the release: 102 Valhalla deliveries in the quarter."
+        },
+        "2026Q2": {
+          "g": 62,
+          "rev": 358.2,
+          "s": 1,
+          "checked": "Checked against the release: Valhalla deliveries against a weak 2025 quarter."
+        },
+        "2026Q3": {
+          "g": 36,
+          "rev": 388.7,
+          "s": 0,
+          "checked": "Checked against the release: Valhalla deliveries, which began in the fourth quarter of 2025, make revenue swing from quarter to quarter."
+        }
+      },
+      "regions": {},
+      "china": "Aston Martin reports wholesale volumes by region, not revenue, and gives no revenue figure for China.",
+      "guidance": {
+        "kind": "qualitative",
+        "date": "28 Oct 2026",
+        "text": "Full-year 2026 guidance unchanged: a material improvement in financial performance on 2025.",
+        "evidence": "Revenue grew 16%, 62% and 36% in the first three quarters of 2026.",
+        "read": "Qualitative, so it cannot be scored against a number."
+      },
+      "sources": [
+        {
+          "t": "Results for Q3 and 9 months ended 30 Sept 2026",
+          "pub": "Aston Martin RNS (London Stock Exchange)",
+          "date": "28 Oct 2026",
+          "url": "https://www.londonstockexchange.com/en/news/article/AML/results-for-q3-and-9-months-ended-30-sept-2026/aa8b-dc-56-2b-f8-4fb6b3",
+          "kind": "company"
+        },
+        {
+          "t": "Interim results for the half-year ended 30 June 2026 (second quarter)",
+          "pub": "Aston Martin RNS (Investegate)",
+          "date": "29 Jul 2026",
+          "url": "https://www.investegate.co.uk/announcement/rns/aston-martin-lagonda-global-holdings--aml/interim-results-for-the-half-year-ended-30-june-26/9692290",
+          "kind": "company"
+        },
+        {
+          "t": "Q1 results for three months ended 31 March 2026",
+          "pub": "Aston Martin RNS (London Stock Exchange)",
+          "date": "29 Apr 2026",
+          "url": "https://www.londonstockexchange.com/news-article/AML/q1-results-for-three-months-ended-31-march-2026/17568254",
+          "kind": "company"
+        },
+        {
+          "t": "Preliminary results FY2025 (fourth quarter)",
+          "pub": "Aston Martin RNS (lse.co.uk)",
+          "date": "25 Feb 2026",
+          "url": "https://www.lse.co.uk/rns/AML/preliminary-results-fy2025-ebjam3l50g9hqtg.html",
+          "kind": "company"
+        },
+        {
+          "t": "Q3 results for the quarter ended 30 September 2025",
+          "pub": "Aston Martin RNS (Shares magazine, LSE regulatory feed)",
+          "date": "29 Oct 2025",
+          "url": "https://www.sharesmagazine.co.uk/news/market/LSE20251029070009_5879470/q3-results-for-the-quarter-ended-30-september-2025",
+          "kind": "company"
+        },
+        {
+          "t": "Interim results for the half-year ended 30 June 2025 (second quarter)",
+          "pub": "Aston Martin RNS (lse.co.uk)",
+          "date": "30 Jul 2025",
+          "url": "https://www.lse.co.uk/rns/interim-results-8e0ycmpk4talvbz.html",
+          "kind": "company"
+        },
+        {
+          "t": "1st Quarter Results 2025",
+          "pub": "Aston Martin RNS (London Stock Exchange)",
+          "date": "30 Apr 2025",
+          "url": "https://www.londonstockexchange.com/news-article/AML/1st-quarter-results/17012277",
+          "kind": "company"
+        },
+        {
+          "t": "Preliminary results year ended 31 December 2024 (fourth quarter)",
+          "pub": "Aston Martin RNS (Shares magazine, LSE regulatory feed)",
+          "date": "26 Feb 2025",
+          "url": "https://sharesmagazine.co.uk/news/market/LSE20250226070008_5551966/preliminary-results-year-ended-31-december-2024",
+          "kind": "company"
+        }
+      ],
+      "origin": "base",
+      "cur": "GBP"
     }
   ],
   "model": {
@@ -1668,6 +1929,149 @@
         "asia_lagging": 0,
         "asia_compared": 0
       },
+      "groups": {
+        "goods": {
+          "n": 9,
+          "median": 2.9,
+          "median_like": null,
+          "median_prev": null,
+          "spread": 30,
+          "slowed": 0,
+          "compared": 0,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Personal luxury goods",
+          "kind": "industry",
+          "members": [
+            "lvmh",
+            "hermes",
+            "kering",
+            "richemont",
+            "moncler",
+            "prada",
+            "burberry",
+            "zegna",
+            "ferragamo"
+          ]
+        },
+        "autos": {
+          "n": 2,
+          "median": null,
+          "median_like": null,
+          "median_prev": null,
+          "spread": 16,
+          "slowed": 0,
+          "compared": 0,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Luxury autos",
+          "kind": "industry",
+          "members": [
+            "ferrari",
+            "aston-martin"
+          ]
+        },
+        "fashion": {
+          "n": 7,
+          "median": 2.9,
+          "median_like": null,
+          "median_prev": null,
+          "spread": 30,
+          "slowed": 0,
+          "compared": 0,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Fashion & leather goods",
+          "kind": "focus",
+          "industry": "goods",
+          "members": [
+            "hermes",
+            "kering",
+            "moncler",
+            "prada",
+            "burberry",
+            "zegna",
+            "ferragamo"
+          ]
+        },
+        "hard": {
+          "n": 1,
+          "median": null,
+          "median_like": null,
+          "median_prev": null,
+          "spread": null,
+          "slowed": 0,
+          "compared": 0,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Jewellery & watches",
+          "kind": "focus",
+          "industry": "goods",
+          "members": [
+            "richemont"
+          ]
+        },
+        "diversified": {
+          "n": 1,
+          "median": null,
+          "median_like": null,
+          "median_prev": null,
+          "spread": null,
+          "slowed": 0,
+          "compared": 0,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Diversified",
+          "kind": "focus",
+          "industry": "goods",
+          "members": [
+            "lvmh"
+          ]
+        },
+        "sports_cars": {
+          "n": 2,
+          "median": null,
+          "median_like": null,
+          "median_prev": null,
+          "spread": 16,
+          "slowed": 0,
+          "compared": 0,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Sports cars",
+          "kind": "focus",
+          "industry": "autos",
+          "members": [
+            "ferrari",
+            "aston-martin"
+          ]
+        }
+      },
+      "categories": {},
       "companies": {
         "lvmh": {
           "growth": 1,
@@ -1694,7 +2098,8 @@
             "flags": [],
             "label": "No prior quarter, behind peers"
           },
-          "rank": 6
+          "rank": 6,
+          "rank_of": 9
         },
         "hermes": {
           "growth": 17.6,
@@ -1721,7 +2126,8 @@
             "flags": [],
             "label": "No prior quarter, ahead of peers"
           },
-          "rank": 2
+          "rank": 2,
+          "rank_of": 9
         },
         "kering": {
           "growth": -12,
@@ -1748,7 +2154,8 @@
             "flags": [],
             "label": "No prior quarter, behind peers"
           },
-          "rank": 9
+          "rank": 9,
+          "rank_of": 9
         },
         "richemont": {
           "growth": 10,
@@ -1775,7 +2182,8 @@
             "flags": [],
             "label": "No prior quarter, ahead of peers"
           },
-          "rank": 3
+          "rank": 3,
+          "rank_of": 9
         },
         "moncler": {
           "growth": 8,
@@ -1802,7 +2210,8 @@
             "flags": [],
             "label": "No prior quarter, ahead of peers"
           },
-          "rank": 4
+          "rank": 4,
+          "rank_of": 9
         },
         "prada": {
           "growth": 18,
@@ -1829,7 +2238,8 @@
             "flags": [],
             "label": "No prior quarter, ahead of peers"
           },
-          "rank": 1
+          "rank": 1,
+          "rank_of": 9
         },
         "burberry": {
           "growth": -4,
@@ -1856,7 +2266,8 @@
             "flags": [],
             "label": "No prior quarter, behind peers"
           },
-          "rank": 7
+          "rank": 7,
+          "rank_of": 9
         },
         "zegna": {
           "growth": 2.9,
@@ -1883,7 +2294,8 @@
             "flags": [],
             "label": "No prior quarter, in line with peers"
           },
-          "rank": 5
+          "rank": 5,
+          "rank_of": 9
         },
         "ferragamo": {
           "growth": -4.0,
@@ -1910,7 +2322,64 @@
             "flags": [],
             "label": "No prior quarter, behind peers"
           },
-          "rank": 8
+          "rank": 8,
+          "rank_of": 9
+        },
+        "ferrari": {
+          "growth": 15,
+          "prev": null,
+          "delta": null,
+          "vs_median": null,
+          "median_others": null,
+          "two_year_stack": null,
+          "base": null,
+          "next_base": null,
+          "asia": null,
+          "asia_prev": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "No prior quarter",
+            "level": "",
+            "flags": [],
+            "label": "No prior quarter"
+          },
+          "rank": 1,
+          "rank_of": 2
+        },
+        "aston-martin": {
+          "growth": -1,
+          "prev": null,
+          "delta": null,
+          "vs_median": null,
+          "median_others": null,
+          "two_year_stack": null,
+          "base": null,
+          "next_base": null,
+          "asia": null,
+          "asia_prev": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "No prior quarter",
+            "level": "",
+            "flags": [],
+            "label": "No prior quarter"
+          },
+          "rank": 2,
+          "rank_of": 2
         }
       }
     },
@@ -1930,6 +2399,151 @@
         "asia_lagging": 0,
         "asia_compared": 0
       },
+      "groups": {
+        "goods": {
+          "n": 10,
+          "median": 0.0,
+          "median_like": -1.0,
+          "median_prev": 2.9,
+          "spread": 28.0,
+          "slowed": 8,
+          "compared": 9,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Personal luxury goods",
+          "kind": "industry",
+          "members": [
+            "lvmh",
+            "hermes",
+            "kering",
+            "richemont",
+            "moncler",
+            "prada",
+            "burberry",
+            "zegna",
+            "cucinelli",
+            "ferragamo"
+          ]
+        },
+        "autos": {
+          "n": 2,
+          "median": null,
+          "median_like": null,
+          "median_prev": null,
+          "spread": 25.2,
+          "slowed": 2,
+          "compared": 2,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Luxury autos",
+          "kind": "industry",
+          "members": [
+            "ferrari",
+            "aston-martin"
+          ]
+        },
+        "fashion": {
+          "n": 8,
+          "median": 0.0,
+          "median_like": -1.0,
+          "median_prev": 2.9,
+          "spread": 28.0,
+          "slowed": 6,
+          "compared": 7,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Fashion & leather goods",
+          "kind": "focus",
+          "industry": "goods",
+          "members": [
+            "hermes",
+            "kering",
+            "moncler",
+            "prada",
+            "burberry",
+            "zegna",
+            "cucinelli",
+            "ferragamo"
+          ]
+        },
+        "hard": {
+          "n": 1,
+          "median": null,
+          "median_like": null,
+          "median_prev": null,
+          "spread": null,
+          "slowed": 1,
+          "compared": 1,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Jewellery & watches",
+          "kind": "focus",
+          "industry": "goods",
+          "members": [
+            "richemont"
+          ]
+        },
+        "diversified": {
+          "n": 1,
+          "median": null,
+          "median_like": null,
+          "median_prev": null,
+          "spread": null,
+          "slowed": 1,
+          "compared": 1,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Diversified",
+          "kind": "focus",
+          "industry": "goods",
+          "members": [
+            "lvmh"
+          ]
+        },
+        "sports_cars": {
+          "n": 2,
+          "median": null,
+          "median_like": null,
+          "median_prev": null,
+          "spread": 25.2,
+          "slowed": 2,
+          "compared": 2,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Sports cars",
+          "kind": "focus",
+          "industry": "autos",
+          "members": [
+            "ferrari",
+            "aston-martin"
+          ]
+        }
+      },
+      "categories": {},
       "companies": {
         "lvmh": {
           "growth": -3,
@@ -1956,7 +2570,8 @@
             "flags": [],
             "label": "Slowing, behind peers"
           },
-          "rank": 8
+          "rank": 8,
+          "rank_of": 10
         },
         "hermes": {
           "growth": 7.2,
@@ -1983,7 +2598,8 @@
             "flags": [],
             "label": "Slowing, ahead of peers"
           },
-          "rank": 3
+          "rank": 3,
+          "rank_of": 10
         },
         "kering": {
           "growth": -15,
@@ -2010,7 +2626,8 @@
             "flags": [],
             "label": "Slowing, behind peers"
           },
-          "rank": 10
+          "rank": 10,
+          "rank_of": 10
         },
         "richemont": {
           "growth": 7,
@@ -2037,7 +2654,8 @@
             "flags": [],
             "label": "Slowing, ahead of peers"
           },
-          "rank": 4
+          "rank": 4,
+          "rank_of": 10
         },
         "moncler": {
           "growth": 1,
@@ -2064,7 +2682,8 @@
             "flags": [],
             "label": "Slowing, ahead of peers"
           },
-          "rank": 5
+          "rank": 5,
+          "rank_of": 10
         },
         "prada": {
           "growth": 13.0,
@@ -2091,7 +2710,8 @@
             "flags": [],
             "label": "Slowing, ahead of peers"
           },
-          "rank": 1
+          "rank": 1,
+          "rank_of": 10
         },
         "burberry": {
           "growth": -6,
@@ -2118,7 +2738,8 @@
             "flags": [],
             "label": "Slowing, behind peers"
           },
-          "rank": 9
+          "rank": 9,
+          "rank_of": 10
         },
         "zegna": {
           "growth": -1.2,
@@ -2145,7 +2766,8 @@
             "flags": [],
             "label": "Slowing, behind peers"
           },
-          "rank": 7
+          "rank": 7,
+          "rank_of": 10
         },
         "cucinelli": {
           "growth": 10.0,
@@ -2172,7 +2794,8 @@
             "flags": [],
             "label": "No prior quarter, ahead of peers"
           },
-          "rank": 2
+          "rank": 2,
+          "rank_of": 10
         },
         "ferragamo": {
           "growth": -1.0,
@@ -2199,7 +2822,64 @@
             "flags": [],
             "label": "Accelerating, behind peers"
           },
-          "rank": 6
+          "rank": 6,
+          "rank_of": 10
+        },
+        "ferrari": {
+          "growth": 12.2,
+          "prev": 15,
+          "delta": -2.8,
+          "vs_median": null,
+          "median_others": null,
+          "two_year_stack": null,
+          "base": null,
+          "next_base": null,
+          "asia": null,
+          "asia_prev": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "Slowing",
+            "level": "",
+            "flags": [],
+            "label": "Slowing"
+          },
+          "rank": 1,
+          "rank_of": 2
+        },
+        "aston-martin": {
+          "growth": -13,
+          "prev": -1,
+          "delta": -12,
+          "vs_median": null,
+          "median_others": null,
+          "two_year_stack": null,
+          "base": null,
+          "next_base": null,
+          "asia": null,
+          "asia_prev": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "Slowing",
+            "level": "",
+            "flags": [],
+            "label": "Slowing"
+          },
+          "rank": 2,
+          "rank_of": 2
         }
       }
     },
@@ -2219,6 +2899,149 @@
         "asia_lagging": 0,
         "asia_compared": 0
       },
+      "groups": {
+        "goods": {
+          "n": 9,
+          "median": -1,
+          "median_like": -1,
+          "median_prev": -1.0,
+          "spread": 25.0,
+          "slowed": 7,
+          "compared": 9,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Personal luxury goods",
+          "kind": "industry",
+          "members": [
+            "lvmh",
+            "hermes",
+            "kering",
+            "richemont",
+            "moncler",
+            "prada",
+            "burberry",
+            "zegna",
+            "ferragamo"
+          ]
+        },
+        "autos": {
+          "n": 2,
+          "median": null,
+          "median_like": null,
+          "median_prev": null,
+          "spread": 39.1,
+          "slowed": 2,
+          "compared": 2,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Luxury autos",
+          "kind": "industry",
+          "members": [
+            "ferrari",
+            "aston-martin"
+          ]
+        },
+        "fashion": {
+          "n": 7,
+          "median": -1,
+          "median_like": -1,
+          "median_prev": -1.0,
+          "spread": 25.0,
+          "slowed": 5,
+          "compared": 7,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Fashion & leather goods",
+          "kind": "focus",
+          "industry": "goods",
+          "members": [
+            "hermes",
+            "kering",
+            "moncler",
+            "prada",
+            "burberry",
+            "zegna",
+            "ferragamo"
+          ]
+        },
+        "hard": {
+          "n": 1,
+          "median": null,
+          "median_like": null,
+          "median_prev": null,
+          "spread": null,
+          "slowed": 1,
+          "compared": 1,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Jewellery & watches",
+          "kind": "focus",
+          "industry": "goods",
+          "members": [
+            "richemont"
+          ]
+        },
+        "diversified": {
+          "n": 1,
+          "median": null,
+          "median_like": null,
+          "median_prev": null,
+          "spread": null,
+          "slowed": 1,
+          "compared": 1,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Diversified",
+          "kind": "focus",
+          "industry": "goods",
+          "members": [
+            "lvmh"
+          ]
+        },
+        "sports_cars": {
+          "n": 2,
+          "median": null,
+          "median_like": null,
+          "median_prev": null,
+          "spread": 39.1,
+          "slowed": 2,
+          "compared": 2,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Sports cars",
+          "kind": "focus",
+          "industry": "autos",
+          "members": [
+            "ferrari",
+            "aston-martin"
+          ]
+        }
+      },
+      "categories": {},
       "companies": {
         "lvmh": {
           "growth": -4,
@@ -2245,7 +3068,8 @@
             "flags": [],
             "label": "Slowing, behind peers"
           },
-          "rank": 7
+          "rank": 7,
+          "rank_of": 9
         },
         "hermes": {
           "growth": 9.0,
@@ -2272,7 +3096,8 @@
             "flags": [],
             "label": "Accelerating, ahead of peers"
           },
-          "rank": 1
+          "rank": 1,
+          "rank_of": 9
         },
         "kering": {
           "growth": -16,
@@ -2299,7 +3124,8 @@
             "flags": [],
             "label": "Slowing, behind peers"
           },
-          "rank": 9
+          "rank": 9,
+          "rank_of": 9
         },
         "richemont": {
           "growth": 6,
@@ -2326,7 +3152,8 @@
             "flags": [],
             "label": "Slowing, ahead of peers"
           },
-          "rank": 3
+          "rank": 3,
+          "rank_of": 9
         },
         "moncler": {
           "growth": -1,
@@ -2353,7 +3180,8 @@
             "flags": [],
             "label": "Slowing, in line with peers"
           },
-          "rank": 4
+          "rank": 4,
+          "rank_of": 9
         },
         "prada": {
           "growth": 7.6,
@@ -2380,7 +3208,8 @@
             "flags": [],
             "label": "Slowing, ahead of peers"
           },
-          "rank": 2
+          "rank": 2,
+          "rank_of": 9
         },
         "burberry": {
           "growth": -1,
@@ -2407,7 +3236,8 @@
             "flags": [],
             "label": "Accelerating, in line with peers"
           },
-          "rank": 5
+          "rank": 5,
+          "rank_of": 9
         },
         "zegna": {
           "growth": -2.6,
@@ -2434,7 +3264,8 @@
             "flags": [],
             "label": "Slowing, in line with peers"
           },
-          "rank": 6
+          "rank": 6,
+          "rank_of": 9
         },
         "ferragamo": {
           "growth": -11.8,
@@ -2461,7 +3292,64 @@
             "flags": [],
             "label": "Slowing, behind peers"
           },
-          "rank": 8
+          "rank": 8,
+          "rank_of": 9
+        },
+        "ferrari": {
+          "growth": 5.1,
+          "prev": 12.2,
+          "delta": -7.1,
+          "vs_median": null,
+          "median_others": null,
+          "two_year_stack": null,
+          "base": null,
+          "next_base": null,
+          "asia": null,
+          "asia_prev": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "Slowing",
+            "level": "",
+            "flags": [],
+            "label": "Slowing"
+          },
+          "rank": 1,
+          "rank_of": 2
+        },
+        "aston-martin": {
+          "growth": -34,
+          "prev": -13,
+          "delta": -21,
+          "vs_median": null,
+          "median_others": null,
+          "two_year_stack": null,
+          "base": null,
+          "next_base": null,
+          "asia": null,
+          "asia_prev": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "Slowing",
+            "level": "",
+            "flags": [],
+            "label": "Slowing"
+          },
+          "rank": 2,
+          "rank_of": 2
         }
       }
     },
@@ -2481,6 +3369,151 @@
         "asia_lagging": 0,
         "asia_compared": 0
       },
+      "groups": {
+        "goods": {
+          "n": 10,
+          "median": 2.8,
+          "median_like": 2,
+          "median_prev": -1,
+          "spread": 20,
+          "slowed": 0,
+          "compared": 9,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Personal luxury goods",
+          "kind": "industry",
+          "members": [
+            "lvmh",
+            "hermes",
+            "kering",
+            "richemont",
+            "moncler",
+            "prada",
+            "burberry",
+            "zegna",
+            "cucinelli",
+            "ferragamo"
+          ]
+        },
+        "autos": {
+          "n": 2,
+          "median": null,
+          "median_like": null,
+          "median_prev": null,
+          "spread": 36.3,
+          "slowed": 0,
+          "compared": 2,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Luxury autos",
+          "kind": "industry",
+          "members": [
+            "ferrari",
+            "aston-martin"
+          ]
+        },
+        "fashion": {
+          "n": 8,
+          "median": 2.8,
+          "median_like": 2,
+          "median_prev": -1,
+          "spread": 18.5,
+          "slowed": 0,
+          "compared": 7,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Fashion & leather goods",
+          "kind": "focus",
+          "industry": "goods",
+          "members": [
+            "hermes",
+            "kering",
+            "moncler",
+            "prada",
+            "burberry",
+            "zegna",
+            "cucinelli",
+            "ferragamo"
+          ]
+        },
+        "hard": {
+          "n": 1,
+          "median": null,
+          "median_like": null,
+          "median_prev": null,
+          "spread": null,
+          "slowed": 0,
+          "compared": 1,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Jewellery & watches",
+          "kind": "focus",
+          "industry": "goods",
+          "members": [
+            "richemont"
+          ]
+        },
+        "diversified": {
+          "n": 1,
+          "median": null,
+          "median_like": null,
+          "median_prev": null,
+          "spread": null,
+          "slowed": 0,
+          "compared": 1,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Diversified",
+          "kind": "focus",
+          "industry": "goods",
+          "members": [
+            "lvmh"
+          ]
+        },
+        "sports_cars": {
+          "n": 2,
+          "median": null,
+          "median_like": null,
+          "median_prev": null,
+          "spread": 36.3,
+          "slowed": 0,
+          "compared": 2,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Sports cars",
+          "kind": "focus",
+          "industry": "autos",
+          "members": [
+            "ferrari",
+            "aston-martin"
+          ]
+        }
+      },
+      "categories": {},
       "companies": {
         "lvmh": {
           "growth": 1,
@@ -2507,7 +3540,8 @@
             "flags": [],
             "label": "Accelerating, behind peers"
           },
-          "rank": 8
+          "rank": 8,
+          "rank_of": 10
         },
         "hermes": {
           "growth": 9.6,
@@ -2534,7 +3568,8 @@
             "flags": [],
             "label": "Steady, ahead of peers"
           },
-          "rank": 3
+          "rank": 3,
+          "rank_of": 10
         },
         "kering": {
           "growth": -6,
@@ -2561,7 +3596,8 @@
             "flags": [],
             "label": "Accelerating, behind peers"
           },
-          "rank": 10
+          "rank": 10,
+          "rank_of": 10
         },
         "richemont": {
           "growth": 14,
@@ -2588,7 +3624,8 @@
             "flags": [],
             "label": "Accelerating, ahead of peers"
           },
-          "rank": 1
+          "rank": 1,
+          "rank_of": 10
         },
         "moncler": {
           "growth": -1,
@@ -2615,7 +3652,8 @@
             "flags": [],
             "label": "Steady, behind peers"
           },
-          "rank": 9
+          "rank": 9,
+          "rank_of": 10
         },
         "prada": {
           "growth": 7.6,
@@ -2642,7 +3680,8 @@
             "flags": [],
             "label": "Steady, ahead of peers"
           },
-          "rank": 4
+          "rank": 4,
+          "rank_of": 10
         },
         "burberry": {
           "growth": 2,
@@ -2669,7 +3708,8 @@
             "flags": [],
             "label": "Accelerating, in line with peers"
           },
-          "rank": 6
+          "rank": 6,
+          "rank_of": 10
         },
         "zegna": {
           "growth": 3.6,
@@ -2696,7 +3736,8 @@
             "flags": [],
             "label": "Accelerating, in line with peers"
           },
-          "rank": 5
+          "rank": 5,
+          "rank_of": 10
         },
         "cucinelli": {
           "growth": 12.5,
@@ -2723,7 +3764,8 @@
             "flags": [],
             "label": "No prior quarter, ahead of peers"
           },
-          "rank": 2
+          "rank": 2,
+          "rank_of": 10
         },
         "ferragamo": {
           "growth": 1.7,
@@ -2750,7 +3792,64 @@
             "flags": [],
             "label": "Accelerating, in line with peers"
           },
-          "rank": 7
+          "rank": 7,
+          "rank_of": 10
+        },
+        "ferrari": {
+          "growth": 9.3,
+          "prev": 5.1,
+          "delta": 4.2,
+          "vs_median": null,
+          "median_others": null,
+          "two_year_stack": null,
+          "base": null,
+          "next_base": 15,
+          "asia": null,
+          "asia_prev": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "Accelerating",
+            "level": "",
+            "flags": [],
+            "label": "Accelerating"
+          },
+          "rank": 1,
+          "rank_of": 2
+        },
+        "aston-martin": {
+          "growth": -27,
+          "prev": -34,
+          "delta": 7,
+          "vs_median": null,
+          "median_others": null,
+          "two_year_stack": null,
+          "base": null,
+          "next_base": -1,
+          "asia": null,
+          "asia_prev": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "Accelerating",
+            "level": "",
+            "flags": [],
+            "label": "Accelerating"
+          },
+          "rank": 2,
+          "rank_of": 2
         }
       }
     },
@@ -2770,6 +3869,151 @@
         "asia_lagging": 0,
         "asia_compared": 0
       },
+      "groups": {
+        "goods": {
+          "n": 10,
+          "median": 5.1,
+          "median_like": 5.1,
+          "median_prev": 2.8,
+          "spread": 14.9,
+          "slowed": 4,
+          "compared": 10,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Personal luxury goods",
+          "kind": "industry",
+          "members": [
+            "lvmh",
+            "hermes",
+            "kering",
+            "richemont",
+            "moncler",
+            "prada",
+            "burberry",
+            "zegna",
+            "cucinelli",
+            "ferragamo"
+          ]
+        },
+        "autos": {
+          "n": 2,
+          "median": null,
+          "median_like": null,
+          "median_prev": null,
+          "spread": 18,
+          "slowed": 1,
+          "compared": 2,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Luxury autos",
+          "kind": "industry",
+          "members": [
+            "ferrari",
+            "aston-martin"
+          ]
+        },
+        "fashion": {
+          "n": 8,
+          "median": 5.1,
+          "median_like": 5.1,
+          "median_prev": 2.8,
+          "spread": 14.9,
+          "slowed": 3,
+          "compared": 8,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Fashion & leather goods",
+          "kind": "focus",
+          "industry": "goods",
+          "members": [
+            "hermes",
+            "kering",
+            "moncler",
+            "prada",
+            "burberry",
+            "zegna",
+            "cucinelli",
+            "ferragamo"
+          ]
+        },
+        "hard": {
+          "n": 1,
+          "median": null,
+          "median_like": null,
+          "median_prev": null,
+          "spread": null,
+          "slowed": 1,
+          "compared": 1,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Jewellery & watches",
+          "kind": "focus",
+          "industry": "goods",
+          "members": [
+            "richemont"
+          ]
+        },
+        "diversified": {
+          "n": 1,
+          "median": null,
+          "median_like": null,
+          "median_prev": null,
+          "spread": null,
+          "slowed": 0,
+          "compared": 1,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Diversified",
+          "kind": "focus",
+          "industry": "goods",
+          "members": [
+            "lvmh"
+          ]
+        },
+        "sports_cars": {
+          "n": 2,
+          "median": null,
+          "median_like": null,
+          "median_prev": null,
+          "spread": 18,
+          "slowed": 1,
+          "compared": 2,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Sports cars",
+          "kind": "focus",
+          "industry": "autos",
+          "members": [
+            "ferrari",
+            "aston-martin"
+          ]
+        }
+      },
+      "categories": {},
       "companies": {
         "lvmh": {
           "growth": 1,
@@ -2798,7 +4042,8 @@
             ],
             "label": "Steady, behind peers"
           },
-          "rank": 8
+          "rank": 8,
+          "rank_of": 10
         },
         "hermes": {
           "growth": 9.8,
@@ -2827,7 +4072,8 @@
             ],
             "label": "Steady, ahead of peers"
           },
-          "rank": 3
+          "rank": 3,
+          "rank_of": 10
         },
         "kering": {
           "growth": -3,
@@ -2856,7 +4102,8 @@
             ],
             "label": "Accelerating, behind peers"
           },
-          "rank": 10
+          "rank": 10,
+          "rank_of": 10
         },
         "richemont": {
           "growth": 11,
@@ -2885,7 +4132,8 @@
             ],
             "label": "Slowing, ahead of peers"
           },
-          "rank": 2
+          "rank": 2,
+          "rank_of": 10
         },
         "moncler": {
           "growth": 7,
@@ -2914,7 +4162,8 @@
             ],
             "label": "Accelerating, ahead of peers"
           },
-          "rank": 4
+          "rank": 4,
+          "rank_of": 10
         },
         "prada": {
           "growth": 5.6,
@@ -2943,7 +4192,8 @@
             ],
             "label": "Slowing, in line with peers"
           },
-          "rank": 5
+          "rank": 5,
+          "rank_of": 10
         },
         "burberry": {
           "growth": 3,
@@ -2972,7 +4222,8 @@
             ],
             "label": "Accelerating, behind peers"
           },
-          "rank": 7
+          "rank": 7,
+          "rank_of": 10
         },
         "zegna": {
           "growth": 4.6,
@@ -3001,7 +4252,8 @@
             ],
             "label": "Accelerating, in line with peers"
           },
-          "rank": 6
+          "rank": 6,
+          "rank_of": 10
         },
         "cucinelli": {
           "growth": 11.9,
@@ -3028,7 +4280,8 @@
             "flags": [],
             "label": "Steady, ahead of peers"
           },
-          "rank": 1
+          "rank": 1,
+          "rank_of": 10
         },
         "ferragamo": {
           "growth": -2.0,
@@ -3057,7 +4310,68 @@
             ],
             "label": "Slowing, behind peers"
           },
-          "rank": 9
+          "rank": 9,
+          "rank_of": 10
+        },
+        "ferrari": {
+          "growth": 6,
+          "prev": 9.3,
+          "delta": -3.3,
+          "vs_median": null,
+          "median_others": null,
+          "two_year_stack": 21.9,
+          "base": 15,
+          "next_base": 12.2,
+          "asia": null,
+          "asia_prev": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "Slowing",
+            "level": "",
+            "flags": [
+              "Easier base next quarter"
+            ],
+            "label": "Slowing"
+          },
+          "rank": 1,
+          "rank_of": 2
+        },
+        "aston-martin": {
+          "growth": -12,
+          "prev": -27,
+          "delta": 15,
+          "vs_median": null,
+          "median_others": null,
+          "two_year_stack": -12.9,
+          "base": -1,
+          "next_base": -13,
+          "asia": null,
+          "asia_prev": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "Accelerating",
+            "level": "",
+            "flags": [
+              "Easier base next quarter"
+            ],
+            "label": "Accelerating"
+          },
+          "rank": 2,
+          "rank_of": 2
         }
       }
     },
@@ -3077,6 +4391,151 @@
         "asia_lagging": 0,
         "asia_compared": 0
       },
+      "groups": {
+        "goods": {
+          "n": 10,
+          "median": 5.3,
+          "median_like": 5.3,
+          "median_prev": 5.1,
+          "spread": 15.2,
+          "slowed": 2,
+          "compared": 10,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Personal luxury goods",
+          "kind": "industry",
+          "members": [
+            "lvmh",
+            "hermes",
+            "kering",
+            "richemont",
+            "moncler",
+            "prada",
+            "burberry",
+            "zegna",
+            "cucinelli",
+            "ferragamo"
+          ]
+        },
+        "autos": {
+          "n": 2,
+          "median": null,
+          "median_like": null,
+          "median_prev": null,
+          "spread": 10,
+          "slowed": 0,
+          "compared": 2,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Luxury autos",
+          "kind": "industry",
+          "members": [
+            "ferrari",
+            "aston-martin"
+          ]
+        },
+        "fashion": {
+          "n": 8,
+          "median": 5.3,
+          "median_like": 5.3,
+          "median_prev": 5.1,
+          "spread": 15.2,
+          "slowed": 2,
+          "compared": 8,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Fashion & leather goods",
+          "kind": "focus",
+          "industry": "goods",
+          "members": [
+            "hermes",
+            "kering",
+            "moncler",
+            "prada",
+            "burberry",
+            "zegna",
+            "cucinelli",
+            "ferragamo"
+          ]
+        },
+        "hard": {
+          "n": 1,
+          "median": null,
+          "median_like": null,
+          "median_prev": null,
+          "spread": null,
+          "slowed": 0,
+          "compared": 1,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Jewellery & watches",
+          "kind": "focus",
+          "industry": "goods",
+          "members": [
+            "richemont"
+          ]
+        },
+        "diversified": {
+          "n": 1,
+          "median": null,
+          "median_like": null,
+          "median_prev": null,
+          "spread": null,
+          "slowed": 0,
+          "compared": 1,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Diversified",
+          "kind": "focus",
+          "industry": "goods",
+          "members": [
+            "lvmh"
+          ]
+        },
+        "sports_cars": {
+          "n": 2,
+          "median": null,
+          "median_like": null,
+          "median_prev": null,
+          "spread": 10,
+          "slowed": 0,
+          "compared": 2,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Sports cars",
+          "kind": "focus",
+          "industry": "autos",
+          "members": [
+            "ferrari",
+            "aston-martin"
+          ]
+        }
+      },
+      "categories": {},
       "companies": {
         "lvmh": {
           "growth": 1,
@@ -3103,7 +4562,8 @@
             "flags": [],
             "label": "Steady, behind peers"
           },
-          "rank": 7
+          "rank": 7,
+          "rank_of": 10
         },
         "hermes": {
           "growth": 5.6,
@@ -3130,7 +4590,8 @@
             "flags": [],
             "label": "Slowing, in line with peers"
           },
-          "rank": 5
+          "rank": 5,
+          "rank_of": 10
         },
         "kering": {
           "growth": 0,
@@ -3157,7 +4618,8 @@
             "flags": [],
             "label": "Accelerating, behind peers"
           },
-          "rank": 9
+          "rank": 9,
+          "rank_of": 10
         },
         "richemont": {
           "growth": 13,
@@ -3184,7 +4646,8 @@
             "flags": [],
             "label": "Accelerating, ahead of peers"
           },
-          "rank": 2
+          "rank": 2,
+          "rank_of": 10
         },
         "moncler": {
           "growth": 12,
@@ -3213,7 +4676,8 @@
             ],
             "label": "Accelerating, ahead of peers"
           },
-          "rank": 3
+          "rank": 3,
+          "rank_of": 10
         },
         "prada": {
           "growth": 1,
@@ -3242,7 +4706,8 @@
             ],
             "label": "Slowing, behind peers"
           },
-          "rank": 8
+          "rank": 8,
+          "rank_of": 10
         },
         "burberry": {
           "growth": 5,
@@ -3271,7 +4736,8 @@
             ],
             "label": "Accelerating, in line with peers"
           },
-          "rank": 6
+          "rank": 6,
+          "rank_of": 10
         },
         "zegna": {
           "growth": 7.4,
@@ -3298,7 +4764,8 @@
             "flags": [],
             "label": "Accelerating, ahead of peers"
           },
-          "rank": 4
+          "rank": 4,
+          "rank_of": 10
         },
         "cucinelli": {
           "growth": 14.0,
@@ -3325,7 +4792,8 @@
             "flags": [],
             "label": "Accelerating, ahead of peers"
           },
-          "rank": 1
+          "rank": 1,
+          "rank_of": 10
         },
         "ferragamo": {
           "growth": -1.2,
@@ -3354,7 +4822,68 @@
             ],
             "label": "Steady, behind peers"
           },
-          "rank": 10
+          "rank": 10,
+          "rank_of": 10
+        },
+        "ferrari": {
+          "growth": 6,
+          "prev": 6,
+          "delta": 0,
+          "vs_median": null,
+          "median_others": null,
+          "two_year_stack": 18.9,
+          "base": 12.2,
+          "next_base": 5.1,
+          "asia": null,
+          "asia_prev": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "Steady",
+            "level": "",
+            "flags": [
+              "Easier base next quarter"
+            ],
+            "label": "Steady"
+          },
+          "rank": 2,
+          "rank_of": 2
+        },
+        "aston-martin": {
+          "growth": 16,
+          "prev": -12,
+          "delta": 28,
+          "vs_median": null,
+          "median_others": null,
+          "two_year_stack": 0.9,
+          "base": -13,
+          "next_base": -34,
+          "asia": null,
+          "asia_prev": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "Accelerating",
+            "level": "",
+            "flags": [
+              "Easier base next quarter"
+            ],
+            "label": "Accelerating"
+          },
+          "rank": 1,
+          "rank_of": 2
         }
       }
     },
@@ -3374,6 +4903,149 @@
         "asia_lagging": 3,
         "asia_compared": 8
       },
+      "groups": {
+        "goods": {
+          "n": 9,
+          "median": 5,
+          "median_like": 5,
+          "median_prev": 5,
+          "spread": 18,
+          "slowed": 1,
+          "compared": 9,
+          "asia_median": 8.3,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 3,
+          "asia_compared": 8,
+          "label": "Personal luxury goods",
+          "kind": "industry",
+          "members": [
+            "lvmh",
+            "hermes",
+            "kering",
+            "richemont",
+            "moncler",
+            "prada",
+            "burberry",
+            "zegna",
+            "ferragamo"
+          ]
+        },
+        "autos": {
+          "n": 2,
+          "median": null,
+          "median_like": null,
+          "median_prev": null,
+          "spread": 51,
+          "slowed": 0,
+          "compared": 2,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Luxury autos",
+          "kind": "industry",
+          "members": [
+            "ferrari",
+            "aston-martin"
+          ]
+        },
+        "fashion": {
+          "n": 7,
+          "median": 5,
+          "median_like": 5,
+          "median_prev": 5,
+          "spread": 9.0,
+          "slowed": 1,
+          "compared": 7,
+          "asia_median": 8.3,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 3,
+          "asia_compared": 6,
+          "label": "Fashion & leather goods",
+          "kind": "focus",
+          "industry": "goods",
+          "members": [
+            "hermes",
+            "kering",
+            "moncler",
+            "prada",
+            "burberry",
+            "zegna",
+            "ferragamo"
+          ]
+        },
+        "hard": {
+          "n": 1,
+          "median": null,
+          "median_like": null,
+          "median_prev": null,
+          "spread": null,
+          "slowed": 0,
+          "compared": 1,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 1,
+          "label": "Jewellery & watches",
+          "kind": "focus",
+          "industry": "goods",
+          "members": [
+            "richemont"
+          ]
+        },
+        "diversified": {
+          "n": 1,
+          "median": null,
+          "median_like": null,
+          "median_prev": null,
+          "spread": null,
+          "slowed": 0,
+          "compared": 1,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 1,
+          "label": "Diversified",
+          "kind": "focus",
+          "industry": "goods",
+          "members": [
+            "lvmh"
+          ]
+        },
+        "sports_cars": {
+          "n": 2,
+          "median": null,
+          "median_like": null,
+          "median_prev": null,
+          "spread": 51,
+          "slowed": 0,
+          "compared": 2,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Sports cars",
+          "kind": "focus",
+          "industry": "autos",
+          "members": [
+            "ferrari",
+            "aston-martin"
+          ]
+        }
+      },
+      "categories": {},
       "companies": {
         "lvmh": {
           "growth": 3,
@@ -3402,7 +5074,8 @@
             ],
             "label": "Accelerating, behind peers"
           },
-          "rank": 8
+          "rank": 8,
+          "rank_of": 9
         },
         "hermes": {
           "growth": 6.7,
@@ -3431,7 +5104,8 @@
             ],
             "label": "Accelerating, in line with peers"
           },
-          "rank": 3
+          "rank": 3,
+          "rank_of": 9
         },
         "kering": {
           "growth": 2,
@@ -3460,7 +5134,8 @@
             ],
             "label": "Accelerating, behind peers"
           },
-          "rank": 9
+          "rank": 9,
+          "rank_of": 9
         },
         "richemont": {
           "growth": 20,
@@ -3489,7 +5164,8 @@
             ],
             "label": "Accelerating, ahead of peers"
           },
-          "rank": 1
+          "rank": 1,
+          "rank_of": 9
         },
         "moncler": {
           "growth": 5,
@@ -3518,7 +5194,8 @@
             ],
             "label": "Slowing, in line with peers"
           },
-          "rank": 4
+          "rank": 4,
+          "rank_of": 9
         },
         "prada": {
           "growth": 5,
@@ -3547,7 +5224,8 @@
             ],
             "label": "Accelerating, in line with peers"
           },
-          "rank": 5
+          "rank": 5,
+          "rank_of": 9
         },
         "burberry": {
           "growth": 5,
@@ -3577,7 +5255,8 @@
             ],
             "label": "Steady, in line with peers"
           },
-          "rank": 6
+          "rank": 6,
+          "rank_of": 9
         },
         "zegna": {
           "growth": 11.0,
@@ -3606,7 +5285,8 @@
             ],
             "label": "Accelerating, ahead of peers"
           },
-          "rank": 2
+          "rank": 2,
+          "rank_of": 9
         },
         "ferragamo": {
           "growth": 4.6,
@@ -3636,7 +5316,68 @@
             ],
             "label": "Accelerating, in line with peers"
           },
-          "rank": 7
+          "rank": 7,
+          "rank_of": 9
+        },
+        "ferrari": {
+          "growth": 11,
+          "prev": 6,
+          "delta": 5,
+          "vs_median": null,
+          "median_others": null,
+          "two_year_stack": 16.7,
+          "base": 5.1,
+          "next_base": 9.3,
+          "asia": null,
+          "asia_prev": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "Accelerating",
+            "level": "",
+            "flags": [
+              "Tougher base next quarter"
+            ],
+            "label": "Accelerating"
+          },
+          "rank": 2,
+          "rank_of": 2
+        },
+        "aston-martin": {
+          "growth": 62,
+          "prev": 16,
+          "delta": 46,
+          "vs_median": null,
+          "median_others": null,
+          "two_year_stack": 6.9,
+          "base": -34,
+          "next_base": -27,
+          "asia": null,
+          "asia_prev": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "Accelerating",
+            "level": "",
+            "flags": [
+              "Tougher base next quarter"
+            ],
+            "label": "Accelerating"
+          },
+          "rank": 1,
+          "rank_of": 2
         }
       }
     },
@@ -3655,6 +5396,369 @@
         "asia_both": 8,
         "asia_lagging": 6,
         "asia_compared": 9
+      },
+      "groups": {
+        "goods": {
+          "n": 10,
+          "median": 2.5,
+          "median_like": 1,
+          "median_prev": 5,
+          "spread": 17.0,
+          "slowed": 9,
+          "compared": 9,
+          "asia_median": 0,
+          "asia_median_like": 2.5,
+          "asia_median_prev": 8.3,
+          "asia_both": 8,
+          "asia_lagging": 6,
+          "asia_compared": 9,
+          "label": "Personal luxury goods",
+          "kind": "industry",
+          "members": [
+            "lvmh",
+            "hermes",
+            "kering",
+            "richemont",
+            "moncler",
+            "prada",
+            "burberry",
+            "zegna",
+            "cucinelli",
+            "ferragamo"
+          ]
+        },
+        "autos": {
+          "n": 2,
+          "median": null,
+          "median_like": null,
+          "median_prev": null,
+          "spread": 26,
+          "slowed": 2,
+          "compared": 2,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Luxury autos",
+          "kind": "industry",
+          "members": [
+            "ferrari",
+            "aston-martin"
+          ]
+        },
+        "fashion": {
+          "n": 8,
+          "median": 2.0,
+          "median_like": 0,
+          "median_prev": 5,
+          "spread": 17.0,
+          "slowed": 7,
+          "compared": 7,
+          "asia_median": 0,
+          "asia_median_like": 2.5,
+          "asia_median_prev": 8.3,
+          "asia_both": 6,
+          "asia_lagging": 4,
+          "asia_compared": 7,
+          "label": "Fashion & leather goods",
+          "kind": "focus",
+          "industry": "goods",
+          "members": [
+            "hermes",
+            "kering",
+            "moncler",
+            "prada",
+            "burberry",
+            "zegna",
+            "cucinelli",
+            "ferragamo"
+          ]
+        },
+        "hard": {
+          "n": 1,
+          "median": null,
+          "median_like": null,
+          "median_prev": null,
+          "spread": null,
+          "slowed": 1,
+          "compared": 1,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 1,
+          "asia_lagging": 1,
+          "asia_compared": 1,
+          "label": "Jewellery & watches",
+          "kind": "focus",
+          "industry": "goods",
+          "members": [
+            "richemont"
+          ]
+        },
+        "diversified": {
+          "n": 1,
+          "median": null,
+          "median_like": null,
+          "median_prev": null,
+          "spread": null,
+          "slowed": 1,
+          "compared": 1,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 1,
+          "asia_lagging": 1,
+          "asia_compared": 1,
+          "label": "Diversified",
+          "kind": "focus",
+          "industry": "goods",
+          "members": [
+            "lvmh"
+          ]
+        },
+        "sports_cars": {
+          "n": 2,
+          "median": null,
+          "median_like": null,
+          "median_prev": null,
+          "spread": 26,
+          "slowed": 2,
+          "compared": 2,
+          "asia_median": null,
+          "asia_median_like": null,
+          "asia_median_prev": null,
+          "asia_both": 0,
+          "asia_lagging": 0,
+          "asia_compared": 0,
+          "label": "Sports cars",
+          "kind": "focus",
+          "industry": "autos",
+          "members": [
+            "ferrari",
+            "aston-martin"
+          ]
+        }
+      },
+      "categories": {
+        "fashion": {
+          "label": "Fashion & leather goods",
+          "n": 12,
+          "companies": 6,
+          "median": 0.0,
+          "rows": [
+            {
+              "company": "zegna",
+              "segment": "Zegna",
+              "g": 11.3
+            },
+            {
+              "company": "hermes",
+              "segment": "Leather Goods and Saddlery",
+              "g": 10.8
+            },
+            {
+              "company": "zegna",
+              "segment": "Tom Ford Fashion",
+              "g": 5.5
+            },
+            {
+              "company": "moncler",
+              "segment": "Stone Island",
+              "g": 5
+            },
+            {
+              "company": "hermes",
+              "segment": "Silk and Textiles",
+              "g": 1.4
+            },
+            {
+              "company": "prada",
+              "segment": "Prada (retail sales)",
+              "g": 1
+            },
+            {
+              "company": "moncler",
+              "segment": "Moncler",
+              "g": -1
+            },
+            {
+              "company": "hermes",
+              "segment": "Ready-to-wear and Accessories",
+              "g": -2
+            },
+            {
+              "company": "kering",
+              "segment": "Kering Fashion & Leather Goods",
+              "g": -3
+            },
+            {
+              "company": "prada",
+              "segment": "Miu Miu (retail sales)",
+              "g": -3
+            },
+            {
+              "company": "lvmh",
+              "segment": "Fashion & Leather Goods",
+              "g": -5
+            },
+            {
+              "company": "zegna",
+              "segment": "Thom Browne",
+              "g": -7.4
+            }
+          ]
+        },
+        "jewellery_watches": {
+          "label": "Jewellery & watches",
+          "n": 5,
+          "companies": 4,
+          "median": 11,
+          "rows": [
+            {
+              "company": "richemont",
+              "segment": "Jewellery Maisons",
+              "g": 14
+            },
+            {
+              "company": "richemont",
+              "segment": "Specialist Watchmakers",
+              "g": 12
+            },
+            {
+              "company": "kering",
+              "segment": "Kering Jewelry",
+              "g": 11
+            },
+            {
+              "company": "lvmh",
+              "segment": "Watches & Jewelry",
+              "g": 6
+            },
+            {
+              "company": "hermes",
+              "segment": "Watches",
+              "g": -6
+            }
+          ]
+        },
+        "beauty": {
+          "label": "Beauty & fragrance",
+          "n": 2,
+          "companies": 2,
+          "median": null,
+          "rows": [
+            {
+              "company": "hermes",
+              "segment": "Perfume and Beauty",
+              "g": 7.5
+            },
+            {
+              "company": "lvmh",
+              "segment": "Perfumes & Cosmetics",
+              "g": 1
+            }
+          ]
+        },
+        "eyewear": {
+          "label": "Eyewear",
+          "n": 1,
+          "companies": 1,
+          "median": null,
+          "rows": [
+            {
+              "company": "kering",
+              "segment": "Kering Eyewear",
+              "g": 4
+            }
+          ]
+        },
+        "wines": {
+          "label": "Wines & spirits",
+          "n": 1,
+          "companies": 1,
+          "median": null,
+          "rows": [
+            {
+              "company": "lvmh",
+              "segment": "Wines & Spirits",
+              "g": 6
+            }
+          ]
+        },
+        "retail": {
+          "label": "Selective retailing",
+          "n": 1,
+          "companies": 1,
+          "median": null,
+          "rows": [
+            {
+              "company": "lvmh",
+              "segment": "Selective Retailing",
+              "g": 8
+            }
+          ]
+        },
+        "cars": {
+          "label": "Cars & spare parts",
+          "n": 1,
+          "companies": 1,
+          "median": null,
+          "rows": [
+            {
+              "company": "ferrari",
+              "segment": "Cars and spare parts",
+              "g": 10
+            }
+          ]
+        },
+        "brand": {
+          "label": "Brand, sponsorship & lifestyle",
+          "n": 1,
+          "companies": 1,
+          "median": null,
+          "rows": [
+            {
+              "company": "ferrari",
+              "segment": "Sponsorship, commercial and brand",
+              "g": 7
+            }
+          ]
+        },
+        "other": {
+          "label": "Other",
+          "n": 5,
+          "companies": 4,
+          "median": null,
+          "rows": [
+            {
+              "company": "ferrari",
+              "segment": "Other",
+              "g": 17
+            },
+            {
+              "company": "hermes",
+              "segment": "Other products",
+              "g": 10.5
+            },
+            {
+              "company": "richemont",
+              "segment": "Other",
+              "g": 9
+            },
+            {
+              "company": "hermes",
+              "segment": "Other Hermès sectors",
+              "g": -1.1
+            },
+            {
+              "company": "kering",
+              "segment": "Corporate & Other",
+              "g": -5
+            }
+          ]
+        }
       },
       "companies": {
         "lvmh": {
@@ -3688,7 +5792,8 @@
             ],
             "label": "Slowing, behind peers"
           },
-          "rank": 6
+          "rank": 6,
+          "rank_of": 10
         },
         "hermes": {
           "growth": 4.3,
@@ -3721,7 +5826,8 @@
             ],
             "label": "Slowing, ahead of peers"
           },
-          "rank": 4
+          "rank": 4,
+          "rank_of": 10
         },
         "kering": {
           "growth": -1,
@@ -3751,7 +5857,8 @@
             ],
             "label": "Slowing, behind peers"
           },
-          "rank": 9
+          "rank": 9,
+          "rank_of": 10
         },
         "richemont": {
           "growth": 13,
@@ -3785,7 +5892,8 @@
             ],
             "label": "Slowing, ahead of peers"
           },
-          "rank": 2
+          "rank": 2,
+          "rank_of": 10
         },
         "moncler": {
           "growth": 0,
@@ -3819,7 +5927,8 @@
             ],
             "label": "Slowing, behind peers"
           },
-          "rank": 7
+          "rank": 7,
+          "rank_of": 10
         },
         "prada": {
           "growth": 0,
@@ -3853,7 +5962,8 @@
             ],
             "label": "Slowing, behind peers"
           },
-          "rank": 8
+          "rank": 8,
+          "rank_of": 10
         },
         "burberry": {
           "growth": 4,
@@ -3884,7 +5994,8 @@
             "flags": [],
             "label": "Slowing, ahead of peers"
           },
-          "rank": 5
+          "rank": 5,
+          "rank_of": 10
         },
         "zegna": {
           "growth": 8.2,
@@ -3915,7 +6026,8 @@
             "flags": [],
             "label": "Slowing, ahead of peers"
           },
-          "rank": 3
+          "rank": 3,
+          "rank_of": 10
         },
         "cucinelli": {
           "growth": 13.5,
@@ -3942,7 +6054,8 @@
             "flags": [],
             "label": "No prior quarter, ahead of peers"
           },
-          "rank": 1
+          "rank": 1,
+          "rank_of": 10
         },
         "ferragamo": {
           "growth": -3.5,
@@ -3977,7 +6090,68 @@
             ],
             "label": "Slowing, behind peers"
           },
-          "rank": 10
+          "rank": 10,
+          "rank_of": 10
+        },
+        "ferrari": {
+          "growth": 10,
+          "prev": 11,
+          "delta": -1,
+          "vs_median": null,
+          "median_others": null,
+          "two_year_stack": 20.2,
+          "base": 9.3,
+          "next_base": 6,
+          "asia": null,
+          "asia_prev": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "Slowing",
+            "level": "",
+            "flags": [
+              "Easier base next quarter"
+            ],
+            "label": "Slowing"
+          },
+          "rank": 2,
+          "rank_of": 2
+        },
+        "aston-martin": {
+          "growth": 36,
+          "prev": 62,
+          "delta": -26,
+          "vs_median": null,
+          "median_others": null,
+          "two_year_stack": -0.7,
+          "base": -27,
+          "next_base": -12,
+          "asia": null,
+          "asia_prev": null,
+          "asia_gap": null,
+          "asia_delta": null,
+          "breadth": {
+            "growing": 0,
+            "reported": 0
+          },
+          "region_spread": null,
+          "driver": null,
+          "signal": {
+            "momentum": "Slowing",
+            "level": "",
+            "flags": [
+              "Tougher base next quarter"
+            ],
+            "label": "Slowing"
+          },
+          "rank": 1,
+          "rank_of": 2
         }
       }
     }
@@ -4053,6 +6227,20 @@
           "watch": "",
           "by": "rules",
           "at": "2026-11-17T02:36:32Z"
+        },
+        "ferrari": {
+          "note": "Growth was +15% in Q4 2024 (at constant exchange rates).",
+          "themes": [],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-18T02:24:36Z"
+        },
+        "aston-martin": {
+          "note": "Growth was −1% in Q4 2024 (as reported).",
+          "themes": [],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-18T02:24:36Z"
         }
       }
     },
@@ -4133,6 +6321,20 @@
           "watch": "",
           "by": "rules",
           "at": "2026-11-17T02:36:32Z"
+        },
+        "ferrari": {
+          "note": "Growth was +12.2% in Q1 2025 (at constant exchange rates), down 2.8 pts from +15% in Q4 2024.",
+          "themes": [],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-18T02:24:36Z"
+        },
+        "aston-martin": {
+          "note": "Growth was −13% in Q1 2025 (as reported), down 12 pts from −1% in Q4 2024.",
+          "themes": [],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-18T02:24:36Z"
         }
       }
     },
@@ -4206,6 +6408,20 @@
           "watch": "",
           "by": "rules",
           "at": "2026-11-17T02:36:32Z"
+        },
+        "ferrari": {
+          "note": "Growth was +5.1% in Q2 2025 (at constant exchange rates), down 7.1 pts from +12.2% in Q1 2025.",
+          "themes": [],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-18T02:24:36Z"
+        },
+        "aston-martin": {
+          "note": "Growth was −34% in Q2 2025 (as reported), down 21 pts from −13% in Q1 2025.",
+          "themes": [],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-18T02:24:36Z"
         }
       }
     },
@@ -4286,6 +6502,20 @@
           "watch": "",
           "by": "rules",
           "at": "2026-11-17T02:36:32Z"
+        },
+        "ferrari": {
+          "note": "Growth was +9.3% in Q3 2025 (at constant exchange rates), up 4.2 pts from +5.1% in Q2 2025.",
+          "themes": [],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-18T02:24:36Z"
+        },
+        "aston-martin": {
+          "note": "Growth was −27% in Q3 2025 (as reported), up 7 pts from −34% in Q2 2025.",
+          "themes": [],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-18T02:24:36Z"
         }
       }
     },
@@ -4384,6 +6614,24 @@
           "watch": "",
           "by": "rules",
           "at": "2026-11-17T02:36:32Z"
+        },
+        "ferrari": {
+          "note": "Growth was +6% in Q4 2025 (at constant exchange rates), down 3.3 pts from +9.3% in Q3 2025. Compounded with the same quarter a year earlier, growth is +21.9% over two years.",
+          "themes": [
+            "Easier base next quarter"
+          ],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-18T02:24:36Z"
+        },
+        "aston-martin": {
+          "note": "Growth was −12% in Q4 2025 (as reported), up 15 pts from −27% in Q3 2025. Compounded with the same quarter a year earlier, growth is −12.9% over two years.",
+          "themes": [
+            "Easier base next quarter"
+          ],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-18T02:24:36Z"
         }
       }
     },
@@ -4472,6 +6720,24 @@
           "watch": "",
           "by": "rules",
           "at": "2026-11-17T02:36:32Z"
+        },
+        "ferrari": {
+          "note": "Growth was +6% in Q1 2026 (at constant exchange rates), unchanged from Q4 2025. Compounded with the same quarter a year earlier, growth is +18.9% over two years.",
+          "themes": [
+            "Easier base next quarter"
+          ],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-18T02:24:36Z"
+        },
+        "aston-martin": {
+          "note": "Growth was +16% in Q1 2026 (as reported), up 28 pts from −12% in Q4 2025. Compounded with the same quarter a year earlier, growth is +0.9% over two years.",
+          "themes": [
+            "Easier base next quarter"
+          ],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-18T02:24:36Z"
         }
       }
     },
@@ -4565,6 +6831,24 @@
           "watch": "",
           "by": "rules",
           "at": "2026-11-17T02:36:32Z"
+        },
+        "ferrari": {
+          "note": "Growth was +11% in Q2 2026 (at constant exchange rates), up 5 pts from +6% in Q1 2026. Compounded with the same quarter a year earlier, growth is +16.7% over two years.",
+          "themes": [
+            "Tougher base next quarter"
+          ],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-18T02:24:36Z"
+        },
+        "aston-martin": {
+          "note": "Growth was +62% in Q2 2026 (as reported), up 46 pts from +16% in Q1 2026. Compounded with the same quarter a year earlier, growth is +6.9% over two years.",
+          "themes": [
+            "Tougher base next quarter"
+          ],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-18T02:24:36Z"
         }
       }
     },
@@ -4665,12 +6949,203 @@
           "watch": "",
           "by": "rules",
           "at": "2026-11-18T01:07:56Z"
+        },
+        "ferrari": {
+          "note": "Growth was +10% in Q3 2026 (at constant exchange rates), down 1 pt from +11% in Q2 2026. Compounded with the same quarter a year earlier, growth is +20.2% over two years.",
+          "themes": [
+            "Easier base next quarter"
+          ],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-18T02:24:36Z"
+        },
+        "aston-martin": {
+          "note": "Growth was +36% in Q3 2026 (as reported), down 26 pts from +62% in Q2 2026. Compounded with the same quarter a year earlier, growth is −0.7% over two years.",
+          "themes": [
+            "Tougher base next quarter"
+          ],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-18T02:24:36Z"
         }
       }
     }
   },
+  "taxonomy": {
+    "note": "How companies and their segments are grouped. industries are peer groups: each company is compared only with the others in its own industry, and every median is taken within one. focus splits an industry by what the company mostly sells. categories group segments across companies, so leather goods can be read against leather goods. A median is shown only for a group of at least min_group members, and never for a category marked no_median, whose lines have nothing in common. In segments, a name mapped to null is a line inside another one, such as Gucci inside Kering's fashion line, and is left out of the category so nothing is counted twice.",
+    "min_group": 3,
+    "industries": [
+      {
+        "id": "goods",
+        "label": "Personal luxury goods"
+      },
+      {
+        "id": "autos",
+        "label": "Luxury autos"
+      }
+    ],
+    "focus": [
+      {
+        "id": "fashion",
+        "label": "Fashion & leather goods",
+        "industry": "goods"
+      },
+      {
+        "id": "hard",
+        "label": "Jewellery & watches",
+        "industry": "goods"
+      },
+      {
+        "id": "diversified",
+        "label": "Diversified",
+        "industry": "goods"
+      },
+      {
+        "id": "sports_cars",
+        "label": "Sports cars",
+        "industry": "autos"
+      }
+    ],
+    "companies": {
+      "lvmh": {
+        "industry": "goods",
+        "focus": "diversified"
+      },
+      "hermes": {
+        "industry": "goods",
+        "focus": "fashion"
+      },
+      "kering": {
+        "industry": "goods",
+        "focus": "fashion"
+      },
+      "richemont": {
+        "industry": "goods",
+        "focus": "hard"
+      },
+      "moncler": {
+        "industry": "goods",
+        "focus": "fashion"
+      },
+      "prada": {
+        "industry": "goods",
+        "focus": "fashion"
+      },
+      "burberry": {
+        "industry": "goods",
+        "focus": "fashion"
+      },
+      "zegna": {
+        "industry": "goods",
+        "focus": "fashion"
+      },
+      "cucinelli": {
+        "industry": "goods",
+        "focus": "fashion"
+      },
+      "ferragamo": {
+        "industry": "goods",
+        "focus": "fashion"
+      },
+      "ferrari": {
+        "industry": "autos",
+        "focus": "sports_cars"
+      },
+      "aston-martin": {
+        "industry": "autos",
+        "focus": "sports_cars"
+      }
+    },
+    "categories": [
+      {
+        "id": "fashion",
+        "label": "Fashion & leather goods"
+      },
+      {
+        "id": "jewellery_watches",
+        "label": "Jewellery & watches"
+      },
+      {
+        "id": "beauty",
+        "label": "Beauty & fragrance"
+      },
+      {
+        "id": "eyewear",
+        "label": "Eyewear"
+      },
+      {
+        "id": "wines",
+        "label": "Wines & spirits"
+      },
+      {
+        "id": "retail",
+        "label": "Selective retailing"
+      },
+      {
+        "id": "cars",
+        "label": "Cars & spare parts"
+      },
+      {
+        "id": "brand",
+        "label": "Brand, sponsorship & lifestyle"
+      },
+      {
+        "id": "other",
+        "label": "Other",
+        "no_median": true
+      }
+    ],
+    "segments": {
+      "lvmh": {
+        "Wines & Spirits": "wines",
+        "Fashion & Leather Goods": "fashion",
+        "Perfumes & Cosmetics": "beauty",
+        "Watches & Jewelry": "jewellery_watches",
+        "Selective Retailing": "retail"
+      },
+      "hermes": {
+        "Leather Goods and Saddlery": "fashion",
+        "Ready-to-wear and Accessories": "fashion",
+        "Silk and Textiles": "fashion",
+        "Other Hermès sectors": "other",
+        "Perfume and Beauty": "beauty",
+        "Watches": "jewellery_watches",
+        "Other products": "other"
+      },
+      "kering": {
+        "Kering Fashion & Leather Goods": "fashion",
+        "of which Gucci": null,
+        "Kering Jewelry": "jewellery_watches",
+        "Kering Eyewear": "eyewear",
+        "Corporate & Other": "other"
+      },
+      "richemont": {
+        "Jewellery Maisons": "jewellery_watches",
+        "Specialist Watchmakers": "jewellery_watches",
+        "Other": "other"
+      },
+      "moncler": {
+        "Moncler": "fashion",
+        "Stone Island": "fashion"
+      },
+      "prada": {
+        "Prada (retail sales)": "fashion",
+        "Miu Miu (retail sales)": "fashion"
+      },
+      "zegna": {
+        "Zegna": "fashion",
+        "Thom Browne": "fashion",
+        "Tom Ford Fashion": "fashion"
+      },
+      "ferrari": {
+        "Cars and spare parts": "cars",
+        "Sponsorship, commercial and brand": "brand",
+        "Other": "other"
+      }
+    }
+  },
   "meta": {
-    "built_at": "2026-11-18T01:23:45Z",
+    "built_at": "2026-11-18T02:25:16Z",
     "runs": [
       {
         "at": "2026-11-18T01:04:01Z",
@@ -4886,7 +7361,7 @@
       }
     ],
     "quality": {
-      "figures": 173,
+      "figures": 192,
       "errors": 0,
       "warnings": []
     },

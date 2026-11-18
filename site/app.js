@@ -1,13 +1,13 @@
 "use strict";
 /* ---------- state ---------- */
-let D = null, MODEL = {}, NOTES = {}, META = {};
+let D = null, MODEL = {}, NOTES = {}, META = {}, TAX = {};
 const REG = [["asia","Asia ex-Japan"],["japan","Japan"],["europe","Europe"],["americas","Americas"],["me","Middle East & other"]];
 const REG_KEYS = REG.map(r => r[0]);
 const MEASURES = [["group","Group growth","group growth"],["asia","Asia ex-Japan growth","Asia ex-Japan growth"],["japan","Japan growth","Japan growth"],["europe","Europe growth","Europe growth"],["americas","Americas growth","Americas growth"],["me","Middle East & other growth","Middle East & other growth"],["stack","Two-year growth","two-year growth"]];
 const AGAINST = [["prev","Prior quarter"],["yoy","Same quarter last year"],["median","Median of the others"],["company","One company"],["none","Nothing"]];
-const TITLES = {overview:"Overview", compare:"Compare", company:"Company", data:"Data and sources", method:"Method"};
+const TITLES = {overview:"Overview", compare:"Compare", categories:"Categories", company:"Company", data:"Data and sources", method:"Method"};
 const WORDS = ["zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve"];
-const state = { view:"overview", quarter:"", company:"", sel:new Set(), measure:"group", against:"prev", againstCo:"", open:new Set(), dataCo:"all", dataType:"all", dataText:"" };
+const state = { view:"overview", group:"", quarter:"", company:"", sel:new Set(), measure:"group", against:"prev", againstCo:"", open:new Set(), dataCo:"all", dataType:"all", dataText:"" };
 let redraws = [];
 
 /* ---------- helpers ---------- */
@@ -38,7 +38,20 @@ const prevQ = q => shiftQ(q, -1);
 function median(a){ const v = a.filter(isNum).sort((x, y) => x - y); if (!v.length) return null; const m = v.length >> 1; return v.length % 2 ? v[m] : (v[m - 1] + v[m]) / 2; }
 const cos = () => D.companies;
 const byId = id => cos().find(c => c.id === id) || cos()[0];
-function colorOf(c){ const i = cos().indexOf(c); return i >= 0 && i < 9 ? "var(--c" + (i + 1) + ")" : "var(--c-more)"; }   /* eight checked hues, then two neutrals: ink for the ninth, grey from the tenth on */
+/* Peer groups come from config/categories.json. Every median and rank is taken inside one industry. */
+const industries = () => TAX.industries && TAX.industries.length ? TAX.industries : [{id:"goods", label:"Peers"}];
+const firstIndustry = () => industries()[0].id;
+function industryOf(c){ return ((TAX.companies || {})[c.id] || {}).industry || firstIndustry(); }
+function focusOf(c){ return ((TAX.companies || {})[c.id] || {}).focus || null; }
+function groupLabel(id){ const g = industries().concat(TAX.focus || []).find(x => x.id === id); return g ? g.label : id; }
+const grp = () => cos().filter(c => industryOf(c) === state.group);
+const sameIndustry = c => cos().filter(o => industryOf(o) === industryOf(c));
+const minGroup = () => TAX.min_group || 3;
+/* Colour follows the company and never its rank: eight checked hues in fixed order inside each industry, then ink, then grey.
+   A company outside the first industry is also drawn dashed, so a mixed selection never relies on colour alone. */
+function colorOf(c){ const i = sameIndustry(c).indexOf(c); return i >= 0 && i < 9 ? "var(--c" + (i + 1) + ")" : "var(--c-more)"; }
+const dashed = c => industryOf(c) !== firstIndustry();
+function swatch(color, dash){ return dash ? "background:repeating-linear-gradient(90deg," + color + " 0 5px,transparent 5px 8px)" : "background:" + color; }
 function gv(c, q){ const s = c.series && c.series[q]; return s && isNum(s.g) ? s.g : null; }
 function rcell(c, q, k){ const r = c.regions && c.regions[q]; return r && r[k] && isNum(r[k].v) ? r[k] : null; }
 function rv(c, q, k){ const x = rcell(c, q, k); return x ? x.v : null; }
@@ -47,7 +60,7 @@ function allQuarters(){ const s = new Set(); cos().forEach(c => Object.keys(c.se
 function srcOf(c, i){ return c.sources && isNum(i) && c.sources[i] ? c.sources[i] : null; }
 function periodLabel(c, q){ const s = c.series && c.series[q]; return s && s.label ? s.label + " (" + qLabel(q) + ")" : qLabel(q); }
 function basisWords(b){ return ({"Organic":"organic","Constant FX":"at constant exchange rates","Comparable":"comparable","Reported":"as reported"})[b] || String(b || "").toLowerCase(); }
-function count(n, of){ return (n === of ? "All " + (WORDS[n] || n) : (n < WORDS.length ? WORDS[n][0].toUpperCase() + WORDS[n].slice(1) : n) + " of " + (WORDS[of] || of)); }
+function count(n, of){ return (n === of ? (n === 2 ? "Both" : "All " + (WORDS[n] || n)) : (n < WORDS.length ? WORDS[n][0].toUpperCase() + WORDS[n].slice(1) : n) + " of " + (WORDS[of] || of)); }
 function niceDomain(vals){
   const v = vals.filter(isNum); let lo = Math.min(0, ...v), hi = Math.max(0, ...v);
   const span = hi - lo, step = span > 60 ? 20 : span > 28 ? 10 : 5;
@@ -60,11 +73,11 @@ function againstVal(c, q, m){
   const a = state.against;
   if (a === "prev") return val(c, prevQ(q), m);
   if (a === "yoy") return val(c, shiftQ(q, -4), m);
-  if (a === "median") return median(cos().filter(o => o.id !== c.id).map(o => val(o, q, m)));
+  if (a === "median") return median(sameIndustry(c).filter(o => o.id !== c.id).map(o => val(o, q, m)));
   if (a === "company"){ const x = byId(state.againstCo); return x.id === c.id ? null : val(x, q, m); }
   return null;
 }
-function againstLabel(q){ const a = state.against; return a === "prev" ? qLabel(prevQ(q)) : a === "yoy" ? qLabel(shiftQ(q, -4)) : a === "median" ? "the median of the others" : a === "company" ? byId(state.againstCo).name : ""; }
+function againstLabel(q){ const a = state.against; return a === "prev" ? qLabel(prevQ(q)) : a === "yoy" ? qLabel(shiftQ(q, -4)) : a === "median" ? "the median of the others in the industry" : a === "company" ? byId(state.againstCo).name : ""; }
 const measureLabel = () => MEASURES.find(m => m[0] === state.measure)[1];
 function go(hash){ location.hash = hash; }
 
@@ -171,7 +184,7 @@ function trendChart(lines, qs, endLabels){
     lines.forEach(l => {
       let d = "", pen = false, n = 0, last = null;
       l.vals.forEach((v, i) => { if (!isNum(v)){ pen = false; return; } d += (pen ? "L" : "M") + x(i).toFixed(1) + " " + y(v).toFixed(1); pen = true; n++; last = {i, v}; });
-      if (n >= 2) svg.append(sv("path", {class: l.ref ? "ref" : "ln", d, style: l.ref ? "" : "stroke:" + l.color}));
+      if (n >= 2) svg.append(sv("path", {class: l.ref ? "ref" : "ln", d, style: l.ref ? "" : "stroke:" + l.color + (l.dash ? ";stroke-dasharray:6 4" : "")}));
       /* A dot marks the latest point, and any point with no neighbour, which the line alone would not show. */
       if (!l.ref) l.vals.forEach((v, i) => { if (isNum(v) && (i === last.i || (!isNum(l.vals[i - 1]) && !isNum(l.vals[i + 1])))) svg.append(sv("circle", {class:"pt", cx: x(i), cy: y(v), r: 4.5, style:"fill:" + l.color})); });
       if (last && endLabels && !l.ref){ const tx = sv("text", {class:"endl", x: x(last.i) + 10, y: y(last.v) + 4}); tx.textContent = (narrow ? "" : l.name + " ") + fmtPct(last.v); svg.append(tx); }
@@ -230,13 +243,14 @@ function signalChips(m){ const f = document.createDocumentFragment(); if (!m) re
 
 /* ---------- overview ---------- */
 function viewOverview(v){
-  const q = state.quarter, list = cos(), peer = (MODEL[q] || {}).peer || {}, p = prevQ(q);
+  const q = state.quarter, list = grp(), blk = MODEL[q] || {}, peer = (blk.groups || {})[state.group] || blk.peer || {}, p = prevQ(q), main = state.group === firstIndustry();
   const ranked = list.filter(c => gv(c, q) != null).sort((a, b) => gv(b, q) - gv(a, q));
-  let head = "Luxury sales in " + qLabel(q) + ".";
-  if (peer.compared >= 2) head = peer.slowed * 2 >= peer.compared ? count(peer.slowed, peer.compared) + " groups slowed in " + qLabel(q) + "." : count(peer.compared - peer.slowed, peer.compared) + " groups sped up in " + qLabel(q) + ".";
+  let head = groupLabel(state.group) + " in " + qLabel(q) + ".";
+  if (peer.compared >= 2) head = peer.slowed * 2 >= peer.compared ? count(peer.slowed, peer.compared) + " companies slowed in " + qLabel(q) + "." : count(peer.compared - peer.slowed, peer.compared) + " companies sped up in " + qLabel(q) + ".";
   /* The sentence on how the median moved is written once, by the pipeline. */
-  const bits = [((NOTES[q] || {}).peer || {}).lede, "Every figure links to its source."].filter(Boolean);
-  v.append(el("div", {class:"hero"}, el("div", {class:"mono", text: qLabel(q) + " · " + ranked.length + " groups · data as of " + D.asOf}), el("h2", {class:"headline", text: head}), el("p", {class:"lede", text: bits.join(" ")})));
+  const few = ranked.length < minGroup() ? "With " + (WORDS[ranked.length] || ranked.length) + " companies in this group there is no median: each company is shown on its own." : null;
+  const bits = [main ? ((NOTES[q] || {}).peer || {}).lede : null, few, "Every figure links to its source."].filter(Boolean);
+  v.append(el("div", {class:"hero"}, el("div", {class:"mono", text: qLabel(q) + " · " + groupLabel(state.group) + " · " + ranked.length + " companies · data as of " + D.asOf}), el("h2", {class:"headline", text: head}), el("p", {class:"lede", text: bits.join(" ")})));
 
   const delta = (a, b) => { if (!isNum(a) || !isNum(b)) return null; const d = a - b; return el("span", {class:"delta " + (d < 0 ? "down" : d > 0 ? "up" : "")}, (d < 0 ? "▼ " : d > 0 ? "▲ " : "") + fmtPts(d)); };
   const tile = (label, value, ...rest) => el("div", {class:"kpi"}, el("div", {class:"mono", text: label}), el("div", {class:"v num", text: value}), el("div", {class:"d"}, ...rest));
@@ -246,8 +260,9 @@ function viewOverview(v){
   const top = ranked[0], low = ranked[ranked.length - 1];
   v.append(el("div", {class:"kpis"},
     /* A tile that shows a change shows the level for the same companies, and says so when that is not all of them. */
-    medianTile("Median growth", peer.median, peer.median_like, peer.median_prev, peer.compared, peer.n),
-    medianTile("Median, Asia ex-Japan", peer.asia_median, peer.asia_median_like, peer.asia_median_prev, peer.asia_both, peer.asia_compared),
+    /* A group too small for a median shows its size and the spread between its companies instead. */
+    isNum(peer.median) ? medianTile("Median growth", peer.median, peer.median_like, peer.median_prev, peer.compared, peer.n) : tile("Companies", String(ranked.length), "Too few for a median"),
+    isNum(peer.median) ? medianTile("Median, Asia ex-Japan", peer.asia_median, peer.asia_median_like, peer.asia_median_prev, peer.asia_both, peer.asia_compared) : tile("Spread", isNum(peer.spread) ? fmtPts(peer.spread).replace(/^\+/, "") : "n/d", "Fastest less slowest"),
     tile("Fastest", top ? fmtPct(gv(top, q)) : "n/d", top ? top.name : ""),
     tile("Slowest", low ? fmtPct(gv(low, q)) : "n/d", low ? low.name : "")));
 
@@ -255,9 +270,12 @@ function viewOverview(v){
   const t1 = top ? top.name + " grew fastest at " + fmtPct(gv(top, q)) + ". " + (flat === 0 ? "Every company grew." : flat === 1 ? "One company was at or below zero." : count(flat, ranked.length) + " companies were at or below zero.") : "Growth by company";
   const t2 = peer.asia_compared ? "Asia ex-Japan grew more slowly than the group at " + peer.asia_lagging + " of " + peer.asia_compared + " companies." : "Group growth against Asia ex-Japan";
   const dumb = el("div", null, el("div", {class:"legend"}, el("span", null, el("i", {style:"background:var(--d-blue)"}), "Group"), el("span", null, el("i", {style:"background:var(--d-orange)"}), "Asia ex-Japan"), el("span", null, "Right column: the gap in points")), dumbChart(list, q));
-  v.append(el("div", {class:"g2"},
-    exhibit(t1, barsChart(list, q, "group"), {sub:"Sales growth against the same quarter a year earlier, on each company's underlying basis."}),
-    exhibit(t2, dumb, {sub:"Where the orange dot sits left of the blue one, the region is holding the company back."})));
+  const bars = exhibit(t1, barsChart(list, q, "group"), {sub:"Sales growth against the same quarter a year earlier, on each company's underlying basis."});
+  /* The carmakers report units by region, not revenue, so a group with no Asia figure gets its trend instead. */
+  const qs8 = allQuarters().slice(-8), trendLines = list.map(c => ({name: c.name, color: colorOf(c), dash: dashed(c), vals: qs8.map(x => gv(c, x))}));
+  v.append(el("div", {class:"g2"}, bars, peer.asia_compared
+    ? exhibit(t2, dumb, {sub:"Where the orange dot sits left of the blue one, the region is holding the company back."})
+    : exhibit("Growth by quarter, " + qLabel(qs8[0]) + " to " + qLabel(qs8[qs8.length - 1]) + ".", el("div", null, el("div", {class:"legend"}, ...trendLines.map(l => el("span", null, el("i", {class:"ln", style: swatch(l.color, l.dash)}), l.name))), trendChart(trendLines, qs8, true)), {sub:"These companies report no revenue by region."})));
 
   const ms = ranked.map(c => mm(c, q)).filter(Boolean);
   const nSlow = ms.filter(m => m.signal.momentum === "Slowing").length, nDrag = ms.filter(m => m.signal.flags.includes("Asia drag")).length, nTough = ms.filter(m => m.signal.flags.includes("Tougher base next quarter")).length;
@@ -265,7 +283,8 @@ function viewOverview(v){
   const body = el("tbody");
   ranked.forEach(c => { const m = mm(c, q); body.append(el("tr", {class:"click", onclick: () => go("#company/" + c.id)}, el("td", null, c.name), el("td", {text: fmtPct(gv(c, q))}), el("td", {text: m ? fmtPts(m.delta) : "n/d"}), el("td", {class:"l"}, signalChips(m)))); });
   tb.append(body);
-  v.append(exhibit(nSlow + " of " + ms.length + " companies are slowing. " + nDrag + " show an Asia drag and " + nTough + " face a tougher base next quarter.", el("div", {class:"tscroll"}, tb),
+  const faces = n => n === 1 ? " faces" : " face";
+  v.append(exhibit(nSlow + " of " + ms.length + " companies are slowing. " + (peer.asia_compared ? nDrag + (nDrag === 1 ? " shows" : " show") + " an Asia drag and " + nTough + faces(nTough) : nTough + faces(nTough)) + " a tougher base next quarter.", el("div", {class:"tscroll"}, tb),
     {sub:"Labels come from fixed rules applied to the figures. Select a company for its file.", src:"Source: model step of the pipeline. Rules and thresholds are on the Method screen."}));
 
   v.append(el("div", null, el("div", {class:"mono", style:"margin-bottom:8px", text:"How the data gets here"}), el("div", {class:"steps"},
@@ -279,11 +298,16 @@ function viewCompare(v){
   const q = state.quarter, list = cos().filter(c => state.sel.has(c.id)), m = state.measure, ml = measureLabel(), hasRef = state.against !== "none";
   const chips = el("div", {class:"chips"});
   cos().forEach(c => chips.append(el("button", {class:"chip", type:"button", "aria-pressed": String(state.sel.has(c.id)), onclick: () => { state.sel.has(c.id) ? state.sel.delete(c.id) : state.sel.add(c.id); render(); }}, el("i", {style:"background:" + colorOf(c)}), c.name)));
+  /* Quick picks: a whole industry, or one focus inside it. */
+  const pick = (label, ids) => el("button", {class:"linkbtn", type:"button", onclick: () => { state.sel = new Set(ids); render(); }}, label);
+  const picks = [...industries().map(i => pick(i.label, cos().filter(c => industryOf(c) === i.id).map(c => c.id))),
+    ...(TAX.focus || []).filter(f => cos().filter(c => focusOf(c) === f.id).length > 1 && cos().filter(c => focusOf(c) === f.id).length < cos().filter(c => industryOf(c) === f.industry).length)
+      .map(f => pick(f.label, cos().filter(c => focusOf(c) === f.id).map(c => c.id)))];
   const mSel = el("select", {id:"c-measure", onchange: e => { state.measure = e.target.value; render(); }}, ...MEASURES.map(x => el("option", {value: x[0], text: x[1]}))); mSel.value = m;
   const aSel = el("select", {id:"c-against", onchange: e => { state.against = e.target.value; render(); }}, ...AGAINST.map(x => el("option", {value: x[0], text: x[1]}))); aSel.value = state.against;
   const coSel = el("select", {id:"c-against-co", "aria-label":"Company to compare against", onchange: e => { state.againstCo = e.target.value; render(); }}, ...cos().map(c => el("option", {value: c.id, text: c.name}))); coSel.value = state.againstCo;
   v.append(el("div", {class:"controls"},
-    el("div", {class:"ctl"}, el("div", {class:"mono"}, "Companies", el("button", {class:"linkbtn", type:"button", onclick: () => { state.sel = new Set(cos().map(c => c.id)); render(); }}, "All"), el("button", {class:"linkbtn", type:"button", onclick: () => { state.sel = new Set(); render(); }}, "Clear")), chips),
+    el("div", {class:"ctl"}, el("div", {class:"mono"}, "Companies", el("button", {class:"linkbtn", type:"button", onclick: () => { state.sel = new Set(cos().map(c => c.id)); render(); }}, "All"), ...picks, el("button", {class:"linkbtn", type:"button", onclick: () => { state.sel = new Set(); render(); }}, "Clear")), chips),
     el("div", {class:"ctl"}, el("label", {class:"mono", for:"c-measure", text:"Measure"}), mSel),
     el("div", {class:"ctl"}, el("label", {class:"mono", for:"c-against", text:"Compare against"}), el("div", {class:"row"}, aSel, state.against === "company" ? coSel : null))));
   if (!list.length){ v.append(el("p", {class:"note", text:"Select at least one company."})); return; }
@@ -293,26 +317,28 @@ function viewCompare(v){
   const t1 = hasRef && cmp.length ? below + " of " + cmp.length + " selected " + (cmp.length === 1 ? "company is" : "companies are") + " below " + againstLabel(q) + " on " + MEASURES.find(x => x[0] === m)[2] + "." : ml + " in " + qLabel(q) + ".";
   const leg = el("div", {class:"legend"}, el("span", null, "Bar: " + qLabel(q)), hasRef ? el("span", null, el("i", {class:"tick"}), againstLabel(q)[0].toUpperCase() + againstLabel(q).slice(1)) : null, hasRef ? el("span", null, "Right column: the difference in points") : null);
   const qs = allQuarters().slice(-8);
-  const lines = list.map(c => ({name: c.name, color: colorOf(c), vals: qs.map(x => val(c, x, m))})).filter(l => l.vals.some(isNum));
-  if (state.against === "median") lines.push({name:"Median of all companies", ref: true, vals: qs.map(x => median(cos().map(c => val(c, x, m))))});
+  const lines = list.map(c => ({name: c.name, color: colorOf(c), dash: dashed(c), vals: qs.map(x => val(c, x, m))})).filter(l => l.vals.some(isNum));
+  /* One median line per industry in the selection, and only for an industry with enough companies. */
+  if (state.against === "median") industries().filter(i => list.some(c => industryOf(c) === i.id)).forEach(i => { const mem = cos().filter(c => industryOf(c) === i.id);
+    if (mem.length >= minGroup()) lines.push({name:"Median, " + i.label.toLowerCase(), ref: true, vals: qs.map(x => median(mem.map(c => val(c, x, m))))}); });
   if (state.against === "company" && !state.sel.has(state.againstCo)) lines.push({name: byId(state.againstCo).name, ref: true, vals: qs.map(x => val(byId(state.againstCo), x, m))});
-  const tleg = el("div", {class:"legend"}, ...lines.map(l => el("span", null, el("i", {class:"ln", style:"background:" + (l.ref ? "var(--ink-2)" : l.color)}), l.name)));
+  const tleg = el("div", {class:"legend"}, ...lines.map(l => el("span", null, el("i", {class:"ln", style: l.ref ? "background:var(--ink-2)" : swatch(l.color, l.dash)}), l.name)));
   const span = lines.length ? qs.filter((x, i) => lines.some(l => isNum(l.vals[i]))) : [];
   v.append(el("div", {class:"g2"},
     exhibit(t1, el("div", null, leg, barsChart(list, q, m, {ref: hasRef, color: true})), {sub: m === "group" ? "Each company on its own underlying basis." : m === "stack" ? "This quarter's growth compounded with the same quarter a year earlier." : "Regions as mapped into the five buckets. See the notes under Exhibit 4."}),
     exhibit(ml + (span.length > 1 ? ", " + qLabel(span[0]) + " to " + qLabel(span[span.length - 1]) + "." : " by quarter."), el("div", null, tleg, trendChart(lines, qs, lines.filter(l => !l.ref).length <= 4)), {sub: REG_KEYS.includes(m) ? "Regional figures are held for the two latest quarters." : "Move across the chart to read every line at a quarter."})));
 
   const tb = el("table", {class:"num"}, el("thead", null, el("tr", null, el("th", {text:"Company"}), el("th", {text: ml + ", " + qLabel(q)}), hasRef ? el("th", {text: againstLabel(q)[0].toUpperCase() + againstLabel(q).slice(1)}) : null, hasRef ? el("th", {text:"Difference"}) : null, el("th", {class:"l", text:"Signal"}), el("th", {class:"l", text:""}))));
-  const body = el("tbody");
+  const body = el("tbody"), mixed = new Set(list.map(industryOf)).size > 1;   /* the industry tag only when the selection spans two */
   rows.sort((a, b) => b.g - a.g).forEach(r => {
     const c = r.c, x = mm(c, q), open = state.open.has(c.id);
     body.append(el("tr", {class:"click" + (open ? " open" : ""), onclick: () => { open ? state.open.delete(c.id) : state.open.add(c.id); render(); }},
-      el("td", null, el("span", {class:"cdot", style:"background:" + colorOf(c)}), c.name), el("td", {text: fmtPct(r.g)}), hasRef ? el("td", {text: fmtPct(r.ref)}) : null, hasRef ? el("td", {text: isNum(r.ref) ? fmtPts(r.g - r.ref) : "n/d"}) : null,
+      el("td", null, el("span", {class:"cdot", style:"background:" + colorOf(c)}), c.name, mixed ? el("span", {class:"tag", text: groupLabel(industryOf(c))}) : null), el("td", {text: fmtPct(r.g)}), hasRef ? el("td", {text: fmtPct(r.ref)}) : null, hasRef ? el("td", {text: isNum(r.ref) ? fmtPts(r.g - r.ref) : "n/d"}) : null,
       el("td", {class:"l"}, x ? el("span", {class:"st test", text: x.signal.label}) : "n/d"), el("td", {class:"l note", text: open ? "Hide" : "Details"})));
     if (open && x){
       const item = (k, t) => el("div", null, el("dt", {text: k}), el("dd", {text: t}));
       body.append(el("tr", {class:"detail"}, el("td", {colspan: hasRef ? "6" : "4"}, el("dl", {class:"dl"},
-        item("Change against " + qLabel(prevQ(q)), fmtPts(x.delta)), item("Against the median of the others", fmtPts(x.vs_median)), item("Two-year growth", fmtPct(x.two_year_stack)),
+        item("Change against " + qLabel(prevQ(q)), fmtPts(x.delta)), item("Against the median of the others in the industry", fmtPts(x.vs_median)), item("Two-year growth", fmtPct(x.two_year_stack)),
         item("Base this quarter, next quarter", isNum(x.base) ? fmtPct(x.base) + ", " + fmtPct(x.next_base) : "n/d"), item("Asia gap to group", fmtPts(x.asia_gap)), item("Regions growing", x.breadth.reported ? x.breadth.growing + " of " + x.breadth.reported : "n/d"),
         item("Largest regional move", x.driver ? x.driver.name + " " + fmtPts(x.driver.change) : "n/d"), item("Flags", x.signal.flags.join(", ") || "None")),
         el("p", {class:"note", style:"margin-top:10px"}, el("a", {href:"#company/" + c.id, text:"Open the " + c.name + " file"})))));
@@ -325,13 +351,48 @@ function viewCompare(v){
   v.append(exhibit(meds.length ? meds[0][0] + " was the weakest region for this selection, with a median of " + fmtPct(meds[0][1]) + "." : "Growth by region", heatTable(list, q), {sub:"Blue is growth, red is decline. Hover a cell for the company's own label and the source."}));
 }
 
+/* ---------- categories ---------- */
+function viewCategories(v){
+  const q = state.quarter, p = prevQ(q), blk = MODEL[q] || {}, groups = blk.groups || {}, cats = blk.categories || {};
+  const order = industries().flatMap(i => [i.id, ...(TAX.focus || []).filter(f => f.industry === i.id).map(f => f.id)]).filter(id => groups[id] && groups[id].n);
+  const tb = el("table", {class:"num"}, el("thead", null, el("tr", null, el("th", {class:"l", text:"Group"}), el("th", {class:"l", text:"Companies"}), el("th", {text:"Median, " + qLabel(q)}), el("th", {text:"Median, " + qLabel(p)}), el("th", {text:"Change"}))));
+  const body = el("tbody");
+  order.forEach(id => { const g = groups[id], ind = g.kind === "industry";
+    const who = g.members.map(cid => byId(cid)).sort((a, b) => gv(b, q) - gv(a, q)).map(c => c.name + " " + fmtPct(gv(c, q))).join(", ");
+    const hasMed = isNum(g.median), like = isNum(g.median_like) && isNum(g.median_prev);
+    body.append(el("tr", null, el("td", {class:"l", style: ind ? "font-weight:600" : "padding-left:22px"}, g.label, el("span", {class:"tag", text: ind ? "Industry" : "Focus"})),
+      el("td", {class:"l", style:"color:var(--ink-2);font-size:13px", text: g.members.length < minGroup() ? who : g.n + " companies"}),
+      el("td", {text: hasMed ? fmtPct(like ? g.median_like : g.median) : "n/d"}), el("td", {text: like ? fmtPct(g.median_prev) : "n/d"}), el("td", {text: like ? fmtPts(g.median_like - g.median_prev) : "n/d"}))); });
+  tb.append(body);
+  const withMed = order.map(id => groups[id]).filter(g => isNum(g.median_like) && isNum(g.median_prev)).sort((a, b) => (b.median_like - b.median_prev) - (a.median_like - a.median_prev));
+  v.append(exhibit(withMed.length ? withMed.map(g => g.label + " moved " + fmtPts(g.median_like - g.median_prev)).join(". ") + "." : "Peer groups in " + qLabel(q) + ".", el("div", {class:"tscroll"}, tb),
+    {sub:"Medians use the companies that report both quarters. A group of fewer than " + (WORDS[minGroup()] || minGroup()) + " lists its members instead of a median.", src:"Source: company releases and the model step of the pipeline."}));
+
+  const ids = (TAX.categories || []).map(c => c.id).filter(id => cats[id]);
+  if (!ids.length){ v.append(exhibit("Product categories", el("p", {class:"note", text:"No segment figures for this quarter."}))); return; }
+  const all = ids.flatMap(id => cats[id].rows.map(r => r.g)), dom = niceDomain(all), pos = t => (t - dom.lo) / (dom.hi - dom.lo) * 100;
+  const wrap = el("div", {class:"cat"});
+  ids.forEach(id => { const k = cats[id], ml = el("div", {class:"mlist"});
+    wrap.append(el("h4", null, k.label, el("span", {class:"note", text: k.n + (k.n === 1 ? " line" : " lines") + " from " + k.companies + (k.companies === 1 ? " company" : " companies") + (isNum(k.median) ? ", median " + fmtPct(k.median) : "")})));
+    k.rows.forEach(r => { const c = byId(r.company), mt = el("div", {class:"mt"}, el("i", {style:"left:" + pos(0) + "%"}));
+      if (r.g !== 0) mt.append(el("b", {class: r.g > 0 ? "pos" : "neg", style:"left:" + Math.min(pos(0), pos(r.g)) + "%;width:" + Math.abs(pos(r.g) - pos(0)) + "%"}));
+      if (isNum(k.median)) mt.append(el("span", {class:"medm", style:"left:" + pos(k.median) + "%"}));
+      const row = el("div", {class:"mrow", tabindex:"0"}, el("span", null, c.name + " · " + r.segment), mt, el("span", {class:"g num", text: fmtPct(r.g)}), el("span", {class:"r", text: c.basis}));
+      bindTip(row, t => { t.append(el("div", {class:"tt", text: c.name + ", " + r.segment}), tipRow(fmtPct(r.g), qLabel(q) + ", " + basisWords(c.basis))); if (isNum(k.median)) t.append(el("div", {class:"src", text:"Category median " + fmtPct(k.median) + ", gap " + fmtPts(r.g - k.median)})); });
+      ml.append(row); });
+    wrap.append(ml); });
+  const ranked = ids.filter(id => isNum(cats[id].median)).sort((a, b) => cats[b].median - cats[a].median);
+  v.append(exhibit(ranked.length >= 2 ? cats[ranked[0]].label + " led the categories with a median of " + fmtPct(cats[ranked[0]].median) + ". " + cats[ranked[ranked.length - 1]].label + " trailed at " + fmtPct(cats[ranked[ranked.length - 1]].median) + "." : "Growth by product category, " + qLabel(q) + ".", wrap,
+    {sub:"Each line on its company's own basis. The black mark is the category median, shown when " + (WORDS[minGroup()] || minGroup()) + " or more lines stand behind it. A line inside another line, such as Gucci inside Kering's fashion line, is left out."}));
+}
+
 /* ---------- company ---------- */
 function viewCompany(v){
   const c = byId(state.company), q = state.quarter, x = mm(c, q), nt = ((NOTES[q] || {}).companies || {})[c.id], s0 = c.series && c.series[q];
   const chips = el("div", {class:"chips"});
   cos().forEach(o => chips.append(el("button", {class:"chip", type:"button", "aria-pressed": String(o.id === c.id), onclick: () => go("#company/" + o.id)}, el("i", {style:"background:" + colorOf(o)}), o.name)));
   v.append(chips);
-  const head = el("div", null, el("div", {class:"cohead"}, el("span", {class:"name", text: c.name}), el("span", {class:"mono", text: [c.ticker, c.hq, c.basis + " growth", periodLabel(c, q)].filter(Boolean).join(" · ")})));
+  const head = el("div", null, el("div", {class:"cohead"}, el("span", {class:"name", text: c.name}), el("span", {class:"mono", text: [c.ticker, c.hq, groupLabel(industryOf(c)), focusOf(c) ? groupLabel(focusOf(c)) : null, c.basis + " growth", periodLabel(c, q)].filter(Boolean).join(" · ")})));
   if (c.fiscal) head.append(el("p", {class:"note", text: c.fiscal}));
   if (c.scope) head.append(el("p", {class:"note", text: c.scope}));
   const mini = (k, t) => el("div", null, el("span", {class:"mono", text: k}), el("b", {class:"num", text: t}));
@@ -342,17 +403,22 @@ function viewCompany(v){
   if (nt && nt.watch) note.append(el("p", null, el("b", {style:"font-weight:600", text:"To check next: "}), nt.watch));
   note.append(el("div", {style:"margin:8px 0"}, signalChips(x)));
   const qs = allQuarters().slice(-8);
-  const lines = [{name: c.name, color: colorOf(c), vals: qs.map(t => gv(c, t))}, {name:"Median of all companies", ref: true, vals: qs.map(t => median(cos().map(o => gv(o, t))))}];
+  /* Against the median of its own industry, or against each other member when the industry is too small for a median. */
+  const mates = sameIndustry(c), big = mates.length >= minGroup(), indName = groupLabel(industryOf(c)).toLowerCase();
+  const lines = [{name: c.name, color: colorOf(c), dash: dashed(c), vals: qs.map(t => gv(c, t))}].concat(big
+    ? [{name:"Median, " + indName, ref: true, vals: qs.map(t => median(mates.map(o => gv(o, t))))}]
+    : mates.filter(o => o.id !== c.id).map(o => ({name: o.name, ref: true, vals: qs.map(t => gv(o, t))})));
   const left = el("div", {style:"display:grid;gap:24px;align-content:start"},
     exhibit(x ? x.signal.label + "." : "What moved", note, {src: nt ? (nt.by === "rules" ? "Note written by fixed rules from the model output." : "Note written by " + nt.by + " from the model output. Every number in it was checked against the data.") : ""}),
-    exhibit(c.name + " against the median, by quarter.", el("div", null, el("div", {class:"legend"}, el("span", null, el("i", {class:"ln", style:"background:" + colorOf(c)}), c.name), el("span", null, el("i", {class:"ln", style:"background:var(--ink-2)"}), "Median of all companies")), trendChart(lines, qs, true))));
+    exhibit(c.name + (big ? " against the median of " + indName + ", by quarter." : " against " + lines.slice(1).map(l => l.name).join(" and ") + ", by quarter."), el("div", null, el("div", {class:"legend"}, ...lines.map(l => el("span", null, el("i", {class:"ln", style: l.ref ? "background:var(--ink-2)" : swatch(l.color, l.dash)}), l.name))), trendChart(lines, qs, true))));
   const segs = (c.segments && c.segments[q]) || [];
   if (segs.length){
     const dom = niceDomain(segs.map(s => s.g)), pos = t => (t - dom.lo) / (dom.hi - dom.lo) * 100, ml = el("div", {class:"mlist"});
     segs.forEach(s => { const mt = el("div", {class:"mt"}, el("i", {style:"left:" + pos(0) + "%"}));
       if (isNum(s.g) && s.g !== 0) mt.append(el("b", {class: s.g > 0 ? "pos" : "neg", style:"left:" + Math.min(pos(0), pos(s.g)) + "%;width:" + Math.abs(pos(s.g) - pos(0)) + "%"}));
       ml.append(el("div", {class:"mrow"}, el("span", {text: s.name}), mt, el("span", {class:"g num", text: fmtPct(s.g)}), el("span", {class:"r num", text: fmtRev(s.rev, c.cur)}))); });
-    const best = segs.filter(s => isNum(s.g) && !/^of which/i.test(s.name)).sort((a, b) => b.g - a.g);
+    const catOf = s => { const m = (TAX.segments || {})[c.id] || {}; return s.name in m ? m[s.name] : "other"; };
+    const best = segs.filter(s => isNum(s.g) && !/^of which/i.test(s.name) && catOf(s) !== null && catOf(s) !== "other").sort((a, b) => b.g - a.g);
     left.append(exhibit(best.length >= 2 ? best[0].name + " led at " + fmtPct(best[0].g) + ". " + best[best.length - 1].name + " was weakest at " + fmtPct(best[best.length - 1].g) + "." : "Segments", ml, {sub:"Growth and revenue by segment, " + qLabel(q) + "."}));
   }
   const right = el("div", {style:"display:grid;gap:24px;align-content:start"});
@@ -365,12 +431,12 @@ function viewCompany(v){
   }
   const item = (k, t) => el("div", null, el("dt", {text: k}), el("dd", {text: t}));
   if (x) right.append(exhibit(x.signal.flags.some(f => /base/.test(f)) ? x.signal.flags.find(f => /base/.test(f)) + "." : "The comparison base is steady into next quarter.", el("dl", {class:"dl"},
-    item("Revenue, " + qLabel(q), s0 && isNum(s0.rev) ? fmtRev(s0.rev, c.cur) : "n/d"), item("Growth lapped this quarter", fmtPct(x.base)), item("Growth to lap next quarter", fmtPct(x.next_base)), item("Asia gap to group", fmtPts(x.asia_gap)), item("Regions growing", x.breadth.reported ? x.breadth.growing + " of " + x.breadth.reported : "n/d"), item("Rank on growth", x.rank + " of " + ((MODEL[q] || {}).peer || {}).n)),
+    item("Revenue, " + qLabel(q), s0 && isNum(s0.rev) ? fmtRev(s0.rev, c.cur) : "n/d"), item("Growth lapped this quarter", fmtPct(x.base)), item("Growth to lap next quarter", fmtPct(x.next_base)), item("Asia gap to group", fmtPts(x.asia_gap)), item("Regions growing", x.breadth.reported ? x.breadth.growing + " of " + x.breadth.reported : "n/d"), item("Rank on growth in " + indName, x.rank + " of " + (x.rank_of || ((MODEL[q] || {}).peer || {}).n))),
     {src:"Source: model step of the pipeline."}));
   const words = el("div", {class:"prose"});
   if (c.china) words.append(el("p", null, el("b", {style:"font-weight:600", text:"China and Asia. "}), c.china));
   if (c.guidance && c.guidance.text){ const g = c.guidance; words.append(el("p", null, el("b", {style:"font-weight:600", text:"Guidance. "}), g.text + (g.date ? " Stated " + g.date + "." : "")));
-    if (g.evidence) words.append(el("p", null, el("b", {style:"font-weight:600", text:"Against the figures. "}), g.evidence.replace("{median}", fmtPct(median(cos().filter(o => o.id !== c.id).map(o => gv(o, D.latest))))) + " " + (g.read || ""))); }
+    if (g.evidence) words.append(el("p", null, el("b", {style:"font-weight:600", text:"Against the figures. "}), g.evidence.replace("{median}", fmtPct(median(mates.filter(o => o.id !== c.id).map(o => gv(o, D.latest))))) + " " + (g.read || ""))); }
   if (words.children.length) right.append(exhibit("What management said.", words, {src:"Source: company releases listed below."}));
   if (c.sources && c.sources.length){ const ol = el("ol", {class:"srcs"});
     c.sources.forEach(s => ol.append(el("li", null, s.url ? el("a", {href: s.url, target:"_blank", rel:"noopener noreferrer", text: s.t}) : s.t, ". " + [s.pub, s.date].filter(Boolean).join(", ") + ". ", el("span", {class:"st " + (s.kind === "press" ? "part" : "ok"), text: s.kind === "press" ? "Press" : "Company"}))));
@@ -434,7 +500,7 @@ function viewData(v){
 
   const gt = el("table", null, el("thead", null, el("tr", null, ...["Company","What was said","Stated","Type","Against the figures","Read"].map(h => el("th", {class:"l", scope:"col", text: h})))));
   const gb = el("tbody"), kinds = {testable:["test","Can be tested"], qualitative:["","Qualitative"], none:["","No guidance"]};
-  cos().forEach(c => { const g = c.guidance; if (!g || !g.text) return; const k = kinds[g.kind] || kinds.qualitative, med = median(cos().filter(o => o.id !== c.id).map(o => gv(o, D.latest)));
+  cos().forEach(c => { const g = c.guidance; if (!g || !g.text) return; const k = kinds[g.kind] || kinds.qualitative, med = median(sameIndustry(c).filter(o => o.id !== c.id).map(o => gv(o, D.latest)));
     gb.append(el("tr", null, el("td", {text: c.name}), el("td", {class:"l", text: g.text}), el("td", {class:"l", style:"white-space:nowrap", text: g.date || ""}), el("td", {class:"l"}, el("span", {class:"st " + k[0], text: k[1]})), el("td", {class:"l", text: (g.evidence || "").replace("{median}", fmtPct(med))}), el("td", {class:"l", text: g.read || ""}))); });
   gt.append(gb);
   const testable = cos().filter(c => c.guidance && c.guidance.kind === "testable").length;
@@ -467,13 +533,14 @@ function viewMethod(v){
 }
 
 /* ---------- shell ---------- */
-const VIEWS = {overview: viewOverview, compare: viewCompare, company: viewCompany, data: viewData, method: viewMethod};
+const VIEWS = {overview: viewOverview, compare: viewCompare, categories: viewCategories, company: viewCompany, data: viewData, method: viewMethod};
 function render(){
   if (!D) return;
   redraws = []; exNo = 0; tipHide();
   const v = $("#view"); v.replaceChildren();
   $("#title").textContent = TITLES[state.view];
   $("#q-wrap").style.visibility = state.view === "method" ? "hidden" : "visible";
+  $("#g-wrap").style.display = state.view === "overview" || state.view === "compare" ? "" : "none";   /* the other screens show every group */
   document.querySelectorAll("#nav a").forEach(a => { if (a.dataset.v === state.view) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); });
   VIEWS[state.view](v);
 }
@@ -487,12 +554,14 @@ window.addEventListener("hashchange", route);
 window.addEventListener("scroll", tipHide, {passive: true});
 document.addEventListener("keydown", e => { if (e.key === "Escape") closeDrawer(); });
 $("#f-quarter").addEventListener("change", e => { state.quarter = e.target.value; render(); });
+$("#f-group").addEventListener("change", e => { state.group = e.target.value; state.sel = new Set(grp().map(c => c.id)); render(); });
 let lastW = 0, rz = 0;
 if (window.ResizeObserver) new ResizeObserver(() => { const w = $("#view").clientWidth; if (w === lastW) return; lastW = w; cancelAnimationFrame(rz); rz = requestAnimationFrame(() => redraws.forEach(f => f())); }).observe($("#view"));
 
 fetch("data.json", {cache:"no-store"}).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(d => {
-  D = {asOf: d.asOf, latest: d.latest, companies: d.companies}; MODEL = d.model || {}; NOTES = d.notes || {}; META = d.meta || {};
-  state.quarter = D.latest; state.company = cos()[0].id; state.againstCo = cos()[0].id; state.sel = new Set(cos().map(c => c.id));
+  D = {asOf: d.asOf, latest: d.latest, companies: d.companies}; MODEL = d.model || {}; NOTES = d.notes || {}; META = d.meta || {}; TAX = d.taxonomy || {};
+  state.group = firstIndustry(); state.quarter = D.latest; state.company = cos()[0].id; state.againstCo = cos()[0].id; state.sel = new Set(grp().map(c => c.id));
+  const gs = $("#f-group"); gs.replaceChildren(...industries().map(i => el("option", {value: i.id, text: i.label}))); gs.value = state.group;
   const sel = $("#f-quarter"); sel.replaceChildren(...allQuarters().reverse().map(q => el("option", {value: q, text: qLabel(q)}))); sel.value = state.quarter;
   $("#side-asof").textContent = "Data as of " + D.asOf;
   route();

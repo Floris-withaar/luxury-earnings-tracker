@@ -1649,6 +1649,267 @@
       ],
       "origin": "base",
       "cur": "EUR"
+    },
+    {
+      "id": "ferrari",
+      "name": "Ferrari",
+      "ticker": "RACE.MI",
+      "hq": "Maranello",
+      "basis": "Constant FX",
+      "scope": "Growth is net revenues at constant currency. Ferrari reports shipments by region, not revenue, so the region columns are empty. Releases from the fourth quarter of 2025 onward round growth to whole numbers, and so does the fourth quarter of 2024, which comes from the release's table.",
+      "series": {
+        "2024Q4": {
+          "g": 15,
+          "rev": 1736,
+          "s": 7
+        },
+        "2025Q1": {
+          "g": 12.2,
+          "rev": 1791,
+          "s": 6
+        },
+        "2025Q2": {
+          "g": 5.1,
+          "rev": 1787,
+          "s": 5
+        },
+        "2025Q3": {
+          "g": 9.3,
+          "rev": 1766,
+          "s": 4
+        },
+        "2025Q4": {
+          "g": 6,
+          "rev": 1802,
+          "s": 3
+        },
+        "2026Q1": {
+          "g": 6,
+          "rev": 1848,
+          "s": 2
+        },
+        "2026Q2": {
+          "g": 11,
+          "rev": 1938,
+          "s": 1
+        },
+        "2026Q3": {
+          "g": 10,
+          "rev": 1896,
+          "s": 0
+        }
+      },
+      "regions": {},
+      "segments": {
+        "2026Q3": [
+          {
+            "name": "Cars and spare parts",
+            "g": 10,
+            "rev": 1586
+          },
+          {
+            "name": "Sponsorship, commercial and brand",
+            "g": 7,
+            "rev": 220
+          },
+          {
+            "name": "Other",
+            "g": 17,
+            "rev": 90
+          }
+        ]
+      },
+      "china": "Ferrari shipped 3,368 cars in the third quarter, 33 fewer than a year earlier, and reports shipments by region rather than revenue.",
+      "guidance": {
+        "kind": "testable",
+        "date": "3 Nov 2026",
+        "text": "Net revenues of about €7.65 billion in 2026, raised from about €7.60 billion. Net revenues were €7.15 billion in 2025.",
+        "evidence": "Nine-month net revenues were €5,682 million, up 6%.",
+        "read": "Testable at the full-year results in February."
+      },
+      "sources": [
+        {
+          "t": "Q3 2026 results",
+          "pub": "Ferrari press release (MFN)",
+          "date": "3 Nov 2026",
+          "url": "https://mfn.se/one/a/ferrari/strong-mix-and-personalizations-sustain-q3-growth-and-further-2026-guidance-upgrade-e16af121.iframe",
+          "kind": "company"
+        },
+        {
+          "t": "Q2 2026 results",
+          "pub": "Ferrari press release (MFN)",
+          "date": "30 Jul 2026",
+          "url": "https://mfn.se/one/a/ferrari/personalizations-and-mix-continue-to-drive-strong-results-and-2026-guidance-raise-79d4d9ab",
+          "kind": "company"
+        },
+        {
+          "t": "Q1 2026 results",
+          "pub": "Ferrari press release",
+          "date": "5 May 2026",
+          "url": "https://cdn.ferrari.com/cms/network/media/pdf/2026_05_05%20-%20%20Ferrari%20Q1%202026%20Results%20Press%20Release.pdf",
+          "kind": "company"
+        },
+        {
+          "t": "Q4 and full-year 2025 results",
+          "pub": "Ferrari press release",
+          "date": "10 Feb 2026",
+          "url": "https://cdn.ferrari.com/cms/network/media/pdf/2026_02_10%20-%20Ferrari%20FY%202025%20Results%20Press%20Release.pdf",
+          "kind": "company"
+        },
+        {
+          "t": "Q3 2025 results",
+          "pub": "Ferrari press release",
+          "date": "4 Nov 2025",
+          "url": "https://www.ferrari.com/en-PY/corporate/articles/ferrari-financial-results-q3-2025",
+          "kind": "company"
+        },
+        {
+          "t": "Q2 2025 results",
+          "pub": "Ferrari press release",
+          "date": "31 Jul 2025",
+          "url": "https://cdn.ferrari.com/cms/network/media/pdf/2.%202025_07_31%20-%20Ferrari%20Q2%202025%20Results%20Press%20Release.pdf",
+          "kind": "company"
+        },
+        {
+          "t": "Q1 2025 results",
+          "pub": "Ferrari press release (SEC filing)",
+          "date": "6 May 2025",
+          "url": "https://www.sec.gov/Archives/edgar/data/1648416/000164841625000049/fnvq12025results.htm",
+          "kind": "company"
+        },
+        {
+          "t": "Q4 and full-year 2024 results",
+          "pub": "Ferrari press release",
+          "date": "4 Feb 2025",
+          "url": "https://ferrari.com/en-EN/corporate/articles/2024-full-year-and-fourth-quarter-financial-results",
+          "kind": "company"
+        }
+      ],
+      "origin": "base",
+      "cur": "EUR"
+    },
+    {
+      "id": "aston-martin",
+      "name": "Aston Martin",
+      "ticker": "AML.L",
+      "hq": "Gaydon",
+      "basis": "Reported",
+      "scope": "Growth is total revenue as reported, in sterling: Aston Martin publishes no constant-currency figure. Valhalla deliveries, which began in the fourth quarter of 2025, make revenue swing from quarter to quarter. The company reports wholesale units by region, not revenue, so the region columns are empty. The announcements are the company's own regulatory releases (RNS), linked on the London Stock Exchange or on sites that republish RNS in full.",
+      "series": {
+        "2024Q4": {
+          "g": -1,
+          "rev": 589.3,
+          "s": 7
+        },
+        "2025Q1": {
+          "g": -13,
+          "rev": 233.9,
+          "s": 6
+        },
+        "2025Q2": {
+          "g": -34,
+          "rev": 220.5,
+          "s": 5,
+          "checked": "Checked against the release: fewer Specials and US tariff disruption."
+        },
+        "2025Q3": {
+          "g": -27,
+          "rev": 285.2,
+          "s": 4
+        },
+        "2025Q4": {
+          "g": -12,
+          "rev": 518.1,
+          "s": 3
+        },
+        "2026Q1": {
+          "g": 16,
+          "rev": 270.4,
+          "s": 2,
+          "checked": "Checked against the release: 102 Valhalla deliveries in the quarter."
+        },
+        "2026Q2": {
+          "g": 62,
+          "rev": 358.2,
+          "s": 1,
+          "checked": "Checked against the release: Valhalla deliveries against a weak 2025 quarter."
+        },
+        "2026Q3": {
+          "g": 36,
+          "rev": 388.7,
+          "s": 0,
+          "checked": "Checked against the release: Valhalla deliveries, which began in the fourth quarter of 2025, make revenue swing from quarter to quarter."
+        }
+      },
+      "regions": {},
+      "china": "Aston Martin reports wholesale volumes by region, not revenue, and gives no revenue figure for China.",
+      "guidance": {
+        "kind": "qualitative",
+        "date": "28 Oct 2026",
+        "text": "Full-year 2026 guidance unchanged: a material improvement in financial performance on 2025.",
+        "evidence": "Revenue grew 16%, 62% and 36% in the first three quarters of 2026.",
+        "read": "Qualitative, so it cannot be scored against a number."
+      },
+      "sources": [
+        {
+          "t": "Results for Q3 and 9 months ended 30 Sept 2026",
+          "pub": "Aston Martin RNS (London Stock Exchange)",
+          "date": "28 Oct 2026",
+          "url": "https://www.londonstockexchange.com/en/news/article/AML/results-for-q3-and-9-months-ended-30-sept-2026/aa8b-dc-56-2b-f8-4fb6b3",
+          "kind": "company"
+        },
+        {
+          "t": "Interim results for the half-year ended 30 June 2026 (second quarter)",
+          "pub": "Aston Martin RNS (Investegate)",
+          "date": "29 Jul 2026",
+          "url": "https://www.investegate.co.uk/announcement/rns/aston-martin-lagonda-global-holdings--aml/interim-results-for-the-half-year-ended-30-june-26/9692290",
+          "kind": "company"
+        },
+        {
+          "t": "Q1 results for three months ended 31 March 2026",
+          "pub": "Aston Martin RNS (London Stock Exchange)",
+          "date": "29 Apr 2026",
+          "url": "https://www.londonstockexchange.com/news-article/AML/q1-results-for-three-months-ended-31-march-2026/17568254",
+          "kind": "company"
+        },
+        {
+          "t": "Preliminary results FY2025 (fourth quarter)",
+          "pub": "Aston Martin RNS (lse.co.uk)",
+          "date": "25 Feb 2026",
+          "url": "https://www.lse.co.uk/rns/AML/preliminary-results-fy2025-ebjam3l50g9hqtg.html",
+          "kind": "company"
+        },
+        {
+          "t": "Q3 results for the quarter ended 30 September 2025",
+          "pub": "Aston Martin RNS (Shares magazine, LSE regulatory feed)",
+          "date": "29 Oct 2025",
+          "url": "https://www.sharesmagazine.co.uk/news/market/LSE20251029070009_5879470/q3-results-for-the-quarter-ended-30-september-2025",
+          "kind": "company"
+        },
+        {
+          "t": "Interim results for the half-year ended 30 June 2025 (second quarter)",
+          "pub": "Aston Martin RNS (lse.co.uk)",
+          "date": "30 Jul 2025",
+          "url": "https://www.lse.co.uk/rns/interim-results-8e0ycmpk4talvbz.html",
+          "kind": "company"
+        },
+        {
+          "t": "1st Quarter Results 2025",
+          "pub": "Aston Martin RNS (London Stock Exchange)",
+          "date": "30 Apr 2025",
+          "url": "https://www.londonstockexchange.com/news-article/AML/1st-quarter-results/17012277",
+          "kind": "company"
+        },
+        {
+          "t": "Preliminary results year ended 31 December 2024 (fourth quarter)",
+          "pub": "Aston Martin RNS (Shares magazine, LSE regulatory feed)",
+          "date": "26 Feb 2025",
+          "url": "https://sharesmagazine.co.uk/news/market/LSE20250226070008_5551966/preliminary-results-year-ended-31-december-2024",
+          "kind": "company"
+        }
+      ],
+      "origin": "base",
+      "cur": "GBP"
     }
   ]
 }
