@@ -7145,126 +7145,8 @@
     }
   },
   "meta": {
-    "built_at": "2026-11-18T02:25:16Z",
+    "built_at": "2026-11-18T02:29:36Z",
     "runs": [
-      {
-        "at": "2026-11-18T01:04:01Z",
-        "command": "eval",
-        "results": [
-          {
-            "company": "All",
-            "quarter": "2026Q3",
-            "status": "extraction matched 24 of 25 verified figures",
-            "detail": "6 of 10 releases could be read; Kering: www.globenewswire.com answered HTTP 403; Moncler: www.monclergroup.com answered HTTP 403; Burberry: www.burberryplc.com answered HTTP 403; Zegna Group: ir.zegnagroup.com answered HTTP 403"
-          }
-        ],
-        "usage": {
-          "steps": {
-            "extract": {
-              "calls": 6,
-              "input": 48955,
-              "output": 15126,
-              "searches": 0,
-              "usd": 0.2492,
-              "model": "claude-sonnet-5-5"
-            }
-          },
-          "estimated_usd": 0.2492
-        }
-      },
-      {
-        "at": "2026-11-18T01:04:28Z",
-        "command": "interpret",
-        "results": [
-          {
-            "company": "LVMH",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          },
-          {
-            "company": "Hermès",
-            "status": "note by rules",
-            "detail": "The model note failed. JSONDecodeError: Extra data: line 3 column 1 (char 168)"
-          },
-          {
-            "company": "Kering",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          },
-          {
-            "company": "Richemont",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          },
-          {
-            "company": "Moncler",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          },
-          {
-            "company": "Prada Group",
-            "status": "note by rules",
-            "detail": "The model note failed. JSONDecodeError: Extra data: line 3 column 1 (char 186)"
-          },
-          {
-            "company": "Burberry",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          },
-          {
-            "company": "Zegna Group",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          },
-          {
-            "company": "Brunello Cucinelli",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          },
-          {
-            "company": "Ferragamo",
-            "status": "note by rules",
-            "detail": "The model note failed. JSONDecodeError: Expecting ',' delimiter: line 5 column 3 (char 663)"
-          }
-        ],
-        "usage": {
-          "steps": {
-            "interpret": {
-              "calls": 10,
-              "input": 9710,
-              "output": 3099,
-              "searches": 0,
-              "usd": 0.0504,
-              "model": "claude-sonnet-5-5"
-            }
-          },
-          "estimated_usd": 0.0504
-        }
-      },
-      {
-        "at": "2026-11-18T01:20:20Z",
-        "command": "update",
-        "results": [
-          {
-            "company": "LVMH",
-            "status": "no newer release",
-            "detail": "LVMH's Q3 2026 revenue release, dated 12 October 2026, is the most recent one found; the search turned up no later quarterly release. It is on LVMH's own site, and its revenue-by-business-group table "
-          }
-        ],
-        "usage": {
-          "steps": {
-            "research": {
-              "calls": 1,
-              "input": 23161,
-              "output": 1230,
-              "searches": 2,
-              "usd": 0.0229,
-              "model": "claude-haiku-5-5"
-            }
-          },
-          "estimated_usd": 0.0229
-        }
-      },
       {
         "at": "2026-11-18T01:21:59Z",
         "command": "eval",
@@ -7358,6 +7240,124 @@
           },
           "estimated_usd": 0.0497
         }
+      },
+      {
+        "at": "2026-11-18T02:08:31Z",
+        "command": "update",
+        "results": [
+          {
+            "company": "LVMH",
+            "status": "no newer release",
+            "detail": "This is LVMH's Q3 2026 revenue release dated 12 October 2026, hosted on its own lvmh.com publications page, with a direct PDF copy on its CDN and a wire copy on Nasdaq. It reports a three-month quarte"
+          }
+        ],
+        "usage": {
+          "steps": {
+            "research": {
+              "calls": 1,
+              "input": 22341,
+              "output": 911,
+              "searches": 2,
+              "usd": 0.0227,
+              "model": "claude-haiku-5-5"
+            }
+          },
+          "estimated_usd": 0.0227
+        }
+      },
+      {
+        "at": "2026-11-18T02:09:56Z",
+        "command": "eval",
+        "results": [
+          {
+            "company": "All",
+            "quarter": "2026Q3",
+            "status": "extraction matched 25 of 25 verified figures",
+            "detail": "6 of 10 releases could be read; Kering: www.globenewswire.com answered HTTP 403; Moncler: www.monclergroup.com answered HTTP 403; Burberry: www.burberryplc.com answered HTTP 403; Zegna Group: ir.zegnagroup.com answered HTTP 403"
+          }
+        ],
+        "usage": {
+          "steps": {
+            "extract": {
+              "calls": 6,
+              "input": 56923,
+              "output": 12142,
+              "searches": 0,
+              "usd": 0.2353,
+              "model": "claude-sonnet-5-5"
+            }
+          },
+          "estimated_usd": 0.2353
+        }
+      },
+      {
+        "at": "2026-11-18T02:10:40Z",
+        "command": "interpret",
+        "results": [
+          {
+            "company": "LVMH",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Hermès",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Kering",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Richemont",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Moncler",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Prada Group",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Burberry",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Zegna Group",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Brunello Cucinelli",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Ferragamo",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          }
+        ],
+        "usage": {
+          "steps": {
+            "interpret": {
+              "calls": 10,
+              "input": 12681,
+              "output": 2529,
+              "searches": 0,
+              "usd": 0.0506,
+              "model": "claude-sonnet-5-5"
+            }
+          },
+          "estimated_usd": 0.0507
+        }
       }
     ],
     "quality": {
@@ -7366,7 +7366,7 @@
       "warnings": []
     },
     "eval": {
-      "at": "2026-11-18T01:21:59Z",
+      "at": "2026-11-18T02:09:56Z",
       "quarter": "2026Q3",
       "model": "claude-sonnet-5-5",
       "hits": 25,
@@ -7385,13 +7385,13 @@
           "extract": {
             "calls": 6,
             "input": 56923,
-            "output": 13315,
+            "output": 12142,
             "searches": 0,
-            "usd": 0.2469,
+            "usd": 0.2353,
             "model": "claude-sonnet-5-5"
           }
         },
-        "estimated_usd": 0.247
+        "estimated_usd": 0.2353
       }
     },
     "thresholds": {
