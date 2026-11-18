@@ -1,14 +1,12 @@
 {
-  "at": "2026-11-18T01:04:01Z",
+  "at": "2026-11-18T01:21:59Z",
   "quarter": "2026Q3",
   "model": "claude-sonnet-5-5",
-  "hits": 24,
+  "hits": 25,
   "total": 25,
   "releases": 10,
   "read": 6,
-  "misses": [
-    "Prada Group group: expected 0, extracted None"
-  ],
+  "misses": [],
   "skipped": [
     "Kering: www.globenewswire.com answered HTTP 403",
     "Moncler: www.monclergroup.com answered HTTP 403",
@@ -19,13 +17,13 @@
     "steps": {
       "extract": {
         "calls": 6,
-        "input": 48955,
-        "output": 15126,
+        "input": 56923,
+        "output": 13315,
         "searches": 0,
-        "usd": 0.2492,
+        "usd": 0.2469,
         "model": "claude-sonnet-5-5"
       }
     },
-    "estimated_usd": 0.2492
+    "estimated_usd": 0.247
   }
 }
