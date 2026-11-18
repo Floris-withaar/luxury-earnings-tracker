@@ -167,6 +167,28 @@ class InterpretTests(unittest.TestCase):
         self.assertIn("down 2 pts", notes["companies"]["lvmh"]["note"])
         self.assertIn("6 of 6", notes["peer"]["note"])
 
+    def test_note_payload_holds_one_median(self):
+        # The 18 November run wrote "5 points below the peer median of 2.5%": the gap was to the median
+        # of the other companies (4%), the 2.5% was the median of all. Only the first may reach the model.
+        block = self.out["2026Q3"]
+        by_id = {c["id"]: c for c in self.data["companies"]}
+        for cid, m in block["companies"].items():
+            payload = interpret.payload_for(by_id[cid], "2026Q3", m, block["peer"])
+            def keys(node):
+                if isinstance(node, dict):
+                    for k, v in node.items():
+                        yield k
+                        yield from keys(v)
+                elif isinstance(node, list):
+                    for v in node:
+                        yield from keys(v)
+            medians = sorted(k for k in keys(payload) if "median" in k)
+            self.assertEqual(medians, ["gap_to_that_median_pts", "median_of_the_other_companies_pct"], cid)
+            if payload["gap_to_that_median_pts"] is not None:
+                self.assertAlmostEqual(payload["model"]["growth"] - payload["median_of_the_other_companies_pct"],
+                                       payload["gap_to_that_median_pts"], places=1)
+        self.assertIn("median_of_the_other_companies_pct", interpret.PROMPT)
+
     def test_grounded_llm_note_is_kept_and_invented_number_is_rejected(self):
         good = {"note": "Growth slowed to 1% as Asia excluding Japan fell 5%.", "themes": ["China weakness"], "watch": "Check Asia."}
         bad = {"note": "Growth slowed to 1% and margins fell to 37%.", "themes": [], "watch": ""}
