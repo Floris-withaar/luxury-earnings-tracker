@@ -9503,126 +9503,8 @@
     }
   },
   "meta": {
-    "built_at": "2026-11-18T03:10:38Z",
+    "built_at": "2026-11-18T03:11:48Z",
     "runs": [
-      {
-        "at": "2026-11-18T01:21:59Z",
-        "command": "eval",
-        "results": [
-          {
-            "company": "All",
-            "quarter": "2026Q3",
-            "status": "extraction matched 25 of 25 verified figures",
-            "detail": "6 of 10 releases could be read; Kering: www.globenewswire.com answered HTTP 403; Moncler: www.monclergroup.com answered HTTP 403; Burberry: www.burberryplc.com answered HTTP 403; Zegna Group: ir.zegnagroup.com answered HTTP 403"
-          }
-        ],
-        "usage": {
-          "steps": {
-            "extract": {
-              "calls": 6,
-              "input": 56923,
-              "output": 13315,
-              "searches": 0,
-              "usd": 0.2469,
-              "model": "claude-sonnet-5-5"
-            }
-          },
-          "estimated_usd": 0.247
-        }
-      },
-      {
-        "at": "2026-11-18T01:22:28Z",
-        "command": "interpret",
-        "results": [
-          {
-            "company": "LVMH",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          },
-          {
-            "company": "Hermès",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          },
-          {
-            "company": "Kering",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          },
-          {
-            "company": "Richemont",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          },
-          {
-            "company": "Moncler",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          },
-          {
-            "company": "Prada Group",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          },
-          {
-            "company": "Burberry",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          },
-          {
-            "company": "Zegna Group",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          },
-          {
-            "company": "Brunello Cucinelli",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          },
-          {
-            "company": "Ferragamo",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          }
-        ],
-        "usage": {
-          "steps": {
-            "interpret": {
-              "calls": 10,
-              "input": 12261,
-              "output": 2519,
-              "searches": 0,
-              "usd": 0.0498,
-              "model": "claude-sonnet-5-5"
-            }
-          },
-          "estimated_usd": 0.0497
-        }
-      },
-      {
-        "at": "2026-11-18T02:08:31Z",
-        "command": "update",
-        "results": [
-          {
-            "company": "LVMH",
-            "status": "no newer release",
-            "detail": "This is LVMH's Q3 2026 revenue release dated 12 October 2026, hosted on its own lvmh.com publications page, with a direct PDF copy on its CDN and a wire copy on Nasdaq. It reports a three-month quarte"
-          }
-        ],
-        "usage": {
-          "steps": {
-            "research": {
-              "calls": 1,
-              "input": 22341,
-              "output": 911,
-              "searches": 2,
-              "usd": 0.0227,
-              "model": "claude-haiku-5-5"
-            }
-          },
-          "estimated_usd": 0.0227
-        }
-      },
       {
         "at": "2026-11-18T02:09:56Z",
         "command": "eval",
@@ -9716,6 +9598,134 @@
           },
           "estimated_usd": 0.0507
         }
+      },
+      {
+        "at": "2026-11-18T02:52:21Z",
+        "command": "update",
+        "results": [
+          {
+            "company": "LVMH",
+            "status": "no newer release",
+            "detail": "This is LVMH's own investor-site publication of its Q3 2026 revenue release, dated Paris, 12 October 2026, and it is the newest LVMH sales release I found (the Q1 and H1 releases are older). It includ"
+          }
+        ],
+        "usage": {
+          "steps": {
+            "research": {
+              "calls": 1,
+              "input": 21928,
+              "output": 1069,
+              "searches": 2,
+              "usd": 0.0227,
+              "model": "claude-haiku-5-5"
+            }
+          },
+          "estimated_usd": 0.0227
+        }
+      },
+      {
+        "at": "2026-11-18T02:54:12Z",
+        "command": "eval",
+        "results": [
+          {
+            "company": "All",
+            "quarter": "2026Q3",
+            "status": "extraction matched 26 of 27 verified figures",
+            "detail": "8 of 12 releases could be read; Kering: www.globenewswire.com answered HTTP 403; Moncler: www.monclergroup.com answered HTTP 403; Burberry: www.burberryplc.com answered HTTP 403; Zegna Group: ir.zegnagroup.com answered HTTP 403"
+          }
+        ],
+        "usage": {
+          "steps": {
+            "extract": {
+              "calls": 8,
+              "input": 74016,
+              "output": 14978,
+              "searches": 0,
+              "usd": 0.2978,
+              "model": "claude-sonnet-5-5"
+            }
+          },
+          "estimated_usd": 0.2978
+        }
+      },
+      {
+        "at": "2026-11-18T02:54:49Z",
+        "command": "interpret",
+        "results": [
+          {
+            "company": "LVMH",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Hermès",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Kering",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Richemont",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Moncler",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Prada Group",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Burberry",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Zegna Group",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Brunello Cucinelli",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Ferragamo",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Ferrari",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Aston Martin",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          }
+        ],
+        "usage": {
+          "steps": {
+            "interpret": {
+              "calls": 12,
+              "input": 15933,
+              "output": 3068,
+              "searches": 0,
+              "usd": 0.0625,
+              "model": "claude-sonnet-5-5"
+            }
+          },
+          "estimated_usd": 0.0625
+        }
       }
     ],
     "quality": {
@@ -9724,14 +9734,16 @@
       "warnings": []
     },
     "eval": {
-      "at": "2026-11-18T02:09:56Z",
+      "at": "2026-11-18T02:54:12Z",
       "quarter": "2026Q3",
       "model": "claude-sonnet-5-5",
-      "hits": 25,
-      "total": 25,
-      "releases": 10,
-      "read": 6,
-      "misses": [],
+      "hits": 26,
+      "total": 27,
+      "releases": 12,
+      "read": 8,
+      "misses": [
+        "Aston Martin group: expected 36, extracted None"
+      ],
       "skipped": [
         "Kering: www.globenewswire.com answered HTTP 403",
         "Moncler: www.monclergroup.com answered HTTP 403",
@@ -9741,15 +9753,15 @@
       "usage": {
         "steps": {
           "extract": {
-            "calls": 6,
-            "input": 56923,
-            "output": 12142,
+            "calls": 8,
+            "input": 74016,
+            "output": 14978,
             "searches": 0,
-            "usd": 0.2353,
+            "usd": 0.2978,
             "model": "claude-sonnet-5-5"
           }
         },
-        "estimated_usd": 0.2353
+        "estimated_usd": 0.2978
       }
     },
     "thresholds": {
