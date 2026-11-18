@@ -1,12 +1,14 @@
 {
-  "at": "2026-11-18T02:09:56Z",
+  "at": "2026-11-18T02:54:12Z",
   "quarter": "2026Q3",
   "model": "claude-sonnet-5-5",
-  "hits": 25,
-  "total": 25,
-  "releases": 10,
-  "read": 6,
-  "misses": [],
+  "hits": 26,
+  "total": 27,
+  "releases": 12,
+  "read": 8,
+  "misses": [
+    "Aston Martin group: expected 36, extracted None"
+  ],
   "skipped": [
     "Kering: www.globenewswire.com answered HTTP 403",
     "Moncler: www.monclergroup.com answered HTTP 403",
@@ -16,14 +18,14 @@
   "usage": {
     "steps": {
       "extract": {
-        "calls": 6,
-        "input": 56923,
-        "output": 12142,
+        "calls": 8,
+        "input": 74016,
+        "output": 14978,
         "searches": 0,
-        "usd": 0.2353,
+        "usd": 0.2978,
         "model": "claude-sonnet-5-5"
       }
     },
-    "estimated_usd": 0.2353
+    "estimated_usd": 0.2978
   }
 }
