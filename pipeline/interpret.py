@@ -35,6 +35,13 @@ Write every growth rate with a % sign and every change between two rates in poin
 """
 
 
+SCHEMA = llm.strict({"type": "object", "properties": {
+    "note": {"type": "string"},
+    "themes": {"type": "array", "items": {"type": "string"}},
+    "watch": {"type": "string"},
+}})
+
+
 def rule_note(company: dict, q: str, m: dict, peer: dict) -> str:
     """The fallback note, written by fixed rules from the model output."""
     p = prev_quarter(q)
@@ -144,7 +151,7 @@ def interpret(dataset: dict, derived: dict, q: str, *, client=None, use_llm: boo
         if use_llm:
             payload = payload_for(company, q, m, block["peer"])
             try:
-                answer = llm.ask_json(PROMPT.format(payload=json.dumps(payload, ensure_ascii=False)), step="interpret", client=client)
+                answer = llm.ask_json(PROMPT.format(payload=json.dumps(payload, ensure_ascii=False)), step="interpret", client=client, schema=SCHEMA)
                 note = str(answer.get("note", "")).strip()
                 extra = ungrounded(note, payload)
                 if note and not extra:

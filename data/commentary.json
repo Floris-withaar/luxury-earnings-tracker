@@ -612,8 +612,7 @@
         ],
         "watch": "",
         "by": "rules",
-        "at": "2026-11-18T01:04:05Z",
-        "rejected": "The model note failed. JSONDecodeError: Extra data: line 3 column 1 (char 168)"
+        "at": "2026-11-18T01:07:56Z"
       },
       "kering": {
         "note": "Kering's comparable growth was -1% in Q3 2026, down from 2% in Q2 2026, a change of -3 points, and 5 points below the peer median of 2.5%... Asia Pacific was -5% on lower store traffic, particularly Mainland China. Gucci was -6% and Kering Fashion & Leather Goods was -3%, while Kering Jewelry grew 11% and Kering Eyewear 4%. Three of five regions grew, with Japan at 4%.",
@@ -662,8 +661,7 @@
         ],
         "watch": "",
         "by": "rules",
-        "at": "2026-11-18T01:04:15Z",
-        "rejected": "The model note failed. JSONDecodeError: Extra data: line 3 column 1 (char 186)"
+        "at": "2026-11-18T01:07:56Z"
       },
       "burberry": {
         "note": "Burberry's comparable growth was 4% in Q3 2026, against 5% in Q2 2026, a change of -1 point. The slowdown came from Greater China, which grew 5% after 9% in the prior quarter, a change of -4 points. Americas grew 11% and EMEIA was -2%. Two of three regions grew. Growth was ahead of the peer median of 2.5%. Two-year stack was 6.1%.",
@@ -713,8 +711,7 @@
         ],
         "watch": "",
         "by": "rules",
-        "at": "2026-11-18T01:04:25Z",
-        "rejected": "The model note failed. JSONDecodeError: Expecting ',' delimiter: line 5 column 3 (char 663)"
+        "at": "2026-11-18T01:07:56Z"
       }
     }
   }

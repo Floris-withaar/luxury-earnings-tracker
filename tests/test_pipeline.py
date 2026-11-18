@@ -1,5 +1,6 @@
 """Tests that run without a network or an API key:  python -m unittest discover -s tests"""
 import copy
+import json
 import unittest
 
 from tests.support import FIXTURE, FakeClient
@@ -185,6 +186,49 @@ class LLMTests(unittest.TestCase):
         # 1,000 input and 200 output tokens on the research model, plus two searches at $0.01
         self.assertAlmostEqual(summary["estimated_usd"], 1000 / 1e6 * 0.10 + 200 / 1e6 * 0.50 + 0.02, places=4)
         llm.USAGE.clear()
+
+    def test_parse_json_takes_the_first_object(self):
+        # The three failures of the 18 November live run: a second object, or text holding a brace.
+        self.assertEqual(llm.parse_json('{"note": "a"}\n\n{"note": "b"}'), {"note": "a"})
+        self.assertEqual(llm.parse_json('{"note": "a"}\nNote: figures in {braces}.'), {"note": "a"})
+        self.assertEqual(llm.parse_json('Answer {not json} then {"a": 1}'), {"a": 1})
+        with self.assertRaises(ValueError):
+            llm.parse_json("no object here")
+
+    def test_schemas_meet_the_api_rules(self):
+        def objects(node):
+            if isinstance(node, dict):
+                if node.get("type") == "object":
+                    yield node
+                for v in node.values():
+                    yield from objects(v)
+            elif isinstance(node, list):
+                for v in node:
+                    yield from objects(v)
+        def unions(node):
+            if isinstance(node, dict):
+                yield isinstance(node.get("type"), list) or "anyOf" in node
+                for v in node.values():
+                    yield from unions(v)
+        for schema in (extract.SCHEMA, interpret.SCHEMA):
+            found = list(objects(schema))
+            self.assertTrue(found)
+            for o in found:
+                self.assertIs(o["additionalProperties"], False)            # the API rejects anything else
+                self.assertEqual(sorted(o["required"]), sorted(o["properties"]))   # no optional fields
+            self.assertLessEqual(sum(unions(schema)), 16)                   # the API limit on nullable fields
+        for banned in ("minimum", "maximum", "minLength", "maxLength"):
+            self.assertNotIn(banned, json.dumps([extract.SCHEMA, interpret.SCHEMA]))
+
+    def test_extraction_and_notes_ask_for_schema_json(self):
+        client = FakeClient({"company": "X", "group": {"growth_pct": 0, "quote": "stable"}})
+        extract.extract("X", "Retail sales were stable.", client=client)
+        self.assertEqual(client.calls[0]["output_config"]["format"], {"type": "json_schema", "schema": extract.SCHEMA})
+        self.assertIn("stable, flat or unchanged is 0", client.calls[0]["messages"][0]["content"])
+        notes = FakeClient({"note": "Asia was the weak spot this quarter.", "themes": [], "watch": ""})
+        llm.ask_json("x", step="interpret", client=notes, schema=interpret.SCHEMA)
+        self.assertEqual(notes.calls[0]["output_config"], {"effort": llm.EFFORT["interpret"],
+                                                           "format": {"type": "json_schema", "schema": interpret.SCHEMA}})
 
     def test_parse_json_tolerates_fences_and_text(self):
         self.assertEqual(llm.parse_json('```json\n{"a": 1}\n```'), {"a": 1})

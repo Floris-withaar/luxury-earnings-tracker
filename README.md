@@ -33,6 +33,8 @@ python -m unittest discover -s tests -b
 | 4. Model | `pipeline/model.py` | Arithmetic | Change against the prior quarter, peer medians, two-year growth, base effects, Asia gap and a rule-based signal. |
 | 5. Interpret | `pipeline/interpret.py` | LLM | Writes a short note per company from the model output. A note containing a number that is not in the data is discarded and the rule-based note is kept. |
 
+Steps 2 and 5 send a JSON schema with the request (structured outputs), so the API returns an answer of exactly that shape. A figure a release states only in words, such as "stable", is recorded as 0% and the record says so.
+
 `pipeline/run.py` ties the steps together and writes `site/data.json`, the one file the website reads.
 
 ```mermaid
