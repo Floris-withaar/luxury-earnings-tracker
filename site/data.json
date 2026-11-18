@@ -1674,6 +1674,7 @@
           "prev": null,
           "delta": null,
           "vs_median": -4.5,
+          "median_others": 5.5,
           "two_year_stack": null,
           "base": null,
           "next_base": null,
@@ -1700,6 +1701,7 @@
           "prev": null,
           "delta": null,
           "vs_median": 15.7,
+          "median_others": 1.9,
           "two_year_stack": null,
           "base": null,
           "next_base": null,
@@ -1726,6 +1728,7 @@
           "prev": null,
           "delta": null,
           "vs_median": -17.4,
+          "median_others": 5.5,
           "two_year_stack": null,
           "base": null,
           "next_base": null,
@@ -1752,6 +1755,7 @@
           "prev": null,
           "delta": null,
           "vs_median": 8.1,
+          "median_others": 1.9,
           "two_year_stack": null,
           "base": null,
           "next_base": null,
@@ -1778,6 +1782,7 @@
           "prev": null,
           "delta": null,
           "vs_median": 6.0,
+          "median_others": 1.9,
           "two_year_stack": null,
           "base": null,
           "next_base": null,
@@ -1804,6 +1809,7 @@
           "prev": null,
           "delta": null,
           "vs_median": 16.1,
+          "median_others": 1.9,
           "two_year_stack": null,
           "base": null,
           "next_base": null,
@@ -1830,6 +1836,7 @@
           "prev": null,
           "delta": null,
           "vs_median": -9.4,
+          "median_others": 5.5,
           "two_year_stack": null,
           "base": null,
           "next_base": null,
@@ -1856,6 +1863,7 @@
           "prev": null,
           "delta": null,
           "vs_median": -1.6,
+          "median_others": 4.5,
           "two_year_stack": null,
           "base": null,
           "next_base": null,
@@ -1882,6 +1890,7 @@
           "prev": null,
           "delta": null,
           "vs_median": -9.4,
+          "median_others": 5.5,
           "two_year_stack": null,
           "base": null,
           "next_base": null,
@@ -1927,6 +1936,7 @@
           "prev": 1,
           "delta": -4,
           "vs_median": -4,
+          "median_others": 1,
           "two_year_stack": null,
           "base": null,
           "next_base": null,
@@ -1953,6 +1963,7 @@
           "prev": 17.6,
           "delta": -10.4,
           "vs_median": 8.2,
+          "median_others": -1.0,
           "two_year_stack": null,
           "base": null,
           "next_base": null,
@@ -1979,6 +1990,7 @@
           "prev": -12,
           "delta": -3,
           "vs_median": -16,
+          "median_others": 1,
           "two_year_stack": null,
           "base": null,
           "next_base": null,
@@ -2005,6 +2017,7 @@
           "prev": 10,
           "delta": -3,
           "vs_median": 8.0,
+          "median_others": -1.0,
           "two_year_stack": null,
           "base": null,
           "next_base": null,
@@ -2031,6 +2044,7 @@
           "prev": 8,
           "delta": -7,
           "vs_median": 2.0,
+          "median_others": -1.0,
           "two_year_stack": null,
           "base": null,
           "next_base": null,
@@ -2057,6 +2071,7 @@
           "prev": 18,
           "delta": -5.0,
           "vs_median": 14.0,
+          "median_others": -1.0,
           "two_year_stack": null,
           "base": null,
           "next_base": null,
@@ -2083,6 +2098,7 @@
           "prev": -4,
           "delta": -2,
           "vs_median": -7,
+          "median_others": 1,
           "two_year_stack": null,
           "base": null,
           "next_base": null,
@@ -2109,6 +2125,7 @@
           "prev": 2.9,
           "delta": -4.1,
           "vs_median": -2.2,
+          "median_others": 1,
           "two_year_stack": null,
           "base": null,
           "next_base": null,
@@ -2135,6 +2152,7 @@
           "prev": null,
           "delta": null,
           "vs_median": 11.0,
+          "median_others": -1.0,
           "two_year_stack": null,
           "base": null,
           "next_base": null,
@@ -2161,6 +2179,7 @@
           "prev": -4.0,
           "delta": 3.0,
           "vs_median": -2.0,
+          "median_others": 1,
           "two_year_stack": null,
           "base": null,
           "next_base": null,
@@ -2206,6 +2225,7 @@
           "prev": -3,
           "delta": -1,
           "vs_median": -3.0,
+          "median_others": -1.0,
           "two_year_stack": null,
           "base": null,
           "next_base": null,
@@ -2232,6 +2252,7 @@
           "prev": 7.2,
           "delta": 1.8,
           "vs_median": 10.8,
+          "median_others": -1.8,
           "two_year_stack": null,
           "base": null,
           "next_base": null,
@@ -2258,6 +2279,7 @@
           "prev": -15,
           "delta": -1,
           "vs_median": -15.0,
+          "median_others": -1.0,
           "two_year_stack": null,
           "base": null,
           "next_base": null,
@@ -2284,6 +2306,7 @@
           "prev": 7,
           "delta": -1,
           "vs_median": 7.8,
+          "median_others": -1.8,
           "two_year_stack": null,
           "base": null,
           "next_base": null,
@@ -2310,6 +2333,7 @@
           "prev": 1,
           "delta": -2,
           "vs_median": 0.8,
+          "median_others": -1.8,
           "two_year_stack": null,
           "base": null,
           "next_base": null,
@@ -2336,6 +2360,7 @@
           "prev": 13.0,
           "delta": -5.4,
           "vs_median": 9.4,
+          "median_others": -1.8,
           "two_year_stack": null,
           "base": null,
           "next_base": null,
@@ -2362,6 +2387,7 @@
           "prev": -6,
           "delta": 5,
           "vs_median": 0.8,
+          "median_others": -1.8,
           "two_year_stack": null,
           "base": null,
           "next_base": null,
@@ -2388,6 +2414,7 @@
           "prev": -1.2,
           "delta": -1.4,
           "vs_median": -1.6,
+          "median_others": -1.0,
           "two_year_stack": null,
           "base": null,
           "next_base": null,
@@ -2414,6 +2441,7 @@
           "prev": -1.0,
           "delta": -10.8,
           "vs_median": -10.8,
+          "median_others": -1.0,
           "two_year_stack": null,
           "base": null,
           "next_base": null,
@@ -2459,6 +2487,7 @@
           "prev": -4,
           "delta": 5,
           "vs_median": -2.6,
+          "median_others": 3.6,
           "two_year_stack": null,
           "base": null,
           "next_base": 1,
@@ -2485,6 +2514,7 @@
           "prev": 9.0,
           "delta": 0.6,
           "vs_median": 7.6,
+          "median_others": 2,
           "two_year_stack": null,
           "base": null,
           "next_base": 17.6,
@@ -2511,6 +2541,7 @@
           "prev": -16,
           "delta": 10,
           "vs_median": -9.6,
+          "median_others": 3.6,
           "two_year_stack": null,
           "base": null,
           "next_base": -12,
@@ -2537,6 +2568,7 @@
           "prev": 6,
           "delta": 8,
           "vs_median": 12,
+          "median_others": 2,
           "two_year_stack": null,
           "base": null,
           "next_base": 10,
@@ -2563,6 +2595,7 @@
           "prev": -1,
           "delta": 0,
           "vs_median": -4.6,
+          "median_others": 3.6,
           "two_year_stack": null,
           "base": null,
           "next_base": 8,
@@ -2589,6 +2622,7 @@
           "prev": 7.6,
           "delta": 0.0,
           "vs_median": 5.6,
+          "median_others": 2,
           "two_year_stack": null,
           "base": null,
           "next_base": 18,
@@ -2615,6 +2649,7 @@
           "prev": -1,
           "delta": 3,
           "vs_median": -1.6,
+          "median_others": 3.6,
           "two_year_stack": null,
           "base": null,
           "next_base": -4,
@@ -2641,6 +2676,7 @@
           "prev": -2.6,
           "delta": 6.2,
           "vs_median": 1.6,
+          "median_others": 2,
           "two_year_stack": null,
           "base": null,
           "next_base": 2.9,
@@ -2667,6 +2703,7 @@
           "prev": null,
           "delta": null,
           "vs_median": 10.5,
+          "median_others": 2,
           "two_year_stack": null,
           "base": null,
           "next_base": null,
@@ -2693,6 +2730,7 @@
           "prev": -11.8,
           "delta": 13.5,
           "vs_median": -1.9,
+          "median_others": 3.6,
           "two_year_stack": null,
           "base": null,
           "next_base": -4.0,
@@ -2738,6 +2776,7 @@
           "prev": 1,
           "delta": 0,
           "vs_median": -4.6,
+          "median_others": 5.6,
           "two_year_stack": 2.0,
           "base": 1,
           "next_base": -3,
@@ -2766,6 +2805,7 @@
           "prev": 9.6,
           "delta": 0.2,
           "vs_median": 5.2,
+          "median_others": 4.6,
           "two_year_stack": 29.1,
           "base": 17.6,
           "next_base": 7.2,
@@ -2794,6 +2834,7 @@
           "prev": -6,
           "delta": 3,
           "vs_median": -8.6,
+          "median_others": 5.6,
           "two_year_stack": -14.6,
           "base": -12,
           "next_base": -15,
@@ -2822,6 +2863,7 @@
           "prev": 14,
           "delta": -3,
           "vs_median": 6.4,
+          "median_others": 4.6,
           "two_year_stack": 22.1,
           "base": 10,
           "next_base": 7,
@@ -2850,6 +2892,7 @@
           "prev": -1,
           "delta": 8,
           "vs_median": 2.4,
+          "median_others": 4.6,
           "two_year_stack": 15.6,
           "base": 8,
           "next_base": 1,
@@ -2878,6 +2921,7 @@
           "prev": 7.6,
           "delta": -2.0,
           "vs_median": 1.0,
+          "median_others": 4.6,
           "two_year_stack": 24.6,
           "base": 18,
           "next_base": 13.0,
@@ -2906,6 +2950,7 @@
           "prev": 2,
           "delta": 1,
           "vs_median": -2.6,
+          "median_others": 5.6,
           "two_year_stack": -1.1,
           "base": -4,
           "next_base": -6,
@@ -2934,6 +2979,7 @@
           "prev": 3.6,
           "delta": 1.0,
           "vs_median": -1.0,
+          "median_others": 5.6,
           "two_year_stack": 7.6,
           "base": 2.9,
           "next_base": -1.2,
@@ -2962,6 +3008,7 @@
           "prev": 12.5,
           "delta": -0.6,
           "vs_median": 7.3,
+          "median_others": 4.6,
           "two_year_stack": null,
           "base": null,
           "next_base": 10.0,
@@ -2988,6 +3035,7 @@
           "prev": 1.7,
           "delta": -3.7,
           "vs_median": -7.6,
+          "median_others": 5.6,
           "two_year_stack": -5.9,
           "base": -4.0,
           "next_base": -1.0,
@@ -3035,6 +3083,7 @@
           "prev": 1,
           "delta": 0,
           "vs_median": -4.6,
+          "median_others": 5.6,
           "two_year_stack": -2.0,
           "base": -3,
           "next_base": -4,
@@ -3061,6 +3110,7 @@
           "prev": 9.8,
           "delta": -4.2,
           "vs_median": 0.6,
+          "median_others": 5,
           "two_year_stack": 13.2,
           "base": 7.2,
           "next_base": 9.0,
@@ -3087,6 +3137,7 @@
           "prev": -3,
           "delta": 3,
           "vs_median": -5.6,
+          "median_others": 5.6,
           "two_year_stack": -15.0,
           "base": -15,
           "next_base": -16,
@@ -3113,6 +3164,7 @@
           "prev": 11,
           "delta": 2,
           "vs_median": 8,
+          "median_others": 5,
           "two_year_stack": 20.9,
           "base": 7,
           "next_base": 6,
@@ -3139,6 +3191,7 @@
           "prev": 7,
           "delta": 5,
           "vs_median": 7,
+          "median_others": 5,
           "two_year_stack": 13.1,
           "base": 1,
           "next_base": -1,
@@ -3167,6 +3220,7 @@
           "prev": 5.6,
           "delta": -4.6,
           "vs_median": -4.6,
+          "median_others": 5.6,
           "two_year_stack": 14.1,
           "base": 13.0,
           "next_base": 7.6,
@@ -3195,6 +3249,7 @@
           "prev": 3,
           "delta": 2,
           "vs_median": -0.6,
+          "median_others": 5.6,
           "two_year_stack": -1.3,
           "base": -6,
           "next_base": -1,
@@ -3223,6 +3278,7 @@
           "prev": 4.6,
           "delta": 2.8,
           "vs_median": 2.4,
+          "median_others": 5,
           "two_year_stack": 6.1,
           "base": -1.2,
           "next_base": -2.6,
@@ -3249,6 +3305,7 @@
           "prev": 11.9,
           "delta": 2.1,
           "vs_median": 9.0,
+          "median_others": 5,
           "two_year_stack": 25.4,
           "base": 10.0,
           "next_base": null,
@@ -3275,6 +3332,7 @@
           "prev": -2.0,
           "delta": 0.8,
           "vs_median": -6.8,
+          "median_others": 5.6,
           "two_year_stack": -2.2,
           "base": -1.0,
           "next_base": -11.8,
@@ -3322,6 +3380,7 @@
           "prev": 1,
           "delta": 2,
           "vs_median": -2.0,
+          "median_others": 5.0,
           "two_year_stack": -1.1,
           "base": -4,
           "next_base": 1,
@@ -3350,6 +3409,7 @@
           "prev": 5.6,
           "delta": 1.1,
           "vs_median": 1.7,
+          "median_others": 5.0,
           "two_year_stack": 16.3,
           "base": 9.0,
           "next_base": 9.6,
@@ -3378,6 +3438,7 @@
           "prev": 0,
           "delta": 2,
           "vs_median": -3.0,
+          "median_others": 5.0,
           "two_year_stack": -14.3,
           "base": -16,
           "next_base": -6,
@@ -3406,6 +3467,7 @@
           "prev": 13,
           "delta": 7,
           "vs_median": 15.0,
+          "median_others": 5.0,
           "two_year_stack": 27.2,
           "base": 6,
           "next_base": 14,
@@ -3434,6 +3496,7 @@
           "prev": 12,
           "delta": -7,
           "vs_median": 0.0,
+          "median_others": 5.0,
           "two_year_stack": 4.0,
           "base": -1,
           "next_base": -1,
@@ -3462,6 +3525,7 @@
           "prev": 1,
           "delta": 4,
           "vs_median": 0.0,
+          "median_others": 5.0,
           "two_year_stack": 13.0,
           "base": 7.6,
           "next_base": 7.6,
@@ -3490,6 +3554,7 @@
           "prev": 5,
           "delta": 0,
           "vs_median": 0.0,
+          "median_others": 5.0,
           "two_year_stack": 4.0,
           "base": -1,
           "next_base": 2,
@@ -3519,6 +3584,7 @@
           "prev": 7.4,
           "delta": 3.6,
           "vs_median": 6.0,
+          "median_others": 5.0,
           "two_year_stack": 8.1,
           "base": -2.6,
           "next_base": 3.6,
@@ -3547,6 +3613,7 @@
           "prev": -1.2,
           "delta": 5.8,
           "vs_median": -0.4,
+          "median_others": 5.0,
           "two_year_stack": -7.7,
           "base": -11.8,
           "next_base": 1.7,
@@ -3595,6 +3662,7 @@
           "prev": 3,
           "delta": -2,
           "vs_median": -3,
+          "median_others": 4,
           "two_year_stack": 2.0,
           "base": 1,
           "next_base": 1,
@@ -3627,6 +3695,7 @@
           "prev": 6.7,
           "delta": -2.4,
           "vs_median": 3.3,
+          "median_others": 1,
           "two_year_stack": 14.3,
           "base": 9.6,
           "next_base": 9.8,
@@ -3659,6 +3728,7 @@
           "prev": 2,
           "delta": -3,
           "vs_median": -5,
+          "median_others": 4,
           "two_year_stack": -6.9,
           "base": -6,
           "next_base": -3,
@@ -3688,6 +3758,7 @@
           "prev": 20,
           "delta": -7,
           "vs_median": 12,
+          "median_others": 1,
           "two_year_stack": 28.8,
           "base": 14,
           "next_base": 11,
@@ -3721,6 +3792,7 @@
           "prev": 5,
           "delta": -5,
           "vs_median": -4,
+          "median_others": 4,
           "two_year_stack": -1.0,
           "base": -1,
           "next_base": 7,
@@ -3754,6 +3826,7 @@
           "prev": 5,
           "delta": -5,
           "vs_median": -4,
+          "median_others": 4,
           "two_year_stack": 7.6,
           "base": 7.6,
           "next_base": 5.6,
@@ -3787,6 +3860,7 @@
           "prev": 5,
           "delta": -1,
           "vs_median": 3,
+          "median_others": 1,
           "two_year_stack": 6.1,
           "base": 2,
           "next_base": 3,
@@ -3817,6 +3891,7 @@
           "prev": 11.0,
           "delta": -2.8,
           "vs_median": 7.2,
+          "median_others": 1,
           "two_year_stack": 12.1,
           "base": 3.6,
           "next_base": 4.6,
@@ -3847,6 +3922,7 @@
           "prev": null,
           "delta": null,
           "vs_median": 12.5,
+          "median_others": 1,
           "two_year_stack": 27.7,
           "base": 12.5,
           "next_base": 11.9,
@@ -3873,6 +3949,7 @@
           "prev": 4.6,
           "delta": -8.1,
           "vs_median": -7.5,
+          "median_others": 4,
           "two_year_stack": -1.9,
           "base": 1.7,
           "next_base": -2.0,
@@ -4500,17 +4577,13 @@
       },
       "companies": {
         "lvmh": {
-          "note": "LVMH organic growth was 1% in Q3 2026, down from 3% in Q2 2026, a change of -2 points, and behind the peer median of 2.5%. The slowdown came from Asia excl. Japan, which was -5% after +4% in the prior quarter, a swing of -9 points. Management cited a less buoyant environment in China that hit Fashion & Leather Goods, which was -5%. Japan grew 6%, the United States 5% and Europe 4%. Three of four regions grew.",
+          "note": "Growth was +1% in Q3 2026 (organic), down 2 pts from +3% in Q2 2026. Japan led the regions at +6%. Asia excl. Japan was weakest at −5%. Asia excl. Japan moved from +4% to −5%, a swing of −9 pts. Compounded with the same quarter a year earlier, growth is +2% over two years. That is 3 pts behind the median of the other companies.",
           "themes": [
-            "Asia drag",
-            "China softness",
-            "Fashion weakness",
-            "Slowing growth"
+            "Asia drag"
           ],
-          "watch": "Check whether Asia excl. Japan and Fashion & Leather Goods stay negative in the next release, and whether Japan, the United States and Europe keep growing.",
-          "by": "claude-sonnet-5-5",
-          "at": "2026-11-18T01:04:02Z",
-          "figures": "fe8cccab5d95"
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-18T01:23:19Z"
         },
         "hermes": {
           "note": "Growth was +4.3% in Q3 2026 (at constant exchange rates), down 2.4 pts from +6.7% in Q2 2026. Japan led the regions at +9.6%. Other (Middle East) was weakest at −4.5%. Asia-Pacific excl. Japan moved from +2.5% to 0%, a swing of −2.5 pts. Compounded with the same quarter a year earlier, growth is +14.3% over two years. That is 3.3 pts ahead of the median of the other companies.",
@@ -4522,43 +4595,34 @@
           "at": "2026-11-18T01:07:56Z"
         },
         "kering": {
-          "note": "Kering's comparable growth was -1% in Q3 2026, down from 2% in Q2 2026, a change of -3 points, and 5 points below the peer median of 2.5%... Asia Pacific was -5% on lower store traffic, particularly Mainland China. Gucci was -6% and Kering Fashion & Leather Goods was -3%, while Kering Jewelry grew 11% and Kering Eyewear 4%. Three of five regions grew, with Japan at 4%.",
+          "note": "Growth was −1% in Q3 2026 (comparable), down 3 pts from +2% in Q2 2026. Japan led the regions at +4%. Asia Pacific was weakest at −5%. Compounded with the same quarter a year earlier, growth is −6.9% over two years. That is 5 pts behind the median of the other companies.",
           "themes": [
-            "Asia Pacific drag",
-            "Gucci weakness",
-            "Jewelry strength",
-            "Slowing momentum"
+            "Asia drag",
+            "Tougher base next quarter"
           ],
-          "watch": "Check whether Asia Pacific and Gucci retail sales improve against a tougher comparison base, and whether Kering Jewelry keeps its lead among the segments.",
-          "by": "claude-sonnet-5-5",
-          "at": "2026-11-18T01:04:08Z",
-          "figures": "e758b9c9a8e5"
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-18T01:23:19Z"
         },
         "richemont": {
-          "note": "Richemont grew 13% at Constant FX in Q3 2026, down from 20% in Q2 2026, a slowdown of 7 points. The biggest driver was Japan, whose change was -13 points, though it still grew 23%. Asia Pacific grew 10%, 11 points slower than the prior quarter. Middle East & Africa was -7%. Four of five regions grew. Jewellery Maisons grew 14%, Specialist Watchmakers 12% and Other 9%. Growth remains ahead of the peer median of 2.5%.",
+          "note": "Growth was +13% in Q3 2026 (at constant exchange rates), down 7 pts from +20% in Q2 2026. Japan led the regions at +23%. Middle East & Africa was weakest at −7%. Asia Pacific moved from +21% to +10%, a swing of −11 pts. Compounded with the same quarter a year earlier, growth is +28.8% over two years. That is 12 pts ahead of the median of the other companies.",
           "themes": [
-            "Slowing growth",
             "Asia drag",
-            "Japan deceleration",
-            "Easier base"
+            "Easier base next quarter"
           ],
-          "watch": "Check whether Asia Pacific growth steadies after its 11 point slowdown, and whether Middle East & Africa returns to growth against the easier base.",
-          "by": "claude-sonnet-5-5",
-          "at": "2026-11-18T01:04:10Z",
-          "figures": "44951652f6d7"
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-18T01:23:19Z"
         },
         "moncler": {
-          "note": "Moncler growth was 0% at Constant FX in Q3 2026, down from 5% in Q2 2026, a change of -5 points, and behind the peer median of 2.5%. Asia was the main source: it grew 5%, 7 points slower than the prior quarter. EMEA fell 8% on softer local demand and subdued tourist flows. Americas grew 2%. Two of three regions grew. By segment, Moncler was -1% and Stone Island grew 5%.",
+          "note": "Growth was 0% in Q3 2026 (at constant exchange rates), down 5 pts from +5% in Q2 2026. Asia (APAC, Japan, Korea) led the regions at +5%. EMEA was weakest at −8%. Asia (APAC, Japan, Korea) moved from +12% to +5%, a swing of −7 pts. Compounded with the same quarter a year earlier, growth is −1% over two years. That is 4 pts behind the median of the other companies.",
           "themes": [
-            "Asia slowdown",
-            "EMEA weakness",
-            "Behind peers",
-            "Tougher base"
+            "Asia lift",
+            "Tougher base next quarter"
           ],
-          "watch": "Check whether Asia (APAC, Japan, Korea) growth steadies and whether EMEA improves, given the tougher base for next quarter and the absence of guidance in this release.",
-          "by": "claude-sonnet-5-5",
-          "at": "2026-11-18T01:04:12Z",
-          "figures": "05f338e00bff"
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-18T01:23:19Z"
         },
         "prada": {
           "note": "Growth was 0% in Q3 2026 (organic), down 5 pts from +5% in Q2 2026. Americas led the regions at +5%. Middle East was weakest at −18%. Asia Pacific moved from +8% to 0%, a swing of −8 pts. Compounded with the same quarter a year earlier, growth is +7.6% over two years. That is 4 pts behind the median of the other companies.",
@@ -4571,43 +4635,25 @@
           "at": "2026-11-18T01:07:56Z"
         },
         "burberry": {
-          "note": "Burberry's comparable growth was 4% in Q3 2026, against 5% in Q2 2026, a change of -1 point. The slowdown came from Greater China, which grew 5% after 9% in the prior quarter, a change of -4 points. Americas grew 11% and EMEIA was -2%. Two of three regions grew. Growth was ahead of the peer median of 2.5%. Two-year stack was 6.1%.",
-          "themes": [
-            "Slowing growth",
-            "Greater China",
-            "Americas strength",
-            "Ahead of peers"
-          ],
-          "watch": "Check whether Greater China comparable retail sales growth steadies after slowing from 9% to 5%, and whether EMEIA returns to growth from -2%.",
-          "by": "claude-sonnet-5-5",
-          "at": "2026-11-18T01:04:17Z",
-          "figures": "6c2f8b988855"
+          "note": "Growth was +4% in Q3 2026 (comparable), down 1 pt from +5% in Q2 2026. Americas led the regions at +11%. EMEIA was weakest at −2%. Greater China moved from +9% to +5%, a swing of −4 pts. Compounded with the same quarter a year earlier, growth is +6.1% over two years. That is 3 pts ahead of the median of the other companies.",
+          "themes": [],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-18T01:23:19Z"
         },
         "zegna": {
-          "note": "Zegna Group's organic growth was 8.2% in Q3 2026, down from 11.0% in Q2 2026, a change of -2.8 points, though still ahead of the peer median of 2.5%. The Americas was the main driver, with its growth change at -8.2 points, even though it still grew 13.6%. The Greater China Region grew 5.7% after 8.6%, and EMEA grew 6.3%. Thom Browne fell 7.4%, while Zegna grew 11.3% and Tom Ford Fashion grew 5.5%.",
-          "themes": [
-            "Slowing growth",
-            "Americas slowdown",
-            "Thom Browne drag",
-            "China steady"
-          ],
-          "watch": "Check whether the Greater China Region and Thom Browne growth rates stabilize and whether the Americas keeps growing at a pace close to the 13.6% reported here.",
-          "by": "claude-sonnet-5-5",
-          "at": "2026-11-18T01:04:20Z",
-          "figures": "f32feba84f06"
+          "note": "Growth was +8.2% in Q3 2026 (organic), down 2.8 pts from +11% in Q2 2026. Americas led the regions at +13.6%. Greater China Region was weakest at +5.7%. Greater China Region moved from +8.6% to +5.7%, a swing of −2.9 pts. Compounded with the same quarter a year earlier, growth is +12.1% over two years. That is 7.2 pts ahead of the median of the other companies.",
+          "themes": [],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-18T01:23:19Z"
         },
         "cucinelli": {
-          "note": "Brunello Cucinelli reported Q3 2026 growth of 13.5% at constant FX, but there is no prior quarter figure to compare, because the company publishes second-quarter sales only inside the half year. First-half revenues grew 13.3% in 2026. The Q3 figure is 12.5 points above the peer median of 2.5%, and the two-year stack is 27.7%. Management cites strong growth in China but gives no figure for China or Asia.",
-          "themes": [
-            "Constant FX growth",
-            "Ahead of peers",
-            "China commentary",
-            "Raised guidance"
-          ],
-          "watch": "Check whether the company again publishes a quarterly or only a half-year figure for the next period, and whether it gives any growth figure for China or Asia against the raised 2026 guidance of 12%.",
-          "by": "claude-sonnet-5-5",
-          "at": "2026-11-18T01:04:23Z",
-          "figures": "d18319483483"
+          "note": "Growth was +13.5% in Q3 2026 (at constant exchange rates). Compounded with the same quarter a year earlier, growth is +27.7% over two years. That is 12.5 pts ahead of the median of the other companies.",
+          "themes": [],
+          "watch": "",
+          "by": "rules",
+          "at": "2026-11-18T01:23:19Z"
         },
         "ferragamo": {
           "note": "Growth was −3.5% in Q3 2026 (at constant exchange rates), down 8.1 pts from +4.6% in Q2 2026. North America led the regions at +2.4%. Asia Pacific was weakest at −11.1%. Asia Pacific moved from −0.6% to −11.1%, a swing of −10.5 pts. Compounded with the same quarter a year earlier, growth is −1.9% over two years. That is 7.5 pts behind the median of the other companies.",
@@ -4624,116 +4670,8 @@
     }
   },
   "meta": {
-    "built_at": "2026-11-18T01:07:56Z",
+    "built_at": "2026-11-18T01:23:45Z",
     "runs": [
-      {
-        "at": "2026-11-17T02:20:32Z",
-        "command": "eval",
-        "results": [
-          {
-            "company": "All",
-            "quarter": "2026Q3",
-            "status": "extraction matched 23 of 24 verified figures",
-            "detail": "6 of 8 releases could be read; Moncler: www.monclergroup.com answered HTTP 403; Burberry: www.burberryplc.com answered HTTP 403"
-          }
-        ],
-        "usage": {
-          "steps": {
-            "extract": {
-              "calls": 6,
-              "input": 59810,
-              "output": 14454,
-              "searches": 0,
-              "usd": 0.2642,
-              "model": "claude-sonnet-5-5"
-            }
-          },
-          "estimated_usd": 0.2642
-        }
-      },
-      {
-        "at": "2026-11-17T02:20:54Z",
-        "command": "interpret",
-        "results": [
-          {
-            "company": "LVMH",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          },
-          {
-            "company": "Hermès",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          },
-          {
-            "company": "Kering",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          },
-          {
-            "company": "Richemont",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          },
-          {
-            "company": "Moncler",
-            "status": "note by rules",
-            "detail": "The model note failed. JSONDecodeError: Extra data: line 3 column 1 (char 180)"
-          },
-          {
-            "company": "Prada Group",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          },
-          {
-            "company": "Burberry",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          },
-          {
-            "company": "Zegna Group",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          }
-        ],
-        "usage": {
-          "steps": {
-            "interpret": {
-              "calls": 8,
-              "input": 7915,
-              "output": 2273,
-              "searches": 0,
-              "usd": 0.0386,
-              "model": "claude-sonnet-5-5"
-            }
-          },
-          "estimated_usd": 0.0386
-        }
-      },
-      {
-        "at": "2026-11-18T01:02:11Z",
-        "command": "update",
-        "results": [
-          {
-            "company": "LVMH",
-            "status": "no newer release",
-            "detail": "The most recent LVMH quarterly revenue release found is the Q3 2026 revenue release dated 12 October 2026, hosted on lvmh.com as an article page. It reports a three-month Q3 figure (group revenue of €"
-          }
-        ],
-        "usage": {
-          "steps": {
-            "research": {
-              "calls": 1,
-              "input": 22348,
-              "output": 971,
-              "searches": 2,
-              "usd": 0.0227,
-              "model": "claude-haiku-5-5"
-            }
-          },
-          "estimated_usd": 0.0227
-        }
-      },
       {
         "at": "2026-11-18T01:04:01Z",
         "command": "eval",
@@ -4827,6 +4765,124 @@
           },
           "estimated_usd": 0.0504
         }
+      },
+      {
+        "at": "2026-11-18T01:20:20Z",
+        "command": "update",
+        "results": [
+          {
+            "company": "LVMH",
+            "status": "no newer release",
+            "detail": "LVMH's Q3 2026 revenue release, dated 12 October 2026, is the most recent one found; the search turned up no later quarterly release. It is on LVMH's own site, and its revenue-by-business-group table "
+          }
+        ],
+        "usage": {
+          "steps": {
+            "research": {
+              "calls": 1,
+              "input": 23161,
+              "output": 1230,
+              "searches": 2,
+              "usd": 0.0229,
+              "model": "claude-haiku-5-5"
+            }
+          },
+          "estimated_usd": 0.0229
+        }
+      },
+      {
+        "at": "2026-11-18T01:21:59Z",
+        "command": "eval",
+        "results": [
+          {
+            "company": "All",
+            "quarter": "2026Q3",
+            "status": "extraction matched 25 of 25 verified figures",
+            "detail": "6 of 10 releases could be read; Kering: www.globenewswire.com answered HTTP 403; Moncler: www.monclergroup.com answered HTTP 403; Burberry: www.burberryplc.com answered HTTP 403; Zegna Group: ir.zegnagroup.com answered HTTP 403"
+          }
+        ],
+        "usage": {
+          "steps": {
+            "extract": {
+              "calls": 6,
+              "input": 56923,
+              "output": 13315,
+              "searches": 0,
+              "usd": 0.2469,
+              "model": "claude-sonnet-5-5"
+            }
+          },
+          "estimated_usd": 0.247
+        }
+      },
+      {
+        "at": "2026-11-18T01:22:28Z",
+        "command": "interpret",
+        "results": [
+          {
+            "company": "LVMH",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Hermès",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Kering",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Richemont",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Moncler",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Prada Group",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Burberry",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Zegna Group",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Brunello Cucinelli",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Ferragamo",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          }
+        ],
+        "usage": {
+          "steps": {
+            "interpret": {
+              "calls": 10,
+              "input": 12261,
+              "output": 2519,
+              "searches": 0,
+              "usd": 0.0498,
+              "model": "claude-sonnet-5-5"
+            }
+          },
+          "estimated_usd": 0.0497
+        }
       }
     ],
     "quality": {
@@ -4835,16 +4891,14 @@
       "warnings": []
     },
     "eval": {
-      "at": "2026-11-18T01:04:01Z",
+      "at": "2026-11-18T01:21:59Z",
       "quarter": "2026Q3",
       "model": "claude-sonnet-5-5",
-      "hits": 24,
+      "hits": 25,
       "total": 25,
       "releases": 10,
       "read": 6,
-      "misses": [
-        "Prada Group group: expected 0, extracted None"
-      ],
+      "misses": [],
       "skipped": [
         "Kering: www.globenewswire.com answered HTTP 403",
         "Moncler: www.monclergroup.com answered HTTP 403",
@@ -4855,14 +4909,14 @@
         "steps": {
           "extract": {
             "calls": 6,
-            "input": 48955,
-            "output": 15126,
+            "input": 56923,
+            "output": 13315,
             "searches": 0,
-            "usd": 0.2492,
+            "usd": 0.2469,
             "model": "claude-sonnet-5-5"
           }
         },
-        "estimated_usd": 0.2492
+        "estimated_usd": 0.247
       }
     },
     "thresholds": {

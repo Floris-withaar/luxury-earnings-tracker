@@ -3,6 +3,7 @@
 For every quarter it works out, per company:
   delta            change in growth against the prior quarter, in points
   vs_median        growth minus the median of the other companies
+  median_others    that median, which leaves the company itself out
   two_year_stack   this quarter's growth compounded with the same quarter a year earlier
   base, next_base  the growth being lapped this quarter and next quarter (the comparison base)
   asia_gap         Asia ex-Japan growth minus group growth
@@ -46,6 +47,7 @@ def company_metrics(company: dict, q: str, peers: list[dict]) -> dict:
         "prev": g_prev,
         "delta": _r(g - g_prev) if g_prev is not None else None,
         "vs_median": _r(g - median(others)) if median(others) is not None else None,
+        "median_others": _r(median(others)),
         "two_year_stack": _r(((1 + g / 100) * (1 + base / 100) - 1) * 100) if base is not None else None,
         "base": base,
         "next_base": next_base,
