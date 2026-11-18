@@ -86,6 +86,23 @@ class GateTests(unittest.TestCase):
         company(data, "hermes")["regions"].pop("2026Q1", None)
         self.assertEqual(len(gaps()), 1)
 
+    def test_a_series_that_starts_later_is_not_a_gap(self):
+        # Capri Holdings first reported without Versace for the quarter to June 2025, so its series starts there.
+        data = copy.deepcopy(load(COMPANIES))
+        capri = company(data, "capri")
+        self.assertEqual(min(capri["series"]), "2025Q2")
+        self.assertFalse(any("Capri" in w and "no figure between" in w for w in validate.validate(data)["warnings"]))
+        del capri["series"]["2026Q1"]                            # a hole after the start still is one
+        self.assertTrue(any("Capri" in w and "no figure between" in w for w in validate.validate(data)["warnings"]))
+
+    def test_accessible_luxury_has_its_own_median(self):
+        data = copy.deepcopy(load(COMPANIES))
+        out = model.compute(data)["2026Q3"]
+        accessible = out["groups"]["accessible"]
+        self.assertEqual(sorted(accessible["members"]), ["capri", "ralph-lauren", "tapestry"])
+        self.assertNotIn("tapestry", out["groups"]["goods"]["members"])
+        self.assertEqual(out["companies"]["tapestry"]["rank_of"], 3)
+
     def test_a_checked_swing_is_not_flagged_again(self):
         data = dataset()
         company(data, "hermes")["series"]["2026Q3"]["g"] = 40
