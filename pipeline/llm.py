@@ -84,8 +84,14 @@ def usage_summary() -> dict:
     return {"steps": steps, "estimated_usd": round(total, 4)}
 
 
-def complete(prompt: str, *, step: str = "extract", client=None, tools=None, max_tokens: int | None = None) -> str:
-    """Send one prompt and return the text of the answer."""
+def complete(prompt: str, *, step: str = "extract", client=None, tools=None, max_tokens: int | None = None,
+             schema: dict | None = None) -> str:
+    """Send one prompt and return the text of the answer.
+
+    With a schema the API constrains the answer to JSON of that shape (structured outputs), so a stray quote
+    or a second object can no longer break the parse. Not used with web search, whose citations the API
+    does not allow together with a schema.
+    """
     client = client or get_client()
     model = MODELS[step]
     limit = max_tokens or LIMITS[step]
@@ -95,8 +101,13 @@ def complete(prompt: str, *, step: str = "extract", client=None, tools=None, max
         kwargs = {"model": model, "max_tokens": limit, "messages": messages}
         if tools:
             kwargs["tools"] = tools
+        config = {}
         if EFFORT.get(step):
-            kwargs["output_config"] = {"effort": EFFORT[step]}
+            config["effort"] = EFFORT[step]
+        if schema:
+            config["format"] = {"type": "json_schema", "schema": schema}
+        if config:
+            kwargs["output_config"] = config
         response = client.messages.create(**kwargs)
         _record(step, model, response)
         reason = getattr(response, "stop_reason", None)
@@ -132,11 +143,33 @@ def parse_json(text: str):
             return json.loads(fence.group(1), strict=False)
         except json.JSONDecodeError:
             pass
-    start, end = text.find("{"), text.rfind("}")
-    if start >= 0 and end > start:
-        return json.loads(text[start : end + 1], strict=False)
+    # Take the first complete object and ignore whatever follows it, such as a second object or a sentence.
+    decoder = json.JSONDecoder(strict=False)
+    start = text.find("{")
+    while start >= 0:
+        try:
+            found, _ = decoder.raw_decode(text, start)
+            if isinstance(found, dict):
+                return found
+        except json.JSONDecodeError:
+            pass
+        start = text.find("{", start + 1)
     raise ValueError("The model answer held no JSON object.")
 
 
 def ask_json(prompt: str, **kwargs):
     return parse_json(complete(prompt, **kwargs))
+
+
+def strict(schema: dict) -> dict:
+    """Close every object in a schema: no extra keys, every key required. The API asks for the first,
+    and the second keeps optional fields within its limit and makes the model answer each one."""
+    if isinstance(schema, dict):
+        out = {k: strict(v) for k, v in schema.items()}
+        if out.get("type") == "object":
+            out["additionalProperties"] = False
+            out["required"] = list(out.get("properties", {}))
+        return out
+    if isinstance(schema, list):
+        return [strict(v) for v in schema]
+    return schema

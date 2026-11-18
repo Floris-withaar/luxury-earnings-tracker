@@ -593,112 +593,114 @@
     },
     "companies": {
       "lvmh": {
-        "note": "LVMH's Organic growth was 1% in Q3 2026, down from 3% in Q2 2026, a change of -2 points, and behind the peer median of 2.5%. The slowdown came from Asia excl. Japan, which was -5% against +4% in the prior quarter, a swing of -9 points. Management tied this to a less buoyant environment in China that hit Fashion & Leather Goods, which was -5%. Japan grew 6%, Europe 4% and United States 5%. Three of four regions grew.",
+        "note": "LVMH organic growth was 1% in Q3 2026, down from 3% in Q2 2026, a change of -2 points, and behind the peer median of 2.5%. The slowdown came from Asia excl. Japan, which was -5% after +4% in the prior quarter, a swing of -9 points. Management cited a less buoyant environment in China that hit Fashion & Leather Goods, which was -5%. Japan grew 6%, the United States 5% and Europe 4%. Three of four regions grew.",
         "themes": [
           "Asia drag",
-          "China weakness",
-          "Fashion & Leather Goods",
+          "China softness",
+          "Fashion weakness",
           "Slowing growth"
         ],
-        "watch": "Check whether Asia excl. Japan and Fashion & Leather Goods return to growth, and whether Japan, Europe and the United States keep growing.",
+        "watch": "Check whether Asia excl. Japan and Fashion & Leather Goods stay negative in the next release, and whether Japan, the United States and Europe keep growing.",
         "by": "claude-sonnet-5-5",
-        "at": "2026-11-17T02:20:33Z",
+        "at": "2026-11-18T01:04:02Z",
         "figures": "fe8cccab5d95"
       },
       "hermes": {
-        "note": "Hermès growth at Constant FX was 4.3% in Q3 2026, down from 6.7% in Q2 2026, a fall of 2.4 points, yet still ahead of the peer median of 2.5%. The largest driver was the Americas, where growth slowed by 4.9 points to 8.8%. Asia-Pacific excl. Japan was 0%, which was 2.5 points weaker than the prior quarter. Three of five reported regions grew by more than 0%... Leather Goods and Saddlery grew 10.8%, while Watches was -6%.",
+        "note": "Growth was +4.3% in Q3 2026 (at constant exchange rates), down 2.4 pts from +6.7% in Q2 2026. Japan led the regions at +9.6%. Other (Middle East) was weakest at −4.5%. Asia-Pacific excl. Japan moved from +2.5% to 0%, a swing of −2.5 pts. Compounded with the same quarter a year earlier, growth is +14.3% over two years. That is 3.3 pts ahead of the median of the other companies.",
         "themes": [
-          "Slowing growth",
-          "Asia drag",
-          "Americas slowdown",
-          "Leather strength"
+          "Asia drag"
         ],
-        "watch": "Check whether Asia-Pacific excl. Japan moves off 0% and whether the Americas growth rate stabilizes after its 4.9 point slowdown.",
-        "by": "claude-sonnet-5-5",
-        "at": "2026-11-17T02:20:36Z",
-        "figures": "f7282800145a"
+        "watch": "",
+        "by": "rules",
+        "at": "2026-11-18T01:07:56Z"
       },
       "kering": {
-        "note": "Kering's comparable growth was -1% in Q3 2026, down from 2% in Q2 2026, a change of -3 points, and behind the peer median of 2.5%. Asia Pacific was the main drag at -5%, with management citing lower store traffic, particularly in Mainland China. Gucci was -6% and Gucci's own retail sales fell 9%. Kering Jewelry grew 11% and Kering Eyewear 4%. Three of five regions grew.",
+        "note": "Kering's comparable growth was -1% in Q3 2026, down from 2% in Q2 2026, a change of -3 points, and 5 points below the peer median of 2.5%... Asia Pacific was -5% on lower store traffic, particularly Mainland China. Gucci was -6% and Kering Fashion & Leather Goods was -3%, while Kering Jewelry grew 11% and Kering Eyewear 4%. Three of five regions grew, with Japan at 4%.",
         "themes": [
           "Asia Pacific drag",
           "Gucci weakness",
           "Jewelry strength",
           "Slowing momentum"
         ],
-        "watch": "Check whether Asia Pacific store traffic and Gucci retail sales improve, given the base is flagged as tougher next quarter.",
+        "watch": "Check whether Asia Pacific and Gucci retail sales improve against a tougher comparison base, and whether Kering Jewelry keeps its lead among the segments.",
         "by": "claude-sonnet-5-5",
-        "at": "2026-11-17T02:20:38Z",
+        "at": "2026-11-18T01:04:08Z",
         "figures": "e758b9c9a8e5"
       },
       "richemont": {
-        "note": "Richemont's Q3 2026 growth was 13% on a Constant FX basis, down from 20% in Q2 2026, a change of -7 points. Japan was the main driver, with its growth down 13 points to 23%. Asia Pacific grew 10%, 11 points lower than the prior quarter. Four of five regions grew, and Middle East & Africa was -7%. Growth stayed ahead of the peer median of 2.5%. Jewellery Maisons grew 14%.",
+        "note": "Richemont grew 13% at Constant FX in Q3 2026, down from 20% in Q2 2026, a slowdown of 7 points. The biggest driver was Japan, whose change was -13 points, though it still grew 23%. Asia Pacific grew 10%, 11 points slower than the prior quarter. Middle East & Africa was -7%. Four of five regions grew. Jewellery Maisons grew 14%, Specialist Watchmakers 12% and Other 9%. Growth remains ahead of the peer median of 2.5%.",
         "themes": [
           "Slowing growth",
-          "Asia Pacific drag",
-          "Japan slowdown",
-          "Jewellery strength"
+          "Asia drag",
+          "Japan deceleration",
+          "Easier base"
         ],
-        "watch": "Check whether Asia Pacific growth, at 10% this quarter, steadies or slips further, and whether Middle East & Africa returns to growth from -7%.",
+        "watch": "Check whether Asia Pacific growth steadies after its 11 point slowdown, and whether Middle East & Africa returns to growth against the easier base.",
         "by": "claude-sonnet-5-5",
-        "at": "2026-11-17T02:20:41Z",
+        "at": "2026-11-18T01:04:10Z",
         "figures": "44951652f6d7"
       },
       "moncler": {
-        "note": "Growth was 0% in Q3 2026 (at constant exchange rates), down 5 pts from +5% in Q2 2026. Asia (APAC, Japan, Korea) led the regions at +5%. EMEA was weakest at −8%. Asia (APAC, Japan, Korea) moved from +12% to +5%, a swing of −7 pts. Compounded with the same quarter a year earlier, growth is −1% over two years. That is 4 pts behind the median of the other companies.",
+        "note": "Moncler growth was 0% at Constant FX in Q3 2026, down from 5% in Q2 2026, a change of -5 points, and behind the peer median of 2.5%. Asia was the main source: it grew 5%, 7 points slower than the prior quarter. EMEA fell 8% on softer local demand and subdued tourist flows. Americas grew 2%. Two of three regions grew. By segment, Moncler was -1% and Stone Island grew 5%.",
         "themes": [
-          "Asia lift",
-          "Tougher base next quarter"
+          "Asia slowdown",
+          "EMEA weakness",
+          "Behind peers",
+          "Tougher base"
+        ],
+        "watch": "Check whether Asia (APAC, Japan, Korea) growth steadies and whether EMEA improves, given the tougher base for next quarter and the absence of guidance in this release.",
+        "by": "claude-sonnet-5-5",
+        "at": "2026-11-18T01:04:12Z",
+        "figures": "05f338e00bff"
+      },
+      "prada": {
+        "note": "Growth was 0% in Q3 2026 (organic), down 5 pts from +5% in Q2 2026. Americas led the regions at +5%. Middle East was weakest at −18%. Asia Pacific moved from +8% to 0%, a swing of −8 pts. Compounded with the same quarter a year earlier, growth is +7.6% over two years. That is 4 pts behind the median of the other companies.",
+        "themes": [
+          "Narrow growth",
+          "Easier base next quarter"
         ],
         "watch": "",
         "by": "rules",
-        "at": "2026-11-17T02:36:32Z"
-      },
-      "prada": {
-        "note": "Prada Group's organic growth was 0% in Q3 2026, down from 5% in Q2 2026, a slowdown of 5 points and 4 points below the peer median of 2.5%... Let me state it cleanly: growth was 0% against 5% in the prior quarter, a change of -5 points. The largest driver was the Americas, where growth slowed by 14 points to 5%. Asia Pacific was 0%, 8 points lower than before. Only 1 of 5 regions grew. Europe was -3% and Middle East was -18%. Prada retail sales grew 1% and Miu Miu was -3%.",
-        "themes": [
-          "Narrow growth",
-          "Americas slowdown",
-          "Asia Pacific stable",
-          "Easier base"
-        ],
-        "watch": "Check whether the Americas and Asia Pacific growth rates stabilise and whether more than 1 of 5 regions grows against the easier base.",
-        "by": "claude-sonnet-5-5",
-        "at": "2026-11-17T02:20:47Z",
-        "figures": "6f8e3073b5ea"
+        "at": "2026-11-18T01:07:56Z"
       },
       "burberry": {
-        "note": "Burberry's comparable growth was 4% in Q3 2026, against 5% in Q2 2026, a slowdown of 1 point. Greater China was the main driver: it grew 5% after 9% in the quarter before, a change of -4 points. Americas grew 11% while EMEIA fell 2%, so 2 of 3 regions grew. Growth sits ahead of the peer median of 2.5%.",
+        "note": "Burberry's comparable growth was 4% in Q3 2026, against 5% in Q2 2026, a change of -1 point. The slowdown came from Greater China, which grew 5% after 9% in the prior quarter, a change of -4 points. Americas grew 11% and EMEIA was -2%. Two of three regions grew. Growth was ahead of the peer median of 2.5%. Two-year stack was 6.1%.",
         "themes": [
-          "Slowing momentum",
-          "Greater China slowdown",
+          "Slowing growth",
+          "Greater China",
           "Americas strength",
           "Ahead of peers"
         ],
-        "watch": "Check whether Greater China comparable retail sales growth steadies after the step down from 9% to 5%, and whether EMEIA returns to growth from -2%.",
+        "watch": "Check whether Greater China comparable retail sales growth steadies after slowing from 9% to 5%, and whether EMEIA returns to growth from -2%.",
         "by": "claude-sonnet-5-5",
-        "at": "2026-11-17T02:20:49Z",
+        "at": "2026-11-18T01:04:17Z",
         "figures": "6c2f8b988855"
       },
       "zegna": {
-        "note": "Zegna Group's organic growth was 8.2% in Q3 2026, down from 11.0% in Q2 2026, a change of -2.8 points, though still ahead of the peer median of 2.5%. The Americas was the main driver, with its growth change of -8.2 points, and it still grew 13.6%. The Greater China Region grew 5.7%, after 8.6% in the second quarter. EMEA grew 6.3%. Thom Browne fell 7.4%, while Zegna grew 11.3%.",
+        "note": "Zegna Group's organic growth was 8.2% in Q3 2026, down from 11.0% in Q2 2026, a change of -2.8 points, though still ahead of the peer median of 2.5%. The Americas was the main driver, with its growth change at -8.2 points, even though it still grew 13.6%. The Greater China Region grew 5.7% after 8.6%, and EMEA grew 6.3%. Thom Browne fell 7.4%, while Zegna grew 11.3% and Tom Ford Fashion grew 5.5%.",
         "themes": [
           "Slowing growth",
-          "Americas driver",
-          "China slowdown",
-          "Thom Browne decline"
+          "Americas slowdown",
+          "Thom Browne drag",
+          "China steady"
         ],
-        "watch": "Check whether the Greater China Region growth of 5.7% stabilizes and whether Thom Browne, which was -7.4%, still bears the weight of the slowdown there.",
+        "watch": "Check whether the Greater China Region and Thom Browne growth rates stabilize and whether the Americas keeps growing at a pace close to the 13.6% reported here.",
         "by": "claude-sonnet-5-5",
-        "at": "2026-11-17T02:20:52Z",
+        "at": "2026-11-18T01:04:20Z",
         "figures": "f32feba84f06"
       },
       "cucinelli": {
-        "note": "Growth was +13.5% in Q3 2026 (at constant exchange rates). Compounded with the same quarter a year earlier, growth is +27.7% over two years. That is 12.5 pts ahead of the median of the other companies.",
-        "themes": [],
-        "watch": "",
-        "by": "rules",
-        "at": "2026-11-17T02:36:32Z"
+        "note": "Brunello Cucinelli reported Q3 2026 growth of 13.5% at constant FX, but there is no prior quarter figure to compare, because the company publishes second-quarter sales only inside the half year. First-half revenues grew 13.3% in 2026. The Q3 figure is 12.5 points above the peer median of 2.5%, and the two-year stack is 27.7%. Management cites strong growth in China but gives no figure for China or Asia.",
+        "themes": [
+          "Constant FX growth",
+          "Ahead of peers",
+          "China commentary",
+          "Raised guidance"
+        ],
+        "watch": "Check whether the company again publishes a quarterly or only a half-year figure for the next period, and whether it gives any growth figure for China or Asia against the raised 2026 guidance of 12%.",
+        "by": "claude-sonnet-5-5",
+        "at": "2026-11-18T01:04:23Z",
+        "figures": "d18319483483"
       },
       "ferragamo": {
         "note": "Growth was −3.5% in Q3 2026 (at constant exchange rates), down 8.1 pts from +4.6% in Q2 2026. North America led the regions at +2.4%. Asia Pacific was weakest at −11.1%. Asia Pacific moved from −0.6% to −11.1%, a swing of −10.5 pts. Compounded with the same quarter a year earlier, growth is −1.9% over two years. That is 7.5 pts behind the median of the other companies.",
@@ -709,7 +711,7 @@
         ],
         "watch": "",
         "by": "rules",
-        "at": "2026-11-17T02:36:32Z"
+        "at": "2026-11-18T01:07:56Z"
       }
     }
   }
