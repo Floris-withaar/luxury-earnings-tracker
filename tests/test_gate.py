@@ -86,6 +86,24 @@ class GateTests(unittest.TestCase):
         company(data, "hermes")["regions"].pop("2026Q1", None)
         self.assertEqual(len(gaps()), 1)
 
+    def test_a_checked_swing_is_not_flagged_again(self):
+        data = dataset()
+        company(data, "hermes")["series"]["2026Q3"]["g"] = 40
+        swings = lambda: [w for w in validate.validate(data)["warnings"] if "Hermès: growth moved" in w]
+        self.assertEqual(len(swings()), 1)
+        company(data, "hermes")["series"]["2026Q3"]["checked"] = "Checked against the release."
+        self.assertEqual(swings(), [])
+
+    def test_grouping_file_is_checked(self):
+        data = dataset()
+        company(data, "lvmh")["segments"]["2026Q3"].append({"name": "Brand new line", "g": 3})
+        self.assertTrue(any("Brand new line" in w for w in validate.validate(data)["warnings"]))
+        errors, warnings = [], []
+        validate.check_taxonomy(data["companies"], {"industries": [{"id": "goods"}], "companies": {"lvmh": {"industry": "boats"}},
+                                                     "categories": [{"id": "x"}], "segments": {"lvmh": {"Wine": "y"}}}, errors, warnings)
+        self.assertEqual(len(errors), 2)
+        self.assertTrue(any("grouped with the first industry" in w for w in warnings))
+
     def test_stale_company_is_a_warning(self):
         warnings = validate.validate(load(FIXTURE), load(WATCHLIST), today=date(2027, 6, 1))["warnings"]
         self.assertTrue(any("LVMH" in w and "expected" in w for w in warnings))

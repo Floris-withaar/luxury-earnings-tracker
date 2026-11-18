@@ -69,6 +69,20 @@
         "watch": "",
         "by": "rules",
         "at": "2026-11-17T02:36:32Z"
+      },
+      "ferrari": {
+        "note": "Growth was +15% in Q4 2024 (at constant exchange rates).",
+        "themes": [],
+        "watch": "",
+        "by": "rules",
+        "at": "2026-11-18T02:24:36Z"
+      },
+      "aston-martin": {
+        "note": "Growth was −1% in Q4 2024 (as reported).",
+        "themes": [],
+        "watch": "",
+        "by": "rules",
+        "at": "2026-11-18T02:24:36Z"
       }
     }
   },
@@ -149,6 +163,20 @@
         "watch": "",
         "by": "rules",
         "at": "2026-11-17T02:36:32Z"
+      },
+      "ferrari": {
+        "note": "Growth was +12.2% in Q1 2025 (at constant exchange rates), down 2.8 pts from +15% in Q4 2024.",
+        "themes": [],
+        "watch": "",
+        "by": "rules",
+        "at": "2026-11-18T02:24:36Z"
+      },
+      "aston-martin": {
+        "note": "Growth was −13% in Q1 2025 (as reported), down 12 pts from −1% in Q4 2024.",
+        "themes": [],
+        "watch": "",
+        "by": "rules",
+        "at": "2026-11-18T02:24:36Z"
       }
     }
   },
@@ -222,6 +250,20 @@
         "watch": "",
         "by": "rules",
         "at": "2026-11-17T02:36:32Z"
+      },
+      "ferrari": {
+        "note": "Growth was +5.1% in Q2 2025 (at constant exchange rates), down 7.1 pts from +12.2% in Q1 2025.",
+        "themes": [],
+        "watch": "",
+        "by": "rules",
+        "at": "2026-11-18T02:24:36Z"
+      },
+      "aston-martin": {
+        "note": "Growth was −34% in Q2 2025 (as reported), down 21 pts from −13% in Q1 2025.",
+        "themes": [],
+        "watch": "",
+        "by": "rules",
+        "at": "2026-11-18T02:24:36Z"
       }
     }
   },
@@ -302,6 +344,20 @@
         "watch": "",
         "by": "rules",
         "at": "2026-11-17T02:36:32Z"
+      },
+      "ferrari": {
+        "note": "Growth was +9.3% in Q3 2025 (at constant exchange rates), up 4.2 pts from +5.1% in Q2 2025.",
+        "themes": [],
+        "watch": "",
+        "by": "rules",
+        "at": "2026-11-18T02:24:36Z"
+      },
+      "aston-martin": {
+        "note": "Growth was −27% in Q3 2025 (as reported), up 7 pts from −34% in Q2 2025.",
+        "themes": [],
+        "watch": "",
+        "by": "rules",
+        "at": "2026-11-18T02:24:36Z"
       }
     }
   },
@@ -400,6 +456,24 @@
         "watch": "",
         "by": "rules",
         "at": "2026-11-17T02:36:32Z"
+      },
+      "ferrari": {
+        "note": "Growth was +6% in Q4 2025 (at constant exchange rates), down 3.3 pts from +9.3% in Q3 2025. Compounded with the same quarter a year earlier, growth is +21.9% over two years.",
+        "themes": [
+          "Easier base next quarter"
+        ],
+        "watch": "",
+        "by": "rules",
+        "at": "2026-11-18T02:24:36Z"
+      },
+      "aston-martin": {
+        "note": "Growth was −12% in Q4 2025 (as reported), up 15 pts from −27% in Q3 2025. Compounded with the same quarter a year earlier, growth is −12.9% over two years.",
+        "themes": [
+          "Easier base next quarter"
+        ],
+        "watch": "",
+        "by": "rules",
+        "at": "2026-11-18T02:24:36Z"
       }
     }
   },
@@ -488,6 +562,24 @@
         "watch": "",
         "by": "rules",
         "at": "2026-11-17T02:36:32Z"
+      },
+      "ferrari": {
+        "note": "Growth was +6% in Q1 2026 (at constant exchange rates), unchanged from Q4 2025. Compounded with the same quarter a year earlier, growth is +18.9% over two years.",
+        "themes": [
+          "Easier base next quarter"
+        ],
+        "watch": "",
+        "by": "rules",
+        "at": "2026-11-18T02:24:36Z"
+      },
+      "aston-martin": {
+        "note": "Growth was +16% in Q1 2026 (as reported), up 28 pts from −12% in Q4 2025. Compounded with the same quarter a year earlier, growth is +0.9% over two years.",
+        "themes": [
+          "Easier base next quarter"
+        ],
+        "watch": "",
+        "by": "rules",
+        "at": "2026-11-18T02:24:36Z"
       }
     }
   },
@@ -581,6 +673,24 @@
         "watch": "",
         "by": "rules",
         "at": "2026-11-17T02:36:32Z"
+      },
+      "ferrari": {
+        "note": "Growth was +11% in Q2 2026 (at constant exchange rates), up 5 pts from +6% in Q1 2026. Compounded with the same quarter a year earlier, growth is +16.7% over two years.",
+        "themes": [
+          "Tougher base next quarter"
+        ],
+        "watch": "",
+        "by": "rules",
+        "at": "2026-11-18T02:24:36Z"
+      },
+      "aston-martin": {
+        "note": "Growth was +62% in Q2 2026 (as reported), up 46 pts from +16% in Q1 2026. Compounded with the same quarter a year earlier, growth is +6.9% over two years.",
+        "themes": [
+          "Tougher base next quarter"
+        ],
+        "watch": "",
+        "by": "rules",
+        "at": "2026-11-18T02:24:36Z"
       }
     }
   },
@@ -681,6 +791,24 @@
         "watch": "",
         "by": "rules",
         "at": "2026-11-18T01:07:56Z"
+      },
+      "ferrari": {
+        "note": "Growth was +10% in Q3 2026 (at constant exchange rates), down 1 pt from +11% in Q2 2026. Compounded with the same quarter a year earlier, growth is +20.2% over two years.",
+        "themes": [
+          "Easier base next quarter"
+        ],
+        "watch": "",
+        "by": "rules",
+        "at": "2026-11-18T02:24:36Z"
+      },
+      "aston-martin": {
+        "note": "Growth was +36% in Q3 2026 (as reported), down 26 pts from +62% in Q2 2026. Compounded with the same quarter a year earlier, growth is −0.7% over two years.",
+        "themes": [
+          "Tougher base next quarter"
+        ],
+        "watch": "",
+        "by": "rules",
+        "at": "2026-11-18T02:24:36Z"
       }
     }
   }

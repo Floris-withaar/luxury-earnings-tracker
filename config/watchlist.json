@@ -119,6 +119,35 @@
         "3": 20,
         "4": 27
       }
+    },
+    {
+      "id": "ferrari",
+      "name": "Ferrari",
+      "ir_domain": "ferrari.com",
+      "first_check_days": 30,
+      "lags": {
+        "1": 35,
+        "2": 30,
+        "3": 34,
+        "4": 41
+      }
+    },
+    {
+      "id": "aston-martin",
+      "name": "Aston Martin",
+      "ir_domain": "astonmartin.com",
+      "more_domains": [
+        "investegate.co.uk",
+        "lse.co.uk",
+        "sharesmagazine.co.uk"
+      ],
+      "first_check_days": 28,
+      "lags": {
+        "1": 29,
+        "2": 29,
+        "3": 28,
+        "4": 56
+      }
     }
   ]
 }

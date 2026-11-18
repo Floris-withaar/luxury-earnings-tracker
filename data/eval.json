@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-18T01:21:59Z",
+  "at": "2026-11-18T02:09:56Z",
   "quarter": "2026Q3",
   "model": "claude-sonnet-5-5",
   "hits": 25,
@@ -18,12 +18,12 @@
       "extract": {
         "calls": 6,
         "input": 56923,
-        "output": 13315,
+        "output": 12142,
         "searches": 0,
-        "usd": 0.2469,
+        "usd": 0.2353,
         "model": "claude-sonnet-5-5"
       }
     },
-    "estimated_usd": 0.247
+    "estimated_usd": 0.2353
   }
 }

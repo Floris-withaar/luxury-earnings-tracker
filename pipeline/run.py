@@ -19,7 +19,7 @@ import sys
 
 from . import extract, fetch, interpret, llm, model, research, validate, verify, watch
 from .common import (COMMENTARY, COMPANIES, DATA, DERIVED, REGION_KEYS, REVIEW, SITE, WATCHLIST, growth, load, now_iso,
-                     region, save)
+                     region, save, taxonomy)
 
 RUN_LOG = DATA / "run_log.json"
 EVAL = DATA / "eval.json"
@@ -39,7 +39,7 @@ def publish(dataset: dict) -> None:
     """Write the single file the website reads, from what refresh and the run log left on disk."""
     built = {
         "asOf": dataset["asOf"], "latest": dataset["latest"], "companies": dataset["companies"],
-        "model": load(DERIVED), "notes": load(COMMENTARY),
+        "model": load(DERIVED), "notes": load(COMMENTARY), "taxonomy": taxonomy(),
         "meta": {"built_at": now_iso(), "runs": load(RUN_LOG, [])[-5:],
                  "quality": validate.summary(dataset), "eval": load(EVAL),
                  "thresholds": {"momentum_pts": model.MOMENTUM_PTS, "level_pts": model.LEVEL_PTS,

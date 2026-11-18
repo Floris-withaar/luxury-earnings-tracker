@@ -27,7 +27,12 @@ Once the data is deep enough, the tracker compares more than companies with each
 2. **Regions that line up.** Companies cut Asia differently: some report Japan alone, some fold it into the rest of Asia. A second set of region columns handles that, so regions compare like with like.
 3. **Segments.** Leather goods against jewellery against watches, across companies.
 
-The order matters. This comes after the ten-group dataset has run a full reporting season with clean alerts. Breadth without checked sources is what the project exists to avoid.
+Status on 18 November 2026, moved forward at Floris's request:
+
+- **Peer groups: built.** `config/categories.json` puts each company in an industry (personal luxury goods or luxury autos) and a focus (fashion and leather goods, jewellery and watches, diversified, sports cars). Medians, ranks and "against peers" are taken inside one industry, and only when at least three companies stand behind them. The Categories screen sets the groups side by side.
+- **Luxury autos: Ferrari and Aston Martin.** Porsche is left out for the same reason as Swatch: it publishes revenue for the year to date, not for the quarter. With two companies, the autos group shows both and has no median until a third quarterly reporter joins.
+- **Segments: built.** Segment lines are grouped into product categories across companies. Only the latest quarter has segment data, so categories show one quarter until more are added.
+- **Regions that line up: not started.** Next after the January season.
 
 ## Decided against
 
@@ -36,8 +41,9 @@ The order matters. This comes after the ten-group dataset has run a full reporti
 | Forecasts and share prices | The project reports what companies said. A forecast would need a track record this project does not have. |
 | A chatbot or user accounts | They add an attack surface and running costs without making a figure more reliable. |
 | A database or a server | The dataset is one small file. Git already gives history, review and rollback. |
-| More than about ten companies | Depth and checked sources matter more than breadth. |
-| More chart types | Five screens answer the questions. New charts are added only for a question the current ones cannot answer. |
+| More than about ten companies in one peer group | Depth and checked sources matter more than breadth. New industries come in as their own peer group. |
+| Porsche | It publishes revenue for the year to date only. A quarter backed out of cumulative figures would be derived, which the dataset does not allow. |
+| More chart types | Six screens answer the questions. New charts are added only for a question the current ones cannot answer. |
 
 ## How a new figure gets in
 

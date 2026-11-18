@@ -1,0 +1,173 @@
+{
+  "note": "How companies and their segments are grouped. industries are peer groups: each company is compared only with the others in its own industry, and every median is taken within one. focus splits an industry by what the company mostly sells. categories group segments across companies, so leather goods can be read against leather goods. A median is shown only for a group of at least min_group members, and never for a category marked no_median, whose lines have nothing in common. In segments, a name mapped to null is a line inside another one, such as Gucci inside Kering's fashion line, and is left out of the category so nothing is counted twice.",
+  "min_group": 3,
+  "industries": [
+    {
+      "id": "goods",
+      "label": "Personal luxury goods"
+    },
+    {
+      "id": "autos",
+      "label": "Luxury autos"
+    }
+  ],
+  "focus": [
+    {
+      "id": "fashion",
+      "label": "Fashion & leather goods",
+      "industry": "goods"
+    },
+    {
+      "id": "hard",
+      "label": "Jewellery & watches",
+      "industry": "goods"
+    },
+    {
+      "id": "diversified",
+      "label": "Diversified",
+      "industry": "goods"
+    },
+    {
+      "id": "sports_cars",
+      "label": "Sports cars",
+      "industry": "autos"
+    }
+  ],
+  "companies": {
+    "lvmh": {
+      "industry": "goods",
+      "focus": "diversified"
+    },
+    "hermes": {
+      "industry": "goods",
+      "focus": "fashion"
+    },
+    "kering": {
+      "industry": "goods",
+      "focus": "fashion"
+    },
+    "richemont": {
+      "industry": "goods",
+      "focus": "hard"
+    },
+    "moncler": {
+      "industry": "goods",
+      "focus": "fashion"
+    },
+    "prada": {
+      "industry": "goods",
+      "focus": "fashion"
+    },
+    "burberry": {
+      "industry": "goods",
+      "focus": "fashion"
+    },
+    "zegna": {
+      "industry": "goods",
+      "focus": "fashion"
+    },
+    "cucinelli": {
+      "industry": "goods",
+      "focus": "fashion"
+    },
+    "ferragamo": {
+      "industry": "goods",
+      "focus": "fashion"
+    },
+    "ferrari": {
+      "industry": "autos",
+      "focus": "sports_cars"
+    },
+    "aston-martin": {
+      "industry": "autos",
+      "focus": "sports_cars"
+    }
+  },
+  "categories": [
+    {
+      "id": "fashion",
+      "label": "Fashion & leather goods"
+    },
+    {
+      "id": "jewellery_watches",
+      "label": "Jewellery & watches"
+    },
+    {
+      "id": "beauty",
+      "label": "Beauty & fragrance"
+    },
+    {
+      "id": "eyewear",
+      "label": "Eyewear"
+    },
+    {
+      "id": "wines",
+      "label": "Wines & spirits"
+    },
+    {
+      "id": "retail",
+      "label": "Selective retailing"
+    },
+    {
+      "id": "cars",
+      "label": "Cars & spare parts"
+    },
+    {
+      "id": "brand",
+      "label": "Brand, sponsorship & lifestyle"
+    },
+    {
+      "id": "other",
+      "label": "Other",
+      "no_median": true
+    }
+  ],
+  "segments": {
+    "lvmh": {
+      "Wines & Spirits": "wines",
+      "Fashion & Leather Goods": "fashion",
+      "Perfumes & Cosmetics": "beauty",
+      "Watches & Jewelry": "jewellery_watches",
+      "Selective Retailing": "retail"
+    },
+    "hermes": {
+      "Leather Goods and Saddlery": "fashion",
+      "Ready-to-wear and Accessories": "fashion",
+      "Silk and Textiles": "fashion",
+      "Other Hermès sectors": "other",
+      "Perfume and Beauty": "beauty",
+      "Watches": "jewellery_watches",
+      "Other products": "other"
+    },
+    "kering": {
+      "Kering Fashion & Leather Goods": "fashion",
+      "of which Gucci": null,
+      "Kering Jewelry": "jewellery_watches",
+      "Kering Eyewear": "eyewear",
+      "Corporate & Other": "other"
+    },
+    "richemont": {
+      "Jewellery Maisons": "jewellery_watches",
+      "Specialist Watchmakers": "jewellery_watches",
+      "Other": "other"
+    },
+    "moncler": {
+      "Moncler": "fashion",
+      "Stone Island": "fashion"
+    },
+    "prada": {
+      "Prada (retail sales)": "fashion",
+      "Miu Miu (retail sales)": "fashion"
+    },
+    "zegna": {
+      "Zegna": "fashion",
+      "Thom Browne": "fashion",
+      "Tom Ford Fashion": "fashion"
+    },
+    "ferrari": {
+      "Cars and spare parts": "cars",
+      "Sponsorship, commercial and brand": "brand",
+      "Other": "other"
+    }
+  }
+}

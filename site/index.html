@@ -6,7 +6,7 @@
 <meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Luxury Earnings Tracker</title>
-<meta name="description" content="Quarterly sales growth of the large luxury groups in one sourced dataset.">
+<meta name="description" content="Quarterly sales growth of listed luxury groups and luxury carmakers in one sourced dataset.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -17,6 +17,7 @@
     <nav id="nav" aria-label="Screens">
       <a href="#overview" data-v="overview">Overview</a>
       <a href="#compare" data-v="compare">Compare</a>
+      <a href="#categories" data-v="categories">Categories</a>
       <a href="#company" data-v="company">Company</a>
       <a href="#data" data-v="data">Data and sources</a>
       <a href="#method" data-v="method">Method</a>
@@ -26,7 +27,10 @@
   <main class="main"><div class="inner">
     <header class="top">
       <div><div class="mono" id="crumb">Luxury Earnings Tracker</div><h1 id="title">Overview</h1></div>
-      <label for="f-quarter" id="q-wrap">Quarter <select id="f-quarter"></select></label>
+      <div class="filters">
+        <label for="f-group" id="g-wrap">Peer group <select id="f-group"></select></label>
+        <label for="f-quarter" id="q-wrap">Quarter <select id="f-quarter"></select></label>
+      </div>
     </header>
     <div id="view"><p class="note">Loading the data.</p></div>
   </div></main>
@@ -36,13 +40,15 @@
 
 <template id="tpl-method">
   <div class="method">
-    <p><b>The measure.</b> Sales growth for one quarter against the same quarter a year earlier, on the underlying basis each company publishes: organic at LVMH and Prada, constant exchange rates at Hermès, Richemont and Moncler, comparable at Kering. All of them strip out currency. Organic and comparable also strip out acquisitions and disposals. The bases are close, and the basis is shown next to every company.</p>
+    <p><b>The measure.</b> Sales growth for one quarter against the same quarter a year earlier, on the underlying basis each company publishes: organic, at constant exchange rates or comparable, which all strip out currency. Organic and comparable also strip out acquisitions and disposals. Aston Martin publishes only reported growth, in sterling, and is shown that way. The basis sits next to every company.</p>
+    <p><b>Peer groups.</b> Companies are compared only with companies in the same industry: personal luxury goods or luxury autos. Every median, rank and "against peers" figure is taken inside one industry. Within personal luxury goods, each company also carries a focus: fashion and leather goods, jewellery and watches, or diversified. A median needs at least three companies behind it, so a group of one or two shows its members and no median.</p>
+    <p><b>Categories.</b> Segment lines are grouped across companies into product categories, so leather goods can be read against leather goods and jewellery against jewellery. A line inside another line, such as Gucci inside Kering's fashion line, is left out so nothing counts twice. The Other category has no median, because its lines have nothing in common.</p>
     <p><b>Calendar quarters.</b> Periods are filed under the calendar quarter in which they end. Richemont's financial year ends in March, so its July to September quarter (Q2 FY27) is listed as Q3 2026.</p>
-    <p><b>Regions.</b> Companies cut the world differently. Each reported region goes into one of five buckets and keeps the company's own label. Where a bucket is a loose fit, the figure carries a note: LVMH reports the United States, Moncler's Asia includes Japan and Korea, and Moncler's EMEA includes the Middle East.</p>
-    <p><b>Scope differences.</b> Prada's quarterly series is retail sales on an organic basis, which is 87% of its revenue and the only measure it gives by quarter and by region. Moncler's regions are for the Moncler brand. LVMH and Kering give regional growth in their results presentations, taken here from trade press reports. Those figures are marked Press on the Data screen.</p>
-    <p><b>Nothing is derived.</b> No quarter is backed out of year-to-date figures and no missing number is estimated. An empty cell means the company did not publish it. Figures keep the rounding of the source.</p>
+    <p><b>Regions.</b> Companies cut the world differently. Each reported region goes into one of five buckets and keeps the company's own label. Where a bucket is a loose fit, the figure carries a note. The carmakers report units by region, not revenue, so they have no regional figures here.</p>
+    <p><b>Scope differences.</b> Prada's quarterly series is retail sales on an organic basis, the only measure it gives by quarter and by region. Burberry's is comparable retail sales. Moncler's regions are for the Moncler brand. Each company's notes on scope are on its page and under the regional table.</p>
+    <p><b>Nothing is derived.</b> No quarter is backed out of year-to-date figures and no missing number is estimated. An empty cell means the company did not publish it. Figures keep the rounding of the source. Porsche is not tracked for this reason: it publishes revenue for the year to date, not for the quarter.</p>
     <p><b>Model.</b> Change is growth against the prior quarter, in points. Two-year growth compounds this quarter with the same quarter a year earlier. The base is the growth being lapped: a higher base next quarter makes growth harder to show. The Asia gap is Asia ex-Japan growth minus group growth.</p>
-    <p><b>Signals.</b> Fixed rules, so the same numbers always give the same words. Accelerating or slowing needs a move of at least <span data-t="momentum_pts">1</span> point. Ahead of or behind peers needs <span data-t="level_pts">2</span> points from the median of the others. An Asia drag or lift needs a gap of <span data-t="asia_gap_pts">3</span> points. A base effect is flagged from <span data-t="base_shift_pts">2</span> points.</p>
+    <p><b>Signals.</b> Fixed rules, so the same numbers always give the same words. Accelerating or slowing needs a move of at least <span data-t="momentum_pts">1</span> point. Ahead of or behind peers needs <span data-t="level_pts">2</span> points from the median of the others in the same industry. An Asia drag or lift needs a gap of <span data-t="asia_gap_pts">3</span> points. A base effect is flagged from <span data-t="base_shift_pts">2</span> points.</p>
     <p><b>Checks.</b> A figure found by the pipeline enters the dataset only when its quoted words and its number are both in the release. Each update arrives as a pull request for a person to approve. The checks catch copying errors. They do not confirm that a release is genuine, so research is limited to company sites and regulatory wires.</p>
     <p><b>Use.</b> This is a study project built from public company releases. It gives no investment advice.</p>
   </div>

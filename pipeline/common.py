@@ -14,6 +14,7 @@ DERIVED = DATA / "derived.json"          # output of the model stage
 COMMENTARY = DATA / "commentary.json"    # output of the interpret stage
 REVIEW = DATA / "review"                 # drafts waiting for a human
 WATCHLIST = ROOT / "config" / "watchlist.json"
+TAXONOMY = ROOT / "config" / "categories.json"   # industries, focus groups and segment categories
 
 # The five region buckets every company is mapped into.
 REGIONS = [
@@ -133,3 +134,30 @@ def skipped_quarters(entry: dict | None) -> set[int]:
     """
     found = {int(n) for n in ((entry or {}).get("skip_quarters") or []) if str(n) in ("1", "2", "3", "4")}
     return found if len(found) < 4 else set()
+
+
+_TAXONOMY_CACHE: dict | None = None
+
+
+def taxonomy(reload: bool = False) -> dict:
+    """The grouping in config/categories.json. Read once per run."""
+    global _TAXONOMY_CACHE
+    if _TAXONOMY_CACHE is None or reload:
+        _TAXONOMY_CACHE = load(TAXONOMY, {}) or {}
+    return _TAXONOMY_CACHE
+
+
+def industry_of(company: dict, tax: dict) -> str:
+    """The peer group a company belongs to. A company the file does not list joins the first industry."""
+    first = ((tax.get("industries") or [{}])[0]).get("id", "goods")
+    return ((tax.get("companies") or {}).get(company.get("id")) or {}).get("industry") or first
+
+
+def focus_of(company: dict, tax: dict) -> str | None:
+    return ((tax.get("companies") or {}).get(company.get("id")) or {}).get("focus")
+
+
+def segment_category(company: dict, name: str, tax: dict) -> str | None:
+    """The category of one segment line. None for a line inside another line. "other" for a line the file does not list."""
+    mapping = (tax.get("segments") or {}).get(company.get("id")) or {}
+    return mapping[name] if name in mapping else "other"

@@ -13,7 +13,7 @@ from datetime import date, timedelta
 
 from . import model
 from .common import (BASES, DERIVED, GROWTH_RANGE, QUARTER_RE, REGION_KEYS, SITE, WATCHLIST, growth, is_num, load, plausible,
-                     prev_quarter, quarter_label, skipped_quarters)
+                     prev_quarter, quarter_label, skipped_quarters, taxonomy)
 
 ID_RE = re.compile(r"^[a-z0-9][a-z0-9-]{0,60}$")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
@@ -76,7 +76,9 @@ def check_company(c: dict, errors: list, warnings: list, skipped: frozenset = fr
             continue   # the company publishes no figure for these quarters alone
         if missing:
             warnings.append(f"{name}: no figure between {quarter_label(a)} and {quarter_label(b)}.")
-        elif is_num(series[a].get("g")) and is_num(series[b].get("g")) and abs(series[b]["g"] - series[a]["g"]) > SWING_PTS:
+        # A large move a person has checked against the release carries a note saying why, and is not flagged again.
+        elif (is_num(series[a].get("g")) and is_num(series[b].get("g")) and abs(series[b]["g"] - series[a]["g"]) > SWING_PTS
+              and not series[b].get("checked")):
             warnings.append(f"{name}: growth moved {series[b]['g'] - series[a]['g']:+.1f} pts from {quarter_label(a)} to {quarter_label(b)}. Check both figures.")
 
     for q, cells in (c.get("regions") or {}).items():
@@ -112,6 +114,32 @@ def check_company(c: dict, errors: list, warnings: list, skipped: frozenset = fr
     return figures
 
 
+def check_taxonomy(companies: list[dict], tax: dict, errors: list, warnings: list) -> None:
+    """Every company sits in a known industry, and every segment line in a category."""
+    if not tax:
+        return
+    industries = {i.get("id") for i in tax.get("industries") or []}
+    focus = {f.get("id") for f in tax.get("focus") or []}
+    cats = {c.get("id") for c in tax.get("categories") or []}
+    for cid, entry in (tax.get("companies") or {}).items():
+        if entry.get("industry") not in industries:
+            errors.append(f"categories.json: {cid} has industry {entry.get('industry')!r}, which is not listed.")
+        if entry.get("focus") is not None and entry.get("focus") not in focus:
+            errors.append(f"categories.json: {cid} has focus {entry.get('focus')!r}, which is not listed.")
+    for cid, mapping in (tax.get("segments") or {}).items():
+        for name, cat in mapping.items():
+            if cat is not None and cat not in cats:
+                errors.append(f"categories.json: segment {name!r} of {cid} maps to {cat!r}, which is not a category.")
+    listed = tax.get("companies") or {}
+    missing = [c.get("name") for c in companies if c.get("id") not in listed]
+    if missing:
+        warnings.append("Not in config/categories.json, so grouped with the first industry: " + ", ".join(missing) + ".")
+    unmapped = sorted({f"{c.get('name')}: {seg.get('name')}" for c in companies for segs in (c.get("segments") or {}).values()
+                       for seg in segs if seg.get("name") not in ((tax.get("segments") or {}).get(c.get("id")) or {})})
+    if unmapped:
+        warnings.append("Segments with no category, counted as Other: " + "; ".join(unmapped) + ".")
+
+
 def validate(dataset: dict, watchlist: dict | None = None, today: date | None = None) -> dict:
     # errors stop the build. warnings are standing notes. alerts are the warnings that mean
     # "something is overdue", which the weekly watch sends to the owner.
@@ -127,6 +155,7 @@ def validate(dataset: dict, watchlist: dict | None = None, today: date | None = 
     entries = {entry.get("id"): entry for entry in (watchlist or {}).get("companies", [])}
     for c in companies:
         figures += check_company(c, errors, warnings, frozenset(skipped_quarters(entries.get(c.get("id")))))
+    check_taxonomy(companies, taxonomy(), errors, warnings)
     quarters = sorted({q for c in companies for q in (c.get("series") or {}) if QUARTER_RE.match(q)})
     if quarters and dataset.get("latest") != quarters[-1]:
         errors.append(f"latest is {dataset.get('latest')!r} but the newest quarter in the data is {quarters[-1]}.")
