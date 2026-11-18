@@ -9158,148 +9158,212 @@
       },
       "companies": {
         "lvmh": {
-          "note": "Growth was +1% in Q3 2026 (organic), down 2 pts from +3% in Q2 2026. Japan led the regions at +6%. Asia excl. Japan was weakest at −5%. Asia excl. Japan moved from +4% to −5%, a swing of −9 pts. Compounded with the same quarter a year earlier, growth is +2% over two years. That is 3.2 pts behind the median of the other companies.",
+          "note": "LVMH organic growth was 1% in Q3 2026, down from 3% in Q2 2026, a slowdown of 2 points. Asia excl. Japan drove the change, moving from 4% to -5%, a swing of 9 points. Japan grew 6%, Europe 4% and United States 5%. Fashion & Leather Goods was -5%. Growth sat 3.2 points below the median of the other personal luxury goods companies at 4.2%.",
           "themes": [
-            "Asia drag"
+            "Asia drag",
+            "Slowing growth",
+            "Fashion weakness",
+            "Behind peers"
           ],
-          "watch": "",
-          "by": "rules",
-          "at": "2026-11-18T03:00:58Z"
+          "watch": "Check whether Asia excl. Japan returns to growth and whether Fashion & Leather Goods improves from -5%, against a group comparison base of 1%.",
+          "by": "claude-sonnet-5-5",
+          "at": "2026-11-18T03:18:45Z",
+          "figures": "798bd340717f"
         },
         "hermes": {
-          "note": "Growth was +4.3% in Q3 2026 (at constant exchange rates), down 2.4 pts from +6.7% in Q2 2026. Japan led the regions at +9.6%. Other (Middle East) was weakest at −4.5%. Asia-Pacific excl. Japan moved from +2.5% to 0%, a swing of −2.5 pts. Compounded with the same quarter a year earlier, growth is +14.3% over two years. That is 1.8 pts ahead of the median of the other companies.",
+          "note": "Hermès growth at Constant FX was 4.3% in Q3 2026, versus 6.7% in Q2 2026, a slowdown of 2.4 points. The Americas was the main driver, with its rate falling 4.9 points to 8.8%. Asia-Pacific excl. Japan was 0%, down 2.5 points. Growth was 1.8 points above the median of the other personal luxury goods companies at 2.5%. Three of five regions grew.",
           "themes": [
-            "Asia drag"
+            "Slowing growth",
+            "Asia drag",
+            "Americas deceleration",
+            "Leather strength"
           ],
-          "watch": "",
-          "by": "rules",
-          "at": "2026-11-18T03:00:58Z"
+          "watch": "Check whether Asia-Pacific excl. Japan moves off 0% and whether the Americas rate holds near 8.8% against the 9.8% comparison the group must lap.",
+          "by": "claude-sonnet-5-5",
+          "at": "2026-11-18T03:18:48Z",
+          "figures": "40eb7a655054"
         },
         "kering": {
-          "note": "Growth was −1% in Q3 2026 (comparable), down 3 pts from +2% in Q2 2026. Japan led the regions at +4%. Asia Pacific was weakest at −5%. Compounded with the same quarter a year earlier, growth is −6.9% over two years. That is 5.2 pts behind the median of the other companies.",
+          "note": "Kering's comparable growth was -1% in Q3 2026, down from 2% in Q2 2026, a change of -3 points. Asia Pacific fell 5%, with lower store traffic weighing on Mainland China, and on Japan for Gucci. Gucci was -6% within Kering Fashion & Leather Goods at -3%, while Kering Jewelry grew 11%. Growth was 3 points behind nothing but 5.2 points below the median of the other personal luxury goods companies at 4.2%. Three of five regions grew.",
           "themes": [
-            "Asia drag",
-            "Tougher base next quarter"
+            "Asia Pacific drag",
+            "Gucci weakness",
+            "Jewelry strength",
+            "Slowing momentum"
           ],
-          "watch": "",
-          "by": "rules",
-          "at": "2026-11-18T03:00:58Z"
+          "watch": "Check whether Asia Pacific and Gucci retail sales improve against the tougher base of -3% group growth that Kering must lap next quarter.",
+          "by": "claude-sonnet-5-5",
+          "at": "2026-11-18T03:18:51Z",
+          "figures": "ce062b299b19"
         },
         "richemont": {
-          "note": "Growth was +13% in Q3 2026 (at constant exchange rates), down 7 pts from +20% in Q2 2026. Japan led the regions at +23%. Middle East & Africa was weakest at −7%. Asia Pacific moved from +21% to +10%, a swing of −11 pts. Compounded with the same quarter a year earlier, growth is +28.8% over two years. That is 10.5 pts ahead of the median of the other companies.",
+          "note": "Richemont's Q3 2026 growth at Constant FX was 13%, down from 20% in Q2 2026, a slowdown of 7 points. Asia Pacific grew 10%, 11 points slower than the prior quarter, and Japan's change was -13 points. Four of five regions grew, while Middle East & Africa was -7%. Growth was 10.5 points ahead of the median of the other personal luxury goods companies at 2.5%.",
           "themes": [
-            "Asia drag",
-            "Easier base next quarter"
+            "Slowing growth",
+            "Asia Pacific drag",
+            "Japan deceleration",
+            "Easier base"
           ],
-          "watch": "",
-          "by": "rules",
-          "at": "2026-11-18T03:00:58Z"
+          "watch": "Check whether Asia Pacific growth steadies against the 11% group growth being lapped, and whether Middle East & Africa returns to growth.",
+          "by": "claude-sonnet-5-5",
+          "at": "2026-11-18T03:18:53Z",
+          "figures": "f3990fb33fde"
         },
         "moncler": {
-          "note": "Growth was 0% in Q3 2026 (at constant exchange rates), down 5 pts from +5% in Q2 2026. Asia (APAC, Japan, Korea) led the regions at +5%. EMEA was weakest at −8%. Asia (APAC, Japan, Korea) moved from +12% to +5%, a swing of −7 pts. Compounded with the same quarter a year earlier, growth is −1% over two years. That is 4.2 pts behind the median of the other companies.",
+          "note": "Moncler's Q3 2026 growth at Constant FX was 0%, down from 5% in Q2 2026, a slowdown of 5 points. Asia (APAC, Japan, Korea) was the main driver: it grew 5%, 7 points slower than the prior quarter. EMEA fell 8% on softer local demand and subdued tourist flows, while the Americas grew 2%. Growth was 4.2 points behind the median of the other personal luxury goods companies at 4.2%.",
           "themes": [
-            "Asia lift",
-            "Tougher base next quarter"
+            "Slowing growth",
+            "Asia deceleration",
+            "EMEA weakness",
+            "Tougher base"
           ],
-          "watch": "",
-          "by": "rules",
-          "at": "2026-11-18T03:00:58Z"
+          "watch": "Check whether Asia (APAC, Japan, Korea) growth steadies and whether EMEA improves, given that the group must lap growth of 7% next quarter.",
+          "by": "claude-sonnet-5-5",
+          "at": "2026-11-18T03:18:56Z",
+          "figures": "faeed2b02f6a"
         },
         "prada": {
-          "note": "Growth was 0% in Q3 2026 (organic), down 5 pts from +5% in Q2 2026. Americas led the regions at +5%. Middle East was weakest at −18%. Asia Pacific moved from +8% to 0%, a swing of −8 pts. Compounded with the same quarter a year earlier, growth is +7.6% over two years. That is 4.2 pts behind the median of the other companies.",
+          "note": "Prada Group organic growth was 0% in Q3 2026, down from 5% in Q2 2026, a fall of 5 points. The driver was the Americas, where the change was -14 points, leaving growth at 5%. Asia Pacific was 0%, an 8 point slowdown, with subdued Mainland China traffic offset by Korea, Hong Kong and Macau. Europe was -3% and the Middle East was -18%. Only 1 of 5 regions grew. Growth was 4.2 points below the median of the other personal luxury goods companies.",
           "themes": [
+            "Slowing growth",
+            "Americas slowdown",
             "Narrow growth",
-            "Easier base next quarter"
+            "Behind peers"
           ],
-          "watch": "",
-          "by": "rules",
-          "at": "2026-11-18T03:00:58Z"
+          "watch": "Check whether the Americas and Asia Pacific recover and more than 1 of 5 regions grows, against an easier base of 5.6% to lap.",
+          "by": "claude-sonnet-5-5",
+          "at": "2026-11-18T03:18:59Z",
+          "figures": "79992bc70b20"
         },
         "burberry": {
-          "note": "Growth was +4% in Q3 2026 (comparable), down 1 pt from +5% in Q2 2026. Americas led the regions at +11%. EMEIA was weakest at −2%. Greater China moved from +9% to +5%, a swing of −4 pts. Compounded with the same quarter a year earlier, growth is +6.1% over two years. That is 1.4 pts ahead of the median of the other companies.",
-          "themes": [],
-          "watch": "",
-          "by": "rules",
-          "at": "2026-11-18T03:00:58Z"
+          "note": "Burberry's comparable growth was 4% in Q3 2026, down from 5% in Q2 2026, a fall of 1 point. Greater China drove the slowdown, growing 5% after 9% the quarter before, a drop of 4 points. Americas grew 11% while EMEIA was -2%. Two of three regions grew. Group growth was 1.4 points above the median of the other personal luxury goods companies at 2.6%.",
+          "themes": [
+            "Slowing momentum",
+            "Greater China",
+            "Americas strength",
+            "EMEIA decline"
+          ],
+          "watch": "Check whether Greater China comparable retail sales growth stabilises against the 5% reported this quarter and whether EMEIA returns to growth from -2%.",
+          "by": "claude-sonnet-5-5",
+          "at": "2026-11-18T03:19:02Z",
+          "figures": "89553535449e"
         },
         "zegna": {
-          "note": "Growth was +8.2% in Q3 2026 (organic), down 2.8 pts from +11% in Q2 2026. Americas led the regions at +13.6%. Greater China Region was weakest at +5.7%. Greater China Region moved from +8.6% to +5.7%, a swing of −2.9 pts. Compounded with the same quarter a year earlier, growth is +12.1% over two years. That is 5.7 pts ahead of the median of the other companies.",
-          "themes": [],
-          "watch": "",
-          "by": "rules",
-          "at": "2026-11-18T03:00:58Z"
+          "note": "Zegna Group's organic growth was 8.2% in Q3 2026, down from 11.0% in Q2 2026, a slowdown of 2.8 points. The two-year stack was 12.1%. Americas was the main driver of the change, at 13.6% growth. The Greater China Region grew 5.7%, after 8.6% in the second quarter. Thom Browne fell 7.4%. Growth was 5.7 points above the median of the other personal luxury goods companies, at 2.5%.",
+          "themes": [
+            "Slowing growth",
+            "Americas strength",
+            "Thom Browne decline",
+            "China slowdown"
+          ],
+          "watch": "Check whether the Greater China Region growth of 5.7% steadies or slows again, and whether Thom Browne, which was -7.4%, is still held back by that slowdown.",
+          "by": "claude-sonnet-5-5",
+          "at": "2026-11-18T03:19:04Z",
+          "figures": "11ceb42943ea"
         },
         "cucinelli": {
-          "note": "Growth was +13.5% in Q3 2026 (at constant exchange rates). Compounded with the same quarter a year earlier, growth is +27.7% over two years. That is 11 pts ahead of the median of the other companies.",
-          "themes": [],
-          "watch": "",
-          "by": "rules",
-          "at": "2026-11-18T03:00:58Z"
+          "note": "Brunello Cucinelli grew 13.5% at Constant FX in Q3 2026, but there is no prior quarter figure, so no change against Q2 2026 can be shown. The company publishes second-quarter sales only inside the half year. The two-year stack was 27.7%. Growth was 11.0 points ahead of the median of the other personal luxury goods companies at 2.5%. Management cites strong growth in China but gives no figure.",
+          "themes": [
+            "Constant FX growth",
+            "Ahead of peers",
+            "China contribution",
+            "Raised guidance"
+          ],
+          "watch": "Check whether the company publishes regional figures for the quarter and puts a growth number on China and Asia, and how growth compares with the 11.9% the group must lap next quarter.",
+          "by": "claude-sonnet-5-5",
+          "at": "2026-11-18T03:19:07Z",
+          "figures": "d4890764d10d"
         },
         "ferragamo": {
-          "note": "Growth was −3.5% in Q3 2026 (at constant exchange rates), down 8.1 pts from +4.6% in Q2 2026. North America led the regions at +2.4%. Asia Pacific was weakest at −11.1%. Asia Pacific moved from −0.6% to −11.1%, a swing of −10.5 pts. Compounded with the same quarter a year earlier, growth is −1.9% over two years. That is 7.7 pts behind the median of the other companies.",
+          "note": "Ferragamo's Q3 2026 growth at Constant FX was -3.5%, down from 4.6% in Q2 2026, a change of -8.1 points. Asia Pacific was the main drag, at -11.1% after a 0.6% decline in the prior quarter. North America was the only region that grew, at 2.4%. Japan was -5.0% and EMEA was -5.2%. Growth was 7.7 points behind the median of the other personal luxury goods companies, at 4.2%.",
           "themes": [
-            "Asia drag",
+            "Asia Pacific drag",
             "Narrow growth",
-            "Easier base next quarter"
+            "Slowing momentum",
+            "Behind peers"
           ],
-          "watch": "",
-          "by": "rules",
-          "at": "2026-11-18T03:00:58Z"
+          "watch": "Check whether Asia Pacific, and China in particular, stops deteriorating and whether growth broadens beyond North America against the easier base of -2.0% in the year-earlier quarter.",
+          "by": "claude-sonnet-5-5",
+          "at": "2026-11-18T03:19:10Z",
+          "figures": "167ec534b3d0"
         },
         "pandora": {
-          "note": "Growth was +6% in Q3 2026 (organic), up 3 pts from +3% in Q2 2026. Compounded with the same quarter a year earlier, growth is +12.4% over two years. That is 3.5 pts ahead of the median of the other companies.",
+          "note": "Pandora's organic growth was 6% in Q3 2026, up from 3% in Q2 2026, a change of 3 points. That is ahead of the median of the other personal luxury goods companies at 2.5%, a gap of 3.5 points. Management said Asia-Pacific like-for-like sales grew 20%, led by Japan. Guidance was narrowed to organic growth of 2% to 3% in 2026 from 0% to 3%, with an EBIT margin of 22.5% to 23%.",
           "themes": [
-            "Easier base next quarter"
+            "Accelerating organic growth",
+            "Asia-Pacific strength",
+            "Narrowed guidance",
+            "Easier base"
           ],
-          "watch": "",
-          "by": "rules",
-          "at": "2026-11-18T03:00:58Z"
+          "watch": "Check whether organic growth holds against the 4% growth it laps next quarter and whether Asia-Pacific like-for-like sales stay led by Japan.",
+          "by": "claude-sonnet-5-5",
+          "at": "2026-11-18T03:19:13Z",
+          "figures": "992e4e63600b"
         },
         "ferrari": {
-          "note": "Growth was +10% in Q3 2026 (at constant exchange rates), down 1 pt from +11% in Q2 2026. Compounded with the same quarter a year earlier, growth is +20.2% over two years.",
+          "note": "Ferrari's Q3 2026 growth at Constant FX was 10%, down from 11% in Q2 2026, a slowdown of 1 point. Cars and spare parts grew 10%, Sponsorship, commercial and brand grew 7%, and Other grew 17%. The two-year stack is 20.2%. Ferrari shipped 3,368 cars, 33 fewer than a year earlier. Guidance is about €7.65 billion in 2026, raised from about €7.60 billion.",
           "themes": [
-            "Easier base next quarter"
+            "Slowing growth",
+            "Guidance raised",
+            "Easier base",
+            "Cars and spare parts"
           ],
-          "watch": "",
-          "by": "rules",
-          "at": "2026-11-18T02:24:36Z"
+          "watch": "Check whether growth in cars and spare parts holds against the easier base of 6% to be lapped next quarter, and whether shipments rise or fall against the year earlier.",
+          "by": "claude-sonnet-5-5",
+          "at": "2026-11-18T03:19:15Z",
+          "figures": "352df0523973"
         },
         "aston-martin": {
-          "note": "Growth was +36% in Q3 2026 (as reported), down 26 pts from +62% in Q2 2026. Compounded with the same quarter a year earlier, growth is −0.7% over two years.",
+          "note": "Aston Martin's reported revenue growth was 36% in Q3 2026, against 62% in Q2 2026, a slowdown of 26 points. The company gives no revenue by region or segment, so the change cannot be traced to a market. The scope note says Valhalla deliveries make revenue swing from quarter to quarter. Growth a year earlier was -27%, and the rate to lap next quarter is -12%. Full-year 2026 guidance is unchanged.",
           "themes": [
-            "Tougher base next quarter"
+            "Slowing growth",
+            "Valhalla deliveries",
+            "Tougher base",
+            "Unchanged guidance"
           ],
-          "watch": "",
-          "by": "rules",
-          "at": "2026-11-18T02:24:36Z"
+          "watch": "Check whether reported revenue growth holds up against the tougher base of -12% and whether Valhalla deliveries again drive the quarterly swing.",
+          "by": "claude-sonnet-5-5",
+          "at": "2026-11-18T03:19:18Z",
+          "figures": "4541ac17e1eb"
         },
         "ralph-lauren": {
-          "note": "Growth was +10% in Q3 2026 (at constant exchange rates), down 3 pts from +13% in Q2 2026. Asia (incl. Japan) led the regions at +28%. Europe was weakest at +3%. Asia (incl. Japan) moved from +25% to +28%, a swing of +3 pts. Compounded with the same quarter a year earlier, growth is +25.4% over two years. That is 6.5 pts ahead of the median of the other companies.",
+          "note": "Ralph Lauren's constant FX growth was 10% in Q3 2026, down from 13% in Q2 2026, a change of -3 points. North America was the main driver, with its contribution down 7 points, and it grew 6%. Europe grew 3%. Asia (incl. Japan) grew 28%, up 3 points. All 3 reported regions grew. Growth was 6.5 points ahead of the median of the other accessible luxury companies at 3.5%.",
           "themes": [
-            "Asia lift",
-            "Easier base next quarter"
+            "Slowing growth",
+            "Asia strength",
+            "North America drag",
+            "Ahead of peers"
           ],
-          "watch": "",
-          "by": "rules",
-          "at": "2026-11-18T03:06:22Z"
+          "watch": "Check whether North America growth steadies against the 10% group growth that is to be lapped next quarter, and whether Asia (incl. Japan) holds its pace.",
+          "by": "claude-sonnet-5-5",
+          "at": "2026-11-18T03:19:22Z",
+          "figures": "521aca9d8b67"
         },
         "tapestry": {
-          "note": "Growth was +12% in Q3 2026 (at constant exchange rates), up 1 pt from +11% in Q2 2026. Greater China led the regions at +39%. North America was weakest at +4%. Greater China moved from +28% to +39%, a swing of +11 pts. Compounded with the same quarter a year earlier, growth is +29.9% over two years. That is 9.4 pts ahead of the median of the other companies.",
+          "note": "Tapestry's constant FX growth was 12% in Q3 2026, up from 11% in Q2 2026, a gain of 1 point. Greater China drove the change, growing 39%, 11 points faster than the prior quarter. Europe grew 22%, while North America and Japan each grew 4%. Coach grew 16% and Kate Spade was -10%. Growth was 9.4 points above the median of the other accessible luxury companies at 2.5%. All 4 reported regions grew.",
           "themes": [
-            "Asia lift",
-            "Tougher base next quarter"
+            "Greater China lift",
+            "Coach strength",
+            "Kate Spade decline",
+            "Tougher comparison"
           ],
-          "watch": "",
-          "by": "rules",
-          "at": "2026-11-18T03:06:22Z"
+          "watch": "Check whether Greater China growth holds up against the 18% group growth the company must lap next quarter, and whether Kate Spade improves from -10%.",
+          "by": "claude-sonnet-5-5",
+          "at": "2026-11-18T03:19:24Z",
+          "figures": "677affded2ae"
         },
         "capri": {
-          "note": "Growth was −4.9% in Q3 2026 (at constant exchange rates), down 0.8 pts from −4.1% in Q2 2026. Compounded with the same quarter a year earlier, growth is −8.9% over two years. That is 15.9 pts behind the median of the other companies.",
-          "themes": [],
-          "watch": "",
-          "by": "rules",
-          "at": "2026-11-18T03:06:22Z"
+          "note": "Capri Holdings' constant FX growth was -4.9% in Q3 2026, against -4.1% in Q2 2026, a change of -0.8 points. The two-year stack was -8.9%. Michael Kors fell 8.0% while Jimmy Choo grew 12.2%. The company was 15.9 points behind the median of the other accessible luxury companies, which grew 11.0%. Capri gives no regional growth, and no figure for China.",
+          "themes": [
+            "Steady momentum",
+            "Behind peers",
+            "Michael Kors decline",
+            "Jimmy Choo growth"
+          ],
+          "watch": "Check whether Michael Kors growth improves from -8.0% and whether Jimmy Choo keeps growing against the comparison of -5.9% for the whole company.",
+          "by": "claude-sonnet-5-5",
+          "at": "2026-11-18T03:19:27Z",
+          "figures": "117d689180df"
         }
       }
     }
@@ -9503,126 +9567,8 @@
     }
   },
   "meta": {
-    "built_at": "2026-11-18T03:11:48Z",
+    "built_at": "2026-11-18T03:19:30Z",
     "runs": [
-      {
-        "at": "2026-11-18T02:09:56Z",
-        "command": "eval",
-        "results": [
-          {
-            "company": "All",
-            "quarter": "2026Q3",
-            "status": "extraction matched 25 of 25 verified figures",
-            "detail": "6 of 10 releases could be read; Kering: www.globenewswire.com answered HTTP 403; Moncler: www.monclergroup.com answered HTTP 403; Burberry: www.burberryplc.com answered HTTP 403; Zegna Group: ir.zegnagroup.com answered HTTP 403"
-          }
-        ],
-        "usage": {
-          "steps": {
-            "extract": {
-              "calls": 6,
-              "input": 56923,
-              "output": 12142,
-              "searches": 0,
-              "usd": 0.2353,
-              "model": "claude-sonnet-5-5"
-            }
-          },
-          "estimated_usd": 0.2353
-        }
-      },
-      {
-        "at": "2026-11-18T02:10:40Z",
-        "command": "interpret",
-        "results": [
-          {
-            "company": "LVMH",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          },
-          {
-            "company": "Hermès",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          },
-          {
-            "company": "Kering",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          },
-          {
-            "company": "Richemont",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          },
-          {
-            "company": "Moncler",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          },
-          {
-            "company": "Prada Group",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          },
-          {
-            "company": "Burberry",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          },
-          {
-            "company": "Zegna Group",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          },
-          {
-            "company": "Brunello Cucinelli",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          },
-          {
-            "company": "Ferragamo",
-            "status": "note by claude-sonnet-5-5",
-            "detail": ""
-          }
-        ],
-        "usage": {
-          "steps": {
-            "interpret": {
-              "calls": 10,
-              "input": 12681,
-              "output": 2529,
-              "searches": 0,
-              "usd": 0.0506,
-              "model": "claude-sonnet-5-5"
-            }
-          },
-          "estimated_usd": 0.0507
-        }
-      },
-      {
-        "at": "2026-11-18T02:52:21Z",
-        "command": "update",
-        "results": [
-          {
-            "company": "LVMH",
-            "status": "no newer release",
-            "detail": "This is LVMH's own investor-site publication of its Q3 2026 revenue release, dated Paris, 12 October 2026, and it is the newest LVMH sales release I found (the Q1 and H1 releases are older). It includ"
-          }
-        ],
-        "usage": {
-          "steps": {
-            "research": {
-              "calls": 1,
-              "input": 21928,
-              "output": 1069,
-              "searches": 2,
-              "usd": 0.0227,
-              "model": "claude-haiku-5-5"
-            }
-          },
-          "estimated_usd": 0.0227
-        }
-      },
       {
         "at": "2026-11-18T02:54:12Z",
         "command": "eval",
@@ -9726,6 +9672,154 @@
           },
           "estimated_usd": 0.0625
         }
+      },
+      {
+        "at": "2026-11-18T03:16:46Z",
+        "command": "update",
+        "results": [
+          {
+            "company": "LVMH",
+            "status": "no newer release",
+            "detail": "The LVMH investor site hosts the 12 October 2026 revenue release, which includes a third-quarter revenue table (€18,504m for Q3 2026 versus €18,280m a year earlier) and a nine-month table, so it meets"
+          }
+        ],
+        "usage": {
+          "steps": {
+            "research": {
+              "calls": 1,
+              "input": 22164,
+              "output": 1171,
+              "searches": 2,
+              "usd": 0.0228,
+              "model": "claude-haiku-5-5"
+            }
+          },
+          "estimated_usd": 0.0228
+        }
+      },
+      {
+        "at": "2026-11-18T03:18:44Z",
+        "command": "eval",
+        "results": [
+          {
+            "company": "All",
+            "quarter": "2026Q3",
+            "status": "extraction matched 26 of 28 verified figures",
+            "detail": "9 of 16 releases could be read; Kering: www.globenewswire.com answered HTTP 403; Moncler: www.monclergroup.com answered HTTP 403; Burberry: www.burberryplc.com answered HTTP 403; Zegna Group: ir.zegnagroup.com answered HTTP 403; Ralph Lauren: www.sec.gov answered HTTP 403; Tapestry: www.sec.gov answered HTTP 403; Capri Holdings: www.sec.gov answered HTTP 403"
+          }
+        ],
+        "usage": {
+          "steps": {
+            "extract": {
+              "calls": 9,
+              "input": 78839,
+              "output": 15305,
+              "searches": 0,
+              "usd": 0.3109,
+              "model": "claude-sonnet-5-5"
+            }
+          },
+          "estimated_usd": 0.3107
+        }
+      },
+      {
+        "at": "2026-11-18T03:19:30Z",
+        "command": "interpret",
+        "results": [
+          {
+            "company": "LVMH",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Hermès",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Kering",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Richemont",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Moncler",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Prada Group",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Burberry",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Zegna Group",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Brunello Cucinelli",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Ferragamo",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Pandora",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Ferrari",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Aston Martin",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Ralph Lauren",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Tapestry",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          },
+          {
+            "company": "Capri Holdings",
+            "status": "note by claude-sonnet-5-5",
+            "detail": ""
+          }
+        ],
+        "usage": {
+          "steps": {
+            "interpret": {
+              "calls": 16,
+              "input": 21624,
+              "output": 4113,
+              "searches": 0,
+              "usd": 0.0846,
+              "model": "claude-sonnet-5-5"
+            }
+          },
+          "estimated_usd": 0.0844
+        }
       }
     ],
     "quality": {
@@ -9734,34 +9828,38 @@
       "warnings": []
     },
     "eval": {
-      "at": "2026-11-18T02:54:12Z",
+      "at": "2026-11-18T03:18:44Z",
       "quarter": "2026Q3",
       "model": "claude-sonnet-5-5",
       "hits": 26,
-      "total": 27,
-      "releases": 12,
-      "read": 8,
+      "total": 28,
+      "releases": 16,
+      "read": 9,
       "misses": [
+        "Prada Group group: expected 0, extracted None",
         "Aston Martin group: expected 36, extracted None"
       ],
       "skipped": [
         "Kering: www.globenewswire.com answered HTTP 403",
         "Moncler: www.monclergroup.com answered HTTP 403",
         "Burberry: www.burberryplc.com answered HTTP 403",
-        "Zegna Group: ir.zegnagroup.com answered HTTP 403"
+        "Zegna Group: ir.zegnagroup.com answered HTTP 403",
+        "Ralph Lauren: www.sec.gov answered HTTP 403",
+        "Tapestry: www.sec.gov answered HTTP 403",
+        "Capri Holdings: www.sec.gov answered HTTP 403"
       ],
       "usage": {
         "steps": {
           "extract": {
-            "calls": 8,
-            "input": 74016,
-            "output": 14978,
+            "calls": 9,
+            "input": 78839,
+            "output": 15305,
             "searches": 0,
-            "usd": 0.2978,
+            "usd": 0.3109,
             "model": "claude-sonnet-5-5"
           }
         },
-        "estimated_usd": 0.2978
+        "estimated_usd": 0.3107
       }
     },
     "thresholds": {
