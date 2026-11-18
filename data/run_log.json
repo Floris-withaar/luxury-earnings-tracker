@@ -1,16 +1,5 @@
 [
   {
-    "at": "2026-11-15T09:00:00Z",
-    "command": "seed",
-    "results": [
-      {
-        "company": "Six companies",
-        "quarter": "2026Q3",
-        "status": "entered and checked by hand against the sources"
-      }
-    ]
-  },
-  {
     "at": "2026-11-16T01:53:53Z",
     "command": "update",
     "results": [
@@ -993,6 +982,154 @@
         }
       },
       "estimated_usd": 0.0625
+    }
+  },
+  {
+    "at": "2026-11-18T03:16:46Z",
+    "command": "update",
+    "results": [
+      {
+        "company": "LVMH",
+        "status": "no newer release",
+        "detail": "The LVMH investor site hosts the 12 October 2026 revenue release, which includes a third-quarter revenue table (€18,504m for Q3 2026 versus €18,280m a year earlier) and a nine-month table, so it meets"
+      }
+    ],
+    "usage": {
+      "steps": {
+        "research": {
+          "calls": 1,
+          "input": 22164,
+          "output": 1171,
+          "searches": 2,
+          "usd": 0.0228,
+          "model": "claude-haiku-5-5"
+        }
+      },
+      "estimated_usd": 0.0228
+    }
+  },
+  {
+    "at": "2026-11-18T03:18:44Z",
+    "command": "eval",
+    "results": [
+      {
+        "company": "All",
+        "quarter": "2026Q3",
+        "status": "extraction matched 26 of 28 verified figures",
+        "detail": "9 of 16 releases could be read; Kering: www.globenewswire.com answered HTTP 403; Moncler: www.monclergroup.com answered HTTP 403; Burberry: www.burberryplc.com answered HTTP 403; Zegna Group: ir.zegnagroup.com answered HTTP 403; Ralph Lauren: www.sec.gov answered HTTP 403; Tapestry: www.sec.gov answered HTTP 403; Capri Holdings: www.sec.gov answered HTTP 403"
+      }
+    ],
+    "usage": {
+      "steps": {
+        "extract": {
+          "calls": 9,
+          "input": 78839,
+          "output": 15305,
+          "searches": 0,
+          "usd": 0.3109,
+          "model": "claude-sonnet-5-5"
+        }
+      },
+      "estimated_usd": 0.3107
+    }
+  },
+  {
+    "at": "2026-11-18T03:19:30Z",
+    "command": "interpret",
+    "results": [
+      {
+        "company": "LVMH",
+        "status": "note by claude-sonnet-5-5",
+        "detail": ""
+      },
+      {
+        "company": "Hermès",
+        "status": "note by claude-sonnet-5-5",
+        "detail": ""
+      },
+      {
+        "company": "Kering",
+        "status": "note by claude-sonnet-5-5",
+        "detail": ""
+      },
+      {
+        "company": "Richemont",
+        "status": "note by claude-sonnet-5-5",
+        "detail": ""
+      },
+      {
+        "company": "Moncler",
+        "status": "note by claude-sonnet-5-5",
+        "detail": ""
+      },
+      {
+        "company": "Prada Group",
+        "status": "note by claude-sonnet-5-5",
+        "detail": ""
+      },
+      {
+        "company": "Burberry",
+        "status": "note by claude-sonnet-5-5",
+        "detail": ""
+      },
+      {
+        "company": "Zegna Group",
+        "status": "note by claude-sonnet-5-5",
+        "detail": ""
+      },
+      {
+        "company": "Brunello Cucinelli",
+        "status": "note by claude-sonnet-5-5",
+        "detail": ""
+      },
+      {
+        "company": "Ferragamo",
+        "status": "note by claude-sonnet-5-5",
+        "detail": ""
+      },
+      {
+        "company": "Pandora",
+        "status": "note by claude-sonnet-5-5",
+        "detail": ""
+      },
+      {
+        "company": "Ferrari",
+        "status": "note by claude-sonnet-5-5",
+        "detail": ""
+      },
+      {
+        "company": "Aston Martin",
+        "status": "note by claude-sonnet-5-5",
+        "detail": ""
+      },
+      {
+        "company": "Ralph Lauren",
+        "status": "note by claude-sonnet-5-5",
+        "detail": ""
+      },
+      {
+        "company": "Tapestry",
+        "status": "note by claude-sonnet-5-5",
+        "detail": ""
+      },
+      {
+        "company": "Capri Holdings",
+        "status": "note by claude-sonnet-5-5",
+        "detail": ""
+      }
+    ],
+    "usage": {
+      "steps": {
+        "interpret": {
+          "calls": 16,
+          "input": 21624,
+          "output": 4113,
+          "searches": 0,
+          "usd": 0.0846,
+          "model": "claude-sonnet-5-5"
+        }
+      },
+      "estimated_usd": 0.0844
     }
   }
 ]

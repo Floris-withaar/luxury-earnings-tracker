@@ -1,31 +1,35 @@
 {
-  "at": "2026-11-18T02:54:12Z",
+  "at": "2026-11-18T03:18:44Z",
   "quarter": "2026Q3",
   "model": "claude-sonnet-5-5",
   "hits": 26,
-  "total": 27,
-  "releases": 12,
-  "read": 8,
+  "total": 28,
+  "releases": 16,
+  "read": 9,
   "misses": [
+    "Prada Group group: expected 0, extracted None",
     "Aston Martin group: expected 36, extracted None"
   ],
   "skipped": [
     "Kering: www.globenewswire.com answered HTTP 403",
     "Moncler: www.monclergroup.com answered HTTP 403",
     "Burberry: www.burberryplc.com answered HTTP 403",
-    "Zegna Group: ir.zegnagroup.com answered HTTP 403"
+    "Zegna Group: ir.zegnagroup.com answered HTTP 403",
+    "Ralph Lauren: www.sec.gov answered HTTP 403",
+    "Tapestry: www.sec.gov answered HTTP 403",
+    "Capri Holdings: www.sec.gov answered HTTP 403"
   ],
   "usage": {
     "steps": {
       "extract": {
-        "calls": 8,
-        "input": 74016,
-        "output": 14978,
+        "calls": 9,
+        "input": 78839,
+        "output": 15305,
         "searches": 0,
-        "usd": 0.2978,
+        "usd": 0.3109,
         "model": "claude-sonnet-5-5"
       }
     },
-    "estimated_usd": 0.2978
+    "estimated_usd": 0.3107
   }
 }
