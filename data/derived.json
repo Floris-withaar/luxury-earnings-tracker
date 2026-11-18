@@ -1,8 +1,8 @@
 {
   "2024Q4": {
     "peer": {
-      "n": 9,
-      "median": 2.9,
+      "n": 10,
+      "median": 5.45,
       "median_like": null,
       "median_prev": null,
       "spread": 30,
@@ -17,8 +17,8 @@
     },
     "groups": {
       "goods": {
-        "n": 9,
-        "median": 2.9,
+        "n": 10,
+        "median": 5.45,
         "median_like": null,
         "median_prev": null,
         "spread": 30,
@@ -41,7 +41,8 @@
           "prada",
           "burberry",
           "zegna",
-          "ferragamo"
+          "ferragamo",
+          "pandora"
         ]
       },
       "autos": {
@@ -63,6 +64,27 @@
         "members": [
           "ferrari",
           "aston-martin"
+        ]
+      },
+      "accessible": {
+        "n": 2,
+        "median": null,
+        "median_like": null,
+        "median_prev": null,
+        "spread": 6,
+        "slowed": 0,
+        "compared": 0,
+        "asia_median": null,
+        "asia_median_like": null,
+        "asia_median_prev": null,
+        "asia_both": 0,
+        "asia_lagging": 0,
+        "asia_compared": 0,
+        "label": "Accessible luxury",
+        "kind": "industry",
+        "members": [
+          "ralph-lauren",
+          "tapestry"
         ]
       },
       "fashion": {
@@ -93,11 +115,11 @@
         ]
       },
       "hard": {
-        "n": 1,
+        "n": 2,
         "median": null,
         "median_like": null,
         "median_prev": null,
-        "spread": null,
+        "spread": 1,
         "slowed": 0,
         "compared": 0,
         "asia_median": null,
@@ -110,7 +132,8 @@
         "kind": "focus",
         "industry": "goods",
         "members": [
-          "richemont"
+          "richemont",
+          "pandora"
         ]
       },
       "diversified": {
@@ -163,176 +186,8 @@
         "growth": 1,
         "prev": null,
         "delta": null,
-        "vs_median": -4.5,
-        "median_others": 5.5,
-        "two_year_stack": null,
-        "base": null,
-        "next_base": null,
-        "asia": null,
-        "asia_prev": null,
-        "asia_gap": null,
-        "asia_delta": null,
-        "breadth": {
-          "growing": 0,
-          "reported": 0
-        },
-        "region_spread": null,
-        "driver": null,
-        "signal": {
-          "momentum": "No prior quarter",
-          "level": "behind peers",
-          "flags": [],
-          "label": "No prior quarter, behind peers"
-        },
-        "rank": 6,
-        "rank_of": 9
-      },
-      "hermes": {
-        "growth": 17.6,
-        "prev": null,
-        "delta": null,
-        "vs_median": 15.7,
-        "median_others": 1.9,
-        "two_year_stack": null,
-        "base": null,
-        "next_base": null,
-        "asia": null,
-        "asia_prev": null,
-        "asia_gap": null,
-        "asia_delta": null,
-        "breadth": {
-          "growing": 0,
-          "reported": 0
-        },
-        "region_spread": null,
-        "driver": null,
-        "signal": {
-          "momentum": "No prior quarter",
-          "level": "ahead of peers",
-          "flags": [],
-          "label": "No prior quarter, ahead of peers"
-        },
-        "rank": 2,
-        "rank_of": 9
-      },
-      "kering": {
-        "growth": -12,
-        "prev": null,
-        "delta": null,
-        "vs_median": -17.4,
-        "median_others": 5.5,
-        "two_year_stack": null,
-        "base": null,
-        "next_base": null,
-        "asia": null,
-        "asia_prev": null,
-        "asia_gap": null,
-        "asia_delta": null,
-        "breadth": {
-          "growing": 0,
-          "reported": 0
-        },
-        "region_spread": null,
-        "driver": null,
-        "signal": {
-          "momentum": "No prior quarter",
-          "level": "behind peers",
-          "flags": [],
-          "label": "No prior quarter, behind peers"
-        },
-        "rank": 9,
-        "rank_of": 9
-      },
-      "richemont": {
-        "growth": 10,
-        "prev": null,
-        "delta": null,
-        "vs_median": 8.1,
-        "median_others": 1.9,
-        "two_year_stack": null,
-        "base": null,
-        "next_base": null,
-        "asia": null,
-        "asia_prev": null,
-        "asia_gap": null,
-        "asia_delta": null,
-        "breadth": {
-          "growing": 0,
-          "reported": 0
-        },
-        "region_spread": null,
-        "driver": null,
-        "signal": {
-          "momentum": "No prior quarter",
-          "level": "ahead of peers",
-          "flags": [],
-          "label": "No prior quarter, ahead of peers"
-        },
-        "rank": 3,
-        "rank_of": 9
-      },
-      "moncler": {
-        "growth": 8,
-        "prev": null,
-        "delta": null,
-        "vs_median": 6.0,
-        "median_others": 1.9,
-        "two_year_stack": null,
-        "base": null,
-        "next_base": null,
-        "asia": null,
-        "asia_prev": null,
-        "asia_gap": null,
-        "asia_delta": null,
-        "breadth": {
-          "growing": 0,
-          "reported": 0
-        },
-        "region_spread": null,
-        "driver": null,
-        "signal": {
-          "momentum": "No prior quarter",
-          "level": "ahead of peers",
-          "flags": [],
-          "label": "No prior quarter, ahead of peers"
-        },
-        "rank": 4,
-        "rank_of": 9
-      },
-      "prada": {
-        "growth": 18,
-        "prev": null,
-        "delta": null,
-        "vs_median": 16.1,
-        "median_others": 1.9,
-        "two_year_stack": null,
-        "base": null,
-        "next_base": null,
-        "asia": null,
-        "asia_prev": null,
-        "asia_gap": null,
-        "asia_delta": null,
-        "breadth": {
-          "growing": 0,
-          "reported": 0
-        },
-        "region_spread": null,
-        "driver": null,
-        "signal": {
-          "momentum": "No prior quarter",
-          "level": "ahead of peers",
-          "flags": [],
-          "label": "No prior quarter, ahead of peers"
-        },
-        "rank": 1,
-        "rank_of": 9
-      },
-      "burberry": {
-        "growth": -4,
-        "prev": null,
-        "delta": null,
-        "vs_median": -9.4,
-        "median_others": 5.5,
+        "vs_median": -7,
+        "median_others": 8,
         "two_year_stack": null,
         "base": null,
         "next_base": null,
@@ -353,14 +208,14 @@
           "label": "No prior quarter, behind peers"
         },
         "rank": 7,
-        "rank_of": 9
+        "rank_of": 10
       },
-      "zegna": {
-        "growth": 2.9,
+      "hermes": {
+        "growth": 17.6,
         "prev": null,
         "delta": null,
-        "vs_median": -1.6,
-        "median_others": 4.5,
+        "vs_median": 14.7,
+        "median_others": 2.9,
         "two_year_stack": null,
         "base": null,
         "next_base": null,
@@ -376,19 +231,131 @@
         "driver": null,
         "signal": {
           "momentum": "No prior quarter",
-          "level": "in line with peers",
+          "level": "ahead of peers",
           "flags": [],
-          "label": "No prior quarter, in line with peers"
+          "label": "No prior quarter, ahead of peers"
         },
-        "rank": 5,
-        "rank_of": 9
+        "rank": 2,
+        "rank_of": 10
       },
-      "ferragamo": {
-        "growth": -4.0,
+      "kering": {
+        "growth": -12,
         "prev": null,
         "delta": null,
-        "vs_median": -9.4,
-        "median_others": 5.5,
+        "vs_median": -20,
+        "median_others": 8,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "No prior quarter",
+          "level": "behind peers",
+          "flags": [],
+          "label": "No prior quarter, behind peers"
+        },
+        "rank": 10,
+        "rank_of": 10
+      },
+      "richemont": {
+        "growth": 10,
+        "prev": null,
+        "delta": null,
+        "vs_median": 7.1,
+        "median_others": 2.9,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "No prior quarter",
+          "level": "ahead of peers",
+          "flags": [],
+          "label": "No prior quarter, ahead of peers"
+        },
+        "rank": 4,
+        "rank_of": 10
+      },
+      "moncler": {
+        "growth": 8,
+        "prev": null,
+        "delta": null,
+        "vs_median": 5.1,
+        "median_others": 2.9,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "No prior quarter",
+          "level": "ahead of peers",
+          "flags": [],
+          "label": "No prior quarter, ahead of peers"
+        },
+        "rank": 5,
+        "rank_of": 10
+      },
+      "prada": {
+        "growth": 18,
+        "prev": null,
+        "delta": null,
+        "vs_median": 15.1,
+        "median_others": 2.9,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "No prior quarter",
+          "level": "ahead of peers",
+          "flags": [],
+          "label": "No prior quarter, ahead of peers"
+        },
+        "rank": 1,
+        "rank_of": 10
+      },
+      "burberry": {
+        "growth": -4,
+        "prev": null,
+        "delta": null,
+        "vs_median": -12,
+        "median_others": 8,
         "two_year_stack": null,
         "base": null,
         "next_base": null,
@@ -409,7 +376,91 @@
           "label": "No prior quarter, behind peers"
         },
         "rank": 8,
-        "rank_of": 9
+        "rank_of": 10
+      },
+      "zegna": {
+        "growth": 2.9,
+        "prev": null,
+        "delta": null,
+        "vs_median": -5.1,
+        "median_others": 8,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "No prior quarter",
+          "level": "behind peers",
+          "flags": [],
+          "label": "No prior quarter, behind peers"
+        },
+        "rank": 6,
+        "rank_of": 10
+      },
+      "ferragamo": {
+        "growth": -4.0,
+        "prev": null,
+        "delta": null,
+        "vs_median": -12.0,
+        "median_others": 8,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "No prior quarter",
+          "level": "behind peers",
+          "flags": [],
+          "label": "No prior quarter, behind peers"
+        },
+        "rank": 9,
+        "rank_of": 10
+      },
+      "pandora": {
+        "growth": 11,
+        "prev": null,
+        "delta": null,
+        "vs_median": 8.1,
+        "median_others": 2.9,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "No prior quarter",
+          "level": "ahead of peers",
+          "flags": [],
+          "label": "No prior quarter, ahead of peers"
+        },
+        "rank": 3,
+        "rank_of": 10
       },
       "ferrari": {
         "growth": 15,
@@ -466,18 +517,74 @@
         },
         "rank": 2,
         "rank_of": 2
+      },
+      "ralph-lauren": {
+        "growth": 11,
+        "prev": null,
+        "delta": null,
+        "vs_median": null,
+        "median_others": null,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "No prior quarter",
+          "level": "",
+          "flags": [],
+          "label": "No prior quarter"
+        },
+        "rank": 1,
+        "rank_of": 2
+      },
+      "tapestry": {
+        "growth": 5,
+        "prev": null,
+        "delta": null,
+        "vs_median": null,
+        "median_others": null,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "No prior quarter",
+          "level": "",
+          "flags": [],
+          "label": "No prior quarter"
+        },
+        "rank": 2,
+        "rank_of": 2
       }
     }
   },
   "2025Q1": {
     "peer": {
-      "n": 10,
-      "median": 0.0,
-      "median_like": -1.0,
-      "median_prev": 2.9,
+      "n": 11,
+      "median": 1,
+      "median_like": 0.0,
+      "median_prev": 5.45,
       "spread": 28.0,
-      "slowed": 8,
-      "compared": 9,
+      "slowed": 9,
+      "compared": 10,
       "asia_median": null,
       "asia_median_like": null,
       "asia_median_prev": null,
@@ -487,13 +594,13 @@
     },
     "groups": {
       "goods": {
-        "n": 10,
-        "median": 0.0,
-        "median_like": -1.0,
-        "median_prev": 2.9,
+        "n": 11,
+        "median": 1,
+        "median_like": 0.0,
+        "median_prev": 5.45,
         "spread": 28.0,
-        "slowed": 8,
-        "compared": 9,
+        "slowed": 9,
+        "compared": 10,
         "asia_median": null,
         "asia_median_like": null,
         "asia_median_prev": null,
@@ -512,7 +619,8 @@
           "burberry",
           "zegna",
           "cucinelli",
-          "ferragamo"
+          "ferragamo",
+          "pandora"
         ]
       },
       "autos": {
@@ -534,6 +642,27 @@
         "members": [
           "ferrari",
           "aston-martin"
+        ]
+      },
+      "accessible": {
+        "n": 2,
+        "median": null,
+        "median_like": null,
+        "median_prev": null,
+        "spread": 2,
+        "slowed": 1,
+        "compared": 2,
+        "asia_median": null,
+        "asia_median_like": null,
+        "asia_median_prev": null,
+        "asia_both": 0,
+        "asia_lagging": 0,
+        "asia_compared": 0,
+        "label": "Accessible luxury",
+        "kind": "industry",
+        "members": [
+          "ralph-lauren",
+          "tapestry"
         ]
       },
       "fashion": {
@@ -565,13 +694,13 @@
         ]
       },
       "hard": {
-        "n": 1,
+        "n": 2,
         "median": null,
         "median_like": null,
         "median_prev": null,
-        "spread": null,
-        "slowed": 1,
-        "compared": 1,
+        "spread": 0,
+        "slowed": 2,
+        "compared": 2,
         "asia_median": null,
         "asia_median_like": null,
         "asia_median_prev": null,
@@ -582,7 +711,8 @@
         "kind": "focus",
         "industry": "goods",
         "members": [
-          "richemont"
+          "richemont",
+          "pandora"
         ]
       },
       "diversified": {
@@ -635,176 +765,8 @@
         "growth": -3,
         "prev": 1,
         "delta": -4,
-        "vs_median": -4,
-        "median_others": 1,
-        "two_year_stack": null,
-        "base": null,
-        "next_base": null,
-        "asia": null,
-        "asia_prev": null,
-        "asia_gap": null,
-        "asia_delta": null,
-        "breadth": {
-          "growing": 0,
-          "reported": 0
-        },
-        "region_spread": null,
-        "driver": null,
-        "signal": {
-          "momentum": "Slowing",
-          "level": "behind peers",
-          "flags": [],
-          "label": "Slowing, behind peers"
-        },
-        "rank": 8,
-        "rank_of": 10
-      },
-      "hermes": {
-        "growth": 7.2,
-        "prev": 17.6,
-        "delta": -10.4,
-        "vs_median": 8.2,
-        "median_others": -1.0,
-        "two_year_stack": null,
-        "base": null,
-        "next_base": null,
-        "asia": null,
-        "asia_prev": null,
-        "asia_gap": null,
-        "asia_delta": null,
-        "breadth": {
-          "growing": 0,
-          "reported": 0
-        },
-        "region_spread": null,
-        "driver": null,
-        "signal": {
-          "momentum": "Slowing",
-          "level": "ahead of peers",
-          "flags": [],
-          "label": "Slowing, ahead of peers"
-        },
-        "rank": 3,
-        "rank_of": 10
-      },
-      "kering": {
-        "growth": -15,
-        "prev": -12,
-        "delta": -3,
-        "vs_median": -16,
-        "median_others": 1,
-        "two_year_stack": null,
-        "base": null,
-        "next_base": null,
-        "asia": null,
-        "asia_prev": null,
-        "asia_gap": null,
-        "asia_delta": null,
-        "breadth": {
-          "growing": 0,
-          "reported": 0
-        },
-        "region_spread": null,
-        "driver": null,
-        "signal": {
-          "momentum": "Slowing",
-          "level": "behind peers",
-          "flags": [],
-          "label": "Slowing, behind peers"
-        },
-        "rank": 10,
-        "rank_of": 10
-      },
-      "richemont": {
-        "growth": 7,
-        "prev": 10,
-        "delta": -3,
-        "vs_median": 8.0,
-        "median_others": -1.0,
-        "two_year_stack": null,
-        "base": null,
-        "next_base": null,
-        "asia": null,
-        "asia_prev": null,
-        "asia_gap": null,
-        "asia_delta": null,
-        "breadth": {
-          "growing": 0,
-          "reported": 0
-        },
-        "region_spread": null,
-        "driver": null,
-        "signal": {
-          "momentum": "Slowing",
-          "level": "ahead of peers",
-          "flags": [],
-          "label": "Slowing, ahead of peers"
-        },
-        "rank": 4,
-        "rank_of": 10
-      },
-      "moncler": {
-        "growth": 1,
-        "prev": 8,
-        "delta": -7,
-        "vs_median": 2.0,
-        "median_others": -1.0,
-        "two_year_stack": null,
-        "base": null,
-        "next_base": null,
-        "asia": null,
-        "asia_prev": null,
-        "asia_gap": null,
-        "asia_delta": null,
-        "breadth": {
-          "growing": 0,
-          "reported": 0
-        },
-        "region_spread": null,
-        "driver": null,
-        "signal": {
-          "momentum": "Slowing",
-          "level": "ahead of peers",
-          "flags": [],
-          "label": "Slowing, ahead of peers"
-        },
-        "rank": 5,
-        "rank_of": 10
-      },
-      "prada": {
-        "growth": 13.0,
-        "prev": 18,
-        "delta": -5.0,
-        "vs_median": 14.0,
-        "median_others": -1.0,
-        "two_year_stack": null,
-        "base": null,
-        "next_base": null,
-        "asia": null,
-        "asia_prev": null,
-        "asia_gap": null,
-        "asia_delta": null,
-        "breadth": {
-          "growing": 0,
-          "reported": 0
-        },
-        "region_spread": null,
-        "driver": null,
-        "signal": {
-          "momentum": "Slowing",
-          "level": "ahead of peers",
-          "flags": [],
-          "label": "Slowing, ahead of peers"
-        },
-        "rank": 1,
-        "rank_of": 10
-      },
-      "burberry": {
-        "growth": -6,
-        "prev": -4,
-        "delta": -2,
-        "vs_median": -7,
-        "median_others": 1,
+        "vs_median": -7.0,
+        "median_others": 4.0,
         "two_year_stack": null,
         "base": null,
         "next_base": null,
@@ -825,14 +787,42 @@
           "label": "Slowing, behind peers"
         },
         "rank": 9,
-        "rank_of": 10
+        "rank_of": 11
       },
-      "zegna": {
-        "growth": -1.2,
-        "prev": 2.9,
-        "delta": -4.1,
-        "vs_median": -2.2,
-        "median_others": 1,
+      "hermes": {
+        "growth": 7.2,
+        "prev": 17.6,
+        "delta": -10.4,
+        "vs_median": 7.2,
+        "median_others": 0.0,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Slowing",
+          "level": "ahead of peers",
+          "flags": [],
+          "label": "Slowing, ahead of peers"
+        },
+        "rank": 3,
+        "rank_of": 11
+      },
+      "kering": {
+        "growth": -15,
+        "prev": -12,
+        "delta": -3,
+        "vs_median": -19.0,
+        "median_others": 4.0,
         "two_year_stack": null,
         "base": null,
         "next_base": null,
@@ -852,15 +842,155 @@
           "flags": [],
           "label": "Slowing, behind peers"
         },
-        "rank": 7,
-        "rank_of": 10
+        "rank": 11,
+        "rank_of": 11
+      },
+      "richemont": {
+        "growth": 7,
+        "prev": 10,
+        "delta": -3,
+        "vs_median": 7.0,
+        "median_others": 0.0,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Slowing",
+          "level": "ahead of peers",
+          "flags": [],
+          "label": "Slowing, ahead of peers"
+        },
+        "rank": 4,
+        "rank_of": 11
+      },
+      "moncler": {
+        "growth": 1,
+        "prev": 8,
+        "delta": -7,
+        "vs_median": -2.0,
+        "median_others": 3.0,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Slowing",
+          "level": "behind peers",
+          "flags": [],
+          "label": "Slowing, behind peers"
+        },
+        "rank": 6,
+        "rank_of": 11
+      },
+      "prada": {
+        "growth": 13.0,
+        "prev": 18,
+        "delta": -5.0,
+        "vs_median": 13.0,
+        "median_others": 0.0,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Slowing",
+          "level": "ahead of peers",
+          "flags": [],
+          "label": "Slowing, ahead of peers"
+        },
+        "rank": 1,
+        "rank_of": 11
+      },
+      "burberry": {
+        "growth": -6,
+        "prev": -4,
+        "delta": -2,
+        "vs_median": -10.0,
+        "median_others": 4.0,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Slowing",
+          "level": "behind peers",
+          "flags": [],
+          "label": "Slowing, behind peers"
+        },
+        "rank": 10,
+        "rank_of": 11
+      },
+      "zegna": {
+        "growth": -1.2,
+        "prev": 2.9,
+        "delta": -4.1,
+        "vs_median": -5.2,
+        "median_others": 4.0,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Slowing",
+          "level": "behind peers",
+          "flags": [],
+          "label": "Slowing, behind peers"
+        },
+        "rank": 8,
+        "rank_of": 11
       },
       "cucinelli": {
         "growth": 10.0,
         "prev": null,
         "delta": null,
-        "vs_median": 11.0,
-        "median_others": -1.0,
+        "vs_median": 10.0,
+        "median_others": 0.0,
         "two_year_stack": null,
         "base": null,
         "next_base": null,
@@ -881,14 +1011,14 @@
           "label": "No prior quarter, ahead of peers"
         },
         "rank": 2,
-        "rank_of": 10
+        "rank_of": 11
       },
       "ferragamo": {
         "growth": -1.0,
         "prev": -4.0,
         "delta": 3.0,
-        "vs_median": -2.0,
-        "median_others": 1,
+        "vs_median": -5.0,
+        "median_others": 4.0,
         "two_year_stack": null,
         "base": null,
         "next_base": null,
@@ -908,8 +1038,36 @@
           "flags": [],
           "label": "Accelerating, behind peers"
         },
-        "rank": 6,
-        "rank_of": 10
+        "rank": 7,
+        "rank_of": 11
+      },
+      "pandora": {
+        "growth": 7,
+        "prev": 11,
+        "delta": -4,
+        "vs_median": 7.0,
+        "median_others": 0.0,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Slowing",
+          "level": "ahead of peers",
+          "flags": [],
+          "label": "Slowing, ahead of peers"
+        },
+        "rank": 5,
+        "rank_of": 11
       },
       "ferrari": {
         "growth": 12.2,
@@ -966,18 +1124,74 @@
         },
         "rank": 2,
         "rank_of": 2
+      },
+      "ralph-lauren": {
+        "growth": 10,
+        "prev": 11,
+        "delta": -1,
+        "vs_median": null,
+        "median_others": null,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Slowing",
+          "level": "",
+          "flags": [],
+          "label": "Slowing"
+        },
+        "rank": 1,
+        "rank_of": 2
+      },
+      "tapestry": {
+        "growth": 8,
+        "prev": 5,
+        "delta": 3,
+        "vs_median": null,
+        "median_others": null,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Accelerating",
+          "level": "",
+          "flags": [],
+          "label": "Accelerating"
+        },
+        "rank": 2,
+        "rank_of": 2
       }
     }
   },
   "2025Q2": {
     "peer": {
-      "n": 9,
-      "median": -1,
-      "median_like": -1,
-      "median_prev": -1.0,
+      "n": 10,
+      "median": -1.0,
+      "median_like": -1.0,
+      "median_prev": 0.0,
       "spread": 25.0,
       "slowed": 7,
-      "compared": 9,
+      "compared": 10,
       "asia_median": null,
       "asia_median_like": null,
       "asia_median_prev": null,
@@ -987,13 +1201,13 @@
     },
     "groups": {
       "goods": {
-        "n": 9,
-        "median": -1,
-        "median_like": -1,
-        "median_prev": -1.0,
+        "n": 10,
+        "median": -1.0,
+        "median_like": -1.0,
+        "median_prev": 0.0,
         "spread": 25.0,
         "slowed": 7,
-        "compared": 9,
+        "compared": 10,
         "asia_median": null,
         "asia_median_like": null,
         "asia_median_prev": null,
@@ -1011,7 +1225,8 @@
           "prada",
           "burberry",
           "zegna",
-          "ferragamo"
+          "ferragamo",
+          "pandora"
         ]
       },
       "autos": {
@@ -1033,6 +1248,28 @@
         "members": [
           "ferrari",
           "aston-martin"
+        ]
+      },
+      "accessible": {
+        "n": 3,
+        "median": 8,
+        "median_like": null,
+        "median_prev": null,
+        "spread": 18.7,
+        "slowed": 0,
+        "compared": 2,
+        "asia_median": null,
+        "asia_median_like": null,
+        "asia_median_prev": null,
+        "asia_both": 0,
+        "asia_lagging": 0,
+        "asia_compared": 0,
+        "label": "Accessible luxury",
+        "kind": "industry",
+        "members": [
+          "ralph-lauren",
+          "tapestry",
+          "capri"
         ]
       },
       "fashion": {
@@ -1063,13 +1300,13 @@
         ]
       },
       "hard": {
-        "n": 1,
+        "n": 2,
         "median": null,
         "median_like": null,
         "median_prev": null,
-        "spread": null,
+        "spread": 2,
         "slowed": 1,
-        "compared": 1,
+        "compared": 2,
         "asia_median": null,
         "asia_median_like": null,
         "asia_median_prev": null,
@@ -1080,7 +1317,8 @@
         "kind": "focus",
         "industry": "goods",
         "members": [
-          "richemont"
+          "richemont",
+          "pandora"
         ]
       },
       "diversified": {
@@ -1133,232 +1371,8 @@
         "growth": -4,
         "prev": -3,
         "delta": -1,
-        "vs_median": -3.0,
-        "median_others": -1.0,
-        "two_year_stack": null,
-        "base": null,
-        "next_base": null,
-        "asia": null,
-        "asia_prev": null,
-        "asia_gap": null,
-        "asia_delta": null,
-        "breadth": {
-          "growing": 0,
-          "reported": 0
-        },
-        "region_spread": null,
-        "driver": null,
-        "signal": {
-          "momentum": "Slowing",
-          "level": "behind peers",
-          "flags": [],
-          "label": "Slowing, behind peers"
-        },
-        "rank": 7,
-        "rank_of": 9
-      },
-      "hermes": {
-        "growth": 9.0,
-        "prev": 7.2,
-        "delta": 1.8,
-        "vs_median": 10.8,
-        "median_others": -1.8,
-        "two_year_stack": null,
-        "base": null,
-        "next_base": null,
-        "asia": null,
-        "asia_prev": null,
-        "asia_gap": null,
-        "asia_delta": null,
-        "breadth": {
-          "growing": 0,
-          "reported": 0
-        },
-        "region_spread": null,
-        "driver": null,
-        "signal": {
-          "momentum": "Accelerating",
-          "level": "ahead of peers",
-          "flags": [],
-          "label": "Accelerating, ahead of peers"
-        },
-        "rank": 1,
-        "rank_of": 9
-      },
-      "kering": {
-        "growth": -16,
-        "prev": -15,
-        "delta": -1,
-        "vs_median": -15.0,
-        "median_others": -1.0,
-        "two_year_stack": null,
-        "base": null,
-        "next_base": null,
-        "asia": null,
-        "asia_prev": null,
-        "asia_gap": null,
-        "asia_delta": null,
-        "breadth": {
-          "growing": 0,
-          "reported": 0
-        },
-        "region_spread": null,
-        "driver": null,
-        "signal": {
-          "momentum": "Slowing",
-          "level": "behind peers",
-          "flags": [],
-          "label": "Slowing, behind peers"
-        },
-        "rank": 9,
-        "rank_of": 9
-      },
-      "richemont": {
-        "growth": 6,
-        "prev": 7,
-        "delta": -1,
-        "vs_median": 7.8,
-        "median_others": -1.8,
-        "two_year_stack": null,
-        "base": null,
-        "next_base": null,
-        "asia": null,
-        "asia_prev": null,
-        "asia_gap": null,
-        "asia_delta": null,
-        "breadth": {
-          "growing": 0,
-          "reported": 0
-        },
-        "region_spread": null,
-        "driver": null,
-        "signal": {
-          "momentum": "Slowing",
-          "level": "ahead of peers",
-          "flags": [],
-          "label": "Slowing, ahead of peers"
-        },
-        "rank": 3,
-        "rank_of": 9
-      },
-      "moncler": {
-        "growth": -1,
-        "prev": 1,
-        "delta": -2,
-        "vs_median": 0.8,
-        "median_others": -1.8,
-        "two_year_stack": null,
-        "base": null,
-        "next_base": null,
-        "asia": null,
-        "asia_prev": null,
-        "asia_gap": null,
-        "asia_delta": null,
-        "breadth": {
-          "growing": 0,
-          "reported": 0
-        },
-        "region_spread": null,
-        "driver": null,
-        "signal": {
-          "momentum": "Slowing",
-          "level": "in line with peers",
-          "flags": [],
-          "label": "Slowing, in line with peers"
-        },
-        "rank": 4,
-        "rank_of": 9
-      },
-      "prada": {
-        "growth": 7.6,
-        "prev": 13.0,
-        "delta": -5.4,
-        "vs_median": 9.4,
-        "median_others": -1.8,
-        "two_year_stack": null,
-        "base": null,
-        "next_base": null,
-        "asia": null,
-        "asia_prev": null,
-        "asia_gap": null,
-        "asia_delta": null,
-        "breadth": {
-          "growing": 0,
-          "reported": 0
-        },
-        "region_spread": null,
-        "driver": null,
-        "signal": {
-          "momentum": "Slowing",
-          "level": "ahead of peers",
-          "flags": [],
-          "label": "Slowing, ahead of peers"
-        },
-        "rank": 2,
-        "rank_of": 9
-      },
-      "burberry": {
-        "growth": -1,
-        "prev": -6,
-        "delta": 5,
-        "vs_median": 0.8,
-        "median_others": -1.8,
-        "two_year_stack": null,
-        "base": null,
-        "next_base": null,
-        "asia": null,
-        "asia_prev": null,
-        "asia_gap": null,
-        "asia_delta": null,
-        "breadth": {
-          "growing": 0,
-          "reported": 0
-        },
-        "region_spread": null,
-        "driver": null,
-        "signal": {
-          "momentum": "Accelerating",
-          "level": "in line with peers",
-          "flags": [],
-          "label": "Accelerating, in line with peers"
-        },
-        "rank": 5,
-        "rank_of": 9
-      },
-      "zegna": {
-        "growth": -2.6,
-        "prev": -1.2,
-        "delta": -1.4,
-        "vs_median": -1.6,
-        "median_others": -1.0,
-        "two_year_stack": null,
-        "base": null,
-        "next_base": null,
-        "asia": null,
-        "asia_prev": null,
-        "asia_gap": null,
-        "asia_delta": null,
-        "breadth": {
-          "growing": 0,
-          "reported": 0
-        },
-        "region_spread": null,
-        "driver": null,
-        "signal": {
-          "momentum": "Slowing",
-          "level": "in line with peers",
-          "flags": [],
-          "label": "Slowing, in line with peers"
-        },
-        "rank": 6,
-        "rank_of": 9
-      },
-      "ferragamo": {
-        "growth": -11.8,
-        "prev": -1.0,
-        "delta": -10.8,
-        "vs_median": -10.8,
-        "median_others": -1.0,
+        "vs_median": -3,
+        "median_others": -1,
         "two_year_stack": null,
         "base": null,
         "next_base": null,
@@ -1379,7 +1393,259 @@
           "label": "Slowing, behind peers"
         },
         "rank": 8,
-        "rank_of": 9
+        "rank_of": 10
+      },
+      "hermes": {
+        "growth": 9.0,
+        "prev": 7.2,
+        "delta": 1.8,
+        "vs_median": 10.0,
+        "median_others": -1,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Accelerating",
+          "level": "ahead of peers",
+          "flags": [],
+          "label": "Accelerating, ahead of peers"
+        },
+        "rank": 1,
+        "rank_of": 10
+      },
+      "kering": {
+        "growth": -16,
+        "prev": -15,
+        "delta": -1,
+        "vs_median": -15,
+        "median_others": -1,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Slowing",
+          "level": "behind peers",
+          "flags": [],
+          "label": "Slowing, behind peers"
+        },
+        "rank": 10,
+        "rank_of": 10
+      },
+      "richemont": {
+        "growth": 6,
+        "prev": 7,
+        "delta": -1,
+        "vs_median": 7,
+        "median_others": -1,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Slowing",
+          "level": "ahead of peers",
+          "flags": [],
+          "label": "Slowing, ahead of peers"
+        },
+        "rank": 4,
+        "rank_of": 10
+      },
+      "moncler": {
+        "growth": -1,
+        "prev": 1,
+        "delta": -2,
+        "vs_median": 0,
+        "median_others": -1,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Slowing",
+          "level": "in line with peers",
+          "flags": [],
+          "label": "Slowing, in line with peers"
+        },
+        "rank": 5,
+        "rank_of": 10
+      },
+      "prada": {
+        "growth": 7.6,
+        "prev": 13.0,
+        "delta": -5.4,
+        "vs_median": 8.6,
+        "median_others": -1,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Slowing",
+          "level": "ahead of peers",
+          "flags": [],
+          "label": "Slowing, ahead of peers"
+        },
+        "rank": 3,
+        "rank_of": 10
+      },
+      "burberry": {
+        "growth": -1,
+        "prev": -6,
+        "delta": 5,
+        "vs_median": 0,
+        "median_others": -1,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Accelerating",
+          "level": "in line with peers",
+          "flags": [],
+          "label": "Accelerating, in line with peers"
+        },
+        "rank": 6,
+        "rank_of": 10
+      },
+      "zegna": {
+        "growth": -2.6,
+        "prev": -1.2,
+        "delta": -1.4,
+        "vs_median": -1.6,
+        "median_others": -1,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Slowing",
+          "level": "in line with peers",
+          "flags": [],
+          "label": "Slowing, in line with peers"
+        },
+        "rank": 7,
+        "rank_of": 10
+      },
+      "ferragamo": {
+        "growth": -11.8,
+        "prev": -1.0,
+        "delta": -10.8,
+        "vs_median": -10.8,
+        "median_others": -1,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Slowing",
+          "level": "behind peers",
+          "flags": [],
+          "label": "Slowing, behind peers"
+        },
+        "rank": 9,
+        "rank_of": 10
+      },
+      "pandora": {
+        "growth": 8,
+        "prev": 7,
+        "delta": 1,
+        "vs_median": 9,
+        "median_others": -1,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Accelerating",
+          "level": "ahead of peers",
+          "flags": [],
+          "label": "Accelerating, ahead of peers"
+        },
+        "rank": 2,
+        "rank_of": 10
       },
       "ferrari": {
         "growth": 5.1,
@@ -1436,18 +1702,102 @@
         },
         "rank": 2,
         "rank_of": 2
+      },
+      "ralph-lauren": {
+        "growth": 11,
+        "prev": 10,
+        "delta": 1,
+        "vs_median": 10.8,
+        "median_others": 0.1,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Accelerating",
+          "level": "ahead of peers",
+          "flags": [],
+          "label": "Accelerating, ahead of peers"
+        },
+        "rank": 1,
+        "rank_of": 3
+      },
+      "tapestry": {
+        "growth": 8,
+        "prev": 8,
+        "delta": 0,
+        "vs_median": 6.3,
+        "median_others": 1.6,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Steady",
+          "level": "ahead of peers",
+          "flags": [],
+          "label": "Steady, ahead of peers"
+        },
+        "rank": 2,
+        "rank_of": 3
+      },
+      "capri": {
+        "growth": -7.7,
+        "prev": null,
+        "delta": null,
+        "vs_median": -17.2,
+        "median_others": 9.5,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "No prior quarter",
+          "level": "behind peers",
+          "flags": [],
+          "label": "No prior quarter, behind peers"
+        },
+        "rank": 3,
+        "rank_of": 3
       }
     }
   },
   "2025Q3": {
     "peer": {
-      "n": 10,
-      "median": 2.8,
-      "median_like": 2,
-      "median_prev": -1,
+      "n": 11,
+      "median": 3.6,
+      "median_like": 2.8,
+      "median_prev": -1.0,
       "spread": 20,
-      "slowed": 0,
-      "compared": 9,
+      "slowed": 1,
+      "compared": 10,
       "asia_median": null,
       "asia_median_like": null,
       "asia_median_prev": null,
@@ -1457,13 +1807,13 @@
     },
     "groups": {
       "goods": {
-        "n": 10,
-        "median": 2.8,
-        "median_like": 2,
-        "median_prev": -1,
+        "n": 11,
+        "median": 3.6,
+        "median_like": 2.8,
+        "median_prev": -1.0,
         "spread": 20,
-        "slowed": 0,
-        "compared": 9,
+        "slowed": 1,
+        "compared": 10,
         "asia_median": null,
         "asia_median_like": null,
         "asia_median_prev": null,
@@ -1482,7 +1832,8 @@
           "burberry",
           "zegna",
           "cucinelli",
-          "ferragamo"
+          "ferragamo",
+          "pandora"
         ]
       },
       "autos": {
@@ -1504,6 +1855,28 @@
         "members": [
           "ferrari",
           "aston-martin"
+        ]
+      },
+      "accessible": {
+        "n": 3,
+        "median": 14,
+        "median_like": 14,
+        "median_prev": 8,
+        "spread": 20.2,
+        "slowed": 0,
+        "compared": 3,
+        "asia_median": null,
+        "asia_median_like": null,
+        "asia_median_prev": null,
+        "asia_both": 0,
+        "asia_lagging": 0,
+        "asia_compared": 0,
+        "label": "Accessible luxury",
+        "kind": "industry",
+        "members": [
+          "ralph-lauren",
+          "tapestry",
+          "capri"
         ]
       },
       "fashion": {
@@ -1535,13 +1908,13 @@
         ]
       },
       "hard": {
-        "n": 1,
+        "n": 2,
         "median": null,
         "median_like": null,
         "median_prev": null,
-        "spread": null,
-        "slowed": 0,
-        "compared": 1,
+        "spread": 8,
+        "slowed": 1,
+        "compared": 2,
         "asia_median": null,
         "asia_median_like": null,
         "asia_median_prev": null,
@@ -1552,7 +1925,8 @@
         "kind": "focus",
         "industry": "goods",
         "members": [
-          "richemont"
+          "richemont",
+          "pandora"
         ]
       },
       "diversified": {
@@ -1605,8 +1979,8 @@
         "growth": 1,
         "prev": -4,
         "delta": 5,
-        "vs_median": -2.6,
-        "median_others": 3.6,
+        "vs_median": -3.8,
+        "median_others": 4.8,
         "two_year_stack": null,
         "base": null,
         "next_base": 1,
@@ -1626,15 +2000,15 @@
           "flags": [],
           "label": "Accelerating, behind peers"
         },
-        "rank": 8,
-        "rank_of": 10
+        "rank": 9,
+        "rank_of": 11
       },
       "hermes": {
         "growth": 9.6,
         "prev": 9.0,
         "delta": 0.6,
-        "vs_median": 7.6,
-        "median_others": 2,
+        "vs_median": 6.8,
+        "median_others": 2.8,
         "two_year_stack": null,
         "base": null,
         "next_base": 17.6,
@@ -1655,14 +2029,14 @@
           "label": "Steady, ahead of peers"
         },
         "rank": 3,
-        "rank_of": 10
+        "rank_of": 11
       },
       "kering": {
         "growth": -6,
         "prev": -16,
         "delta": 10,
-        "vs_median": -9.6,
-        "median_others": 3.6,
+        "vs_median": -10.8,
+        "median_others": 4.8,
         "two_year_stack": null,
         "base": null,
         "next_base": -12,
@@ -1682,15 +2056,15 @@
           "flags": [],
           "label": "Accelerating, behind peers"
         },
-        "rank": 10,
-        "rank_of": 10
+        "rank": 11,
+        "rank_of": 11
       },
       "richemont": {
         "growth": 14,
         "prev": 6,
         "delta": 8,
-        "vs_median": 12,
-        "median_others": 2,
+        "vs_median": 11.2,
+        "median_others": 2.8,
         "two_year_stack": null,
         "base": null,
         "next_base": 10,
@@ -1711,14 +2085,14 @@
           "label": "Accelerating, ahead of peers"
         },
         "rank": 1,
-        "rank_of": 10
+        "rank_of": 11
       },
       "moncler": {
         "growth": -1,
         "prev": -1,
         "delta": 0,
-        "vs_median": -4.6,
-        "median_others": 3.6,
+        "vs_median": -5.8,
+        "median_others": 4.8,
         "two_year_stack": null,
         "base": null,
         "next_base": 8,
@@ -1738,15 +2112,15 @@
           "flags": [],
           "label": "Steady, behind peers"
         },
-        "rank": 9,
-        "rank_of": 10
+        "rank": 10,
+        "rank_of": 11
       },
       "prada": {
         "growth": 7.6,
         "prev": 7.6,
         "delta": 0.0,
-        "vs_median": 5.6,
-        "median_others": 2,
+        "vs_median": 4.8,
+        "median_others": 2.8,
         "two_year_stack": null,
         "base": null,
         "next_base": 18,
@@ -1767,14 +2141,14 @@
           "label": "Steady, ahead of peers"
         },
         "rank": 4,
-        "rank_of": 10
+        "rank_of": 11
       },
       "burberry": {
         "growth": 2,
         "prev": -1,
         "delta": 3,
-        "vs_median": -1.6,
-        "median_others": 3.6,
+        "vs_median": -2.8,
+        "median_others": 4.8,
         "two_year_stack": null,
         "base": null,
         "next_base": -4,
@@ -1790,19 +2164,19 @@
         "driver": null,
         "signal": {
           "momentum": "Accelerating",
-          "level": "in line with peers",
+          "level": "behind peers",
           "flags": [],
-          "label": "Accelerating, in line with peers"
+          "label": "Accelerating, behind peers"
         },
-        "rank": 6,
-        "rank_of": 10
+        "rank": 7,
+        "rank_of": 11
       },
       "zegna": {
         "growth": 3.6,
         "prev": -2.6,
         "delta": 6.2,
-        "vs_median": 1.6,
-        "median_others": 2,
+        "vs_median": -0.4,
+        "median_others": 4.0,
         "two_year_stack": null,
         "base": null,
         "next_base": 2.9,
@@ -1822,15 +2196,15 @@
           "flags": [],
           "label": "Accelerating, in line with peers"
         },
-        "rank": 5,
-        "rank_of": 10
+        "rank": 6,
+        "rank_of": 11
       },
       "cucinelli": {
         "growth": 12.5,
         "prev": null,
         "delta": null,
-        "vs_median": 10.5,
-        "median_others": 2,
+        "vs_median": 9.7,
+        "median_others": 2.8,
         "two_year_stack": null,
         "base": null,
         "next_base": null,
@@ -1851,14 +2225,14 @@
           "label": "No prior quarter, ahead of peers"
         },
         "rank": 2,
-        "rank_of": 10
+        "rank_of": 11
       },
       "ferragamo": {
         "growth": 1.7,
         "prev": -11.8,
         "delta": 13.5,
-        "vs_median": -1.9,
-        "median_others": 3.6,
+        "vs_median": -3.1,
+        "median_others": 4.8,
         "two_year_stack": null,
         "base": null,
         "next_base": -4.0,
@@ -1874,12 +2248,40 @@
         "driver": null,
         "signal": {
           "momentum": "Accelerating",
-          "level": "in line with peers",
+          "level": "behind peers",
           "flags": [],
-          "label": "Accelerating, in line with peers"
+          "label": "Accelerating, behind peers"
         },
-        "rank": 7,
-        "rank_of": 10
+        "rank": 8,
+        "rank_of": 11
+      },
+      "pandora": {
+        "growth": 6,
+        "prev": 8,
+        "delta": -2,
+        "vs_median": 3.2,
+        "median_others": 2.8,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": 11,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Slowing",
+          "level": "ahead of peers",
+          "flags": [],
+          "label": "Slowing, ahead of peers"
+        },
+        "rank": 5,
+        "rank_of": 11
       },
       "ferrari": {
         "growth": 9.3,
@@ -1936,18 +2338,102 @@
         },
         "rank": 2,
         "rank_of": 2
+      },
+      "ralph-lauren": {
+        "growth": 14,
+        "prev": 11,
+        "delta": 3,
+        "vs_median": 8.1,
+        "median_others": 5.9,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": 11,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Accelerating",
+          "level": "ahead of peers",
+          "flags": [],
+          "label": "Accelerating, ahead of peers"
+        },
+        "rank": 2,
+        "rank_of": 3
+      },
+      "tapestry": {
+        "growth": 16,
+        "prev": 8,
+        "delta": 8,
+        "vs_median": 11.1,
+        "median_others": 4.9,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": 5,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Accelerating",
+          "level": "ahead of peers",
+          "flags": [],
+          "label": "Accelerating, ahead of peers"
+        },
+        "rank": 1,
+        "rank_of": 3
+      },
+      "capri": {
+        "growth": -4.2,
+        "prev": -7.7,
+        "delta": 3.5,
+        "vs_median": -19.2,
+        "median_others": 15.0,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Accelerating",
+          "level": "behind peers",
+          "flags": [],
+          "label": "Accelerating, behind peers"
+        },
+        "rank": 3,
+        "rank_of": 3
       }
     }
   },
   "2025Q4": {
     "peer": {
-      "n": 10,
-      "median": 5.1,
-      "median_like": 5.1,
-      "median_prev": 2.8,
+      "n": 11,
+      "median": 4.6,
+      "median_like": 4.6,
+      "median_prev": 3.6,
       "spread": 14.9,
-      "slowed": 4,
-      "compared": 10,
+      "slowed": 5,
+      "compared": 11,
       "asia_median": null,
       "asia_median_like": null,
       "asia_median_prev": null,
@@ -1957,13 +2443,13 @@
     },
     "groups": {
       "goods": {
-        "n": 10,
-        "median": 5.1,
-        "median_like": 5.1,
-        "median_prev": 2.8,
+        "n": 11,
+        "median": 4.6,
+        "median_like": 4.6,
+        "median_prev": 3.6,
         "spread": 14.9,
-        "slowed": 4,
-        "compared": 10,
+        "slowed": 5,
+        "compared": 11,
         "asia_median": null,
         "asia_median_like": null,
         "asia_median_prev": null,
@@ -1982,7 +2468,8 @@
           "burberry",
           "zegna",
           "cucinelli",
-          "ferragamo"
+          "ferragamo",
+          "pandora"
         ]
       },
       "autos": {
@@ -2004,6 +2491,28 @@
         "members": [
           "ferrari",
           "aston-martin"
+        ]
+      },
+      "accessible": {
+        "n": 3,
+        "median": 10,
+        "median_like": 10,
+        "median_prev": 14,
+        "spread": 23.9,
+        "slowed": 2,
+        "compared": 3,
+        "asia_median": null,
+        "asia_median_like": null,
+        "asia_median_prev": null,
+        "asia_both": 0,
+        "asia_lagging": 0,
+        "asia_compared": 0,
+        "label": "Accessible luxury",
+        "kind": "industry",
+        "members": [
+          "ralph-lauren",
+          "tapestry",
+          "capri"
         ]
       },
       "fashion": {
@@ -2035,13 +2544,13 @@
         ]
       },
       "hard": {
-        "n": 1,
+        "n": 2,
         "median": null,
         "median_like": null,
         "median_prev": null,
-        "spread": null,
-        "slowed": 1,
-        "compared": 1,
+        "spread": 7,
+        "slowed": 2,
+        "compared": 2,
         "asia_median": null,
         "asia_median_like": null,
         "asia_median_prev": null,
@@ -2052,7 +2561,8 @@
         "kind": "focus",
         "industry": "goods",
         "members": [
-          "richemont"
+          "richemont",
+          "pandora"
         ]
       },
       "diversified": {
@@ -2105,8 +2615,8 @@
         "growth": 1,
         "prev": 1,
         "delta": 0,
-        "vs_median": -4.6,
-        "median_others": 5.6,
+        "vs_median": -4.1,
+        "median_others": 5.1,
         "two_year_stack": 2.0,
         "base": 1,
         "next_base": -3,
@@ -2128,15 +2638,15 @@
           ],
           "label": "Steady, behind peers"
         },
-        "rank": 8,
-        "rank_of": 10
+        "rank": 9,
+        "rank_of": 11
       },
       "hermes": {
         "growth": 9.8,
         "prev": 9.6,
         "delta": 0.2,
-        "vs_median": 5.2,
-        "median_others": 4.6,
+        "vs_median": 5.5,
+        "median_others": 4.3,
         "two_year_stack": 29.1,
         "base": 17.6,
         "next_base": 7.2,
@@ -2159,14 +2669,14 @@
           "label": "Steady, ahead of peers"
         },
         "rank": 3,
-        "rank_of": 10
+        "rank_of": 11
       },
       "kering": {
         "growth": -3,
         "prev": -6,
         "delta": 3,
-        "vs_median": -8.6,
-        "median_others": 5.6,
+        "vs_median": -8.1,
+        "median_others": 5.1,
         "two_year_stack": -14.6,
         "base": -12,
         "next_base": -15,
@@ -2188,15 +2698,15 @@
           ],
           "label": "Accelerating, behind peers"
         },
-        "rank": 10,
-        "rank_of": 10
+        "rank": 11,
+        "rank_of": 11
       },
       "richemont": {
         "growth": 11,
         "prev": 14,
         "delta": -3,
-        "vs_median": 6.4,
-        "median_others": 4.6,
+        "vs_median": 6.7,
+        "median_others": 4.3,
         "two_year_stack": 22.1,
         "base": 10,
         "next_base": 7,
@@ -2219,14 +2729,14 @@
           "label": "Slowing, ahead of peers"
         },
         "rank": 2,
-        "rank_of": 10
+        "rank_of": 11
       },
       "moncler": {
         "growth": 7,
         "prev": -1,
         "delta": 8,
-        "vs_median": 2.4,
-        "median_others": 4.6,
+        "vs_median": 2.7,
+        "median_others": 4.3,
         "two_year_stack": 15.6,
         "base": 8,
         "next_base": 1,
@@ -2249,14 +2759,14 @@
           "label": "Accelerating, ahead of peers"
         },
         "rank": 4,
-        "rank_of": 10
+        "rank_of": 11
       },
       "prada": {
         "growth": 5.6,
         "prev": 7.6,
         "delta": -2.0,
-        "vs_median": 1.0,
-        "median_others": 4.6,
+        "vs_median": 1.3,
+        "median_others": 4.3,
         "two_year_stack": 24.6,
         "base": 18,
         "next_base": 13.0,
@@ -2279,14 +2789,14 @@
           "label": "Slowing, in line with peers"
         },
         "rank": 5,
-        "rank_of": 10
+        "rank_of": 11
       },
       "burberry": {
         "growth": 3,
         "prev": 2,
         "delta": 1,
-        "vs_median": -2.6,
-        "median_others": 5.6,
+        "vs_median": -2.1,
+        "median_others": 5.1,
         "two_year_stack": -1.1,
         "base": -4,
         "next_base": -6,
@@ -2308,15 +2818,15 @@
           ],
           "label": "Accelerating, behind peers"
         },
-        "rank": 7,
-        "rank_of": 10
+        "rank": 8,
+        "rank_of": 11
       },
       "zegna": {
         "growth": 4.6,
         "prev": 3.6,
         "delta": 1.0,
-        "vs_median": -1.0,
-        "median_others": 5.6,
+        "vs_median": -0.2,
+        "median_others": 4.8,
         "two_year_stack": 7.6,
         "base": 2.9,
         "next_base": -1.2,
@@ -2339,14 +2849,14 @@
           "label": "Accelerating, in line with peers"
         },
         "rank": 6,
-        "rank_of": 10
+        "rank_of": 11
       },
       "cucinelli": {
         "growth": 11.9,
         "prev": 12.5,
         "delta": -0.6,
-        "vs_median": 7.3,
-        "median_others": 4.6,
+        "vs_median": 7.6,
+        "median_others": 4.3,
         "two_year_stack": null,
         "base": null,
         "next_base": 10.0,
@@ -2367,14 +2877,14 @@
           "label": "Steady, ahead of peers"
         },
         "rank": 1,
-        "rank_of": 10
+        "rank_of": 11
       },
       "ferragamo": {
         "growth": -2.0,
         "prev": 1.7,
         "delta": -3.7,
-        "vs_median": -7.6,
-        "median_others": 5.6,
+        "vs_median": -7.1,
+        "median_others": 5.1,
         "two_year_stack": -5.9,
         "base": -4.0,
         "next_base": -1.0,
@@ -2396,8 +2906,38 @@
           ],
           "label": "Slowing, behind peers"
         },
-        "rank": 9,
-        "rank_of": 10
+        "rank": 10,
+        "rank_of": 11
+      },
+      "pandora": {
+        "growth": 4,
+        "prev": 6,
+        "delta": -2,
+        "vs_median": -1.1,
+        "median_others": 5.1,
+        "two_year_stack": 15.4,
+        "base": 11,
+        "next_base": 7,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Slowing",
+          "level": "in line with peers",
+          "flags": [
+            "Easier base next quarter"
+          ],
+          "label": "Slowing, in line with peers"
+        },
+        "rank": 7,
+        "rank_of": 11
       },
       "ferrari": {
         "growth": 6,
@@ -2458,18 +2998,104 @@
         },
         "rank": 2,
         "rank_of": 2
+      },
+      "ralph-lauren": {
+        "growth": 10,
+        "prev": 14,
+        "delta": -4,
+        "vs_median": 4.0,
+        "median_others": 6.0,
+        "two_year_stack": 22.1,
+        "base": 11,
+        "next_base": 10,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Slowing",
+          "level": "ahead of peers",
+          "flags": [],
+          "label": "Slowing, ahead of peers"
+        },
+        "rank": 2,
+        "rank_of": 3
+      },
+      "tapestry": {
+        "growth": 18,
+        "prev": 16,
+        "delta": 2,
+        "vs_median": 15.9,
+        "median_others": 2.0,
+        "two_year_stack": 23.9,
+        "base": 5,
+        "next_base": 8,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Accelerating",
+          "level": "ahead of peers",
+          "flags": [
+            "Tougher base next quarter"
+          ],
+          "label": "Accelerating, ahead of peers"
+        },
+        "rank": 1,
+        "rank_of": 3
+      },
+      "capri": {
+        "growth": -5.9,
+        "prev": -4.2,
+        "delta": -1.7,
+        "vs_median": -19.9,
+        "median_others": 14.0,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": null,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Slowing",
+          "level": "behind peers",
+          "flags": [],
+          "label": "Slowing, behind peers"
+        },
+        "rank": 3,
+        "rank_of": 3
       }
     }
   },
   "2026Q1": {
     "peer": {
-      "n": 10,
-      "median": 5.3,
-      "median_like": 5.3,
-      "median_prev": 5.1,
+      "n": 11,
+      "median": 5,
+      "median_like": 5,
+      "median_prev": 4.6,
       "spread": 15.2,
-      "slowed": 2,
-      "compared": 10,
+      "slowed": 3,
+      "compared": 11,
       "asia_median": null,
       "asia_median_like": null,
       "asia_median_prev": null,
@@ -2479,13 +3105,13 @@
     },
     "groups": {
       "goods": {
-        "n": 10,
-        "median": 5.3,
-        "median_like": 5.3,
-        "median_prev": 5.1,
+        "n": 11,
+        "median": 5,
+        "median_like": 5,
+        "median_prev": 4.6,
         "spread": 15.2,
-        "slowed": 2,
-        "compared": 10,
+        "slowed": 3,
+        "compared": 11,
         "asia_median": null,
         "asia_median_like": null,
         "asia_median_prev": null,
@@ -2504,7 +3130,8 @@
           "burberry",
           "zegna",
           "cucinelli",
-          "ferragamo"
+          "ferragamo",
+          "pandora"
         ]
       },
       "autos": {
@@ -2526,6 +3153,28 @@
         "members": [
           "ferrari",
           "aston-martin"
+        ]
+      },
+      "accessible": {
+        "n": 3,
+        "median": 12,
+        "median_like": 12,
+        "median_prev": 10,
+        "spread": 30.0,
+        "slowed": 1,
+        "compared": 3,
+        "asia_median": null,
+        "asia_median_like": null,
+        "asia_median_prev": null,
+        "asia_both": 0,
+        "asia_lagging": 0,
+        "asia_compared": 0,
+        "label": "Accessible luxury",
+        "kind": "industry",
+        "members": [
+          "ralph-lauren",
+          "tapestry",
+          "capri"
         ]
       },
       "fashion": {
@@ -2557,13 +3206,13 @@
         ]
       },
       "hard": {
-        "n": 1,
+        "n": 2,
         "median": null,
         "median_like": null,
         "median_prev": null,
-        "spread": null,
-        "slowed": 0,
-        "compared": 1,
+        "spread": 11,
+        "slowed": 1,
+        "compared": 2,
         "asia_median": null,
         "asia_median_like": null,
         "asia_median_prev": null,
@@ -2574,7 +3223,8 @@
         "kind": "focus",
         "industry": "goods",
         "members": [
-          "richemont"
+          "richemont",
+          "pandora"
         ]
       },
       "diversified": {
@@ -2627,8 +3277,8 @@
         "growth": 1,
         "prev": 1,
         "delta": 0,
-        "vs_median": -4.6,
-        "median_others": 5.6,
+        "vs_median": -4.3,
+        "median_others": 5.3,
         "two_year_stack": -2.0,
         "base": -3,
         "next_base": -4,
@@ -2648,15 +3298,15 @@
           "flags": [],
           "label": "Steady, behind peers"
         },
-        "rank": 7,
-        "rank_of": 10
+        "rank": 8,
+        "rank_of": 11
       },
       "hermes": {
         "growth": 5.6,
         "prev": 9.8,
         "delta": -4.2,
-        "vs_median": 0.6,
-        "median_others": 5,
+        "vs_median": 2.1,
+        "median_others": 3.5,
         "two_year_stack": 13.2,
         "base": 7.2,
         "next_base": 9.0,
@@ -2672,19 +3322,19 @@
         "driver": null,
         "signal": {
           "momentum": "Slowing",
-          "level": "in line with peers",
+          "level": "ahead of peers",
           "flags": [],
-          "label": "Slowing, in line with peers"
+          "label": "Slowing, ahead of peers"
         },
         "rank": 5,
-        "rank_of": 10
+        "rank_of": 11
       },
       "kering": {
         "growth": 0,
         "prev": -3,
         "delta": 3,
-        "vs_median": -5.6,
-        "median_others": 5.6,
+        "vs_median": -5.3,
+        "median_others": 5.3,
         "two_year_stack": -15.0,
         "base": -15,
         "next_base": -16,
@@ -2704,15 +3354,15 @@
           "flags": [],
           "label": "Accelerating, behind peers"
         },
-        "rank": 9,
-        "rank_of": 10
+        "rank": 10,
+        "rank_of": 11
       },
       "richemont": {
         "growth": 13,
         "prev": 11,
         "delta": 2,
-        "vs_median": 8,
-        "median_others": 5,
+        "vs_median": 9.5,
+        "median_others": 3.5,
         "two_year_stack": 20.9,
         "base": 7,
         "next_base": 6,
@@ -2733,14 +3383,14 @@
           "label": "Accelerating, ahead of peers"
         },
         "rank": 2,
-        "rank_of": 10
+        "rank_of": 11
       },
       "moncler": {
         "growth": 12,
         "prev": 7,
         "delta": 5,
-        "vs_median": 7,
-        "median_others": 5,
+        "vs_median": 8.5,
+        "median_others": 3.5,
         "two_year_stack": 13.1,
         "base": 1,
         "next_base": -1,
@@ -2763,14 +3413,14 @@
           "label": "Accelerating, ahead of peers"
         },
         "rank": 3,
-        "rank_of": 10
+        "rank_of": 11
       },
       "prada": {
         "growth": 1,
         "prev": 5.6,
         "delta": -4.6,
-        "vs_median": -4.6,
-        "median_others": 5.6,
+        "vs_median": -4.3,
+        "median_others": 5.3,
         "two_year_stack": 14.1,
         "base": 13.0,
         "next_base": 7.6,
@@ -2792,15 +3442,15 @@
           ],
           "label": "Slowing, behind peers"
         },
-        "rank": 8,
-        "rank_of": 10
+        "rank": 9,
+        "rank_of": 11
       },
       "burberry": {
         "growth": 5,
         "prev": 3,
         "delta": 2,
-        "vs_median": -0.6,
-        "median_others": 5.6,
+        "vs_median": 1.2,
+        "median_others": 3.8,
         "two_year_stack": -1.3,
         "base": -6,
         "next_base": -1,
@@ -2823,14 +3473,14 @@
           "label": "Accelerating, in line with peers"
         },
         "rank": 6,
-        "rank_of": 10
+        "rank_of": 11
       },
       "zegna": {
         "growth": 7.4,
         "prev": 4.6,
         "delta": 2.8,
-        "vs_median": 2.4,
-        "median_others": 5,
+        "vs_median": 3.9,
+        "median_others": 3.5,
         "two_year_stack": 6.1,
         "base": -1.2,
         "next_base": -2.6,
@@ -2851,14 +3501,14 @@
           "label": "Accelerating, ahead of peers"
         },
         "rank": 4,
-        "rank_of": 10
+        "rank_of": 11
       },
       "cucinelli": {
         "growth": 14.0,
         "prev": 11.9,
         "delta": 2.1,
-        "vs_median": 9.0,
-        "median_others": 5,
+        "vs_median": 10.5,
+        "median_others": 3.5,
         "two_year_stack": 25.4,
         "base": 10.0,
         "next_base": null,
@@ -2879,14 +3529,14 @@
           "label": "Accelerating, ahead of peers"
         },
         "rank": 1,
-        "rank_of": 10
+        "rank_of": 11
       },
       "ferragamo": {
         "growth": -1.2,
         "prev": -2.0,
         "delta": 0.8,
-        "vs_median": -6.8,
-        "median_others": 5.6,
+        "vs_median": -6.5,
+        "median_others": 5.3,
         "two_year_stack": -2.2,
         "base": -1.0,
         "next_base": -11.8,
@@ -2908,8 +3558,36 @@
           ],
           "label": "Steady, behind peers"
         },
-        "rank": 10,
-        "rank_of": 10
+        "rank": 11,
+        "rank_of": 11
+      },
+      "pandora": {
+        "growth": 2,
+        "prev": 4,
+        "delta": -2,
+        "vs_median": -3.3,
+        "median_others": 5.3,
+        "two_year_stack": 9.1,
+        "base": 7,
+        "next_base": 8,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Slowing",
+          "level": "behind peers",
+          "flags": [],
+          "label": "Slowing, behind peers"
+        },
+        "rank": 7,
+        "rank_of": 11
       },
       "ferrari": {
         "growth": 6,
@@ -2970,18 +3648,102 @@
         },
         "rank": 1,
         "rank_of": 2
+      },
+      "ralph-lauren": {
+        "growth": 12,
+        "prev": 10,
+        "delta": 2,
+        "vs_median": 4.0,
+        "median_others": 8.0,
+        "two_year_stack": 23.2,
+        "base": 10,
+        "next_base": 11,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Accelerating",
+          "level": "ahead of peers",
+          "flags": [],
+          "label": "Accelerating, ahead of peers"
+        },
+        "rank": 2,
+        "rank_of": 3
+      },
+      "tapestry": {
+        "growth": 23,
+        "prev": 18,
+        "delta": 5,
+        "vs_median": 20.5,
+        "median_others": 2.5,
+        "two_year_stack": 32.8,
+        "base": 8,
+        "next_base": 8,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Accelerating",
+          "level": "ahead of peers",
+          "flags": [],
+          "label": "Accelerating, ahead of peers"
+        },
+        "rank": 1,
+        "rank_of": 3
+      },
+      "capri": {
+        "growth": -7.0,
+        "prev": -5.9,
+        "delta": -1.1,
+        "vs_median": -24.5,
+        "median_others": 17.5,
+        "two_year_stack": null,
+        "base": null,
+        "next_base": -7.7,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Slowing",
+          "level": "behind peers",
+          "flags": [],
+          "label": "Slowing, behind peers"
+        },
+        "rank": 3,
+        "rank_of": 3
       }
     }
   },
   "2026Q2": {
     "peer": {
-      "n": 9,
-      "median": 5,
-      "median_like": 5,
-      "median_prev": 5,
+      "n": 10,
+      "median": 5.0,
+      "median_like": 5.0,
+      "median_prev": 3.5,
       "spread": 18,
       "slowed": 1,
-      "compared": 9,
+      "compared": 10,
       "asia_median": 8.3,
       "asia_median_like": null,
       "asia_median_prev": null,
@@ -2991,13 +3753,13 @@
     },
     "groups": {
       "goods": {
-        "n": 9,
-        "median": 5,
-        "median_like": 5,
-        "median_prev": 5,
+        "n": 10,
+        "median": 5.0,
+        "median_like": 5.0,
+        "median_prev": 3.5,
         "spread": 18,
         "slowed": 1,
-        "compared": 9,
+        "compared": 10,
         "asia_median": 8.3,
         "asia_median_like": null,
         "asia_median_prev": null,
@@ -3015,7 +3777,8 @@
           "prada",
           "burberry",
           "zegna",
-          "ferragamo"
+          "ferragamo",
+          "pandora"
         ]
       },
       "autos": {
@@ -3037,6 +3800,28 @@
         "members": [
           "ferrari",
           "aston-martin"
+        ]
+      },
+      "accessible": {
+        "n": 3,
+        "median": 11,
+        "median_like": 11,
+        "median_prev": 12,
+        "spread": 17.1,
+        "slowed": 1,
+        "compared": 3,
+        "asia_median": null,
+        "asia_median_like": null,
+        "asia_median_prev": null,
+        "asia_both": 0,
+        "asia_lagging": 0,
+        "asia_compared": 2,
+        "label": "Accessible luxury",
+        "kind": "industry",
+        "members": [
+          "ralph-lauren",
+          "tapestry",
+          "capri"
         ]
       },
       "fashion": {
@@ -3067,13 +3852,13 @@
         ]
       },
       "hard": {
-        "n": 1,
+        "n": 2,
         "median": null,
         "median_like": null,
         "median_prev": null,
-        "spread": null,
+        "spread": 17,
         "slowed": 0,
-        "compared": 1,
+        "compared": 2,
         "asia_median": null,
         "asia_median_like": null,
         "asia_median_prev": null,
@@ -3084,7 +3869,8 @@
         "kind": "focus",
         "industry": "goods",
         "members": [
-          "richemont"
+          "richemont",
+          "pandora"
         ]
       },
       "diversified": {
@@ -3131,14 +3917,252 @@
         ]
       }
     },
-    "categories": {},
+    "categories": {
+      "fashion": {
+        "label": "Fashion & leather goods",
+        "n": 16,
+        "companies": 8,
+        "median": 4.95,
+        "rows": [
+          {
+            "company": "zegna",
+            "segment": "Zegna",
+            "g": 16.5
+          },
+          {
+            "company": "tapestry",
+            "segment": "Coach",
+            "g": 14
+          },
+          {
+            "company": "hermes",
+            "segment": "Silk and Textiles",
+            "g": 12.2
+          },
+          {
+            "company": "moncler",
+            "segment": "Stone Island",
+            "g": 11
+          },
+          {
+            "company": "hermes",
+            "segment": "Leather Goods and Saddlery",
+            "g": 10.2
+          },
+          {
+            "company": "capri",
+            "segment": "Jimmy Choo",
+            "g": 9.3
+          },
+          {
+            "company": "zegna",
+            "segment": "Tom Ford Fashion",
+            "g": 7.1
+          },
+          {
+            "company": "prada",
+            "segment": "Prada (retail sales)",
+            "g": 6.3
+          },
+          {
+            "company": "hermes",
+            "segment": "Ready-to-wear and Accessories",
+            "g": 3.6
+          },
+          {
+            "company": "moncler",
+            "segment": "Moncler",
+            "g": 3
+          },
+          {
+            "company": "zegna",
+            "segment": "Thom Browne",
+            "g": 2.7
+          },
+          {
+            "company": "prada",
+            "segment": "Miu Miu (retail sales)",
+            "g": 2.6
+          },
+          {
+            "company": "lvmh",
+            "segment": "Fashion & Leather Goods",
+            "g": 1
+          },
+          {
+            "company": "kering",
+            "segment": "Kering Fashion & Leather Goods",
+            "g": 0
+          },
+          {
+            "company": "tapestry",
+            "segment": "Kate Spade",
+            "g": -7
+          },
+          {
+            "company": "capri",
+            "segment": "Michael Kors",
+            "g": -7.6
+          }
+        ]
+      },
+      "jewellery_watches": {
+        "label": "Jewellery & watches",
+        "n": 5,
+        "companies": 4,
+        "median": 11,
+        "rows": [
+          {
+            "company": "richemont",
+            "segment": "Jewellery Maisons",
+            "g": 24
+          },
+          {
+            "company": "kering",
+            "segment": "Kering Jewelry",
+            "g": 18
+          },
+          {
+            "company": "lvmh",
+            "segment": "Watches & Jewelry",
+            "g": 11
+          },
+          {
+            "company": "richemont",
+            "segment": "Specialist Watchmakers",
+            "g": 8
+          },
+          {
+            "company": "hermes",
+            "segment": "Watches",
+            "g": 4.4
+          }
+        ]
+      },
+      "beauty": {
+        "label": "Beauty & fragrance",
+        "n": 2,
+        "companies": 2,
+        "median": null,
+        "rows": [
+          {
+            "company": "lvmh",
+            "segment": "Perfumes & Cosmetics",
+            "g": -1
+          },
+          {
+            "company": "hermes",
+            "segment": "Perfume and Beauty",
+            "g": -9.5
+          }
+        ]
+      },
+      "eyewear": {
+        "label": "Eyewear",
+        "n": 1,
+        "companies": 1,
+        "median": null,
+        "rows": [
+          {
+            "company": "kering",
+            "segment": "Kering Eyewear",
+            "g": 8
+          }
+        ]
+      },
+      "wines": {
+        "label": "Wines & spirits",
+        "n": 1,
+        "companies": 1,
+        "median": null,
+        "rows": [
+          {
+            "company": "lvmh",
+            "segment": "Wines & Spirits",
+            "g": 5
+          }
+        ]
+      },
+      "retail": {
+        "label": "Selective retailing",
+        "n": 1,
+        "companies": 1,
+        "median": null,
+        "rows": [
+          {
+            "company": "lvmh",
+            "segment": "Selective Retailing",
+            "g": 6
+          }
+        ]
+      },
+      "cars": {
+        "label": "Cars & spare parts",
+        "n": 1,
+        "companies": 1,
+        "median": null,
+        "rows": [
+          {
+            "company": "ferrari",
+            "segment": "Cars and spare parts",
+            "g": 11
+          }
+        ]
+      },
+      "brand": {
+        "label": "Brand, sponsorship & lifestyle",
+        "n": 1,
+        "companies": 1,
+        "median": null,
+        "rows": [
+          {
+            "company": "ferrari",
+            "segment": "Sponsorship, commercial and brand",
+            "g": 2
+          }
+        ]
+      },
+      "other": {
+        "label": "Other",
+        "n": 5,
+        "companies": 4,
+        "median": null,
+        "rows": [
+          {
+            "company": "ferrari",
+            "segment": "Other",
+            "g": 32
+          },
+          {
+            "company": "richemont",
+            "segment": "Other",
+            "g": 9
+          },
+          {
+            "company": "hermes",
+            "segment": "Other Hermès sectors",
+            "g": 4.0
+          },
+          {
+            "company": "hermes",
+            "segment": "Other products",
+            "g": 1.9
+          },
+          {
+            "company": "kering",
+            "segment": "Corporate & Other",
+            "g": -6
+          }
+        ]
+      }
+    },
     "companies": {
       "lvmh": {
         "growth": 3,
         "prev": 1,
         "delta": 2,
-        "vs_median": -2.0,
-        "median_others": 5.0,
+        "vs_median": -2,
+        "median_others": 5,
         "two_year_stack": -1.1,
         "base": -4,
         "next_base": 1,
@@ -3161,14 +4185,14 @@
           "label": "Accelerating, behind peers"
         },
         "rank": 8,
-        "rank_of": 9
+        "rank_of": 10
       },
       "hermes": {
         "growth": 6.7,
         "prev": 5.6,
         "delta": 1.1,
         "vs_median": 1.7,
-        "median_others": 5.0,
+        "median_others": 5,
         "two_year_stack": 16.3,
         "base": 9.0,
         "next_base": 9.6,
@@ -3191,14 +4215,14 @@
           "label": "Accelerating, in line with peers"
         },
         "rank": 3,
-        "rank_of": 9
+        "rank_of": 10
       },
       "kering": {
         "growth": 2,
         "prev": 0,
         "delta": 2,
-        "vs_median": -3.0,
-        "median_others": 5.0,
+        "vs_median": -3,
+        "median_others": 5,
         "two_year_stack": -14.3,
         "base": -16,
         "next_base": -6,
@@ -3220,15 +4244,15 @@
           ],
           "label": "Accelerating, behind peers"
         },
-        "rank": 9,
-        "rank_of": 9
+        "rank": 10,
+        "rank_of": 10
       },
       "richemont": {
         "growth": 20,
         "prev": 13,
         "delta": 7,
-        "vs_median": 15.0,
-        "median_others": 5.0,
+        "vs_median": 15,
+        "median_others": 5,
         "two_year_stack": 27.2,
         "base": 6,
         "next_base": 14,
@@ -3251,14 +4275,14 @@
           "label": "Accelerating, ahead of peers"
         },
         "rank": 1,
-        "rank_of": 9
+        "rank_of": 10
       },
       "moncler": {
         "growth": 5,
         "prev": 12,
         "delta": -7,
-        "vs_median": 0.0,
-        "median_others": 5.0,
+        "vs_median": 0,
+        "median_others": 5,
         "two_year_stack": 4.0,
         "base": -1,
         "next_base": -1,
@@ -3281,14 +4305,14 @@
           "label": "Slowing, in line with peers"
         },
         "rank": 4,
-        "rank_of": 9
+        "rank_of": 10
       },
       "prada": {
         "growth": 5,
         "prev": 1,
         "delta": 4,
-        "vs_median": 0.0,
-        "median_others": 5.0,
+        "vs_median": 0,
+        "median_others": 5,
         "two_year_stack": 13.0,
         "base": 7.6,
         "next_base": 7.6,
@@ -3311,14 +4335,14 @@
           "label": "Accelerating, in line with peers"
         },
         "rank": 5,
-        "rank_of": 9
+        "rank_of": 10
       },
       "burberry": {
         "growth": 5,
         "prev": 5,
         "delta": 0,
-        "vs_median": 0.0,
-        "median_others": 5.0,
+        "vs_median": 0,
+        "median_others": 5,
         "two_year_stack": 4.0,
         "base": -1,
         "next_base": 2,
@@ -3342,14 +4366,14 @@
           "label": "Steady, in line with peers"
         },
         "rank": 6,
-        "rank_of": 9
+        "rank_of": 10
       },
       "zegna": {
         "growth": 11.0,
         "prev": 7.4,
         "delta": 3.6,
         "vs_median": 6.0,
-        "median_others": 5.0,
+        "median_others": 5,
         "two_year_stack": 8.1,
         "base": -2.6,
         "next_base": 3.6,
@@ -3372,14 +4396,14 @@
           "label": "Accelerating, ahead of peers"
         },
         "rank": 2,
-        "rank_of": 9
+        "rank_of": 10
       },
       "ferragamo": {
         "growth": 4.6,
         "prev": -1.2,
         "delta": 5.8,
         "vs_median": -0.4,
-        "median_others": 5.0,
+        "median_others": 5,
         "two_year_stack": -7.7,
         "base": -11.8,
         "next_base": 1.7,
@@ -3403,7 +4427,37 @@
           "label": "Accelerating, in line with peers"
         },
         "rank": 7,
-        "rank_of": 9
+        "rank_of": 10
+      },
+      "pandora": {
+        "growth": 3,
+        "prev": 2,
+        "delta": 1,
+        "vs_median": -2,
+        "median_others": 5,
+        "two_year_stack": 11.2,
+        "base": 8,
+        "next_base": 6,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Accelerating",
+          "level": "behind peers",
+          "flags": [
+            "Easier base next quarter"
+          ],
+          "label": "Accelerating, behind peers"
+        },
+        "rank": 9,
+        "rank_of": 10
       },
       "ferrari": {
         "growth": 11,
@@ -3464,18 +4518,110 @@
         },
         "rank": 1,
         "rank_of": 2
+      },
+      "ralph-lauren": {
+        "growth": 13,
+        "prev": 12,
+        "delta": 1,
+        "vs_median": 9.6,
+        "median_others": 3.5,
+        "two_year_stack": 25.4,
+        "base": 11,
+        "next_base": 14,
+        "asia": 25,
+        "asia_prev": null,
+        "asia_gap": 12,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 3,
+          "reported": 3
+        },
+        "region_spread": 20,
+        "driver": null,
+        "signal": {
+          "momentum": "Accelerating",
+          "level": "ahead of peers",
+          "flags": [
+            "Asia lift",
+            "Tougher base next quarter"
+          ],
+          "label": "Accelerating, ahead of peers"
+        },
+        "rank": 1,
+        "rank_of": 3
+      },
+      "tapestry": {
+        "growth": 11,
+        "prev": 23,
+        "delta": -12,
+        "vs_median": 6.5,
+        "median_others": 4.5,
+        "two_year_stack": 19.9,
+        "base": 8,
+        "next_base": 16,
+        "asia": 28,
+        "asia_prev": null,
+        "asia_gap": 17,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 3,
+          "reported": 4
+        },
+        "region_spread": 32,
+        "driver": null,
+        "signal": {
+          "momentum": "Slowing",
+          "level": "ahead of peers",
+          "flags": [
+            "Asia lift",
+            "Tougher base next quarter"
+          ],
+          "label": "Slowing, ahead of peers"
+        },
+        "rank": 2,
+        "rank_of": 3
+      },
+      "capri": {
+        "growth": -4.1,
+        "prev": -7.0,
+        "delta": 2.9,
+        "vs_median": -16.1,
+        "median_others": 12.0,
+        "two_year_stack": -11.5,
+        "base": -7.7,
+        "next_base": -4.2,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Accelerating",
+          "level": "behind peers",
+          "flags": [
+            "Tougher base next quarter"
+          ],
+          "label": "Accelerating, behind peers"
+        },
+        "rank": 3,
+        "rank_of": 3
       }
     }
   },
   "2026Q3": {
     "peer": {
-      "n": 10,
-      "median": 2.5,
-      "median_like": 1,
-      "median_prev": 5,
+      "n": 11,
+      "median": 4,
+      "median_like": 2.5,
+      "median_prev": 5.0,
       "spread": 17.0,
       "slowed": 9,
-      "compared": 9,
+      "compared": 10,
       "asia_median": 0,
       "asia_median_like": 2.5,
       "asia_median_prev": 8.3,
@@ -3485,13 +4631,13 @@
     },
     "groups": {
       "goods": {
-        "n": 10,
-        "median": 2.5,
-        "median_like": 1,
-        "median_prev": 5,
+        "n": 11,
+        "median": 4,
+        "median_like": 2.5,
+        "median_prev": 5.0,
         "spread": 17.0,
         "slowed": 9,
-        "compared": 9,
+        "compared": 10,
         "asia_median": 0,
         "asia_median_like": 2.5,
         "asia_median_prev": 8.3,
@@ -3510,7 +4656,8 @@
           "burberry",
           "zegna",
           "cucinelli",
-          "ferragamo"
+          "ferragamo",
+          "pandora"
         ]
       },
       "autos": {
@@ -3532,6 +4679,28 @@
         "members": [
           "ferrari",
           "aston-martin"
+        ]
+      },
+      "accessible": {
+        "n": 3,
+        "median": 10,
+        "median_like": 10,
+        "median_prev": 11,
+        "spread": 16.9,
+        "slowed": 2,
+        "compared": 3,
+        "asia_median": null,
+        "asia_median_like": null,
+        "asia_median_prev": null,
+        "asia_both": 2,
+        "asia_lagging": 0,
+        "asia_compared": 2,
+        "label": "Accessible luxury",
+        "kind": "industry",
+        "members": [
+          "ralph-lauren",
+          "tapestry",
+          "capri"
         ]
       },
       "fashion": {
@@ -3563,13 +4732,13 @@
         ]
       },
       "hard": {
-        "n": 1,
+        "n": 2,
         "median": null,
         "median_like": null,
         "median_prev": null,
-        "spread": null,
+        "spread": 7,
         "slowed": 1,
-        "compared": 1,
+        "compared": 2,
         "asia_median": null,
         "asia_median_like": null,
         "asia_median_prev": null,
@@ -3580,7 +4749,8 @@
         "kind": "focus",
         "industry": "goods",
         "members": [
-          "richemont"
+          "richemont",
+          "pandora"
         ]
       },
       "diversified": {
@@ -3630,10 +4800,20 @@
     "categories": {
       "fashion": {
         "label": "Fashion & leather goods",
-        "n": 12,
-        "companies": 6,
+        "n": 16,
+        "companies": 8,
         "median": 0.0,
         "rows": [
+          {
+            "company": "tapestry",
+            "segment": "Coach",
+            "g": 16
+          },
+          {
+            "company": "capri",
+            "segment": "Jimmy Choo",
+            "g": 12.2
+          },
           {
             "company": "zegna",
             "segment": "Zegna",
@@ -3693,6 +4873,16 @@
             "company": "zegna",
             "segment": "Thom Browne",
             "g": -7.4
+          },
+          {
+            "company": "capri",
+            "segment": "Michael Kors",
+            "g": -8.0
+          },
+          {
+            "company": "tapestry",
+            "segment": "Kate Spade",
+            "g": -10
           }
         ]
       },
@@ -3851,8 +5041,8 @@
         "growth": 1,
         "prev": 3,
         "delta": -2,
-        "vs_median": -3,
-        "median_others": 4,
+        "vs_median": -3.2,
+        "median_others": 4.2,
         "two_year_stack": 2.0,
         "base": 1,
         "next_base": 1,
@@ -3878,15 +5068,15 @@
           ],
           "label": "Slowing, behind peers"
         },
-        "rank": 6,
-        "rank_of": 10
+        "rank": 7,
+        "rank_of": 11
       },
       "hermes": {
         "growth": 4.3,
         "prev": 6.7,
         "delta": -2.4,
-        "vs_median": 3.3,
-        "median_others": 1,
+        "vs_median": 1.8,
+        "median_others": 2.5,
         "two_year_stack": 14.3,
         "base": 9.6,
         "next_base": 9.8,
@@ -3906,21 +5096,21 @@
         },
         "signal": {
           "momentum": "Slowing",
-          "level": "ahead of peers",
+          "level": "in line with peers",
           "flags": [
             "Asia drag"
           ],
-          "label": "Slowing, ahead of peers"
+          "label": "Slowing, in line with peers"
         },
-        "rank": 4,
-        "rank_of": 10
+        "rank": 5,
+        "rank_of": 11
       },
       "kering": {
         "growth": -1,
         "prev": 2,
         "delta": -3,
-        "vs_median": -5,
-        "median_others": 4,
+        "vs_median": -5.2,
+        "median_others": 4.2,
         "two_year_stack": -6.9,
         "base": -6,
         "next_base": -3,
@@ -3943,15 +5133,15 @@
           ],
           "label": "Slowing, behind peers"
         },
-        "rank": 9,
-        "rank_of": 10
+        "rank": 10,
+        "rank_of": 11
       },
       "richemont": {
         "growth": 13,
         "prev": 20,
         "delta": -7,
-        "vs_median": 12,
-        "median_others": 1,
+        "vs_median": 10.5,
+        "median_others": 2.5,
         "two_year_stack": 28.8,
         "base": 14,
         "next_base": 11,
@@ -3979,14 +5169,14 @@
           "label": "Slowing, ahead of peers"
         },
         "rank": 2,
-        "rank_of": 10
+        "rank_of": 11
       },
       "moncler": {
         "growth": 0,
         "prev": 5,
         "delta": -5,
-        "vs_median": -4,
-        "median_others": 4,
+        "vs_median": -4.2,
+        "median_others": 4.2,
         "two_year_stack": -1.0,
         "base": -1,
         "next_base": 7,
@@ -4013,15 +5203,15 @@
           ],
           "label": "Slowing, behind peers"
         },
-        "rank": 7,
-        "rank_of": 10
+        "rank": 8,
+        "rank_of": 11
       },
       "prada": {
         "growth": 0,
         "prev": 5,
         "delta": -5,
-        "vs_median": -4,
-        "median_others": 4,
+        "vs_median": -4.2,
+        "median_others": 4.2,
         "two_year_stack": 7.6,
         "base": 7.6,
         "next_base": 5.6,
@@ -4048,15 +5238,15 @@
           ],
           "label": "Slowing, behind peers"
         },
-        "rank": 8,
-        "rank_of": 10
+        "rank": 9,
+        "rank_of": 11
       },
       "burberry": {
         "growth": 4,
         "prev": 5,
         "delta": -1,
-        "vs_median": 3,
-        "median_others": 1,
+        "vs_median": 1.4,
+        "median_others": 2.6,
         "two_year_stack": 6.1,
         "base": 2,
         "next_base": 3,
@@ -4076,19 +5266,19 @@
         },
         "signal": {
           "momentum": "Slowing",
-          "level": "ahead of peers",
+          "level": "in line with peers",
           "flags": [],
-          "label": "Slowing, ahead of peers"
+          "label": "Slowing, in line with peers"
         },
-        "rank": 5,
-        "rank_of": 10
+        "rank": 6,
+        "rank_of": 11
       },
       "zegna": {
         "growth": 8.2,
         "prev": 11.0,
         "delta": -2.8,
-        "vs_median": 7.2,
-        "median_others": 1,
+        "vs_median": 5.7,
+        "median_others": 2.5,
         "two_year_stack": 12.1,
         "base": 3.6,
         "next_base": 4.6,
@@ -4113,14 +5303,14 @@
           "label": "Slowing, ahead of peers"
         },
         "rank": 3,
-        "rank_of": 10
+        "rank_of": 11
       },
       "cucinelli": {
         "growth": 13.5,
         "prev": null,
         "delta": null,
-        "vs_median": 12.5,
-        "median_others": 1,
+        "vs_median": 11.0,
+        "median_others": 2.5,
         "two_year_stack": 27.7,
         "base": 12.5,
         "next_base": 11.9,
@@ -4141,14 +5331,14 @@
           "label": "No prior quarter, ahead of peers"
         },
         "rank": 1,
-        "rank_of": 10
+        "rank_of": 11
       },
       "ferragamo": {
         "growth": -3.5,
         "prev": 4.6,
         "delta": -8.1,
-        "vs_median": -7.5,
-        "median_others": 4,
+        "vs_median": -7.7,
+        "median_others": 4.2,
         "two_year_stack": -1.9,
         "base": 1.7,
         "next_base": -2.0,
@@ -4176,8 +5366,38 @@
           ],
           "label": "Slowing, behind peers"
         },
-        "rank": 10,
-        "rank_of": 10
+        "rank": 11,
+        "rank_of": 11
+      },
+      "pandora": {
+        "growth": 6,
+        "prev": 3,
+        "delta": 3,
+        "vs_median": 3.5,
+        "median_others": 2.5,
+        "two_year_stack": 12.4,
+        "base": 6,
+        "next_base": 4,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Accelerating",
+          "level": "ahead of peers",
+          "flags": [
+            "Easier base next quarter"
+          ],
+          "label": "Accelerating, ahead of peers"
+        },
+        "rank": 4,
+        "rank_of": 11
       },
       "ferrari": {
         "growth": 10,
@@ -4238,6 +5458,104 @@
         },
         "rank": 1,
         "rank_of": 2
+      },
+      "ralph-lauren": {
+        "growth": 10,
+        "prev": 13,
+        "delta": -3,
+        "vs_median": 6.5,
+        "median_others": 3.5,
+        "two_year_stack": 25.4,
+        "base": 14,
+        "next_base": 10,
+        "asia": 28,
+        "asia_prev": 25,
+        "asia_gap": 18,
+        "asia_delta": 3,
+        "breadth": {
+          "growing": 3,
+          "reported": 3
+        },
+        "region_spread": 25,
+        "driver": {
+          "key": "americas",
+          "name": "North America",
+          "change": -7
+        },
+        "signal": {
+          "momentum": "Slowing",
+          "level": "ahead of peers",
+          "flags": [
+            "Asia lift",
+            "Easier base next quarter"
+          ],
+          "label": "Slowing, ahead of peers"
+        },
+        "rank": 2,
+        "rank_of": 3
+      },
+      "tapestry": {
+        "growth": 12,
+        "prev": 11,
+        "delta": 1,
+        "vs_median": 9.4,
+        "median_others": 2.5,
+        "two_year_stack": 29.9,
+        "base": 16,
+        "next_base": 18,
+        "asia": 39,
+        "asia_prev": 28,
+        "asia_gap": 27,
+        "asia_delta": 11,
+        "breadth": {
+          "growing": 4,
+          "reported": 4
+        },
+        "region_spread": 35,
+        "driver": {
+          "key": "asia",
+          "name": "Greater China",
+          "change": 11
+        },
+        "signal": {
+          "momentum": "Accelerating",
+          "level": "ahead of peers",
+          "flags": [
+            "Asia lift",
+            "Tougher base next quarter"
+          ],
+          "label": "Accelerating, ahead of peers"
+        },
+        "rank": 1,
+        "rank_of": 3
+      },
+      "capri": {
+        "growth": -4.9,
+        "prev": -4.1,
+        "delta": -0.8,
+        "vs_median": -15.9,
+        "median_others": 11.0,
+        "two_year_stack": -8.9,
+        "base": -4.2,
+        "next_base": -5.9,
+        "asia": null,
+        "asia_prev": null,
+        "asia_gap": null,
+        "asia_delta": null,
+        "breadth": {
+          "growing": 0,
+          "reported": 0
+        },
+        "region_spread": null,
+        "driver": null,
+        "signal": {
+          "momentum": "Steady",
+          "level": "behind peers",
+          "flags": [],
+          "label": "Steady, behind peers"
+        },
+        "rank": 3,
+        "rank_of": 3
       }
     }
   }

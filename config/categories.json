@@ -9,6 +9,10 @@
     {
       "id": "autos",
       "label": "Luxury autos"
+    },
+    {
+      "id": "accessible",
+      "label": "Accessible luxury"
     }
   ],
   "focus": [
@@ -81,6 +85,19 @@
     "aston-martin": {
       "industry": "autos",
       "focus": "sports_cars"
+    },
+    "pandora": {
+      "industry": "goods",
+      "focus": "hard"
+    },
+    "ralph-lauren": {
+      "industry": "accessible"
+    },
+    "tapestry": {
+      "industry": "accessible"
+    },
+    "capri": {
+      "industry": "accessible"
     }
   },
   "categories": [
@@ -168,6 +185,14 @@
       "Cars and spare parts": "cars",
       "Sponsorship, commercial and brand": "brand",
       "Other": "other"
+    },
+    "tapestry": {
+      "Coach": "fashion",
+      "Kate Spade": "fashion"
+    },
+    "capri": {
+      "Michael Kors": "fashion",
+      "Jimmy Choo": "fashion"
     }
   }
 }

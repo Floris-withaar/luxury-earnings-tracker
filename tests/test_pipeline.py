@@ -238,6 +238,16 @@ class InterpretTests(unittest.TestCase):
         self.assertEqual(notes["companies"]["kering"]["by"], "rules")
         self.assertIn("rejected", notes["companies"]["kering"])
 
+    def test_a_note_with_a_field_name_is_rejected(self):
+        # The 18 November run wrote "the median of the other companies in the peer_group".
+        leak = {"note": "Growth slowed to 1%, behind the median of the other companies in the peer_group.", "themes": [], "watch": ""}
+        quiet = {"note": "Growth slowed to 1%.", "themes": [], "watch": "Check the group_growth_to_lap figure."}
+        answers = [leak if cid == "lvmh" else quiet for cid in self.out["2026Q3"]["companies"]]
+        notes = interpret.interpret(self.data, self.out, "2026Q3", client=FakeClient(*answers), use_llm=True)
+        self.assertEqual(notes["companies"]["lvmh"]["by"], "rules")
+        self.assertIn("peer_group", notes["companies"]["lvmh"]["rejected"])
+        self.assertEqual(notes["companies"]["kering"]["by"], "rules")    # the watch line counts too
+
 
 class LLMTests(unittest.TestCase):
     def test_usage_and_cost_estimate(self):

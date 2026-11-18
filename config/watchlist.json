@@ -148,6 +148,71 @@
         "3": 28,
         "4": 56
       }
+    },
+    {
+      "id": "pandora",
+      "name": "Pandora",
+      "ir_domain": "pandoragroup.com",
+      "more_domains": [
+        "via.ritzau.dk"
+      ],
+      "first_check_days": 35,
+      "lags": {
+        "1": 36,
+        "2": 43,
+        "3": 35,
+        "4": 36
+      }
+    },
+    {
+      "id": "ralph-lauren",
+      "name": "Ralph Lauren",
+      "ir_domain": "ralphlauren.com",
+      "more_domains": [
+        "ralphlauren.gcs-web.com",
+        "sec.gov",
+        "businesswire.com"
+      ],
+      "first_check_days": 35,
+      "lags": {
+        "1": 50,
+        "2": 36,
+        "3": 35,
+        "4": 35
+      }
+    },
+    {
+      "id": "tapestry",
+      "name": "Tapestry",
+      "ir_domain": "tapestry.com",
+      "more_domains": [
+        "tapestry.gcs-web.com",
+        "sec.gov",
+        "businesswire.com"
+      ],
+      "first_check_days": 35,
+      "lags": {
+        "1": 36,
+        "2": 43,
+        "3": 35,
+        "4": 35
+      }
+    },
+    {
+      "id": "capri",
+      "name": "Capri Holdings",
+      "ir_domain": "capriholdings.com",
+      "more_domains": [
+        "sec.gov",
+        "businesswire.com"
+      ],
+      "first_check_days": 29,
+      "lags": {
+        "1": 56,
+        "2": 35,
+        "3": 29,
+        "4": 33
+      }
     }
   ]
 }

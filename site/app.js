@@ -48,10 +48,13 @@ const grp = () => cos().filter(c => industryOf(c) === state.group);
 const sameIndustry = c => cos().filter(o => industryOf(o) === industryOf(c));
 const minGroup = () => TAX.min_group || 3;
 /* Colour follows the company and never its rank: eight checked hues in fixed order inside each industry, then ink, then grey.
-   A company outside the first industry is also drawn dashed, so a mixed selection never relies on colour alone. */
+   A company outside the first industry is also drawn dashed, so a mixed selection never relies on colour alone.
+   No hue is made up for an eleventh company: from the eleventh on, the grey line is dotted. */
 function colorOf(c){ const i = sameIndustry(c).indexOf(c); return i >= 0 && i < 9 ? "var(--c" + (i + 1) + ")" : "var(--c-more)"; }
-const dashed = c => industryOf(c) !== firstIndustry();
-function swatch(color, dash){ return dash ? "background:repeating-linear-gradient(90deg," + color + " 0 5px,transparent 5px 8px)" : "background:" + color; }
+const dashed = c => industryOf(c) !== firstIndustry() ? "dash" : sameIndustry(c).indexOf(c) >= 10 ? "dot" : null;
+const DASH = {dash: "6 4", dot: "1 4"};
+function swatch(color, dash){ return dash === "dot" ? "background:repeating-linear-gradient(90deg," + color + " 0 2px,transparent 2px 5px)"
+  : dash ? "background:repeating-linear-gradient(90deg," + color + " 0 5px,transparent 5px 8px)" : "background:" + color; }
 function gv(c, q){ const s = c.series && c.series[q]; return s && isNum(s.g) ? s.g : null; }
 function rcell(c, q, k){ const r = c.regions && c.regions[q]; return r && r[k] && isNum(r[k].v) ? r[k] : null; }
 function rv(c, q, k){ const x = rcell(c, q, k); return x ? x.v : null; }
@@ -184,7 +187,7 @@ function trendChart(lines, qs, endLabels){
     lines.forEach(l => {
       let d = "", pen = false, n = 0, last = null;
       l.vals.forEach((v, i) => { if (!isNum(v)){ pen = false; return; } d += (pen ? "L" : "M") + x(i).toFixed(1) + " " + y(v).toFixed(1); pen = true; n++; last = {i, v}; });
-      if (n >= 2) svg.append(sv("path", {class: l.ref ? "ref" : "ln", d, style: l.ref ? "" : "stroke:" + l.color + (l.dash ? ";stroke-dasharray:6 4" : "")}));
+      if (n >= 2) svg.append(sv("path", {class: l.ref ? "ref" : "ln", d, style: l.ref ? "" : "stroke:" + l.color + (l.dash ? ";stroke-dasharray:" + (DASH[l.dash] || DASH.dash) + (l.dash === "dot" ? ";stroke-linecap:round" : "") : "")}));
       /* A dot marks the latest point, and any point with no neighbour, which the line alone would not show. */
       if (!l.ref) l.vals.forEach((v, i) => { if (isNum(v) && (i === last.i || (!isNum(l.vals[i - 1]) && !isNum(l.vals[i + 1])))) svg.append(sv("circle", {class:"pt", cx: x(i), cy: y(v), r: 4.5, style:"fill:" + l.color})); });
       if (last && endLabels && !l.ref){ const tx = sv("text", {class:"endl", x: x(last.i) + 10, y: y(last.v) + 4}); tx.textContent = (narrow ? "" : l.name + " ") + fmtPct(last.v); svg.append(tx); }
@@ -307,7 +310,7 @@ function viewCompare(v){
   const aSel = el("select", {id:"c-against", onchange: e => { state.against = e.target.value; render(); }}, ...AGAINST.map(x => el("option", {value: x[0], text: x[1]}))); aSel.value = state.against;
   const coSel = el("select", {id:"c-against-co", "aria-label":"Company to compare against", onchange: e => { state.againstCo = e.target.value; render(); }}, ...cos().map(c => el("option", {value: c.id, text: c.name}))); coSel.value = state.againstCo;
   v.append(el("div", {class:"controls"},
-    el("div", {class:"ctl"}, el("div", {class:"mono"}, "Companies", el("button", {class:"linkbtn", type:"button", onclick: () => { state.sel = new Set(cos().map(c => c.id)); render(); }}, "All"), ...picks, el("button", {class:"linkbtn", type:"button", onclick: () => { state.sel = new Set(); render(); }}, "Clear")), chips),
+    el("div", {class:"ctl"}, el("div", {class:"mono pickrow"}, "Companies", el("button", {class:"linkbtn", type:"button", onclick: () => { state.sel = new Set(cos().map(c => c.id)); render(); }}, "All"), ...picks, el("button", {class:"linkbtn", type:"button", onclick: () => { state.sel = new Set(); render(); }}, "Clear")), chips),
     el("div", {class:"ctl"}, el("label", {class:"mono", for:"c-measure", text:"Measure"}), mSel),
     el("div", {class:"ctl"}, el("label", {class:"mono", for:"c-against", text:"Compare against"}), el("div", {class:"row"}, aSel, state.against === "company" ? coSel : null))));
   if (!list.length){ v.append(el("p", {class:"note", text:"Select at least one company."})); return; }
@@ -370,20 +373,29 @@ function viewCategories(v){
 
   const ids = (TAX.categories || []).map(c => c.id).filter(id => cats[id]);
   if (!ids.length){ v.append(exhibit("Product categories", el("p", {class:"note", text:"No segment figures for this quarter."}))); return; }
-  const all = ids.flatMap(id => cats[id].rows.map(r => r.g)), dom = niceDomain(all), pos = t => (t - dom.lo) / (dom.hi - dom.lo) * 100;
+  /* The same line a quarter earlier, so each category shows which way it moved. */
+  const pcats = (MODEL[p] || {}).categories || {};
+  const before = (id, r) => ((pcats[id] || {}).rows || []).find(o => o.company === r.company && o.segment === r.segment);
+  const hasPrev = ids.some(id => cats[id].rows.some(r => before(id, r)));
+  const all = ids.flatMap(id => cats[id].rows.flatMap(r => { const b = before(id, r); return b ? [r.g, b.g] : [r.g]; })), dom = niceDomain(all), pos = t => (t - dom.lo) / (dom.hi - dom.lo) * 100;
   const wrap = el("div", {class:"cat"});
   ids.forEach(id => { const k = cats[id], ml = el("div", {class:"mlist"});
-    wrap.append(el("h4", null, k.label, el("span", {class:"note", text: k.n + (k.n === 1 ? " line" : " lines") + " from " + k.companies + (k.companies === 1 ? " company" : " companies") + (isNum(k.median) ? ", median " + fmtPct(k.median) : "")})));
+    const pm = (pcats[id] || {}).median;
+    wrap.append(el("h4", null, k.label, el("span", {class:"note", text: k.n + (k.n === 1 ? " line" : " lines") + " from " + k.companies + (k.companies === 1 ? " company" : " companies") + (isNum(k.median) ? ", median " + fmtPct(k.median) + (isNum(pm) ? " against " + fmtPct(pm) + " in " + qLabel(p) : "") : "")})));
     k.rows.forEach(r => { const c = byId(r.company), mt = el("div", {class:"mt"}, el("i", {style:"left:" + pos(0) + "%"}));
       if (r.g !== 0) mt.append(el("b", {class: r.g > 0 ? "pos" : "neg", style:"left:" + Math.min(pos(0), pos(r.g)) + "%;width:" + Math.abs(pos(r.g) - pos(0)) + "%"}));
+      const b = before(id, r);
+      if (b) mt.append(el("span", {class:"prevm", style:"left:" + pos(b.g) + "%"}));
       if (isNum(k.median)) mt.append(el("span", {class:"medm", style:"left:" + pos(k.median) + "%"}));
       const row = el("div", {class:"mrow", tabindex:"0"}, el("span", null, c.name + " · " + r.segment), mt, el("span", {class:"g num", text: fmtPct(r.g)}), el("span", {class:"r", text: c.basis}));
-      bindTip(row, t => { t.append(el("div", {class:"tt", text: c.name + ", " + r.segment}), tipRow(fmtPct(r.g), qLabel(q) + ", " + basisWords(c.basis))); if (isNum(k.median)) t.append(el("div", {class:"src", text:"Category median " + fmtPct(k.median) + ", gap " + fmtPts(r.g - k.median)})); });
+      bindTip(row, t => { t.append(el("div", {class:"tt", text: c.name + ", " + r.segment}), tipRow(fmtPct(r.g), qLabel(q) + ", " + basisWords(c.basis)));
+        if (b) t.append(tipRow(fmtPct(b.g), qLabel(p) + ", change " + fmtPts(r.g - b.g)));
+        if (isNum(k.median)) t.append(el("div", {class:"src", text:"Category median " + fmtPct(k.median) + ", gap " + fmtPts(r.g - k.median)})); });
       ml.append(row); });
     wrap.append(ml); });
   const ranked = ids.filter(id => isNum(cats[id].median)).sort((a, b) => cats[b].median - cats[a].median);
   v.append(exhibit(ranked.length >= 2 ? cats[ranked[0]].label + " led the categories with a median of " + fmtPct(cats[ranked[0]].median) + ". " + cats[ranked[ranked.length - 1]].label + " trailed at " + fmtPct(cats[ranked[ranked.length - 1]].median) + "." : "Growth by product category, " + qLabel(q) + ".", wrap,
-    {sub:"Each line on its company's own basis. The black mark is the category median, shown when " + (WORDS[minGroup()] || minGroup()) + " or more lines stand behind it. A line inside another line, such as Gucci inside Kering's fashion line, is left out."}));
+    {sub:"Each line on its company's own basis. The black mark is the category median, shown when " + (WORDS[minGroup()] || minGroup()) + " or more lines stand behind it." + (hasPrev ? " The grey mark is the same line in " + qLabel(p) + "." : "") + " A line inside another line, such as Gucci inside Kering's fashion line, is left out."}));
 }
 
 /* ---------- company ---------- */
@@ -406,7 +418,7 @@ function viewCompany(v){
   /* Against the median of its own industry, or against each other member when the industry is too small for a median. */
   const mates = sameIndustry(c), big = mates.length >= minGroup(), indName = groupLabel(industryOf(c)).toLowerCase();
   const lines = [{name: c.name, color: colorOf(c), dash: dashed(c), vals: qs.map(t => gv(c, t))}].concat(big
-    ? [{name:"Median, " + indName, ref: true, vals: qs.map(t => median(mates.map(o => gv(o, t))))}]
+    ? [{name:"Median, " + indName, ref: true, vals: qs.map(t => { const xs = mates.map(o => gv(o, t)).filter(isNum); return xs.length >= minGroup() ? median(xs) : null; })}]
     : mates.filter(o => o.id !== c.id).map(o => ({name: o.name, ref: true, vals: qs.map(t => gv(o, t))})));
   const left = el("div", {style:"display:grid;gap:24px;align-content:start"},
     exhibit(x ? x.signal.label + "." : "What moved", note, {src: nt ? (nt.by === "rules" ? "Note written by fixed rules from the model output." : "Note written by " + nt.by + " from the model output. Every number in it was checked against the data.") : ""}),
